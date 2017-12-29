@@ -83,7 +83,7 @@ export default class WelcomeToVR extends React.Component {
                 {this.state.showCarmeliteChurch
                     ? <VrButton onClick={() => this.setState({showCarmeliteChurch: !this.state.showCarmeliteChurch})}>
                         <AnimateImage style={{
-                            transform: [{translate: [-6, 1, 3]}, { scale : 0.8 }, {rotateY : 120}],
+                            transform: [{translate: [-1, 1, 6]}, { scale : 0.8 }, {rotateY : 180}],
                             width: 4,
                             height: 4,
                             borderWidth: 0.05,
@@ -96,7 +96,7 @@ export default class WelcomeToVR extends React.Component {
                         height: 0.3,
                         width: 5,
                         backgroundColor: 'orange',
-                        transform: [{translate: [-6, 0, 3]}, { scale : 0.8 }, {rotateY : 120}]
+                        transform: [{translate: [-1, -1, 6]}, { scale : 0.8 }, {rotateY : 180}]
                     }}>
                         <VrButton
                             onClick={() => this.setState({showCarmeliteChurch: !this.state.showCarmeliteChurch})}>
