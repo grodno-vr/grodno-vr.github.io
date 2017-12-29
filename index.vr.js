@@ -9,11 +9,15 @@ import {
     Image,
     Sound
 } from 'react-vr';
+import AnimateImage from './components/AnimateImage';
 
 export default class WelcomeToVR extends React.Component {
     constructor() {
         super();
         this.state = {
+            showVitautChurch: false,
+            showBrigitsChurch: false,
+            showCarmeliteChurch: false,
             textColor: 'orange'
         };
     }
@@ -22,59 +26,87 @@ export default class WelcomeToVR extends React.Component {
         return (
             <View>
                 <Pano source={asset('room1.jpg')} stereo={'TOP_BOTTOM_3D'} />
-                <View style={{
-                    flex: 1,
-                    flexDirection: 'column',
-                    width: 5,
-                    alignItems: 'stretch',
-                    transform: [{translate: [0, 2.5, -6]}, { scale : 0.8 }],
-                }}>
-                    <View style={{margin: 0.1, height: 0.3, backgroundColor: this.state.textColor}}>
-                        <VrButton onClick={() => this.setState({textColor: this.state.textColor === 'red' ? 'orange' : 'red'})}>
+
+                {this.state.showVitautChurch
+                    ? <VrButton onClick={() => this.setState({showVitautChurch: !this.state.showVitautChurch})}>
+                        <AnimateImage style={{
+                            transform: [{translate: [-5.5, 1.5, -5]}],
+                            width: 2.5,
+                            height: 2.5,
+                            borderWidth: 0.05,
+                            borderColor: 'red',
+                            borderRadius: 1
+                        }} source={asset('vitaut.jpg')}/>
+                    </VrButton>
+                    : <View style={{
+                        margin: 0.1,
+                        height: 0.3,
+                        width: 3,
+                        backgroundColor: 'orange',
+                        transform: [{translate: [-6, 0.5, -6]}, { scale : 0.8 }]
+                    }}>
+                        <VrButton
+                            onClick={() => this.setState({showVitautChurch: !this.state.showVitautChurch})}>
                             <Text style={{fontSize: 0.2, textAlign: 'center'}}>
                                 Church of Vitaut the Great
                             </Text>
                         </VrButton>
                     </View>
-                    <View style={{margin: 0.1, height: 0.3, backgroundColor: 'orange'}}>
-                        <VrButton>
+                }
+
+                {this.state.showBrigitsChurch
+                    ? <VrButton onClick={() => this.setState({showBrigitsChurch: !this.state.showBrigitsChurch})}>
+                        <AnimateImage style={{
+                            transform: [{translate: [4, 2.1, -7]}, {scale: 0.8}],
+                            width: 2.5,
+                            height: 2.5,
+                            borderWidth: 0.05,
+                            borderColor: 'red',
+                            borderRadius: 1
+                        }} source={asset('1.jpg')}/>
+                    </VrButton>
+                    : <View style={{
+                        margin: 0.1,
+                        height: 0.3,
+                        backgroundColor: 'orange',
+                        transform: [{translate: [3.5, 1.1, -7]}, {scale: 0.8}]
+                    }}>
+                        <VrButton
+                            onClick={() => this.setState({showBrigitsChurch: !this.state.showBrigitsChurch})}>
                             <Text style={{fontSize: 0.2, textAlign: 'center'}}>
                                 St. Brigit's Church and the Monastery
                             </Text>
                         </VrButton>
                     </View>
-                    <View style={{margin: 0.1, height: 0.3, backgroundColor: 'orange'}}>
-                        <VrButton>
+                }
+
+                {this.state.showCarmeliteChurch
+                    ? <VrButton onClick={() => this.setState({showCarmeliteChurch: !this.state.showCarmeliteChurch})}>
+                        <AnimateImage style={{
+                            transform: [{translate: [-6, 1, 3]}, { scale : 0.8 }, {rotateY : 120}],
+                            width: 4,
+                            height: 4,
+                            borderWidth: 0.05,
+                            borderColor: 'red',
+                            borderRadius: 2
+                        }} source={asset('2.jpg')}/>
+                    </VrButton>
+                    : <View style={{
+                        margin: 0.1,
+                        height: 0.3,
+                        width: 5,
+                        backgroundColor: 'orange',
+                        transform: [{translate: [-6, 0, 3]}, { scale : 0.8 }, {rotateY : 120}]
+                    }}>
+                        <VrButton
+                            onClick={() => this.setState({showCarmeliteChurch: !this.state.showCarmeliteChurch})}>
                             <Text style={{fontSize: 0.2, textAlign: 'center'}}>
                                 Holy Cross Church and the Monastery of Carmelite
                             </Text>
                         </VrButton>
                     </View>
-                </View>
-                {this.state.textColor === 'red' ?
-                    <View><Image style={{
-                        transform: [{translate: [-5.5, 3.5, -5]}],
-                        width: 2.5,
-                        height: 2.5,
-                        borderWidth: 0.05,
-                        borderColor: 'red',
-                        // borderRadius: 1
-                    }} source={asset('vitaut.jpg')}>
-                        <Sound source={{ mp3: asset('valaam.mp3') }} />
-                    </Image>
-                    <Image style={{
-                    transform: [{translate: [-4.5, 4, -6]}],
-                    width: 3.5,
-                    height: 2.5
-                    }} source={asset('vitaut1.jpg')} />
-                    <Image style={{
-                    transform: [{translate: [-3.5, 9, -7]}],
-                    width: 2,
-                    height: 1.5
-                    }} source={asset('vitaut2.jpg')} />
-                    </View>
-                    : <Text />
                 }
+
 
                 {/*<Text*/}
                 {/*style={{*/}
