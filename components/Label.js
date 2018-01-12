@@ -10,9 +10,15 @@ import {
 
 const Label = props => (
   <View style={[styles.caption, props.style]}>
-      <VrButton style={styles.leftItem} onClick={props.onClick}>
+      <VrButton style={styles.leftItem} onClick={props.onEyeClick}>
           <Image
-              source={asset('eye.png')}
+              source={asset('icons/eye.png')}
+              style={styles.icon}
+          />
+      </VrButton>
+      <VrButton style={styles.middleItem} onClick={props.onInfoClick}>
+          <Image
+              source={asset('icons/info.png')}
               style={styles.icon}
           />
       </VrButton>
@@ -25,7 +31,7 @@ const Label = props => (
 const BORDER_RADIUS = 0.036;
 const styles = StyleSheet.create({
    caption: {
-       width: 1.56,
+       width: 2.5,
        height: 0.32,
        flexDirection: 'row',
        alignItems: 'center',
@@ -34,19 +40,33 @@ const styles = StyleSheet.create({
        transform: [{ translate: [0, 0, -3] }],
    },
    leftItem: {
-       width: '24%',
+       width: '20%',
        height: '100%',
        marginRight: 0.02,
        backgroundColor: 'rgba(140, 140, 140, 0.9)',
+       borderWidth: 0.02,
+       borderColor: 'white',
        borderTopLeftRadius: BORDER_RADIUS,
        borderBottomLeftRadius: BORDER_RADIUS,
        alignItems: 'center',
        justifyContent: 'center',
    },
+    middleItem: {
+        width: '20%',
+        height: '100%',
+        marginRight: 0.02,
+        backgroundColor: 'rgba(140, 140, 140, 0.9)',
+        borderWidth: 0.02,
+        borderColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
    rightItem: {
-       width: '76%',
+       width: '60%',
        height: '100%',
        backgroundColor: 'rgba(0, 0, 0, 0.9)',
+       borderWidth: 0.02,
+       borderColor: 'white',
        borderTopRightRadius: BORDER_RADIUS,
        borderBottomRightRadius: BORDER_RADIUS,
        paddingHorizontal: 0.08,

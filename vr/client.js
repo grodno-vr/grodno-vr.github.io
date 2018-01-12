@@ -5,16 +5,17 @@
 // Auto-generated content.
 import '../process';
 import {VRInstance} from 'react-vr-web';
-import MediaContainerModule from '../native-modules/MediaContainerModule';
+import InfoContainerModule from '../native-modules/InfoContainerModule';
 
 function init(bundle, parent, options) {
   const domOverlayContainer = document.createElement('div');
   domOverlayContainer.id = 'dom-overlay';
 
-  const mediaContainer = new MediaContainerModule(domOverlayContainer);
+  const mediaContainer = new InfoContainerModule(domOverlayContainer);
 
-  const vr = new VRInstance(bundle, 'WelcomeToVR', parent, {
+  const vr = new VRInstance(bundle, 'GrodnoVR', parent, {
     allowCarmelDeeplink: true,
+    hideFullscreen: true,
     ...options,
     nativeModules: [mediaContainer],
   });

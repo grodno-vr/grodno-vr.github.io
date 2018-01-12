@@ -10,11 +10,11 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                margin: 0.1,
-                height: 0.3,
-                width: 3,
-                backgroundColor: 'black',
-                transform: [{translate: [16, 4, -20]}, { scale : 2.5 }, { rotateY: -20 }]
+                // margin: 0.1,
+                // height: 0.3,
+                // width: 3,
+                // backgroundColor: 'black',
+                transform: [{translate: [16, 4, -20]}, { scale : 4 }, { rotateY: -20 }]
             },
             textStyle: {
                 fontSize: 0.2,
@@ -60,11 +60,11 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                margin: 0.1,
-                height: 0.3,
-                width: 3,
-                backgroundColor: 'black',
-                transform: [{translate: [-1, 6, -20]}, { scale : 2.5 }]
+                // margin: 0.1,
+                // height: 0.3,
+                // width: 3,
+                // backgroundColor: 'black',
+                transform: [{translate: [-1, 6, -20]}, { scale : 3.5 }]
             },
             textStyle: {
                 fontSize: 0.2,
@@ -127,11 +127,11 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                margin: 0.1,
-                height: 0.3,
-                width: 3,
-                backgroundColor: 'black',
-                transform: [{translate: [-5, 2.5, 2]}, { scale: 0.7 }, { rotateY: 110 }]
+                // margin: 0.1,
+                // height: 0.3,
+                // width: 3,
+                // backgroundColor: 'black',
+                transform: [{translate: [-5, 2.5, 2]}, { scale: 1.5 }, { rotateY: 110 }]
             },
             textStyle: {
                 fontSize: 0.2,
@@ -166,11 +166,11 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                margin: 0.1,
-                height: 0.3,
-                width: 3,
-                backgroundColor: 'black',
-                transform: [{translate: [18, 5, -1]}, { scale : 2 }, { rotateY: -75 }]
+                // margin: 0.1,
+                // height: 0.3,
+                // width: 3,
+                // backgroundColor: 'black',
+                transform: [{translate: [18, 5, -1]}, { scale : 3 }, { rotateY: -75 }]
             },
             textStyle: {
                 fontSize: 0.2,
@@ -182,11 +182,11 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                margin: 0.1,
-                height: 0.3,
-                width: 3,
-                backgroundColor: 'black',
-                transform: [{translate: [12, 9, 12]}, { scale : 2 }, { rotateY: -130 }]
+                // margin: 0.1,
+                // height: 0.3,
+                // width: 3,
+                // backgroundColor: 'black',
+                transform: [{translate: [12, 9, 12]}, { scale : 3 }, { rotateY: -130 }]
             },
             textStyle: {
                 fontSize: 0.2,

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Module } from 'react-vr-web';
-import MediaContainer from '../components/MediaContainer';
+import Information from '../components/Information';
 
-class MediaContainerModule extends Module {
+class InfoContainerModule extends Module {
     constructor(overlayContainer) {
-        super('MediaContainerModule');
+        super('InfoContainerModule');
 
         this._closeOverlay = this.closeOverlay.bind(this);
         this._overlayContainer = overlayContainer;
@@ -13,7 +13,7 @@ class MediaContainerModule extends Module {
 
     openOverlay(props) {
         ReactDOM.render(
-            <MediaContainer {...props} onClose={this._closeOverlay} />,
+            <Information {...props} onClose={this._closeOverlay} />,
             this._overlayContainer,
         );
     }
@@ -24,4 +24,4 @@ class MediaContainerModule extends Module {
 
 }
 
-export default MediaContainerModule;
+export default InfoContainerModule;

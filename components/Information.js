@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MediaContainer = props => (
+const Information = props => (
     <div className="media-container">
         <div className="media-container__close close" onClick={props.onClose}>Close</div>
         <div className="media-container__layout">
@@ -16,4 +16,4 @@ const MediaContainer = props => (
     </div>
 );
 
-export default MediaContainer;
+export default Information;

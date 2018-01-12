@@ -1,9 +1,9 @@
 'use strict';
 
-var path = require('path');
-var blacklist = require('metro-bundler/src/blacklist');
+const path = require('path');
+const blacklist = require('metro-bundler/src/blacklist');
 
-var config = {
+const config = {
   getProjectRoots() {
     return getRoots();
   },
@@ -27,7 +27,7 @@ var config = {
 };
 
 function getRoots() {
-  var root = process.env.REACT_NATIVE_APP_ROOT;
+  const root = process.env.REACT_NATIVE_APP_ROOT;
   if (root) {
     return [path.resolve(root)];
   }
