@@ -15,6 +15,7 @@ function init(bundle, parent, options) {
 
   const vr = new VRInstance(bundle, 'GrodnoVR', parent, {
     allowCarmelDeeplink: true,
+    antialias: true,
     hideFullscreen: true,
     ...options,
     nativeModules: [mediaContainer],

@@ -2,7 +2,8 @@ import React from 'react';
 import {
     Text,
     Animated,
-    VrButton
+    VrButton,
+    View
 } from 'react-vr';
 
 const Easing = require('Easing');
@@ -66,8 +67,9 @@ class OldImage extends React.Component {
                     style={{
                         width,
                         height,
-                        // borderWidth: 0.1,
-                        // borderColor: 'gray',
+                        borderWidth: 0.1,
+                        borderColor: 'gray',
+                        // borderRadius: 0.6,
                         transform: [
                             { scale: this.state.bounceValue },
                             { translateZ: this.state.animatedTranslation }
@@ -75,6 +77,7 @@ class OldImage extends React.Component {
                     source={this.props.source}>
                     <Text style={{
                         backgroundColor: 'gray',
+                        textAlign: 'center',
                         fontSize: 0.5,
                         width: 1.5,
                         color: 'white'
