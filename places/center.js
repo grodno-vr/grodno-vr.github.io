@@ -10,10 +10,6 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                // margin: 0.1,
-                // height: 0.3,
-                // width: 3,
-                // backgroundColor: 'black',
                 transform: [{translate: [16, 4, -20]}, { scale : 4 }, { rotateY: -20 }]
             },
             textStyle: {
@@ -28,9 +24,7 @@ const center = {
                     style: {
                         transform: [{translate: [3, 8, -7]}, { rotateY: -35, rotateX: 50, rotateZ: 10 }],
                         width: 8,
-                        height: 4.9,
-                        borderWidth: 0.1,
-                        borderColor: 'gray'
+                        height: 4.9
                     }
                 },
                 {
@@ -39,9 +33,7 @@ const center = {
                     style: {
                         transform: [{translate: [3, 8, -7]}, { rotateY: -35 }],
                         width: 7,
-                        height: 4.2,
-                        borderWidth: 0.1,
-                        borderColor: 'gray'
+                        height: 4.2
                     }
                 },
                 {
@@ -50,9 +42,7 @@ const center = {
                     style: {
                         transform: [{translate: [3, 8, -7]}, { rotateY: -35, rotateX: 3 }],
                         width: 7,
-                        height: 3.9,
-                        borderWidth: 0.1,
-                        borderColor: 'gray'
+                        height: 3.9
                     }
                 }
             ]
@@ -60,10 +50,6 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                // margin: 0.1,
-                // height: 0.3,
-                // width: 3,
-                // backgroundColor: 'black',
                 transform: [{translate: [-1, 6, -20]}, { scale : 3.5 }]
             },
             textStyle: {
@@ -78,8 +64,7 @@ const center = {
                     style: {
                         transform: [{translate: [-7, 6, -10]}, { rotateX: 10 }],
                         width: 7,
-                        height: 3.9,
-                        borderColor: 'gray'
+                        height: 3.9
                     }
                 },
                 {
@@ -88,8 +73,7 @@ const center = {
                     style: {
                         transform: [{translate: [-1, 10, -10]}, { rotateX: 10 }],
                         width: 7,
-                        height: 3.9,
-                        borderColor: 'gray'
+                        height: 3.9
                     }
                 },
                 {
@@ -98,8 +82,7 @@ const center = {
                     style: {
                         transform: [{translate: [-1, 10, -10]}],
                         width: 7,
-                        height: 3.9,
-                        borderColor: 'gray'
+                        height: 3.9
                     }
                 },
                 {
@@ -108,8 +91,7 @@ const center = {
                     style: {
                         transform: [{translate: [-7, 14, -10]}],
                         width: 7,
-                        height: 3.9,
-                        borderColor: 'gray'
+                        height: 3.9
                     }
                 },
                 {
@@ -118,8 +100,7 @@ const center = {
                     style: {
                         transform: [{translate: [-1, 14, -10]}, { rotateX: -10 }],
                         width: 7,
-                        height: 3.9,
-                        borderColor: 'gray'
+                        height: 3.9
                     }
                 }
             ]
@@ -127,10 +108,6 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                // margin: 0.1,
-                // height: 0.3,
-                // width: 3,
-                // backgroundColor: 'black',
                 transform: [{translate: [-5, 2.5, 2]}, { scale: 1.5 }, { rotateY: 110 }]
             },
             textStyle: {
@@ -145,9 +122,7 @@ const center = {
                     style: {
                         transform: [{translate: [-10, 4, 4]}, { rotateY: 110 }],
                         width: 7,
-                        height: 3.9,
-                        borderWidth: 0.1,
-                        borderColor: 'gray'
+                        height: 3.9
                     }
                 },
                 {
@@ -156,9 +131,7 @@ const center = {
                     style: {
                         transform: [{translate: [-10, 4, 4]}, { rotateY: 110 }],
                         width: 7,
-                        height: 3.9,
-                        borderWidth: 0.1,
-                        borderColor: 'gray'
+                        height: 3.9
                     }
                 }
             ]
@@ -166,10 +139,6 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                // margin: 0.1,
-                // height: 0.3,
-                // width: 3,
-                // backgroundColor: 'black',
                 transform: [{translate: [18, 5, -1]}, { scale : 3 }, { rotateY: -75 }]
             },
             textStyle: {
@@ -182,10 +151,6 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                // margin: 0.1,
-                // height: 0.3,
-                // width: 3,
-                // backgroundColor: 'black',
                 transform: [{translate: [12, 9, 12]}, { scale : 3 }, { rotateY: -130 }]
             },
             textStyle: {
@@ -193,7 +158,44 @@ const center = {
                 textAlign: 'center'
             },
             text: 'St. Francis Xavier Cathedral',
-            oldImages: []
+            oldImages: [
+                {
+                    source: 'cathedral.jpg',
+                    year: 'XVII c.',
+                    style: {
+                        transform: [{translate: [7, 6, 4]}, { scale: 1.5 }, { rotateY: -130 }],
+                        width: 7,
+                        height: 3.9
+                    }
+                },
+                {
+                    source: 'cathedral1.jpg',
+                    year: '1914 - 1918',
+                    style: {
+                        transform: [{translate: [7, 5, 4]}, { scale: 1.5 }, { rotateY: -130 }],
+                        width: 7,
+                        height: 3.9
+                    }
+                },
+                {
+                    source: 'cathedral2.jpg',
+                    year: '1924',
+                    style: {
+                        transform: [{translate: [6, 18, 20]}, { scale: 2.5 }, { rotateY: -130 }],
+                        width: 7,
+                        height: 3.9
+                    }
+                },
+                {
+                    source: 'cathedral3.jpg',
+                    year: '1924',
+                    style: {
+                        transform: [{translate: [6, 12, 20]}, { scale: 2.5 }, { rotateY: -130 }],
+                        width: 7,
+                        height: 3.9
+                    }
+                }
+            ]
         }
     ]
 };

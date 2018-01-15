@@ -50,22 +50,29 @@ class OldImage extends React.Component {
 
 
     render() {
+        const { transform, width, height } = this.props.style;
         return (
             <VrButton
+                style={{
+                    width,
+                    height,
+                    flex: 1,
+                    transform: [...transform]}}
                 onClick={() => this.props.onClick()}
                 onEnter={() => this.animateIn()}
                 onExit={() => this.animateOut()}
             >
                 <Animated.Image
-                    source={this.props.source}
                     style={{
-                        ...this.props.style,
-                        flex: 1,
+                        width,
+                        height,
+                        // borderWidth: 0.1,
+                        // borderColor: 'gray',
                         transform: [
-                            ...this.props.style.transform,
                             { scale: this.state.bounceValue },
                             { translateZ: this.state.animatedTranslation }
-                    ]}}>
+                        ]}}
+                    source={this.props.source}>
                     <Text style={{
                         backgroundColor: 'gray',
                         fontSize: 0.5,
