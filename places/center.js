@@ -146,7 +146,44 @@ const center = {
                 textAlign: 'center'
             },
             text: 'House of merchant Muravjov',
-            oldImages: []
+            oldImages: [
+                {
+                    source: 'muravjov.jpg',
+                    year: 'XIX c.',
+                    style: {
+                        transform: [{translate: [17, 8, -7]}, { scale : 2 }, { rotateY: -75 }],
+                        width: 3.9,
+                        height: 7
+                    }
+                },
+                {
+                    source: 'muravjov1.jpg',
+                    year: '1980',
+                    style: {
+                        transform: [{translate: [18, 15, 0]}, { scale : 1.8 }, { rotateY: -85 }],
+                        width: 3.9,
+                        height: 7
+                    }
+                },
+                {
+                    source: 'muravjov2.jpg',
+                    year: '1987',
+                    style: {
+                        transform: [{translate: [18, 21, 6]}, { scale : 1.8 }, { rotateY: -90 }],
+                        width: 3.9,
+                        height: 6
+                    }
+                },
+                {
+                    source: 'muravjov3.jpg',
+                    year: '2006',
+                    style: {
+                        transform: [{translate: [18, 18, 4]}, { scale : 1.7 }, { rotateY: -75 }],
+                        width: 7,
+                        height: 4.1
+                    }
+                }
+            ]
         },
         {
             buttonStyle: {},
