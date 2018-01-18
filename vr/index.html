@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="../static_assets/style.css" type="text/css" >
   </head>
   <body>
+    <script src="../third-party/webvr-polyfill.js"></script>
+    <script>
+      new WebVRPolyfill();
+    </script>
     <!-- When you're ready to deploy your app, update this line to point to your compiled client.bundle.js -->
     <script src="./client.bundle?platform=vr"></script>
     <script>
