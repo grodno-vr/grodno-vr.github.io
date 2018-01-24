@@ -1,20 +1,19 @@
 import React from 'react';
-import {
-    asset,
-    Pano,
-    View,
-    NativeModules,
-} from 'react-vr';
+import { asset, Pano, View, NativeModules } from 'react-vr';
 
 import OldImage from './OldImage';
 import Label from './Label';
+import Portal from './Portal';
+import Spinner from './Spinner';
 
 const { InfoContainerModule } = NativeModules;
 
-export default class Place extends React.Component {
+class Place extends React.Component {
+
     constructor() {
         super();
         this.state = {
+            loading: true,
             showOldImages: false
         };
     }
@@ -69,21 +68,41 @@ export default class Place extends React.Component {
     }
 
     renderPortals() {
-        // TODO render portals
+        const { place : { portals = [] } = {} } = this.props;
+        const { showOldImages } = this.state;
+
+        if (!showOldImages) {
+            return portals.map((portal, index) => {
+                const { transformPortal, transformArrow, name } = portal;
+
+                return (
+                    <Portal
+                        key={`${name}-${index}`}
+                        transformPortal={transformPortal}
+                        transformArrow={transformArrow}
+                        place={name}
+                    />
+                );
+            });
+        }
     }
 
     render() {
         const { place = {}, style = {} } = this.props;
         return (
             <View>
+                {this.state.loading && <Spinner />}
                 <Pano
+                    onLoad={() => this.setState({ loading: false })}
                     source={asset(`/places/${place.name}/background.jpg`)}
                     stereo={'TOP_BOTTOM_3D'}
                     style={{...style}}
                 />
-                {this.renderLabels()}
-                {this.renderPortals()}
+                {!this.state.loading && this.renderLabels()}
+                {!this.state.loading && this.renderPortals()}
             </View>
         );
     }
-};
+}
+
+export default Place;

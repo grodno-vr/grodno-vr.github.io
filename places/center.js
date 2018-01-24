@@ -3,7 +3,14 @@ const center = {
     style: {},
     portals: [
         {
-
+            name: 'bridge',
+            transformPortal: [{translate: [-10, 0.5, -0.5]}],
+            transformArrow: [{translate: [-10, -4, -0.5]}, { rotateY: 90, rotateX: -60 }]
+        },
+        {
+            name: 'brigits',
+            transformPortal: [{translate: [5, 0, 9]}],
+            transformArrow: [{translate: [2, -3, 5]}, { rotateY: 10 }]
         }
     ],
     labels: [
