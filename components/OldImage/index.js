@@ -1,9 +1,12 @@
 import React from 'react';
 import { Text, Animated, VrButton } from 'react-vr';
 
+import styles from './styles';
+
 const Easing = require('Easing');
 
 class OldImage extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -15,11 +18,14 @@ class OldImage extends React.Component {
     componentDidMount() {
         this.state.animatedScale.setValue(1.5);
         Animated
-            .spring(this.state.animatedScale, { toValue: 0.8, friction: 5 })
+            .spring(
+                this.state.animatedScale,
+                { toValue: 0.8, friction: 5 }
+            )
             .start();
     }
 
-    animateIn() {
+    mouseIn() {
         Animated.timing(
             this.state.animatedTranslation,
             {
@@ -30,7 +36,7 @@ class OldImage extends React.Component {
         ).start();
     }
 
-    animateOut() {
+    mouseOut() {
         Animated.timing(
             this.state.animatedTranslation,
             {
@@ -46,31 +52,28 @@ class OldImage extends React.Component {
         const { transform, width, height } = this.props.style;
         return (
             <VrButton
-                style={{ width, height, flex: 1, transform: [...transform]}}
+                style={[
+                    styles.button,
+                    { width, height, transform: [...transform] }
+                ]}
                 onClick={() => this.props.onClick()}
-                onEnter={() => this.animateIn()}
-                onExit={() => this.animateOut()}
+                onEnter={() => this.mouseIn()}
+                onExit={() => this.mouseOut()}
             >
                 <Animated.Image
-                    style={{
-                        width,
-                        height,
-                        // TODO: we have a bug in Chrome with border (border blinking)
-                        // borderWidth: 0.1,
-                        // borderColor: 'gray',
-                        // borderRadius: 0.6,
-                        transform: [
-                            { scale: this.state.animatedScale },
-                            { translateZ: this.state.animatedTranslation }
-                        ]}}
+                    style={[
+                        styles.image,
+                        {
+                            width,
+                            height,
+                            transform: [
+                                { scale: this.state.animatedScale },
+                                { translateZ: this.state.animatedTranslation }
+                            ]
+                        }
+                    ]}
                     source={this.props.source}>
-                    <Text style={{
-                        backgroundColor: 'gray',
-                        textAlign: 'center',
-                        fontSize: 0.5,
-                        width: 1.5,
-                        color: 'white'
-                    }}>{this.props.year}</Text>
+                    <Text style={styles.yearLabel}>{this.props.year}</Text>
                 </Animated.Image>
         </VrButton>);
     }

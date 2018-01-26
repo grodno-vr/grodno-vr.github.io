@@ -24,12 +24,13 @@ const center = {
                 textAlign: 'center'
             },
             text: 'Church of Vitaut the Great',
+            description: 'Lorem ipsum text Lorem ipsum text Lorem ipsum text Lorem ipsum text Lorem ipsum text Lorem ipsum text ',
             oldImages: [
                 {
                     source: 'vitaut.jpg',
                     year: '1898 – 1920',
                     style: {
-                        transform: [{translate: [3, 8, -7]}, { rotateY: -35, rotateX: 50, rotateZ: 10 }],
+                        transform: [{translate: [1, 5.5, -8]}, { rotateY: -35 }],
                         width: 8,
                         height: 4.9
                     }
@@ -38,7 +39,7 @@ const center = {
                     source: 'vitaut1.jpg',
                     year: '1923 – 1930',
                     style: {
-                        transform: [{translate: [3, 8, -7]}, { rotateY: -35 }],
+                        transform: [{translate: [7, 5, -4]}, { rotateY: -50 }],
                         width: 7,
                         height: 4.2
                     }
@@ -47,7 +48,7 @@ const center = {
                     source: 'vitaut2.jpg',
                     year: '1936',
                     style: {
-                        transform: [{translate: [3, 8, -7]}, { rotateY: -35, rotateX: 3 }],
+                        transform: [{translate: [2, 1, -7]}, { rotateY: -35 }],
                         width: 7,
                         height: 3.9
                     }
@@ -69,7 +70,7 @@ const center = {
                     source: 'textile_palace1.jpeg',
                     year: '1950th',
                     style: {
-                        transform: [{translate: [-7, 6, -10]}, { rotateX: 10 }],
+                        transform: [{translate: [-7, 7, -10]}, { rotateX: 10 }],
                         width: 7,
                         height: 3.9
                     }
@@ -78,7 +79,7 @@ const center = {
                     source: 'textile_palace4.jpeg',
                     year: '1957',
                     style: {
-                        transform: [{translate: [-1, 10, -10]}, { rotateX: 10 }],
+                        transform: [{translate: [-1, 7, -10]}, { rotateX: 10 }],
                         width: 7,
                         height: 3.9
                     }
@@ -87,7 +88,7 @@ const center = {
                     source: 'textile_palace.jpeg',
                     year: '1960th',
                     style: {
-                        transform: [{translate: [-1, 10, -10]}],
+                        transform: [{translate: [-1, 3, -10]}],
                         width: 7,
                         height: 3.9
                     }
@@ -96,7 +97,7 @@ const center = {
                     source: 'textile_palace2.jpeg',
                     year: '1960th',
                     style: {
-                        transform: [{translate: [-7, 14, -10]}],
+                        transform: [{translate: [-7, 3, -10]}],
                         width: 7,
                         height: 3.9
                     }
@@ -105,7 +106,7 @@ const center = {
                     source: 'textile_palace3.jpeg',
                     year: '1960',
                     style: {
-                        transform: [{translate: [-1, 14, -10]}, { rotateX: -10 }],
+                        transform: [{translate: [-1, -1, -10]}, { rotateX: -10 }],
                         width: 7,
                         height: 3.9
                     }
@@ -127,7 +128,7 @@ const center = {
                     source: 'square.jpg',
                     year: '1939',
                     style: {
-                        transform: [{translate: [-10, 4, 4]}, { rotateY: 110 }],
+                        transform: [{translate: [-10, 0.5, 4]}, { rotateY: 110 }],
                         width: 7,
                         height: 3.9
                     }
@@ -167,7 +168,7 @@ const center = {
                     source: 'muravjov1.jpg',
                     year: '1980',
                     style: {
-                        transform: [{translate: [18, 15, 0]}, { scale : 1.8 }, { rotateY: -85 }],
+                        transform: [{translate: [18, 8, 0]}, { scale : 2 }, { rotateY: -85 }],
                         width: 3.9,
                         height: 7
                     }
@@ -176,7 +177,7 @@ const center = {
                     source: 'muravjov2.jpg',
                     year: '1987',
                     style: {
-                        transform: [{translate: [18, 21, 6]}, { scale : 1.8 }, { rotateY: -90 }],
+                        transform: [{translate: [17, 8, 7]}, { scale : 2 }, { rotateY: -100 }],
                         width: 3.9,
                         height: 6
                     }
@@ -185,7 +186,7 @@ const center = {
                     source: 'muravjov3.jpg',
                     year: '2006',
                     style: {
-                        transform: [{translate: [18, 18, 4]}, { scale : 1.7 }, { rotateY: -75 }],
+                        transform: [{translate: [18, -3, 4]}, { scale : 2 }, { rotateY: -100 }],
                         width: 7,
                         height: 4.1
                     }
@@ -216,7 +217,7 @@ const center = {
                     source: 'cathedral1.jpg',
                     year: '1914 - 1918',
                     style: {
-                        transform: [{translate: [7, 5, 4]}, { scale: 1.5 }, { rotateY: -130 }],
+                        transform: [{translate: [7, 1, 4]}, { scale: 1.5 }, { rotateY: -130 }],
                         width: 7,
                         height: 3.9
                     }
@@ -225,7 +226,7 @@ const center = {
                     source: 'cathedral2.jpg',
                     year: '1924',
                     style: {
-                        transform: [{translate: [6, 18, 20]}, { scale: 2.5 }, { rotateY: -130 }],
+                        transform: [{translate: [6, 9, 20]}, { scale: 2.5 }, { rotateY: -130 }],
                         width: 7,
                         height: 3.9
                     }
@@ -234,7 +235,7 @@ const center = {
                     source: 'cathedral3.jpg',
                     year: '1924',
                     style: {
-                        transform: [{translate: [6, 12, 20]}, { scale: 2.5 }, { rotateY: -130 }],
+                        transform: [{translate: [6, 0, 20]}, { scale: 2.5 }, { rotateY: -130 }],
                         width: 7,
                         height: 3.9
                     }

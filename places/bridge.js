@@ -1,24 +1,9 @@
 const bridge = {
-    name: 'center',
+    name: 'bridge',
     style: {},
     portals: [
-        {
-
-        }
     ],
     labels: [
-        {
-            buttonStyle: {
-
-            },
-            viewStyle: {
-
-            },
-            textStyle: {
-
-            },
-            text: ''
-        }
     ]
 };
 
