@@ -9,7 +9,19 @@ class Portal extends React.Component {
 
     constructor() {
         super();
-        this.state = { animatedScale: new Animated.Value(1) };
+        this.state = { animatedScale: new Animated.Value(1), rotate: 0 };
+        this.timer = null;
+    }
+
+    componentDidMount() {
+        this.timer = setInterval(() => {
+            console.log(123);
+            this.setState({ rotate: this.state.rotate - 1 });
+        }, 5);
+    }
+
+    componentWillUnmount() {
+        if (this.timer) clearInterval(this.timer);
     }
 
     mouseIn() {
@@ -47,7 +59,10 @@ class Portal extends React.Component {
                 onExit={() => this.mouseOut()}
                 style={[
                     styles.view,
+                    this.props.style,
                     {
+                        borderWidth: 0.2,
+                        borderColor: 'white',
                         transform: [
                             ...transformPortal,
                             { scale: this.state.animatedScale }
@@ -57,17 +72,20 @@ class Portal extends React.Component {
             >
                 <VrButton onClick={() => this.props.onClick(place)}>
                     <Sphere
+                        style={{transform: [
+                            { rotateY: this.state.rotate }
+                        ]}}
                         texture={asset(`/places/${place}/portal.jpg`)}
-                        radius={1.1}
+                        radius={1}
                         widthSegments={20}
                         heightSegments={12}
                     />
-                    <View style={[styles.arrowView, { transform: [...transformArrow] }]}>
-                        <Image
-                            source={asset('icons/arrow.png')}
-                            style={styles.arrow}
-                        />
-                    </View>
+                    {/*<View style={[styles.arrowView, { transform: [...transformArrow] }]}>*/}
+                        {/*<Image*/}
+                            {/*source={asset('icons/arrow.png')}*/}
+                            {/*style={styles.arrow}*/}
+                        {/*/>*/}
+                    {/*</View>*/}
                 </VrButton>
             </Animated.View>
         );

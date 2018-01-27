@@ -17,6 +17,7 @@ function init(bundle, parent, options) {
     allowCarmelDeeplink: true,
     antialias: true,
     hideFullscreen: true,
+    cursorVisibility: 'visible',
     ...options,
     nativeModules: [mediaContainer],
   });
@@ -25,6 +26,7 @@ function init(bundle, parent, options) {
 
   vr.render = function() {
     // Any custom behavior you want to perform on each frame goes here
+      // vr.scene.rotation.y = vr.scene.rotation.y - 0.002;
   };
   // Begin the animation loop
   vr.start();

@@ -1,7 +1,8 @@
 import React from 'react';
-import { asset, Pano, View, NativeModules, Animated } from 'react-vr';
+import { asset, Pano, Scene, View, NativeModules, Animated, VrHeadModel } from 'react-vr';
 
 import { OldImage, Label, Portal, Spinner } from '../.';
+import FadeInView from '../FadeInView';
 
 const { InfoContainerModule } = NativeModules;
 
@@ -13,7 +14,7 @@ class Place extends React.Component {
         this.state = {
             loading: true,
             showOldImages: false,
-            rotation: new Animated.Value(0)
+            rotation: 0
         };
     }
 
@@ -31,7 +32,7 @@ class Place extends React.Component {
                 onClick={() => this.setState({ showOldImages: false })}
                 style={{...image.style}}
                 year={image.year}
-                source={asset(`/places/${placeName}/old/${image.source}`)}
+                source={asset(image.source)}
             />
         );
     }
@@ -77,12 +78,9 @@ class Place extends React.Component {
                 transformArrow={transformArrow}
                 place={name}
                 onClick={(placeId) => {
-                    Animated.spring(
-                        this.state.rotation,
-                        { toValue: 0, friction: 5 }
-                    )
-                    .start();
-                    // this.props.onChange(placeId);
+                    // this.setState({ rotation: 40 });
+                    console.log(VrHeadModel.inVR());
+                    this.props.onChange(placeId);
                 }}
             />
         );
@@ -99,21 +97,23 @@ class Place extends React.Component {
         const { loading, showOldImages, rotation } = this.state;
 
         return (
-            <Animated.View
-                style={{ transform: [{rotateY: rotation}] }}
-            >
+            <FadeInView style={{
+                layoutOrigin: [0.5, 0.5, 0],
+                position:'absolute',
+                transform: [{rotateY: -10}]
+            }}>
                 { loading && <Spinner /> }
-                <Pano
-                    onLoad={() => this.setState({ loading: false })}
-                    source={asset(`/places/${place.name}/background.jpg`)}
-                    stereo={'TOP_BOTTOM_3D'}
-                    style={{...style}}
-                />
+                    <Pano
+                        onLoad={() => this.setState({ loading: false })}
+                        source={asset(`/places/${place.name}/background.jpg`)}
+                        stereo={'TOP_BOTTOM_3D'}
+                        style={{...style, tintColor: loading ? 'grey' : 'white'}}
+                    />
                 { !loading && !showOldImages && this.renderLabels() }
                 { !loading && !showOldImages && this.renderPortals() }
 
                 { !loading && showOldImages && this.renderOldImages() }
-            </Animated.View>
+            </FadeInView>
         );
     }
 }

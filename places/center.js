@@ -4,12 +4,12 @@ const center = {
     portals: [
         {
             name: 'bridge',
-            transformPortal: [{translate: [-10, 0.5, -0.5]}],
+            transformPortal: [{translate: [-10, 0, -0.5]}],
             transformArrow: [{translate: [-10, -4, -0.5]}, { rotateY: 90, rotateX: -60 }]
         },
         {
             name: 'brigits',
-            transformPortal: [{translate: [5, 0, 9]}],
+            transformPortal: [{translate: [7, 0, 9]}],
             transformArrow: [{translate: [2, -3, 5]}, { rotateY: 10 }]
         }
     ],
@@ -17,7 +17,7 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                transform: [{translate: [16, 4, -20]}, { scale : 4 }, { rotateY: -20 }]
+                transform: [{translate: [20, 4, -20]}, { scale : 5.5 }, { rotateY: -20 }]
             },
             textStyle: {
                 fontSize: 0.2,
@@ -27,7 +27,7 @@ const center = {
             description: 'Lorem ipsum text Lorem ipsum text Lorem ipsum text Lorem ipsum text Lorem ipsum text Lorem ipsum text ',
             oldImages: [
                 {
-                    source: 'vitaut.jpg',
+                    source: 'places/center/old/vitaut.jpg',
                     year: '1898 – 1920',
                     style: {
                         transform: [{translate: [1, 5.5, -8]}, { rotateY: -35 }],
@@ -36,7 +36,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'vitaut1.jpg',
+                    source: 'places/center/old/vitaut1.jpg',
                     year: '1923 – 1930',
                     style: {
                         transform: [{translate: [7, 5, -4]}, { rotateY: -50 }],
@@ -45,7 +45,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'vitaut2.jpg',
+                    source: 'places/center/old/vitaut2.jpg',
                     year: '1936',
                     style: {
                         transform: [{translate: [2, 1, -7]}, { rotateY: -35 }],
@@ -58,7 +58,7 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                transform: [{translate: [-1, 6, -20]}, { scale : 3.5 }]
+                transform: [{translate: [-1, 5, -20]}, { scale : 4.5 }]
             },
             textStyle: {
                 fontSize: 0.2,
@@ -67,7 +67,7 @@ const center = {
             text: 'Textile Culture Palace',
             oldImages: [
                 {
-                    source: 'textile_palace1.jpeg',
+                    source: 'places/center/old/textile_palace1.jpeg',
                     year: '1950th',
                     style: {
                         transform: [{translate: [-7, 7, -10]}, { rotateX: 10 }],
@@ -76,7 +76,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'textile_palace4.jpeg',
+                    source: 'places/center/old/textile_palace4.jpeg',
                     year: '1957',
                     style: {
                         transform: [{translate: [-1, 7, -10]}, { rotateX: 10 }],
@@ -85,7 +85,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'textile_palace.jpeg',
+                    source: 'places/center/old/textile_palace.jpeg',
                     year: '1960th',
                     style: {
                         transform: [{translate: [-1, 3, -10]}],
@@ -94,7 +94,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'textile_palace2.jpeg',
+                    source: 'places/center/old/textile_palace2.jpeg',
                     year: '1960th',
                     style: {
                         transform: [{translate: [-7, 3, -10]}],
@@ -103,7 +103,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'textile_palace3.jpeg',
+                    source: 'places/center/old/textile_palace3.jpeg',
                     year: '1960',
                     style: {
                         transform: [{translate: [-1, -1, -10]}, { rotateX: -10 }],
@@ -116,7 +116,7 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                transform: [{translate: [-5, 2.5, 2]}, { scale: 1.5 }, { rotateY: 110 }]
+                transform: [{translate: [-5, 2, 2]}, { scale: 2 }, { rotateY: 110 }]
             },
             textStyle: {
                 fontSize: 0.2,
@@ -125,7 +125,7 @@ const center = {
             text: 'Market (Soviet) Square',
             oldImages: [
                 {
-                    source: 'square.jpg',
+                    source: 'places/center/old/square.jpg',
                     year: '1939',
                     style: {
                         transform: [{translate: [-10, 0.5, 4]}, { rotateY: 110 }],
@@ -134,7 +134,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'square1.jpg',
+                    source: 'places/center/old/square1.jpg',
                     year: 'XIX c.',
                     style: {
                         transform: [{translate: [-10, 4, 4]}, { rotateY: 110 }],
@@ -147,7 +147,7 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                transform: [{translate: [18, 5, -1]}, { scale : 3 }, { rotateY: -75 }]
+                transform: [{translate: [18, 5, -1]}, { scale : 4 }, { rotateY: -75 }]
             },
             textStyle: {
                 fontSize: 0.2,
@@ -156,7 +156,7 @@ const center = {
             text: 'House of merchant Muravjov',
             oldImages: [
                 {
-                    source: 'muravjov.jpg',
+                    source: 'places/center/old/muravjov.jpg',
                     year: 'XIX c.',
                     style: {
                         transform: [{translate: [17, 8, -7]}, { scale : 2 }, { rotateY: -75 }],
@@ -165,7 +165,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'muravjov1.jpg',
+                    source: 'places/center/old/muravjov1.jpg',
                     year: '1980',
                     style: {
                         transform: [{translate: [18, 8, 0]}, { scale : 2 }, { rotateY: -85 }],
@@ -174,7 +174,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'muravjov2.jpg',
+                    source: 'places/center/old/muravjov2.jpg',
                     year: '1987',
                     style: {
                         transform: [{translate: [17, 8, 7]}, { scale : 2 }, { rotateY: -100 }],
@@ -183,7 +183,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'muravjov3.jpg',
+                    source: 'places/center/old/muravjov3.jpg',
                     year: '2006',
                     style: {
                         transform: [{translate: [18, -3, 4]}, { scale : 2 }, { rotateY: -100 }],
@@ -196,7 +196,7 @@ const center = {
         {
             buttonStyle: {},
             viewStyle: {
-                transform: [{translate: [12, 9, 12]}, { scale : 3 }, { rotateY: -130 }]
+                transform: [{translate: [12, 9, 12]}, { scale : 4 }, { rotateY: -130 }]
             },
             textStyle: {
                 fontSize: 0.2,
@@ -205,7 +205,7 @@ const center = {
             text: 'St. Francis Xavier Cathedral',
             oldImages: [
                 {
-                    source: 'cathedral.jpg',
+                    source: 'places/center/old/cathedral.jpg',
                     year: 'XVII c.',
                     style: {
                         transform: [{translate: [7, 6, 4]}, { scale: 1.5 }, { rotateY: -130 }],
@@ -214,7 +214,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'cathedral1.jpg',
+                    source: 'places/center/old/cathedral1.jpg',
                     year: '1914 - 1918',
                     style: {
                         transform: [{translate: [7, 1, 4]}, { scale: 1.5 }, { rotateY: -130 }],
@@ -223,7 +223,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'cathedral2.jpg',
+                    source: 'places/center/old/cathedral2.jpg',
                     year: '1924',
                     style: {
                         transform: [{translate: [6, 9, 20]}, { scale: 2.5 }, { rotateY: -130 }],
@@ -232,7 +232,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'cathedral3.jpg',
+                    source: 'places/center/old/cathedral3.jpg',
                     year: '1924',
                     style: {
                         transform: [{translate: [6, 0, 20]}, { scale: 2.5 }, { rotateY: -130 }],
