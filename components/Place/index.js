@@ -10,12 +10,41 @@ class Place extends React.Component {
 
     constructor() {
         super();
-
+        this.timer = null;
         this.state = {
             loading: true,
             showOldImages: false,
+            opacity: 0,
             rotation: 0
         };
+    }
+
+    offLight(cb) {
+        this.setState({ loading: true });
+        this.timer = setInterval(() => {
+            if (this.state.opacity <= 0) {
+                if (this.timer) clearInterval(this.timer);
+                if (cb) cb();
+            }
+            this.setState({ opacity: this.state.opacity - 0.01 });
+        }, 5);
+    }
+
+    onLight() {
+        this.timer = setInterval(() => {
+            if (this.state.opacity >= 1) {
+                if (this.timer) clearInterval(this.timer);
+            }
+            this.setState({ opacity: this.state.opacity + 0.01 });
+        }, 5);
+    }
+
+    componentDidMount() {
+        this.onLight();
+    }
+
+    componentWillReceiveProps() {
+        this.onLight();
     }
 
     openInformation(title, description) {
@@ -80,7 +109,7 @@ class Place extends React.Component {
                 onClick={(placeId) => {
                     // this.setState({ rotation: 40 });
                     console.log(VrHeadModel.inVR());
-                    this.props.onChange(placeId);
+                    this.offLight(() => this.props.onChange(placeId));
                 }}
             />
         );
@@ -94,7 +123,7 @@ class Place extends React.Component {
 
     render() {
         const { place = {}, style = {} } = this.props;
-        const { loading, showOldImages, rotation } = this.state;
+        const { loading, showOldImages, opacity } = this.state;
 
         return (
             <FadeInView style={{
@@ -107,7 +136,7 @@ class Place extends React.Component {
                         onLoad={() => this.setState({ loading: false })}
                         source={asset(`/places/${place.name}/background.jpg`)}
                         stereo={'TOP_BOTTOM_3D'}
-                        style={{...style, tintColor: loading ? 'grey' : 'white'}}
+                        style={{...style, position:'absolute', opacity: opacity, tintColor: loading ? 'grey' : 'white'}}
                     />
                 { !loading && !showOldImages && this.renderLabels() }
                 { !loading && !showOldImages && this.renderPortals() }
