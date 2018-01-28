@@ -1,84 +1,35 @@
 import React from 'react';
-import { asset, Pano, Scene, View, NativeModules, Animated, VrHeadModel } from 'react-vr';
+import { asset, Pano, View, Animated, NativeModules, VrHeadModel } from 'react-vr';
+import { Spinner, OldImage, Portal, Label } from '../.';
 
-import { OldImage, Label, Portal, Spinner } from '../.';
-import FadeInView from '../FadeInView';
+import lightMixin from './mixins/lightMixin';
 
 const { InfoContainerModule } = NativeModules;
+const SuperClass = lightMixin(React.Component);
 
-class Place extends React.Component {
+class Place extends SuperClass {
 
     constructor() {
         super();
-        this.timer = null;
+
         this.state = {
+            ...this.state,
             loading: true,
             showOldImages: false,
-            opacity: 0,
-            rotation: 0
+            selectedLabel: null
         };
     }
 
-    offLight(cb) {
-        this.setState({ loading: true });
-        this.timer = setInterval(() => {
-            if (this.state.opacity <= 0) {
-                if (this.timer) clearInterval(this.timer);
-                if (cb) cb();
-            }
-            this.setState({ opacity: this.state.opacity - 0.01 });
-        }, 5);
-    }
+    renderLabels() {
+        const { place : {labels = []} = {} } = this.props;
 
-    onLight() {
-        this.timer = setInterval(() => {
-            if (this.state.opacity >= 1) {
-                if (this.timer) clearInterval(this.timer);
-            }
-            this.setState({ opacity: this.state.opacity + 0.01 });
-        }, 5);
-    }
-
-    componentDidMount() {
-        this.onLight();
-    }
-
-    componentWillReceiveProps() {
-        this.onLight();
-    }
-
-    openInformation(title, description) {
-        InfoContainerModule.openOverlay({
-            title: title,
-            description: description || 'Has no info'
-        });
-    }
-
-    renderOldImage(placeName, image, index) {
-        return (
-            <OldImage
-                key={index}
-                onClick={() => this.setState({ showOldImages: false })}
-                style={{...image.style}}
-                year={image.year}
-                source={asset(image.source)}
-            />
-        );
-    }
-
-    renderOldImages() {
-        const { place = {} } = this.props;
-        const { selectedLabel } = this.state;
-        const { labels = [], name } = place;
-        const images = (labels[selectedLabel] || {}).oldImages || [];
-
-        return images.map((image, index) => this.renderOldImage(name, image, index));
+        return labels.map((label, index) => this.renderLabel(label, index));
     }
 
     renderLabel(label, index) {
         return (
             <Label
-                key={`${label.name}-${index}`}
+                key={`${index}-${label.name}`}
                 style={{...label.viewStyle}}
                 heading={label.text}
                 onEyeClick={() => {
@@ -91,10 +42,42 @@ class Place extends React.Component {
         );
     }
 
-    renderLabels() {
-        const { place : { labels = [] } = {} } = this.props;
+    openInformation(title, description) {
+        if (VrHeadModel.inVR()) {
+            // TODO open native modal
+        } else {
+            InfoContainerModule.openOverlay({
+                title: title,
+                description: description || 'Has no description'
+            });
+        }
+    }
 
-        return labels.map((label, index) => this.renderLabel(label, index));
+    renderOldImages() {
+        const { place = {} } = this.props;
+        const { selectedLabel } = this.state;
+        const { labels = [] } = place;
+        const images = (labels[selectedLabel] || {}).oldImages || [];
+
+        return images.map((image, index) => this.renderOldImage(image, index));
+    }
+
+    renderOldImage(image, index) {
+        return (
+            <OldImage
+                key={`${index}-${image.source}`}
+                onClick={() => this.setState({ showOldImages: false })}
+                style={{...image.style}}
+                year={image.year}
+                source={image.source}
+            />
+        );
+    }
+
+    renderPortals() {
+        const { place : { portals = [] } = {} } = this.props;
+
+        return portals.map((portal, index) => this.renderPortal(portal, index));
     }
 
     renderPortal(portal, index) {
@@ -107,42 +90,39 @@ class Place extends React.Component {
                 transformArrow={transformArrow}
                 place={name}
                 onClick={(placeId) => {
-                    // this.setState({ rotation: 40 });
-                    console.log(VrHeadModel.inVR());
+                    this.setState({ loading: true });
                     this.offLight(() => this.props.onChange(placeId));
                 }}
             />
         );
     }
 
-    renderPortals() {
-        const { place : { portals = [] } = {} } = this.props;
-
-        return portals.map((portal, index) => this.renderPortal(portal, index));
-    }
-
     render() {
         const { place = {}, style = {} } = this.props;
-        const { loading, showOldImages, opacity } = this.state;
+        const { loading, showOldImages, light } = this.state;
 
         return (
-            <FadeInView style={{
+            <Animated.View style={{
                 layoutOrigin: [0.5, 0.5, 0],
                 position:'absolute',
-                transform: [{rotateY: -10}]
+                opacity: light,
+                transform: [{ rotateY: 90 }]
             }}>
                 { loading && <Spinner /> }
                     <Pano
-                        onLoad={() => this.setState({ loading: false })}
+                        onLoad={() => {
+                            this.setState({ loading: false });
+                            this.onLight();
+                        }}
                         source={asset(`/places/${place.name}/background.jpg`)}
                         stereo={'TOP_BOTTOM_3D'}
-                        style={{...style, position:'absolute', opacity: opacity, tintColor: loading ? 'grey' : 'white'}}
+                        style={{...style, position:'absolute', opacity: light, tintColor: loading ? 'grey' : 'white'}}
                     />
                 { !loading && !showOldImages && this.renderLabels() }
                 { !loading && !showOldImages && this.renderPortals() }
 
                 { !loading && showOldImages && this.renderOldImages() }
-            </FadeInView>
+            </Animated.View>
         );
     }
 }

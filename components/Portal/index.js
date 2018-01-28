@@ -1,5 +1,5 @@
 import React from 'react';
-import { asset, Animated, Image, View, VrButton, Sphere } from 'react-vr';
+import { asset, Animated, Image, View, VrButton, Sphere, Box } from 'react-vr';
 
 import styles from './styles';
 
@@ -9,19 +9,28 @@ class Portal extends React.Component {
 
     constructor() {
         super();
-        this.state = { animatedScale: new Animated.Value(1), rotate: 0 };
+        this.state = {
+            animationRequestId: null,
+            animatedScale: new Animated.Value(1),
+            rotate: 0,
+            opacity: 0.75,
+            showArrow: true
+        };
         this.timer = null;
     }
 
     componentDidMount() {
-        this.timer = setInterval(() => {
-            console.log(123);
+        const step = () => {
             this.setState({ rotate: this.state.rotate - 1 });
-        }, 5);
+            this.animationRequestId = requestAnimationFrame(step);
+        };
+        this.animationRequestId = requestAnimationFrame(step);
     }
 
     componentWillUnmount() {
-        if (this.timer) clearInterval(this.timer);
+        if (this.animationRequestId) {
+            cancelAnimationFrame(this.animationRequestId);
+        }
     }
 
     mouseIn() {
@@ -29,10 +38,11 @@ class Portal extends React.Component {
             this.state.animatedScale,
             {
                 toValue: 2,
-                duration: 100,
+                duration: 400,
                 easing: Easing.in,
             }
         ).start();
+        this.setState({ opacity: 1, showArrow: false });
     }
 
     mouseOut() {
@@ -40,29 +50,22 @@ class Portal extends React.Component {
             this.state.animatedScale,
             {
                 toValue: 1,
-                duration: 100,
+                duration: 400,
                 easing: Easing.in,
             }
         ).start();
+        this.setState({ opacity: 0.75, showArrow: true });
     }
 
     render() {
-        const {
-            transformPortal,
-            transformArrow,
-            place
-        } = this.props;
+        const { transformPortal, place } = this.props;
 
         return (
             <Animated.View
-                onEnter={() => this.mouseIn()}
-                onExit={() => this.mouseOut()}
                 style={[
                     styles.view,
                     this.props.style,
                     {
-                        borderWidth: 0.2,
-                        borderColor: 'white',
                         transform: [
                             ...transformPortal,
                             { scale: this.state.animatedScale }
@@ -70,23 +73,38 @@ class Portal extends React.Component {
                     }
                 ]}
             >
-                <VrButton onClick={() => this.props.onClick(place)}>
+                <VrButton
+                    onClick={() => this.props.onClick(place)}
+                    onEnter={() => this.mouseIn()}
+                    onExit={() => this.mouseOut()}
+                >
                     <Sphere
-                        style={{transform: [
-                            { rotateY: this.state.rotate }
-                        ]}}
+                        style={{
+                            opacity: this.state.opacity,
+                            transform: [
+                                { translateY: 0 },
+                                { rotateY: this.state.rotate }
+                            ]
+                        }}
                         texture={asset(`/places/${place}/portal.jpg`)}
-                        radius={1}
+                        radius={1.1}
                         widthSegments={20}
                         heightSegments={12}
                     />
-                    {/*<View style={[styles.arrowView, { transform: [...transformArrow] }]}>*/}
-                        {/*<Image*/}
-                            {/*source={asset('icons/arrow.png')}*/}
-                            {/*style={styles.arrow}*/}
-                        {/*/>*/}
-                    {/*</View>*/}
                 </VrButton>
+                { this.state.showArrow && <Box
+                    texture={asset('icons/arrow.png')}
+                    dimWidth={1}
+                    dimDepth={1}
+                    dimHeight={1}
+                    style={{
+                            opacity: 0.8,
+                            transform: [
+                                { translateY: -2 },
+                                { rotateY: this.state.rotate }
+                            ]
+                        }}
+                />}
             </Animated.View>
         );
     }

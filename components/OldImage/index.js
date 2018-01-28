@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Animated, VrButton } from 'react-vr';
+import { Text, Animated, VrButton, asset } from 'react-vr';
 
 import styles from './styles';
 
@@ -72,7 +72,7 @@ class OldImage extends React.Component {
                             ]
                         }
                     ]}
-                    source={this.props.source}>
+                    source={asset(this.props.source)}>
                     <Text style={styles.yearLabel}>{this.props.year}</Text>
                 </Animated.Image>
         </VrButton>);

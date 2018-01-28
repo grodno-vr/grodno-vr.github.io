@@ -10,10 +10,6 @@ const styles = StyleSheet.create({
         width: 1,
         backgroundColor: 'black',
         borderRadius: 0.5
-    },
-    arrow: {
-        height: 1,
-        width: 1
     }
 });
 
