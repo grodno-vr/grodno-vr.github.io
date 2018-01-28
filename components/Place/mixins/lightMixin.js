@@ -41,9 +41,9 @@ const lightMixin = Base => class extends Base {
         }
     }
 
-    componentWillReceiveProps() {
-        this.onLight();
-    }
+    // componentWillReceiveProps() {
+    //     this.onLight();
+    // }
 };
 
 export default lightMixin;
