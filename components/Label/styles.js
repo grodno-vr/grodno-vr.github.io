@@ -6,11 +6,12 @@ const styles = StyleSheet.create({
     caption: {
         width: 2.5,
         height: 0.32,
+        opacity: 0.90,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         layoutOrigin: [0.5, 0.5],
-        transform: [{ translate: [0, 0, -3] }],
+        transform: [{ translate: [0, 0, -3] }]
     },
     leftItem: {
         width: '20%',
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: BORDER_RADIUS,
         borderBottomLeftRadius: BORDER_RADIUS,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     middleItem: {
         width: '20%',
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
         // borderWidth: 0.02,
         borderColor: 'white',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     rightItem: {
         width: '60%',
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: BORDER_RADIUS,
         borderBottomRightRadius: BORDER_RADIUS,
         paddingHorizontal: 0.08,
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     captionButton: {
         width: 1,
@@ -52,7 +53,14 @@ const styles = StyleSheet.create({
     },
     icon: {
         height: 0.18,
-        width: 0.18,
+        width: 0.18
+    },
+    btn: {
+        // backgroundColor: 'white',
+        height: 0.32,
+        width: 0.5,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     captionContent: {
         backgroundColor: 'rgba(0, 0, 0, 0.9)',
@@ -60,16 +68,16 @@ const styles = StyleSheet.create({
         paddingVertical: 0.025,
         paddingHorizontal: 0.075,
         borderTopRightRadius: 0.05,
-        borderBottomRightRadius: 0.05,
+        borderBottomRightRadius: 0.05
     },
     heading: {
         fontSize: 0.12,
-        color: '#ffffff',
+        color: '#ffffff'
     },
     subheading: {
         color: '#999999',
         marginTop: 0.024,
-        fontSize: 0.080,
+        fontSize: 0.080
     }
 });
 

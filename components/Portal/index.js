@@ -1,5 +1,5 @@
 import React from 'react';
-import { asset, Animated, Image, View, VrButton, Sphere, Box } from 'react-vr';
+import { asset, Animated, VrButton, Sphere, Box } from 'react-vr';
 
 import styles from './styles';
 
@@ -16,7 +16,6 @@ class Portal extends React.Component {
             opacity: 0.75,
             showArrow: true
         };
-        this.timer = null;
     }
 
     componentDidMount() {
@@ -34,27 +33,27 @@ class Portal extends React.Component {
     }
 
     mouseIn() {
+        this.setState({ showArrow: false, opacity: 1 });
         Animated.timing(
             this.state.animatedScale,
             {
                 toValue: 2,
-                duration: 400,
+                duration: 450,
                 easing: Easing.in,
             }
         ).start();
-        this.setState({ opacity: 1, showArrow: false });
     }
 
     mouseOut() {
+        this.setState({ showArrow: true, opacity: 0.75 });
         Animated.timing(
             this.state.animatedScale,
             {
                 toValue: 1,
-                duration: 400,
+                duration: 450,
                 easing: Easing.in,
             }
         ).start();
-        this.setState({ opacity: 0.75, showArrow: true });
     }
 
     render() {

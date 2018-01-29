@@ -19,7 +19,7 @@ export default class GrodnoVR extends React.Component {
             <Place
                 place={places[currentPlace]}
                 onChange={(placeId) => {
-                 this.setState({ currentPlace: placeId })
+                    this.setState({ currentPlace: placeId })
                 }}
             />
         );

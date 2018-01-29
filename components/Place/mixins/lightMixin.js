@@ -10,7 +10,7 @@ const lightMixin = Base => class extends Base {
 
     animationLoop(condition, stepValue, callback) {
         const step = () => {
-            if (condition()) {
+            if (condition(this.state.light)) {
                 return callback && callback();
             }
             this.setState({ light: this.state.light + stepValue });
@@ -21,16 +21,16 @@ const lightMixin = Base => class extends Base {
 
     offLight(callback) {
         this.animationLoop(
-            () => this.state.light <= 0,
-            - 0.03,
+            (v) => v <= 0,
+            - 0.025,
             callback
         );
     }
 
     onLight(callback) {
         this.animationLoop(
-            () => this.state.light >= 1,
-            0.03,
+            (v) => v >= 1,
+            0.025,
             callback
         );
     }
@@ -40,10 +40,6 @@ const lightMixin = Base => class extends Base {
             cancelAnimationFrame(this.animationRequestId);
         }
     }
-
-    // componentWillReceiveProps() {
-    //     this.onLight();
-    // }
 };
 
 export default lightMixin;

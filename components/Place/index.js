@@ -3,6 +3,7 @@ import { asset, Pano, View, Animated, NativeModules, VrHeadModel } from 'react-v
 import { Spinner, OldImage, Portal, Label } from '../.';
 
 import lightMixin from './mixins/lightMixin';
+import styles from './styles';
 
 const { InfoContainerModule } = NativeModules;
 const SuperClass = lightMixin(React.Component);
@@ -102,12 +103,10 @@ class Place extends SuperClass {
         const { loading, showOldImages, light } = this.state;
 
         return (
-            <Animated.View style={{
-                layoutOrigin: [0.5, 0.5, 0],
-                position:'absolute',
-                opacity: light,
-                transform: [{ rotateY: 90 }]
-            }}>
+            <Animated.View style={[
+                styles.placeView,
+                { opacity: light }
+            ]}>
                 { loading && <Spinner /> }
                     <Pano
                         onLoad={() => {
@@ -116,7 +115,12 @@ class Place extends SuperClass {
                         }}
                         source={asset(`/places/${place.name}/background.jpg`)}
                         stereo={'TOP_BOTTOM_3D'}
-                        style={{...style, position:'absolute', opacity: light, tintColor: loading ? 'grey' : 'white'}}
+                        style={{
+                            ...style,
+                            position:'absolute',
+                            opacity: light,
+                            tintColor: loading ? 'grey' : 'white'
+                        }}
                     />
                 { !loading && !showOldImages && this.renderLabels() }
                 { !loading && !showOldImages && this.renderPortals() }

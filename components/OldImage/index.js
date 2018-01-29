@@ -10,6 +10,7 @@ class OldImage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            // opacity: new Animated.Value(0.6),
             animatedScale: new Animated.Value(0),
             animatedTranslation: new Animated.Value(0)
         };
@@ -26,6 +27,7 @@ class OldImage extends React.Component {
     }
 
     mouseIn() {
+        // this.state.opacity.setValue(1);
         Animated.timing(
             this.state.animatedTranslation,
             {
@@ -37,6 +39,7 @@ class OldImage extends React.Component {
     }
 
     mouseOut() {
+        // this.state.opacity.setValue(0.6);
         Animated.timing(
             this.state.animatedTranslation,
             {
@@ -64,6 +67,7 @@ class OldImage extends React.Component {
                     style={[
                         styles.image,
                         {
+                            // opacity: this.state.opacity,
                             width,
                             height,
                             transform: [
