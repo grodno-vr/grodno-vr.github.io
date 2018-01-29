@@ -33,7 +33,7 @@ class OldImage extends React.Component {
             {
                 toValue: 1.5,
                 duration: 100,
-                easing: Easing.in,
+                easing: Easing.in
             }
         ).start();
     }
@@ -45,7 +45,7 @@ class OldImage extends React.Component {
             {
                 toValue: 0,
                 duration: 100,
-                easing: Easing.in,
+                easing: Easing.in
             }
         ).start();
     }

@@ -20,6 +20,7 @@ const lightMixin = Base => class extends Base {
     }
 
     offLight(callback) {
+        this.cancelCurrentAnimationRequest();
         this.animationLoop(
             (v) => v <= 0,
             - 0.025,
@@ -28,17 +29,31 @@ const lightMixin = Base => class extends Base {
     }
 
     onLight(callback) {
+        this.cancelCurrentAnimationRequest();
         this.animationLoop(
             (v) => v >= 1,
             0.025,
             callback
         );
     }
+    
+    putOutLight(endValue, callback) {
+        this.cancelCurrentAnimationRequest();
+        this.animationLoop(
+            (v) => v <= endValue,
+            - 0.025,
+            callback
+        );
+    }
 
-    componentWillUnmount() {
+    cancelCurrentAnimationRequest() {
         if (this.animationRequestId) {
             cancelAnimationFrame(this.animationRequestId);
         }
+    }
+
+    componentWillUnmount() {
+        this.cancelCurrentAnimationRequest();
     }
 };
 
