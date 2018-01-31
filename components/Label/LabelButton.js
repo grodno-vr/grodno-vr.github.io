@@ -7,7 +7,6 @@ class LabelButton extends React.Component {
 
     constructor() {
         super();
-
         this.state = { scale: new Animated.Value(1) };
     }
 

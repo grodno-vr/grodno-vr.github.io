@@ -24,7 +24,9 @@ const center = {
                 textAlign: 'center'
             },
             text: 'Church of Vitaut the Great',
-            description: 'Lorem ipsum text Lorem ipsum text Lorem ipsum text Lorem ipsum text Lorem ipsum text Lorem ipsum text ',
+            description: `St. Mary\'s Church (Belarusian: Касцёл Найсвяцейшай Дзевы Марыі, Lithuanian: Švč. Mergelės Marijos bažnyčia, Polish: Kościół Najświętszej Maryi Panny) was a parish church (fara) in the city of Grodno (modern Hrodna, Belarus).\n
+            It was founded by Vytautas, Grand Duke of Lithuania before 1389. Because of its founder, it was commonly referred to as Vytautas\' Church (Belarusian: Фара Вітаўта, Lithuanian: Vytauto bažnyčia, Polish: fara witoldowa).\n
+            Rebuilt as a Gothic church around 1494, it was one of the principal catholic churches of Hrodna until the advent of Soviet rule after World War II. Neglected, it was finally demolished in 1961.`,
             oldImages: [
                 {
                     source: 'places/center/old/vitaut.jpg',
@@ -122,7 +124,9 @@ const center = {
                 fontSize: 0.2,
                 textAlign: 'center'
             },
-            text: 'Market (Soviet) Square',
+            text: 'Batory (Market or Soviet) Square',
+            description: `Batory Square is the historical name (during the Polish period in 1921 - 1939) of Soviet (Savyetskaya) Square - the central square for the city of Hrodna in Belarus. \n
+            It was named after Stephen Báthory, King of Poland who had a residence here in the 16th century.`,
             oldImages: [
                 {
                     source: 'places/center/old/square.jpg',
@@ -203,6 +207,10 @@ const center = {
                 textAlign: 'center'
             },
             text: 'St. Francis Xavier Cathedral',
+            description: `St. Francis Xavier Cathedral is a Roman Catholic cathedral in Grodno, Belarus. Originally a Jesuit church, it became a cathedral in 1991, when the new diocese of Grodno was erected.
+            The construction of the church started in 1687. The completed building in Baroque style was consecrated in 1705 to St. Francis Xavier. The monastery was dissolved in 1773 and the church became a parish one. The church survived World War II with no serious damage.
+            In 1960 it was officially closed for a public religious services (for 27 years). The communist authorities tried to convert the building into a museum or a concert hall. Despite this the people attended the church every Sunday for a common player, songs and rosary. 
+            The religious services were restored in 1987. In 1990 the church was granted the title of minor basilica, and a year later it became a cathedral for a diocese of Grodno.`,
             oldImages: [
                 {
                     source: 'places/center/old/cathedral.jpg',

@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
         width: 2.5,
         height: 0.32,
         opacity: 0.90,
+        position: 'absolute',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     captionButton: {
         width: 1,
         height: 0.40,
-        backgroundColor: 'red',
+        backgroundColor: 'red'
     },
     icon: {
         height: 0.18,

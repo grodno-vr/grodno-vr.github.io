@@ -35,6 +35,7 @@ class Place extends SuperClass {
                 heading={label.text}
                 onEyeClick={() => {
                     if (label.oldImages && label.oldImages.length) {
+                        this.putOutLight(0.6, () => {});
                         this.setState({ showOldImages: true, selectedLabel: index });
                     }
                 }}
@@ -67,7 +68,10 @@ class Place extends SuperClass {
         return (
             <OldImage
                 key={`${index}-${image.source}`}
-                onClick={() => this.setState({ showOldImages: false })}
+                onClick={() => {
+                    this.onLight(() => {});
+                    this.setState({ showOldImages: false });
+                }}
                 style={{...image.style}}
                 year={image.year}
                 source={image.source}
@@ -91,6 +95,8 @@ class Place extends SuperClass {
                 transformArrow={transformArrow}
                 place={name}
                 onClick={(placeId) => {
+                    // console.log(VrHeadModel.rotation());
+                    // console.log(VrHeadModel.rotation());
                     this.setState({ loading: true });
                     this.offLight(() => this.props.onChange(placeId));
                     InfoContainerModule.openLoading({});
@@ -105,14 +111,13 @@ class Place extends SuperClass {
 
         return (
             <Animated.View style={[
-                styles.placeView,
-                { opacity: light }
+                styles.placeView
+                // { opacity: light }
             ]}>
                 { loading && <Spinner /> }
                     <Pano
                         onLoad={() => {
-                            this.setState({ loading: false });
-                            this.onLight();
+                            this.onLight(() => this.setState({ loading: false }));
                         }}
                         source={asset(`/places/${place.name}/background.jpg`)}
                         stereo={'TOP_BOTTOM_3D'}

@@ -39,7 +39,7 @@ class Portal extends React.Component {
             {
                 toValue: 2,
                 duration: 450,
-                easing: Easing.in,
+                easing: Easing.in
             }
         ).start();
     }
@@ -51,7 +51,7 @@ class Portal extends React.Component {
             {
                 toValue: 1,
                 duration: 450,
-                easing: Easing.in,
+                easing: Easing.in
             }
         ).start();
     }
