@@ -93,6 +93,7 @@ class Place extends SuperClass {
                 onClick={(placeId) => {
                     this.setState({ loading: true });
                     this.offLight(() => this.props.onChange(placeId));
+                    InfoContainerModule.openLoading({});
                 }}
             />
         );

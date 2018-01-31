@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Module } from 'react-vr-web';
 import Information from '../components/Information';
+import Loading from '../components/Loading';
 
 class InfoContainerModule extends Module {
     constructor(overlayContainer) {
@@ -14,6 +15,13 @@ class InfoContainerModule extends Module {
     openOverlay(props) {
         ReactDOM.render(
             <Information {...props} onClose={this._closeOverlay} />,
+            this._overlayContainer,
+        );
+    }
+
+    openLoading(props) {
+        ReactDOM.render(
+            <Loading {...props} onClose={this._closeOverlay} />,
             this._overlayContainer,
         );
     }
