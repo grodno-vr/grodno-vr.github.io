@@ -19,7 +19,7 @@ class InfoContainerModule extends Module {
         );
     }
 
-    openLoading(props) {
+    loading(props) {
         ReactDOM.render(
             <Loading {...props} onClose={this._closeOverlay} />,
             this._overlayContainer,

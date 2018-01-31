@@ -38,10 +38,19 @@ const center = {
                     }
                 },
                 {
+                    source: 'places/center/old/vitaut3.jpg',
+                    year: '1900',
+                    style: {
+                        transform: [{translate: [7, 5.5, -4]}, { scale: 1.2 }, { rotateY: -50 }],
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
                     source: 'places/center/old/vitaut1.jpg',
                     year: '1923 – 1930',
                     style: {
-                        transform: [{translate: [7, 5, -4]}, { rotateY: -50 }],
+                        transform: [{translate: [7, 1, -4]}, { scale: 1.2 }, { rotateY: -50 }],
                         width: 7,
                         height: 4.2
                     }
@@ -50,7 +59,7 @@ const center = {
                     source: 'places/center/old/vitaut2.jpg',
                     year: '1936',
                     style: {
-                        transform: [{translate: [2, 1, -7]}, { rotateY: -35 }],
+                        transform: [{translate: [1, 1, -8]}, { scale: 1.1 }, { rotateY: -35 }],
                         width: 7,
                         height: 3.9
                     }
@@ -107,6 +116,15 @@ const center = {
                 {
                     source: 'places/center/old/textile_palace3.jpeg',
                     year: '1960',
+                    style: {
+                        transform: [{translate: [-7, -1, -10]}, { rotateX: -10 }],
+                        width: 7,
+                        height: 3.9
+                    }
+                },
+                {
+                    source: 'places/center/old/textile_palace5.jpg',
+                    year: '1958',
                     style: {
                         transform: [{translate: [-1, -1, -10]}, { rotateX: -10 }],
                         width: 7,

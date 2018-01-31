@@ -99,7 +99,7 @@ class Place extends SuperClass {
                     // console.log(VrHeadModel.rotation());
                     this.setState({ loading: true });
                     this.offLight(() => this.props.onChange(placeId));
-                    InfoContainerModule.openLoading({});
+                    InfoContainerModule.loading({});
                 }}
             />
         );
@@ -118,6 +118,7 @@ class Place extends SuperClass {
                     <Pano
                         onLoad={() => {
                             this.onLight(() => this.setState({ loading: false }));
+                            InfoContainerModule.closeOverlay();
                         }}
                         source={asset(`/places/${place.name}/background.jpg`)}
                         stereo={'TOP_BOTTOM_3D'}

@@ -11,7 +11,7 @@ const bridge = {
         {
             buttonStyle: {},
             viewStyle: {
-                transform: [{translate: [2, 3, -5]}, { scale : 2.5 }, { rotateY: -40 }]
+                transform: [{translate: [2, 3, -5]}, { scale : 1.5 }, { rotateY: -40 }]
             },
             textStyle: {
                 fontSize: 0.2,
