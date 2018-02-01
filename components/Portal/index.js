@@ -50,7 +50,7 @@ class Portal extends React.Component {
             this.state.animatedScale,
             {
                 toValue: 1,
-                duration: 450,
+                duration: 250,
                 easing: Easing.in
             }
         ).start();

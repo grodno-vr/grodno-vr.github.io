@@ -5,13 +5,18 @@
 // Auto-generated content.
 import '../process';
 import { VRInstance } from 'react-vr-web';
-import WebBrowserModule from '../native-modules/webBrowserModule';
+import PersistenceOverlayModule from '../native-modules/persistenceOverlayModule';
+import DomOverlayModule from '../native-modules/domOverlayModule';
 
 function init(bundle, parent, options) {
   const domOverlayContainer = document.createElement('div');
-  domOverlayContainer.id = 'dom-overlay';
+  const persistenceOverlayContainer = document.createElement('div');
 
-  const webBrowser = new WebBrowserModule(domOverlayContainer);
+  domOverlayContainer.id = 'dom-overlay';
+  persistenceOverlayContainer.id = 'persistence-overlay';
+
+  const domOverlay = new DomOverlayModule(domOverlayContainer);
+  const persistenceOverlayOverlay = new PersistenceOverlayModule(persistenceOverlayContainer);
 
   const vr = new VRInstance(bundle, 'GrodnoVR', parent, {
     allowCarmelDeeplink: true,
@@ -19,10 +24,11 @@ function init(bundle, parent, options) {
     hideFullscreen: true,
     cursorVisibility: 'visible',
     ...options,
-    nativeModules: [webBrowser]
+    nativeModules: [domOverlay, persistenceOverlayOverlay]
   });
 
   vr.player._wrapper.appendChild(domOverlayContainer);
+  vr.player._wrapper.appendChild(persistenceOverlayContainer);
 
   vr.render = function() {
     // Any custom behavior you want to perform on each frame goes here

@@ -5,7 +5,7 @@ import { OldImage, Portal, Label, Knights } from '../.';
 import lightMixin from './mixins/lightMixin';
 import styles from './styles';
 
-const { WebBrowserModule } = NativeModules;
+const { DomOverlayModule, PersistenceOverlayModule } = NativeModules;
 const SuperClass = lightMixin(React.Component);
 
 class Place extends SuperClass {
@@ -29,7 +29,7 @@ class Place extends SuperClass {
         if (VrHeadModel.inVR()) {
             // TODO render VR loading indicator
         } else {
-            WebBrowserModule.loading();
+            DomOverlayModule.loading();
         }
     }
 
@@ -38,14 +38,17 @@ class Place extends SuperClass {
         if (VrHeadModel.inVR()) {
             // TODO hide VR loading indicator
         } else {
-            WebBrowserModule.closeOverlay();
+            DomOverlayModule.closeOverlay();
         }
     }
 
     rotateCamera(offset = 0) {
         this.headsetRotation = VrHeadModel.rotation();
         const [ , rotateY ] = this.headsetRotation || [];
-        console.log(rotateY);
+        if (rotateY + offset > 180) {
+            console.log(rotateY);
+        }
+
         Animated.timing(
             this.state.rotateY,
             {
@@ -58,6 +61,16 @@ class Place extends SuperClass {
     componentDidMount() {
         this.startLoading();
         this.headsetRotation = VrHeadModel.rotation();
+    }
+
+    renderLocalizationControls() {
+        if (VrHeadModel.inVR()) {
+            // TODO render VR controls
+        } else {
+            PersistenceOverlayModule.renderLocalizationButtons({
+                buttons: ['ENG', 'RU', 'BY']
+            });
+        }
     }
 
     renderLabels() {
@@ -88,7 +101,7 @@ class Place extends SuperClass {
         if (VrHeadModel.inVR()) {
             // TODO open native modal
         } else {
-            WebBrowserModule.openInformation({
+            DomOverlayModule.openInformation({
                 title: title,
                 description: description || 'Has no description'
             });
@@ -151,19 +164,18 @@ class Place extends SuperClass {
                 styles.placeView,
                 { transform: [{ rotateY: this.state.rotateY }] }
             ]}>
-                    <Pano
-                        onLoad={() => {
-                            this.onLight(() => this.stopLoading());
-                        }}
-                        source={asset(`/places/${place.name}/background.jpg`)}
-                        stereo={'TOP_BOTTOM_3D'}
-                        style={{
-                            ...style,
-                            position:'absolute',
-                            opacity: light,
-                            tintColor: loading ? 'grey' : 'white'
-                        }}
-                    />
+                { this.renderLocalizationControls() }
+                <Pano
+                    onLoad={() => this.onLight(() => this.stopLoading())}
+                    source={asset(`/places/${place.name}/background.jpg`)}
+                    stereo={'TOP_BOTTOM_3D'}
+                    style={{
+                        ...style,
+                        position:'absolute',
+                        opacity: light,
+                        tintColor: loading ? 'grey' : 'white'
+                    }}
+                />
                 {
                     // Do not touch this!!!
                     // <Knights

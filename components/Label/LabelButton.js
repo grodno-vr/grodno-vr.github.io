@@ -25,7 +25,7 @@ class LabelButton extends React.Component {
             this.state.scale,
             {
                 toValue: 1,
-                duration: 100
+                duration: 500
             }
         ).start();
     }

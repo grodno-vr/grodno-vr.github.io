@@ -4,9 +4,10 @@ import { Module } from 'react-vr-web';
 import Information from '../components/Information';
 import WebLoading from '../components/Loading/WebLoading';
 
-class WebBrowserModule extends Module {
+class DomOverlayModule extends Module {
+
     constructor(overlayContainer) {
-        super('WebBrowserModule');
+        super('DomOverlayModule');
 
         this._closeOverlay = this.closeOverlay.bind(this);
         this._overlayContainer = overlayContainer;
@@ -32,4 +33,4 @@ class WebBrowserModule extends Module {
 
 }
 
-export default WebBrowserModule;
+export default DomOverlayModule;
