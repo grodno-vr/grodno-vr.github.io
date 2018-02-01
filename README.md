@@ -1,8 +1,8 @@
 # [GrodnoVR Demo](https://grodno-vr.github.io/)
 > :church: Старые фотографии города Гродно в виртуальной реальности, демо на основе [ReactVR](https://facebook.github.io/react-vr) библиотеки
 
--- image
--- image
+![Screen 1](./media/screen2.png)
+![Screen 2](./media/screen1.png)
 
 ### Старт проекта
 
@@ -22,6 +22,10 @@ npm run start
 ```
 http://localhost:8081/vr
 ```
+
+![Mobile 1](./media/mobile1.png)
+![Mobile 2](./media/mobile2.png)
+
 
 ### Поддержка платформ
 
