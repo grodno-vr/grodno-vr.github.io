@@ -90,6 +90,17 @@ class Portal extends React.Component {
                         widthSegments={20}
                         heightSegments={12}
                     />
+                    <Sphere
+                        style={{
+                            opacity: this.state.showArrow ? 0.2 : 0,
+                            transform: [
+                                { translateY: 0 }
+                            ]
+                        }}
+                        radius={1.4}
+                        widthSegments={20}
+                        heightSegments={12}
+                    />
                 </VrButton>
                 { this.state.showArrow && <Box
                     texture={asset('icons/arrow.png')}

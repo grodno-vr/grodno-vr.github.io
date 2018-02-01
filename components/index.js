@@ -3,6 +3,7 @@ import Label from './Label';
 import Portal from './Portal';
 import Information from './Information';
 import OldImage from './OldImage';
-import Spinner from './Spinner';
+import { VRLoading, WebLoading } from './Loading';
+import Knights from './Knights';
 
-export { Place, Label, Portal, Information, OldImage, Spinner };
+export { Place, Label, Portal, Information, OldImage, Knights, VRLoading, WebLoading };

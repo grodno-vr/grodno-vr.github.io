@@ -4,14 +4,14 @@
 
 // Auto-generated content.
 import '../process';
-import {VRInstance} from 'react-vr-web';
-import InfoContainerModule from '../native-modules/InfoContainerModule';
+import { VRInstance } from 'react-vr-web';
+import WebBrowserModule from '../native-modules/webBrowserModule';
 
 function init(bundle, parent, options) {
   const domOverlayContainer = document.createElement('div');
   domOverlayContainer.id = 'dom-overlay';
 
-  const mediaContainer = new InfoContainerModule(domOverlayContainer);
+  const webBrowser = new WebBrowserModule(domOverlayContainer);
 
   const vr = new VRInstance(bundle, 'GrodnoVR', parent, {
     allowCarmelDeeplink: true,
@@ -19,14 +19,14 @@ function init(bundle, parent, options) {
     hideFullscreen: true,
     cursorVisibility: 'visible',
     ...options,
-    nativeModules: [mediaContainer],
+    nativeModules: [webBrowser]
   });
 
   vr.player._wrapper.appendChild(domOverlayContainer);
 
   vr.render = function() {
     // Any custom behavior you want to perform on each frame goes here
-      // vr.scene.rotation.y = vr.scene.rotation.y - 0.002;
+    // vr.scene.rotation.y = vr.scene.rotation.y - 0.002;
   };
   // Begin the animation loop
   vr.start();

@@ -1,11 +1,11 @@
 import React from 'react';
 import { asset, Pano, View, Animated, NativeModules, VrHeadModel } from 'react-vr';
-import { Spinner, OldImage, Portal, Label } from '../.';
+import { OldImage, Portal, Label, Knights } from '../.';
 
 import lightMixin from './mixins/lightMixin';
 import styles from './styles';
 
-const { InfoContainerModule } = NativeModules;
+const { WebBrowserModule } = NativeModules;
 const SuperClass = lightMixin(React.Component);
 
 class Place extends SuperClass {
@@ -13,12 +13,51 @@ class Place extends SuperClass {
     constructor() {
         super();
 
+        this.headsetRotation = VrHeadModel.rotation();
         this.state = {
             ...this.state,
             loading: true,
             showOldImages: false,
-            selectedLabel: null
+            selectedLabel: null,
+            rotate: 0,
+            rotateY: new Animated.Value(0)
         };
+    }
+
+    startLoading() {
+        this.setState({ loading: true });
+        if (VrHeadModel.inVR()) {
+            // TODO render VR loading indicator
+        } else {
+            WebBrowserModule.loading();
+        }
+    }
+
+    stopLoading() {
+        this.setState({ loading: false });
+        if (VrHeadModel.inVR()) {
+            // TODO hide VR loading indicator
+        } else {
+            WebBrowserModule.closeOverlay();
+        }
+    }
+
+    rotateCamera(offset = 0) {
+        this.headsetRotation = VrHeadModel.rotation();
+        const [ , rotateY ] = this.headsetRotation || [];
+        console.log(rotateY);
+        Animated.timing(
+            this.state.rotateY,
+            {
+                toValue: rotateY + offset,
+                duration: 600
+            }
+        ).start();
+    }
+
+    componentDidMount() {
+        this.startLoading();
+        this.headsetRotation = VrHeadModel.rotation();
     }
 
     renderLabels() {
@@ -36,6 +75,7 @@ class Place extends SuperClass {
                 onEyeClick={() => {
                     if (label.oldImages && label.oldImages.length) {
                         this.putOutLight(0.6, () => {});
+                        this.rotateCamera(label.offset);
                         this.setState({ showOldImages: true, selectedLabel: index });
                     }
                 }}
@@ -48,7 +88,7 @@ class Place extends SuperClass {
         if (VrHeadModel.inVR()) {
             // TODO open native modal
         } else {
-            InfoContainerModule.openOverlay({
+            WebBrowserModule.openInformation({
                 title: title,
                 description: description || 'Has no description'
             });
@@ -86,20 +126,17 @@ class Place extends SuperClass {
     }
 
     renderPortal(portal, index) {
-        const { transformPortal, transformArrow, name } = portal;
+        const { transformPortal, name } = portal;
 
         return (
             <Portal
                 key={`${name}-${index}`}
                 transformPortal={transformPortal}
-                transformArrow={transformArrow}
                 place={name}
                 onClick={(placeId) => {
-                    // console.log(VrHeadModel.rotation());
-                    // console.log(VrHeadModel.rotation());
-                    this.setState({ loading: true });
+                    this.rotateCamera();
+                    this.startLoading();
                     this.offLight(() => this.props.onChange(placeId));
-                    InfoContainerModule.loading({});
                 }}
             />
         );
@@ -111,14 +148,12 @@ class Place extends SuperClass {
 
         return (
             <Animated.View style={[
-                styles.placeView
-                // { opacity: light }
+                styles.placeView,
+                { transform: [{ rotateY: this.state.rotateY }] }
             ]}>
-                { loading && <Spinner /> }
                     <Pano
                         onLoad={() => {
-                            this.onLight(() => this.setState({ loading: false }));
-                            InfoContainerModule.closeOverlay();
+                            this.onLight(() => this.stopLoading());
                         }}
                         source={asset(`/places/${place.name}/background.jpg`)}
                         stereo={'TOP_BOTTOM_3D'}
@@ -129,6 +164,12 @@ class Place extends SuperClass {
                             tintColor: loading ? 'grey' : 'white'
                         }}
                     />
+                {
+                    // Do not touch this!!!
+                    // <Knights
+                    //     transform={[{ translate: [-5, -12, -20] }, { scale: 1 }, { rotateX: 270, rotateY: this.state.rotate }]}
+                    // />
+                }
                 { !loading && !showOldImages && this.renderLabels() }
                 { !loading && !showOldImages && this.renderPortals() }
 

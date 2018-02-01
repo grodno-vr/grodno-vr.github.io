@@ -4,18 +4,17 @@ const center = {
     portals: [
         {
             name: 'bridge',
-            transformPortal: [{translate: [-10, 0, -0.5]}],
-            transformArrow: [{translate: [-10, -4, -0.5]}, { rotateY: 90, rotateX: -60 }]
+            transformPortal: [{translate: [-10, 0, -0.5]}]
         },
         {
             name: 'brigits',
-            transformPortal: [{translate: [7, 0, 9]}],
-            transformArrow: [{translate: [2, -3, 5]}, { rotateY: 10 }]
+            transformPortal: [{translate: [7, 0, 11]}]
         }
     ],
     labels: [
         {
             buttonStyle: {},
+            offset: 50,
             viewStyle: {
                 transform: [{translate: [20, 4, -20]}, { scale : 5.5 }, { rotateY: -20 }]
             },
@@ -135,6 +134,7 @@ const center = {
         },
         {
             buttonStyle: {},
+            offset: -110,
             viewStyle: {
                 transform: [{translate: [-5, 2, 2]}, { scale: 2 }, { rotateY: 110 }]
             },
@@ -144,7 +144,7 @@ const center = {
             },
             text: 'Batory (Market or Soviet) Square',
             description: `Batory Square is the historical name (during the Polish period in 1921 - 1939) of Soviet (Savyetskaya) Square - the central square for the city of Hrodna in Belarus. \n
-            It was named after Stephen Báthory, King of Poland who had a residence here in the 16th century.`,
+            It was named after Stephen Báthory, King of Rzeczpospolita who had a residence here in the 16th century.`,
             oldImages: [
                 {
                     source: 'places/center/old/square.jpg',
@@ -168,6 +168,7 @@ const center = {
         },
         {
             buttonStyle: {},
+            offset: 90,
             viewStyle: {
                 transform: [{translate: [18, 5, -1]}, { scale : 4 }, { rotateY: -75 }]
             },
@@ -217,6 +218,7 @@ const center = {
         },
         {
             buttonStyle: {},
+            offset: 130,
             viewStyle: {
                 transform: [{translate: [12, 9, 12]}, { scale : 4 }, { rotateY: -130 }]
             },

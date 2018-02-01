@@ -9,7 +9,9 @@ export default class GrodnoVR extends React.Component {
     constructor() {
         super();
         this.placeKeys = Object.keys(places);
-        this.state = { currentPlace: this.placeKeys[1] };
+
+        const [firstPlace] = this.placeKeys;
+        this.state = { currentPlace: firstPlace };
     }
 
     render() {

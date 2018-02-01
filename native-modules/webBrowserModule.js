@@ -2,26 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Module } from 'react-vr-web';
 import Information from '../components/Information';
-import Loading from '../components/Loading';
+import WebLoading from '../components/Loading/WebLoading';
 
-class InfoContainerModule extends Module {
+class WebBrowserModule extends Module {
     constructor(overlayContainer) {
-        super('InfoContainerModule');
+        super('WebBrowserModule');
 
         this._closeOverlay = this.closeOverlay.bind(this);
         this._overlayContainer = overlayContainer;
     }
 
-    openOverlay(props) {
+    openInformation(props) {
         ReactDOM.render(
             <Information {...props} onClose={this._closeOverlay} />,
             this._overlayContainer,
         );
     }
 
-    loading(props) {
+    loading() {
         ReactDOM.render(
-            <Loading {...props} onClose={this._closeOverlay} />,
+            <WebLoading />,
             this._overlayContainer,
         );
     }
@@ -32,4 +32,4 @@ class InfoContainerModule extends Module {
 
 }
 
-export default InfoContainerModule;
+export default WebBrowserModule;

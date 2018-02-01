@@ -1,9 +1,4 @@
-import React from 'react';
+import VRLoading from './VRLoading';
+import WebLoading from './WebLoading';
 
-const Information = props => (
-    <div className="loading">
-        <p>Loading...</p>
-    </div>
-);
-
-export default Information;
+export { VRLoading, WebLoading };
