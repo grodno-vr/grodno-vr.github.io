@@ -26,6 +26,10 @@ http://localhost:8081/vr
 ![Mobile 1](./media/mobile1.png)
 ![Mobile 2](./media/mobile2.png)
 
+Если браузер на вашей платформе поддерживает [WebVR](https://webvr.info), то вы можете перейти в режим стереоизображения посредством нажатия на кнопку "View in VR":
+
+![VR 1](./media/vr1.jpg)
+![VR 2](./media/vr2.jpg)
 
 ### Поддержка платформ
 
