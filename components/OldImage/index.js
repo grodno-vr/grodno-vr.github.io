@@ -10,20 +10,25 @@ class OldImage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // opacity: new Animated.Value(0.6),
-            animatedScale: new Animated.Value(0),
+            opacity: new Animated.Value(0.1),
+            animatedScale: new Animated.Value(0.1),
             animatedTranslation: new Animated.Value(0)
         };
     }
 
     componentDidMount() {
-        this.state.animatedScale.setValue(1.5);
-        Animated
-            .spring(
-                this.state.animatedScale,
-                { toValue: 0.8, friction: 5 }
-            )
-            .start();
+        Animated.parallel([
+            Animated
+                .timing(
+                    this.state.animatedScale,
+                    { toValue: 0.8, duration: 400, }
+                ),
+            Animated
+                .timing(
+                    this.state.opacity,
+                    { toValue: 1, duration: 800, }
+                )
+        ]).start();
     }
 
     mouseIn() {
@@ -57,7 +62,10 @@ class OldImage extends React.Component {
             <VrButton
                 style={[
                     styles.button,
-                    { width, height, transform: [...transform] }
+                    {
+                        width,
+                        height,
+                        transform: [...transform] }
                 ]}
                 onClick={() => this.props.onClick()}
                 onEnter={() => this.mouseIn()}
@@ -67,7 +75,7 @@ class OldImage extends React.Component {
                     style={[
                         styles.image,
                         {
-                            // opacity: this.state.opacity,
+                            opacity: this.state.opacity,
                             width,
                             height,
                             transform: [

@@ -10,6 +10,9 @@ const Information = props => (
                 </header>
                 <article className="media-content__article article">
                     {props.description.split('\n').map((paragraph, index) => <p key={`paragraph-${index}`}>{paragraph}</p>)}
+                    <div className="sketchfab-embed-wrapper">
+                        <iframe width="640" height="480" src="https://sketchfab.com/models/2f815995909f45b18a0e34d31a2fae74/embed"></iframe>
+                    </div>
                 </article>
             </div>
         </div>

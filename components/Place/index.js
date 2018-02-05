@@ -7,6 +7,7 @@ import styles from './styles';
 
 const { DomOverlayModule, PersistenceOverlayModule } = NativeModules;
 const SuperClass = lightMixin(React.Component);
+const AnimatedPano = Animated.createAnimatedComponent(Pano);
 
 class Place extends SuperClass {
 
@@ -165,7 +166,7 @@ class Place extends SuperClass {
                 { transform: [{ rotateY: this.state.rotateY }] }
             ]}>
                 { this.renderLocalizationControls() }
-                <Pano
+                <AnimatedPano
                     onLoad={() => this.onLight(() => this.stopLoading())}
                     source={asset(`/places/${place.name}/background.jpg`)}
                     stereo={'TOP_BOTTOM_3D'}
