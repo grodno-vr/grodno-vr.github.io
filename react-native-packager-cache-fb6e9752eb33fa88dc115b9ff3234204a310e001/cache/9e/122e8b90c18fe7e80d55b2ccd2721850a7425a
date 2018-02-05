@@ -1,0 +1,70 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule Scene
+ */
+'use strict';
+
+var NativeMethodsMixin=require('NativeMethodsMixin');
+var React=require('React');
+var ReactNativeViewAttributes=require('ReactNativeViewAttributes');
+var View=require('View');
+var StyleSheetPropType=require('StyleSheetPropType');
+var LayoutAndTransformPropTypes=require('LayoutAndTransformPropTypes');
+
+var createReactClass=require('create-react-class');
+var requireNativeComponent=require('requireNativeComponent');
+
+/**
+ * The Scene transform represents the camera location in the world.
+ *
+ * There should only be a single Scene node within a React VR view tree.
+ * The transform of a Scene node, rather than affecting any children, is
+ * instead the transform of the camera in the scene.
+ */
+var Scene=createReactClass({displayName:"Scene",
+mixins:[NativeMethodsMixin],
+
+viewConfig:{
+uiViewClassName:'Scene',
+validAttributes:ReactNativeViewAttributes.RCTView},
+
+
+propTypes:babelHelpers.extends({},
+View.propTypes,{
+style:StyleSheetPropType(LayoutAndTransformPropTypes)
+/**
+     */}),
+
+
+getDefaultProps:function getDefaultProps(){
+return{};
+},
+
+render:function render(){
+// TODO: prevent propagation of changes to 'transform' property up the view hierarchy
+// the viewer transform change is handled via the runtime
+return(
+React.createElement(RKScene,babelHelpers.extends({},
+this.props,{
+testID:this.props.testID,
+onStartShouldSetResponder:function onStartShouldSetResponder(){return true;},
+onResponderTerminationRequest:function onResponderTerminationRequest(){return false;}}),
+React.createElement(View,null,
+this.props.children)));
+
+
+
+}});
+
+
+var RKScene=requireNativeComponent('Scene',Scene,{
+nativeOnly:{}});
+
+
+module.exports=Scene;

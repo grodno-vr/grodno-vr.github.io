@@ -1,0 +1,76 @@
+Object.defineProperty(exports,"__esModule",{value:true});
+
+
+
+
+
+
+
+
+
+
+var _Module2=require("./Module");var _Module3=babelHelpers.interopRequireDefault(_Module2);
+
+
+
+/**
+ * Location implements window.location for the React context
+ * @class Location
+ * @extends Module
+ */var
+Location=function(_Module){babelHelpers.inherits(Location,_Module);
+
+
+
+
+
+
+
+
+
+
+
+/**
+   * Constructs a Location Module with a specific React Native Context
+   */
+function Location(rnctx){babelHelpers.classCallCheck(this,Location);var _this=babelHelpers.possibleConstructorReturn(this,(Location.__proto__||Object.getPrototypeOf(Location)).call(this,
+'Location'));
+_this._rnctx=rnctx;
+
+var location=window.location;
+_this.href=location.href;
+_this.protocol=location.protocol;
+_this.host=location.host;
+_this.hostname=location.hostname;
+_this.port=location.port;
+_this.search=location.search;
+_this.hash=location.hash;
+_this.username=location.username;
+_this.password=location.password;return _this;
+}
+
+/**
+   * Reload the current page. The optional boolean parameter determines whether
+   * the cache is bypassed.
+   * @param forceReload - If true, the cache will be ignored on reload
+   */babelHelpers.createClass(Location,[{key:"reload",value:function reload(
+forceReload){
+window.location.reload(forceReload);
+}
+
+/**
+   * Replace the current location, without affecting the History stack.
+   * @param replace - The location to navigate to
+   */},{key:"replace",value:function replace(
+url){
+window.location.replace(url);
+}}]);return Location;}(_Module3.default);/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */exports.default=Location;

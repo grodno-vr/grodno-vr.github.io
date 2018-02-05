@@ -1,0 +1,266 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule Systrace
+ * 
+ */
+'use strict';
+
+var invariant=require('fbjs/lib/invariant');
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* eslint no-bitwise: 0 */
+var TRACE_TAG_REACT_APPS=131072;
+var TRACE_TAG_JSC_CALLS=134217728;
+
+var _enabled=false;
+var _asyncCookie=0;
+var _markStack=[];
+var _markStackIndex=-1;
+
+// Implements a subset of User Timing API necessary for React measurements.
+// https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API
+var REACT_MARKER="\u269B";
+var userTimingPolyfill={
+mark:function mark(markName){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+},
+measure:function measure(measureName,startMark,endMark){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+},
+clearMarks:function clearMarks(markName){
+
+
+
+
+
+
+
+
+
+
+
+
+},
+clearMeasures:function clearMeasures(){
+// React calls this to avoid memory leaks in browsers, but we don't keep
+// measurements anyway.
+}};
+
+
+var Systrace={
+getUserTimingPolyfill:function getUserTimingPolyfill(){
+return userTimingPolyfill;
+},
+
+setEnabled:function setEnabled(enabled){
+if(_enabled!==enabled){
+
+
+
+
+
+
+
+_enabled=enabled;
+}
+},
+
+isEnabled:function isEnabled(){
+return _enabled;
+},
+
+/**
+   * beginEvent/endEvent for starting and then ending a profile within the same call stack frame
+  **/
+beginEvent:function beginEvent(profileName,args){
+if(_enabled){
+profileName=typeof profileName==='function'?
+profileName():profileName;
+global.nativeTraceBeginSection(TRACE_TAG_REACT_APPS,profileName,args);
+}
+},
+
+endEvent:function endEvent(){
+if(_enabled){
+global.nativeTraceEndSection(TRACE_TAG_REACT_APPS);
+}
+},
+
+/**
+   * beginAsyncEvent/endAsyncEvent for starting and then ending a profile where the end can either
+   * occur on another thread or out of the current stack frame, eg await
+   * the returned cookie variable should be used as input into the endAsyncEvent call to end the profile
+  **/
+beginAsyncEvent:function beginAsyncEvent(profileName){
+var cookie=_asyncCookie;
+if(_enabled){
+_asyncCookie++;
+profileName=typeof profileName==='function'?
+profileName():profileName;
+global.nativeTraceBeginAsyncSection(TRACE_TAG_REACT_APPS,profileName,cookie,0);
+}
+return cookie;
+},
+
+endAsyncEvent:function endAsyncEvent(profileName,cookie){
+if(_enabled){
+profileName=typeof profileName==='function'?
+profileName():profileName;
+global.nativeTraceEndAsyncSection(TRACE_TAG_REACT_APPS,profileName,cookie,0);
+}
+},
+
+/**
+   * counterEvent registers the value to the profileName on the systrace timeline
+  **/
+counterEvent:function counterEvent(profileName,value){
+if(_enabled){
+profileName=typeof profileName==='function'?
+profileName():profileName;
+global.nativeTraceCounter&&
+global.nativeTraceCounter(TRACE_TAG_REACT_APPS,profileName,value);
+}
+},
+
+/**
+   * Relay profiles use await calls, so likely occur out of current stack frame
+   * therefore async variant of profiling is used
+  **/
+attachToRelayProfiler:function attachToRelayProfiler(relayProfiler){
+relayProfiler.attachProfileHandler('*',function(name){
+var cookie=Systrace.beginAsyncEvent(name);
+return function(){
+Systrace.endAsyncEvent(name,cookie);
+};
+});
+
+relayProfiler.attachAggregateHandler('*',function(name,callback){
+Systrace.beginEvent(name);
+callback();
+Systrace.endEvent();
+});
+},
+
+/* This is not called by default due to perf overhead but it's useful
+     if you want to find traces which spend too much time in JSON. */
+swizzleJSON:function swizzleJSON(){
+Systrace.measureMethods(JSON,'JSON',[
+'parse',
+'stringify']);
+
+},
+
+/**
+  * Measures multiple methods of a class. For example, you can do:
+  * Systrace.measureMethods(JSON, 'JSON', ['parse', 'stringify']);
+  *
+  * @param object
+  * @param objectName
+  * @param methodNames Map from method names to method display names.
+  */
+measureMethods:function measureMethods(object,objectName,methodNames){
+{
+return;
+}
+
+methodNames.forEach(function(methodName){
+object[methodName]=Systrace.measure(
+objectName,
+methodName,
+object[methodName]);
+
+});
+},
+
+/**
+  * Returns an profiled version of the input function. For example, you can:
+  * JSON.parse = Systrace.measure('JSON', 'parse', JSON.parse);
+  *
+  * @param objName
+  * @param fnName
+  * @param {function} func
+  * @return {function} replacement function
+  */
+measure:function measure(objName,fnName,func){
+{
+return func;
+}
+
+var profileName=objName+"."+fnName;
+return function(){
+if(!_enabled){
+return func.apply(this,arguments);
+}
+
+Systrace.beginEvent(profileName);
+var ret=func.apply(this,arguments);
+Systrace.endEvent();
+return ret;
+};
+}};
+
+
+
+
+
+
+
+
+
+
+module.exports=Systrace;

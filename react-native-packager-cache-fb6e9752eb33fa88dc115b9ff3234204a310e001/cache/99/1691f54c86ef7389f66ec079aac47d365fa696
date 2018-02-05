@@ -1,0 +1,306 @@
+Object.defineProperty(exports,"__esModule",{value:true});
+
+
+
+
+
+
+
+
+
+
+var _Module2=require("./Module");var _Module3=babelHelpers.interopRequireDefault(_Module2);
+
+
+
+/**
+ * AsyncLocalStorage is an implementation of the AsyncStorage interface, built
+ * on top of IndexedDB.
+ * These methods are not intended to be called directly. Rather, they are
+ * called remotely by the AsyncStorage module on the React side.
+ * @class AsyncLocalStorage
+ * @extends Module
+ * @category runtime-modules
+ */var
+AsyncLocalStorage=function(_Module){babelHelpers.inherits(AsyncLocalStorage,_Module);
+// React Native Context used
+
+
+
+
+function AsyncLocalStorage(rnctx){babelHelpers.classCallCheck(this,AsyncLocalStorage);var _this=babelHelpers.possibleConstructorReturn(this,(AsyncLocalStorage.__proto__||Object.getPrototypeOf(AsyncLocalStorage)).call(this,
+'AsyncLocalStorage'));
+_this._rnctx=rnctx;
+_this._db=null;return _this;
+}
+
+/**
+   * Open the IndexedDB where we are persisting our store.
+   * The schema we use allows us to implement a simple key-value store with
+   * IndexedDB's row-based semantics. We create a table called 'pairs' which
+   * contains objects of the form:
+   *   {key: string, value: any}
+   * The field called 'key' is uniquely indexed and used as our lookup value.
+   * _prepareDB() initializes this database if it has not yet been created,
+   * and returns a Promise that resolves with the database handle.
+   */// Cache the database handle once it has been opened
+babelHelpers.createClass(AsyncLocalStorage,[{key:"_prepareDB",value:function _prepareDB(){var _this2=this;
+return new Promise(function(resolve,reject){
+if(_this2._db){
+return resolve(_this2._db);
+}
+// Open the database called 'AsyncStorage'
+var request=window.indexedDB.open('AsyncStorage',1);
+request.onerror=function(event){
+reject({
+message:'Error opening database'});
+
+};
+request.onupgradeneeded=function(event){
+var db=event.target.result;
+_this2._db=db;
+// If the database has not been created yet, create an object store
+// called 'pairs', with an index called 'key'
+db.createObjectStore('pairs',{keyPath:'key'});
+resolve(db);
+};
+request.onsuccess=function(event){
+var db=event.target.result;
+_this2._db=db;
+resolve(db);
+};
+});
+}
+
+/**
+   * _getRow is a Promise wrapper around IndexedDb's get function.
+   * If the get succeeds, it resolves the Promise with the retrieved value.
+   * Attempting to get a row that does not exist should succeed, returning
+   * a value of undefined.
+   * If the get fails, it rejects the Promise with the error and the key.
+   */},{key:"_getRow",value:function _getRow(
+objectStore,key){
+return new Promise(function(resolve,reject){
+var request=objectStore.get(key);
+request.onerror=function(event){
+reject({
+message:event.target.error.name,
+key:key});
+
+};
+request.onsuccess=function(event){
+var row=event.target.result;
+if(!row){
+resolve([key,undefined]);
+}else{
+resolve([row.key,row.value]);
+}
+};
+});
+}
+
+/**
+   * _putRow is a Promise wrapper around IndexedDb's put function.
+   * A put replaces a row if it previously existed, so it provides the behavior
+   * we need for setting a value in a key-value store.
+   * If the put succeeds, it resolves the Promise.
+   * If the put fails, it rejects the Promise with the error and the key.
+   */},{key:"_putRow",value:function _putRow(
+objectStore,row){
+return new Promise(function(resolve,reject){
+var request=objectStore.put(row);
+request.onerror=function(event){
+reject({
+message:event.target.error.name,
+key:row.key});
+
+};
+request.onsuccess=function(){
+resolve();
+};
+});
+}
+
+/**
+   * _deleteRow is a Promise wrapper around IndexedDb's delete function.
+   * A delete should succeed even if the row does not exist.
+   * If the delete succeeds, it resolves the Promise.
+   * If the delete fails, it rejects the Promise with the error and the key.
+   */},{key:"_deleteRow",value:function _deleteRow(
+objectStore,key){
+return new Promise(function(resolve,reject){
+var request=objectStore.delete(key);
+request.onerror=function(event){
+reject({
+message:event.target.error.name,
+key:key});
+
+};
+request.onsuccess=function(){
+resolve();
+};
+});
+}
+
+/**
+   * multiGet is a public API that fetches the values associated with a set of
+   * keys. Once they have been retrieved, the callback will be called with
+   * an array containing pairs of the form:
+   *   [key, value]
+   * arranged in the same order that the keys were.
+   * If one of the get operations fails, it will pass an error to the callback
+   * with the key that failed.
+   */},{key:"multiGet",value:function multiGet(
+keys,cb){var _this3=this;
+this._prepareDB().
+then(function(db){
+var transaction=db.transaction(['pairs']);
+var objectStore=transaction.objectStore('pairs');
+var gets=[];
+keys.forEach(function(key){return gets.push(_this3._getRow(objectStore,key));});
+return Promise.all(gets);
+}).
+then(
+function(rows){
+_this3._rnctx.invokeCallback(cb,[undefined,rows]);
+},
+function(err){
+_this3._rnctx.invokeCallback(cb,[err]);
+});
+
+}
+
+/**
+   * multiSet is a public API that places key-value pairs into the database.
+   * It takes these pairs as an array of values in the form:
+   *   [key, value]
+   * If one of the set operations fails, it will pass an error to the callback
+   * with the key that failed.
+   */},{key:"multiSet",value:function multiSet(
+pairs,cb){var _this4=this;
+this._prepareDB().
+then(function(db){
+var transaction=db.transaction(['pairs'],'readwrite');
+var objectStore=transaction.objectStore('pairs');
+var puts=[];
+pairs.forEach(function(pair){
+var row={key:pair[0],value:pair[1]};
+puts.push(_this4._putRow(objectStore,row));
+});
+return Promise.all(puts);
+}).
+then(
+function(){
+_this4._rnctx.invokeCallback(cb,[]);
+},
+function(err){
+_this4._rnctx.invokeCallback(cb,[err]);
+});
+
+}
+
+/**
+   * multiRemove is a public API that removes entries from the database.
+   * If one of the remove operations fails, it will pass an error to the
+   * callback with the key that failed.
+   */},{key:"multiRemove",value:function multiRemove(
+keys,cb){var _this5=this;
+this._prepareDB().
+then(function(db){
+var transaction=db.transaction(['pairs'],'readwrite');
+var objectStore=transaction.objectStore('pairs');
+var deletes=[];
+keys.forEach(function(key){return deletes.push(_this5._deleteRow(objectStore,key));});
+return Promise.all(deletes);
+}).
+then(
+function(){
+_this5._rnctx.invokeCallback(cb,[]);
+},
+function(err){
+_this5._rnctx.invokeCallback(cb,[err]);
+});
+
+}
+
+/**
+   * clear removes all rows from the database. It calls into IndexedDB's clear
+   * operation. Once it has completed, it calls the callback. If an error
+   * occurs, it will be passed to the callback.
+   */},{key:"clear",value:function clear(
+cb){var _this6=this;
+this._prepareDB().
+then(function(db){
+return new Promise(function(resolve,reject){
+var transaction=db.transaction(['pairs'],'readwrite');
+var objectStore=transaction.objectStore('pairs');
+var request=objectStore.clear();
+request.onerror=function(event){
+reject({
+message:event.target.error.name});
+
+};
+request.onsuccess=function(){
+resolve();
+};
+});
+}).
+then(
+function(){
+_this6._rnctx.invokeCallback(cb,[]);
+},
+function(err){
+_this6._rnctx.invokeCallback(cb,[err]);
+});
+
+}
+
+/**
+   * getAllKeys retrieves all keys currently stored in the database.
+   * It uses an IndexedDB cursor to iterate through the entire table, without
+   * needing to allocate space for all of the values as well.
+   * When all keys have been fetched, they are passed to the callback.
+   * If an error occurs, it is passed to the callback.
+   */},{key:"getAllKeys",value:function getAllKeys(
+cb){var _this7=this;
+this._prepareDB().
+then(function(db){
+return new Promise(function(resolve,reject){
+var transaction=db.transaction(['pairs']);
+var objectStore=transaction.objectStore('pairs');
+var request=objectStore.openCursor();
+var keys=[];
+request.onerror=function(event){
+reject({
+message:event.target.error.name});
+
+};
+request.onsuccess=function(event){
+var cursor=event.target.result;
+if(cursor){
+keys.push(cursor.key);
+cursor.continue();
+}else{
+resolve(keys);
+}
+};
+});
+}).
+then(
+function(keys){
+_this7._rnctx.invokeCallback(cb,[undefined,keys]);
+},
+function(err){
+_this7._rnctx.invokeCallback(cb,[err]);
+});
+
+}}]);return AsyncLocalStorage;}(_Module3.default);/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */exports.default=AsyncLocalStorage;

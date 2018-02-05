@@ -1,0 +1,182 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule VrHeadModel
+ */
+'use strict';
+
+var MatrixMath=require('MatrixMath');
+var RCTDeviceEventEmitter=require('RCTDeviceEventEmitter');
+var VrMath=require('VrMath');
+
+/**
+ * VrHeadModel is a utility module that simplifies obtaining the current orientation of the headset.
+ *
+ * Orientation data contains some latency and is not fully in sync with the display due to how React VR code runs asynchronously from the main render thread.
+ */var
+VrHeadModelImpl=function(){
+function VrHeadModelImpl(){var _this=this;babelHelpers.classCallCheck(this,VrHeadModelImpl);
+this.headMatrix=MatrixMath.createIdentityMatrix();
+this.viewMatrix=MatrixMath.createIdentityMatrix();
+this._inVR=false;
+this.fov=0;
+this.aspect=1;
+this._headMatrixListener=RCTDeviceEventEmitter.addListener(
+'onReceivedHeadMatrix',
+this._onReceivedHeadMatrix.bind(this));
+
+RCTDeviceEventEmitter.addListener('onEnterVR',function(){
+_this._inVR=true;
+});
+RCTDeviceEventEmitter.addListener('onExitVR',function(){
+_this._inVR=false;
+});
+}babelHelpers.createClass(VrHeadModelImpl,[{key:"_onReceivedHeadMatrix",value:function _onReceivedHeadMatrix(
+
+headMatrix,viewMatrix,fov,aspect){
+this.headMatrix=headMatrix;
+this.viewMatrix=viewMatrix;
+this.fov=fov;
+this.aspect=aspect;
+}
+
+/**
+   * Returns the position of the head as [X,Y,Z].
+   *
+   * If headMatrix is not specified, we use the current orientation of the headset.
+   */},{key:"positionOfHeadMatrix",value:function positionOfHeadMatrix(
+headMatrix){
+console.warn('positionOfHeadMatrix is deprecated.  Please use position instead');
+var matrix=headMatrix||this.headMatrix;
+return VrMath.getTranslation(matrix);
+}
+
+/**
+   * Returns the rotation as Euler angles in radians.
+   *
+   * If headMatrix is not specified, we use the current orientation of the headset.
+   * If eulerOrder is not specified, we use `YXZ` order, that is Yaw, Pitch, and Roll.
+   */},{key:"rotationOfHeadMatrix",value:function rotationOfHeadMatrix(
+headMatrix,eulerOrder){
+console.warn("rotationOfHeadMatrix is deprecated.  Please use rotation, rotationInRadians, yawPitchRoll or yawPitchRollInRadians instead");
+
+
+
+var matrix=headMatrix||this.headMatrix;
+return VrMath.getRotation(matrix,eulerOrder);
+}
+
+/**
+   * Return the position of the head as [X,Y,Z].
+   */},{key:"position",value:function position()
+{
+return VrMath.getTranslation(this.headMatrix);
+}
+
+/**
+   * Returns the rotation as Euler angles in degrees.
+   *
+   * Returns an array in the form:
+   * [rotation about X axis, rotation about Y axis, rotation about Z axis]
+   */},{key:"rotation",value:function rotation()
+{
+return this.rotationInRadians().map(VrMath.radToDeg);
+}
+
+/**
+   * Returns the rotation as Euler angles in degrees.
+   *
+   * Returns an array in the form:
+   * [rotation about X axis, rotation about Y axis, rotation about Z axis]
+   */},{key:"rotationInRadians",value:function rotationInRadians()
+{
+return VrMath.getRotation(this.headMatrix);
+}
+
+/**
+   * Return the rotation in yaw, pitch, roll order in degrees.
+   *
+   * For those new to 3D graphics and who are not former pilots:
+   *   Yaw = looking up and down
+   *   Pitch = looking to the left and right
+   *   Roll = tilting your head from side to side
+   *
+   * Returns an array of rotations in the form:
+   * [Y axis, X axis, Z axis]
+   */},{key:"yawPitchRoll",value:function yawPitchRoll()
+{
+return this.yawPitchRollInRadians().map(VrMath.radToDeg);
+}
+
+/**
+   * Returns the rotation in yaw, pitch, roll order in radians.
+   *
+   * For those new to 3D graphics and who are not former pilots:
+   *   Yaw = looking up and down
+   *   Pitch = looking to the left and right
+   *   Roll = tilting your head from side to side
+   *
+   * Returns an array of rotations in the form:
+   * [Y axis, X axis, Z axis]
+   */},{key:"yawPitchRollInRadians",value:function yawPitchRollInRadians()
+{
+var rotation=this.rotationInRadians();
+return[rotation[1],rotation[0],rotation[2]];
+}
+
+/**
+   * Returns the horizontal field of view of the camera in degrees.
+   */},{key:"horizontalFov",value:function horizontalFov()
+{
+return this.fov;
+}
+
+/**
+   * Returns the vertical field of view of the camera in degrees.
+   */},{key:"verticalFov",value:function verticalFov()
+{
+return this.fov/this.aspect;
+}
+
+/**
+   * Returns the horizontal field of view of the camera in radians.
+   */},{key:"horizontalFovInRadians",value:function horizontalFovInRadians()
+{
+return VrMath.degToRad(this.horizontalFov());
+}
+
+/**
+   * Returns the vertical field of view of the camera in radians.
+   */},{key:"verticalFovInRadians",value:function verticalFovInRadians()
+{
+return VrMath.degToRad(this.verticalFov());
+}
+/**
+   * Returns the Head matrix as an array of numbers.
+   */},{key:"getHeadMatrix",value:function getHeadMatrix()
+{
+return[].concat(babelHelpers.toConsumableArray(this.headMatrix));
+}
+
+/**
+   * Returns true if the headset is in use.
+   */},{key:"getVRStatus",value:function getVRStatus()
+{
+console.warn('getVRStatus is deprecated.  Please use inVR instead');
+return this._inVR;
+}
+
+/**
+   * Returns true if the headset is in use, false if viewed outside of VR
+   */},{key:"inVR",value:function inVR()
+{
+return this._inVR;
+}}]);return VrHeadModelImpl;}();
+
+
+module.exports=new VrHeadModelImpl();

@@ -1,0 +1,165 @@
+Object.defineProperty(exports,"__esModule",{value:true});
+
+
+
+
+
+
+
+
+
+
+var _Module2=require("./Module");var _Module3=babelHelpers.interopRequireDefault(_Module2);
+
+
+
+/**
+ * History exposes the browser history stack to React
+ * @class History
+ * @extends Module
+ */var
+History=function(_Module){babelHelpers.inherits(History,_Module);
+
+
+/**
+   * Constructs a History with a specific React Native Context
+   * It also begins listening to any history popstate events, and fires them
+   * through the native event emitter
+   */
+function History(rnctx){babelHelpers.classCallCheck(this,History);var _this=babelHelpers.possibleConstructorReturn(this,(History.__proto__||Object.getPrototypeOf(History)).call(this,
+'History'));
+_this._rnctx=rnctx;
+
+window.addEventListener('popstate',function(event){
+_this._rnctx.callFunction('RCTDeviceEventEmitter','emit',[
+'historyPopState',
+{state:event.state}]);
+
+_this._rnctx.callFunction('RCTDeviceEventEmitter','emit',[
+'url',
+window.location.toString()]);
+
+});return _this;
+}
+
+/**
+   * Returns a Promise that is resolved with the current history length
+   * @param success - ID of success call back
+   */babelHelpers.createClass(History,[{key:"$length",value:function $length(
+success){
+this._rnctx.invokeCallback(success,[window.history.length]);
+}
+
+/**
+   * Returns a Promise that is resolved with the current history state
+   * @param success - ID of success call back
+   */},{key:"$state",value:function $state(
+success){
+this._rnctx.invokeCallback(success,[window.history.state]);
+}
+
+/**
+   * Returns a Promise that is resolved after the history is moved back
+   * @param success - ID of success call back
+   */},{key:"$back",value:function $back(
+success){
+window.history.back();
+this._rnctx.invokeCallback(success,[true]);
+}
+
+/**
+   * Returns a Promise that is resolved after the history is moved forward
+   * @param success - ID of success call back
+   */},{key:"$forward",value:function $forward(
+success){
+window.history.forward();
+this._rnctx.invokeCallback(success,[true]);
+}
+
+/**
+   * Takes a number of steps, and moves the history by that delta. Returns a
+   * Promise that is resolved after the move is completed.
+   * @param delta - The number of steps to move the current history state. A
+   *   positive number moves the history forward, a negative number moves the
+   *   history back.
+   * @param success - ID of success call back
+   */},{key:"$go",value:function $go(
+delta,success){
+window.history.go(delta);
+this._rnctx.invokeCallback(success,[true]);
+}
+
+/**
+   * Push a new state onto the history stack. The first argument is the state
+   * object to push onto the stack; the second argument is the new title
+   * for the window. An optional third argument is the new URL to display
+   * in the navigation bar.
+   * @param state - An object to push onto the stack
+   * @param title - A string to set as the window title
+   * @param url (optional) - The URL to show in the navigation bar
+   * @param success - ID of success call back
+   * @param fail - ID of failure call back
+   */},{key:"$pushState",value:function $pushState()
+{var _ref2,_ref3;
+if(arguments.length<4){var _ref;
+this._rnctx.invokeCallback((_ref=arguments.length-1,arguments.length<=_ref?undefined:arguments[_ref]),[
+new Error('pushState requires at least two arguments')]);
+
+return;
+}
+var state=arguments.length<=0?undefined:arguments[0];
+var title=arguments.length<=1?undefined:arguments[1];
+var success=(_ref2=arguments.length-2,arguments.length<=_ref2?undefined:arguments[_ref2]);
+var fail=(_ref3=arguments.length-1,arguments.length<=_ref3?undefined:arguments[_ref3]);
+var url=arguments.length===4?undefined:arguments.length<=2?undefined:arguments[2];
+try{
+window.history.pushState(state,title,url);
+this._rnctx.callFunction('RCTDeviceEventEmitter','emit',[
+'url',
+window.location.toString()]);
+
+this._rnctx.invokeCallback(success,[true]);
+}catch(e){
+this._rnctx.invokeCallback(fail,[e]);
+}
+}
+
+/**
+   * Replace the top state onto the history stack. The first argument is the
+   * state object to place at the top of the stack; the second argument is the
+   * new title for the window. An optional third argument is the new URL to
+   * display in the navigation bar.
+   * @param state - An object to push onto the stack
+   * @param title - A string to set as the window title
+   * @param url (optional) - The URL to show in the navigation bar
+   * @param success - ID of success call back
+   * @param fail - ID of failure call back
+   */},{key:"$replaceState",value:function $replaceState()
+{var _ref5,_ref6;
+if(arguments.length<4){var _ref4;
+this._rnctx.invokeCallback((_ref4=arguments.length-1,arguments.length<=_ref4?undefined:arguments[_ref4]),[
+new Error('replaceState requires at least two arguments')]);
+
+return;
+}
+var state=arguments.length<=0?undefined:arguments[0];
+var title=arguments.length<=1?undefined:arguments[1];
+var success=(_ref5=arguments.length-2,arguments.length<=_ref5?undefined:arguments[_ref5]);
+var fail=(_ref6=arguments.length-1,arguments.length<=_ref6?undefined:arguments[_ref6]);
+var url=arguments.length===4?undefined:arguments.length<=2?undefined:arguments[2];
+try{
+window.history.pushState(state,title,url);
+this._rnctx.invokeCallback(success,[true]);
+}catch(e){
+this._rnctx.invokeCallback(fail,[e]);
+}
+}}]);return History;}(_Module3.default);/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */exports.default=History;

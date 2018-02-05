@@ -1,0 +1,15 @@
+Object.defineProperty(exports,"__esModule",{value:true});var _reactVr=require("react-vr");
+
+var styles=_reactVr.StyleSheet.create({
+text:{
+borderRadius:0.2,
+backgroundColor:'black',
+textAlign:'center',
+fontSize:0.5,
+width:3,
+color:'white',
+transform:[{translateZ:-10}]}});exports.default=
+
+
+
+styles;

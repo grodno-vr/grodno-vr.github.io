@@ -1,0 +1,22 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule WebView
+ */
+
+'use strict';
+
+var React=require('React');var
+
+DummyWebView=function(_React$Component){babelHelpers.inherits(DummyWebView,_React$Component);function DummyWebView(){babelHelpers.classCallCheck(this,DummyWebView);return babelHelpers.possibleConstructorReturn(this,(DummyWebView.__proto__||Object.getPrototypeOf(DummyWebView)).apply(this,arguments));}babelHelpers.createClass(DummyWebView,[{key:"render",value:function render()
+{
+return null;
+}}]);return DummyWebView;}(React.Component);
+
+
+module.exports=DummyWebView;

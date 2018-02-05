@@ -1,0 +1,78 @@
+Object.defineProperty(exports,"__esModule",{value:true});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _BaseView=require("./BaseView");var _BaseView2=babelHelpers.interopRequireDefault(_BaseView);
+var _merge=require("../Utils/merge");var _merge2=babelHelpers.interopRequireDefault(_merge);
+var _ovrui=require("ovrui");var OVRUI=babelHelpers.interopRequireWildcard(_ovrui);
+var _three=require("three");var THREE=babelHelpers.interopRequireWildcard(_three);/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *//**
+ * RCTPointLight: runtime implementation of the <PointLight >
+ * https://threejs.org/docs/index.html#api/lights/PointLight
+ * @class RCTAmbientLight
+ * @extends RCTBaseView
+ */var RCTPointLight=function(_RCTBaseView){babelHelpers.inherits(RCTPointLight,_RCTBaseView);/**
+   * constructor: allocates the required resources and sets defaults
+   */function RCTPointLight(guiSys){babelHelpers.classCallCheck(this,RCTPointLight);var _this=babelHelpers.possibleConstructorReturn(this,(RCTPointLight.__proto__||Object.getPrototypeOf(RCTPointLight)).call(this));var light=new THREE.PointLight();_this.view=new OVRUI.UIView(guiSys);_this.view.add(light);// In "physically correct" mode, the product of color * intensity is
+// interpreted as luminous intensity measured in candelas.
+Object.defineProperty(_this.props,'intensity',{set:function set(value){light.intensity=value;}});
+
+// If non-zero, light will attenuate linearly from maximum intensity at
+// light position down to zero at distance.
+Object.defineProperty(_this.props,'distance',{
+set:function set(value){
+light.distance=value;
+}});
+
+// The amount the light dims along the distance of the light
+// In "physically correct" mode, decay = 2 leads to physically realistic light falloff.
+Object.defineProperty(_this.props,'decay',{
+set:function set(value){
+light.decay=value;
+}});
+
+// Color of the light.
+Object.defineProperty(_this.style,'color',{
+set:function set(value){
+light.color.set(value);
+}});
+
+
+// defaults that match three.js
+_this.props.intensity=1;
+_this.props.distance=0;
+_this.props.decay=1;return _this;
+}
+
+/**
+   * Describes the properties representable by this view type and merges
+   * with super type
+   */babelHelpers.createClass(RCTPointLight,null,[{key:"describe",value:function describe()
+{
+return(0,_merge2.default)(babelHelpers.get(RCTPointLight.__proto__||Object.getPrototypeOf(RCTPointLight),"describe",this).call(this),{
+// declare the native props sent from react to runtime
+NativeProps:{
+intensity:'number',
+distance:'number',
+decay:'number'}});
+
+
+}}]);return RCTPointLight;}(_BaseView2.default);exports.default=RCTPointLight;

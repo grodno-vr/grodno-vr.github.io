@@ -1,0 +1,33 @@
+Object.defineProperty(exports,"__esModule",{value:true});var
+
+
+
+
+
+
+
+
+
+
+
+
+Bridge=function(){function Bridge(){babelHelpers.classCallCheck(this,Bridge);}babelHelpers.createClass(Bridge,[{key:"setMessageHandler",value:function setMessageHandler(
+
+
+handler){
+this._messageHandler=handler;
+return this;
+}},{key:"postMessage",value:function postMessage(
+
+msg){
+throw new Error('Subclasses of Bridge should implement their own postMessage()');
+}}]);return Bridge;}();/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */exports.default=Bridge;

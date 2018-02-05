@@ -1,0 +1,169 @@
+Object.defineProperty(exports,"__esModule",{value:true});
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _BaseView=require("./BaseView");var _BaseView2=babelHelpers.interopRequireDefault(_BaseView);
+var _merge=require("../Utils/merge");var _merge2=babelHelpers.interopRequireDefault(_merge);
+var _ovrui=require("ovrui");var OVRUI=babelHelpers.interopRequireWildcard(_ovrui);
+var _three=require("three");var THREE=babelHelpers.interopRequireWildcard(_three);
+var _Yoga=require("../Utils/Yoga.bundle");var Yoga=babelHelpers.interopRequireWildcard(_Yoga);var
+
+RCTQuadPanel=function(_RCTBaseView){babelHelpers.inherits(RCTQuadPanel,_RCTBaseView);
+/**
+   * constructor: allocates the required resources and sets defaults
+   */
+function RCTQuadPanel(guiSys){babelHelpers.classCallCheck(this,RCTQuadPanel);var _this=babelHelpers.possibleConstructorReturn(this,(RCTQuadPanel.__proto__||Object.getPrototypeOf(RCTQuadPanel)).call(this));
+
+
+_this.material=new THREE.MeshBasicMaterial({
+wireframe:false,
+transparent:true,
+premultipliedAlpha:true,
+color:'white',
+side:THREE.DoubleSide,
+depthWrite:false,
+blending:THREE.CustomBlending,
+blendSrc:THREE.OneFactor,
+blendDst:THREE.OneMinusSrcAlphaFactor,
+blendEquation:THREE.AddEquation,
+blendSrcAlpha:THREE.OneFactor,
+blendDstAlpha:THREE.OneMinusSrcAlphaFactor,
+blendEquationAlpha:THREE.AddEquation});
+
+
+_this.guiSys=guiSys;
+_this.camera=new THREE.OrthographicCamera();
+_this.subScene=new THREE.Scene();
+var geometry=new THREE.PlaneGeometry(1,1,1,1);
+_this.plane=new THREE.Mesh(geometry,_this.material);
+_this.plane.subScene=_this.subScene;
+_this.plane.subSceneCamera=_this.camera;
+_this.plane.scale.z=-1;
+_this.view=new OVRUI.UIView(guiSys);
+_this.view.add(_this.plane);
+
+_this.subScene.scale.y=-1;
+_this.isLayer=true;
+
+Object.defineProperty(_this.style,'opacity',{
+configurable:true,
+set:function set(value){
+_this.material.opacity=value;
+}});
+
+
+Object.defineProperty(_this.props,'layer',{
+set:function set(value){
+_this.props._layerWidth=value.width;
+_this.props._layerHeight=value.height;
+_this.props._layerDensity=value.density;
+// default distance to 4m
+_this.props._layerDistance=value.distance||4;
+_this.subScene._rttWidth=value.width;
+_this.subScene._rttHeight=value.height;
+_this.plane.geometry.dispose();
+// The same calculation as shell
+// there is not a direct correlation but for a small angle (<60) the arc
+// is also a reasonable approximation of the chord (within 95%)
+// as our angle is small and dealing with px height rather than angles a proportion of an arc
+// is used
+var halfWidth=
+_this.props._layerDistance*(Math.PI*value.width/_this.props._layerDensity);
+var halfHeight=
+_this.props._layerDistance*(Math.PI*value.height/_this.props._layerDensity);
+_this.plane.geometry=new THREE.PlaneGeometry(halfWidth*2,halfHeight*2,1,1);
+_this.plane.needsUpdate=true;
+_this._createRTT();
+}});return _this;
+
+}babelHelpers.createClass(RCTQuadPanel,[{key:"_createRTT",value:function _createRTT()
+
+{
+if(this.props._layerWidth>0&&this.props._layerHeight>0){
+if(!this.rtt){
+this.rtt=new THREE.WebGLRenderTarget(this.props._layerWidth,this.props._layerHeight,{
+minFilter:THREE.LinearFilter,
+magFilter:THREE.LinearFilter,
+format:THREE.RGBAFormat});
+
+}else{
+this.rtt.setSize(this.props._layerWidth,this.props._layerHeight);
+}
+this.material.map=this.rtt.texture;
+this.material.needsUpdate=true;
+this.camera=new THREE.OrthographicCamera(
+0,
+this.props._layerWidth,
+0,
+this.props._layerHeight,
+-1000,
+1000);
+
+this.camera.setViewOffset(
+this.props._layerWidth,
+this.props._layerHeight,
+0,
+0,
+this.props._layerWidth,
+this.props._layerHeight);
+
+this.plane.subSceneCamera=this.camera;
+this.guiSys.unregisterOffscreenRender(this.offscreenUID);
+this.offscreenUID=this.guiSys.registerOffscreenRender(this.subScene,this.camera,this.rtt);
+}
+}},{key:"addChild",value:function addChild(
+
+index,child){
+this.children.splice(index,0,child);
+this.YGNode.insertChild(child.YGNode,index);
+this.subScene.add(child.view);
+}},{key:"removeChild",value:function removeChild(
+
+index){
+this.subScene.remove(this.children[index].view);
+this.YGNode.removeChild(this.YGNode.getChild(index));
+this.children.splice(index,1);
+}},{key:"presentLayout",value:function presentLayout()
+
+{
+babelHelpers.get(RCTQuadPanel.prototype.__proto__||Object.getPrototypeOf(RCTQuadPanel.prototype),"presentLayout",this).call(this);
+this.plane.visible=this.YGNode.getDisplay()!==Yoga.DISPLAY_NONE;
+}},{key:"dispose",value:function dispose()
+
+{
+this.guiSys.unregisterOffscreenRender(this.offscreenUID);
+babelHelpers.get(RCTQuadPanel.prototype.__proto__||Object.getPrototypeOf(RCTQuadPanel.prototype),"dispose",this).call(this);
+}
+
+/**
+   * Describes the properties representable by this view type and merges
+   * with super type
+   */}],[{key:"describe",value:function describe()
+{
+return(0,_merge2.default)(babelHelpers.get(RCTQuadPanel.__proto__||Object.getPrototypeOf(RCTQuadPanel),"describe",this).call(this),{
+// declare the native props sent from react to runtime
+NativeProps:{
+layer:'object'}});
+
+
+}}]);return RCTQuadPanel;}(_BaseView2.default);/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *//**
+ * @class RCTQuadPanel
+ * @extends RCTBaseView
+ */exports.default=RCTQuadPanel;

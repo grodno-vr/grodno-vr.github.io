@@ -1,0 +1,49 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule RCTLog
+ * 
+ */
+'use strict';
+
+var invariant=require('fbjs/lib/invariant');
+
+var levelsMap={
+log:'log',
+info:'info',
+warn:'warn',
+error:'error',
+fatal:'error'};var
+
+
+RCTLog=function(){function RCTLog(){babelHelpers.classCallCheck(this,RCTLog);}babelHelpers.createClass(RCTLog,null,[{key:"logIfNoNativeHook",
+// level one of log, info, warn, error, mustfix
+value:function logIfNoNativeHook(){
+if(typeof global.nativeLoggingHook==='undefined'){
+// We already printed in xcode, so only log here if using a js debugger
+RCTLog.logToConsole.apply(RCTLog,arguments);
+}
+
+return true;
+}
+
+// Log to console regardless of nativeLoggingHook
+},{key:"logToConsole",value:function logToConsole(level){var _console;
+var logFn=levelsMap[level];
+invariant(
+logFn,
+'Level "'+level+'" not one of '+Object.keys(levelsMap));for(var _len=arguments.length,args=Array(_len>1?_len-1:0),_key=1;_key<_len;_key++){args[_key-1]=arguments[_key];}
+
+
+(_console=console)[logFn].apply(_console,args);
+
+return true;
+}}]);return RCTLog;}();
+
+
+module.exports=RCTLog;

@@ -1,0 +1,94 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule ImageBackground
+ * 
+ * @format
+ */
+'use strict';
+
+var Image=require('Image');
+var React=require('React');
+var StyleSheet=require('StyleSheet');
+var View=require('View');
+
+var ensureComponentIsNative=require('ensureComponentIsNative');
+
+
+
+/**
+ * Very simple drop-in replacement for <Image> which supports nesting views.
+ *
+ * ```ReactNativeWebPlayer
+ * import React, { Component } from 'react';
+ * import { AppRegistry, View, ImageBackground, Text } from 'react-native';
+ *
+ * class DisplayAnImageBackground extends Component {
+ *   render() {
+ *     return (
+ *       <ImageBackground
+ *         style={{width: 50, height: 50}}
+ *         source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+ *       >
+ *         <Text>React</Text>
+ *       </ImageBackground>
+ *     );
+ *   }
+ * }
+ *
+ * // App registration and rendering
+ * AppRegistry.registerComponent('DisplayAnImageBackground', () => DisplayAnImageBackground);
+ * ```
+ */var
+ImageBackground=function(_React$Component){babelHelpers.inherits(ImageBackground,_React$Component);function ImageBackground(){var _ref;var _temp,_this,_ret;babelHelpers.classCallCheck(this,ImageBackground);for(var _len=arguments.length,args=Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}return _ret=(_temp=(_this=babelHelpers.possibleConstructorReturn(this,(_ref=ImageBackground.__proto__||Object.getPrototypeOf(ImageBackground)).call.apply(_ref,[this].concat(args))),_this),_this.
+
+
+
+
+
+
+
+
+
+_viewRef=null,_this.
+
+_captureRef=function(ref){
+_this._viewRef=ref;
+},_temp),babelHelpers.possibleConstructorReturn(_this,_ret);}babelHelpers.createClass(ImageBackground,[{key:"setNativeProps",value:function setNativeProps(props){// Work-around flow
+var viewRef=this._viewRef;if(viewRef){ensureComponentIsNative(viewRef);viewRef.setNativeProps(props);}}},{key:"render",value:function render()
+{var _props=
+this.props,children=_props.children,style=_props.style,imageStyle=_props.imageStyle,imageRef=_props.imageRef,props=babelHelpers.objectWithoutProperties(_props,["children","style","imageStyle","imageRef"]);
+
+return(
+React.createElement(View,{style:style,ref:this._captureRef},
+React.createElement(Image,babelHelpers.extends({},
+props,{
+style:[
+StyleSheet.absoluteFill,
+{
+// Temporary Workaround:
+// Current (imperfect yet) implementation of <Image> overwrites width and height styles
+// (which is not quite correct), and these styles conflict with explicitly set styles
+// of <ImageBackground> and with our internal layout model here.
+// So, we have to proxy/reapply these styles explicitly for actual <Image> component.
+// This workaround should be removed after implementing proper support of
+// intrinsic content size of the <Image>.
+width:style.width,
+height:style.height},
+
+imageStyle],
+
+ref:imageRef})),
+
+children));
+
+
+}}]);return ImageBackground;}(React.Component);
+
+
+module.exports=ImageBackground;

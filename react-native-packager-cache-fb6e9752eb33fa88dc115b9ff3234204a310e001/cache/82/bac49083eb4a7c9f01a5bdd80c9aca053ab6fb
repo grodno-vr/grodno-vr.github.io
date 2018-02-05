@@ -1,0 +1,50 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule UnimplementedView
+ * 
+ * @format
+ */
+'use strict';
+
+var React=require('React');
+var StyleSheet=require('StyleSheet');
+
+/**
+ * Common implementation for a simple stubbed view. Simply applies the view's styles to the inner
+ * View component and renders its children.
+ */var
+UnimplementedView=function(_React$Component){babelHelpers.inherits(UnimplementedView,_React$Component);function UnimplementedView(){babelHelpers.classCallCheck(this,UnimplementedView);return babelHelpers.possibleConstructorReturn(this,(UnimplementedView.__proto__||Object.getPrototypeOf(UnimplementedView)).apply(this,arguments));}babelHelpers.createClass(UnimplementedView,[{key:"setNativeProps",value:function setNativeProps()
+{
+// Do nothing.
+// This method is required in order to use this view as a Touchable* child.
+// See ensureComponentIsNative.js for more info
+}},{key:"render",value:function render()
+
+{
+// Workaround require cycle from requireNativeComponent
+var View=require('View');
+return(
+React.createElement(View,{style:[styles.unimplementedView,this.props.style]},
+this.props.children));
+
+
+}}]);return UnimplementedView;}(React.Component);
+
+
+var styles=StyleSheet.create({
+unimplementedView:
+
+
+
+
+
+{}});
+
+
+module.exports=UnimplementedView;

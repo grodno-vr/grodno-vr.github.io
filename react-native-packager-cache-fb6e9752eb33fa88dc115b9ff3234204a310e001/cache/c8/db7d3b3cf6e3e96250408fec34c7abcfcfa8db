@@ -1,0 +1,22 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule StatusBarIOS
+ */
+
+'use strict';
+
+var React=require('React');var
+
+DummyStatusBarIOS=function(_React$Component){babelHelpers.inherits(DummyStatusBarIOS,_React$Component);function DummyStatusBarIOS(){babelHelpers.classCallCheck(this,DummyStatusBarIOS);return babelHelpers.possibleConstructorReturn(this,(DummyStatusBarIOS.__proto__||Object.getPrototypeOf(DummyStatusBarIOS)).apply(this,arguments));}babelHelpers.createClass(DummyStatusBarIOS,[{key:"render",value:function render()
+{
+return null;
+}}]);return DummyStatusBarIOS;}(React.Component);
+
+
+module.exports=DummyStatusBarIOS;

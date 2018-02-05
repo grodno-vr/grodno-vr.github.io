@@ -1,0 +1,60 @@
+Object.defineProperty(exports,"__esModule",{value:true});
+
+
+
+
+
+
+
+
+
+
+var _Module2=require("./Module");var _Module3=babelHelpers.interopRequireDefault(_Module2);
+
+
+
+
+
+
+
+
+
+/**
+ * DeviceInfoModule Native Module
+ * @class DeviceInfoModule
+ * @extends Module
+ */var
+DeviceInfo=function(_Module){babelHelpers.inherits(DeviceInfo,_Module);
+
+
+
+
+
+function DeviceInfo(){babelHelpers.classCallCheck(this,DeviceInfo);var _this=babelHelpers.possibleConstructorReturn(this,(DeviceInfo.__proto__||Object.getPrototypeOf(DeviceInfo)).call(this,
+'DeviceInfo'));
+_this.Dimensions={
+windowPhysicalPixels:{
+width:1024,
+height:1024,
+scale:1,
+fontScale:1,
+densityDpi:1},
+
+screenPhysicalPixels:{
+width:1024,
+height:1024,
+scale:1,
+fontScale:1,
+densityDpi:1}};return _this;
+
+
+}return DeviceInfo;}(_Module3.default);/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */exports.default=DeviceInfo;
