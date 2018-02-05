@@ -4,11 +4,15 @@ const center = {
     portals: [
         {
             name: 'bridge',
-            transformPortal: [{translate: [-10, 0, -0.5]}]
+            transformPortal: [{translate: [-15, 0, -0.5]}]
         },
         {
             name: 'brigits',
             transformPortal: [{translate: [7, 0, 11]}]
+        },
+        {
+            name: 'vilenskaja',
+            transformPortal: [{translate: [15, 0, -7]}]
         }
     ],
     labels: [

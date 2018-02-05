@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         // borderColor: 'gray',
         borderTopRightRadius: 0.6,
         borderBottomLeftRadius: 0.6,
-        borderBottomRightRadius: 0.6,
+        borderBottomRightRadius: 0.6
         //position: 'absolute',
     },
     button: {
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         // opacity: 0.75,
         // borderTopLeftRadius: 0.6,
         // borderBottomLeftRadius: 0.6,
-        backgroundColor: 'black',
+        backgroundColor: 'gray',
         borderRadius: 0.1,
         marginLeft: -0.2,
         marginTop: -0.2,

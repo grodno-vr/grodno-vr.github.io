@@ -21,12 +21,12 @@ class OldImage extends React.Component {
             Animated
                 .timing(
                     this.state.animatedScale,
-                    { toValue: 0.8, duration: 400, }
+                    { toValue: 0.8, duration: 500 }
                 ),
             Animated
                 .timing(
                     this.state.opacity,
-                    { toValue: 1, duration: 800, }
+                    { toValue: 1, duration: 800 }
                 )
         ]).start();
     }
