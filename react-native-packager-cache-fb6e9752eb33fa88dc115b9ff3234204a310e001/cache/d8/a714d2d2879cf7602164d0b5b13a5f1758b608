@@ -141,7 +141,7 @@ height:4.9}},
 
 {
 source:'places/bridge/old/bernardineSisters1922.png',
-year:'1934',
+year:'1922',
 style:{
 transform:[{translate:[-15,1,-3]},{scale:1},{rotateY:70}],
 width:4.9,
