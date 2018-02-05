@@ -102,6 +102,56 @@ const bridge = {
         },
         {
             buttonStyle: {},
+            offset: -80,
+            viewStyle: {
+                transform: [{translate: [-17, 5, -2]}, { scale : 3 }, { rotateY: 80 }]
+            },
+            textStyle: {
+                fontSize: 0.2,
+                textAlign: 'center'
+            },
+            text: 'Church of the Bernardine Sisters',
+            oldImages: [
+                {
+                    source: 'places/bridge/old/bernardineSisters1944.png',
+                    year: '1944',
+                    style: {
+                        transform: [{translate: [-15, 5, -3]}, { scale : 1 }, { rotateY: 70 }],
+                        width: 8,
+                        height: 4.9
+                    }
+                },
+                {
+                    source: 'places/bridge/old/bernardineSisters1900.png',
+                    year: '1900',
+                    style: {
+                        transform: [{translate: [-17, 5, 4]}, { scale : 1 }, { rotateY: 90 }],
+                        width: 8,
+                        height: 4.9
+                    }
+                },
+                {
+                    source: 'places/bridge/old/bernardineSisters1934.png',
+                    year: '1934',
+                    style: {
+                        transform: [{translate: [-17, 0.5, 4]}, { scale : 1 }, { rotateY: 90 }],
+                        width: 8,
+                        height: 4.9
+                    }
+                },
+                {
+                    source: 'places/bridge/old/bernardineSisters1922.png',
+                    year: '1934',
+                    style: {
+                        transform: [{translate: [-15, 1, -3]}, { scale : 1 }, { rotateY: 70 }],
+                        width: 4.9,
+                        height: 8
+                    }
+                }
+            ]
+        },
+        {
+            buttonStyle: {},
             offset: -110,
             viewStyle: {
                 transform: [{translate: [-17, 2, 10]}, { scale : 3 }, { rotateY: 120 }]
@@ -175,15 +225,6 @@ const bridge = {
                     }
                 },
                 {
-                    source: 'places/bridge/old/bernardine1944.png',
-                    year: '1944',
-                    style: {
-                        transform: [{translate: [0, 7, 10]}, { scale : 1 }, { rotateY: 200 }],
-                        width: 8,
-                        height: 4.9
-                    }
-                },
-                {
                     source: 'places/bridge/old/bernardine1950.jpg',
                     year: '1950th',
                     style: {
@@ -196,7 +237,7 @@ const bridge = {
                     source: 'places/bridge/old/bernardine1950-1.jpg',
                     year: '1950th',
                     style: {
-                        transform: [{translate: [1, 3, 10]}, { scale : 1 }, { rotateY: 200 }],
+                        transform: [{translate: [1, 7, 10]}, { scale : 1 }, { rotateY: 200 }],
                         width: 8,
                         height: 4.9
                     }
