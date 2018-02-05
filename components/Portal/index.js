@@ -5,6 +5,9 @@ import styles from './styles';
 
 const Easing = require('Easing');
 
+const AnimatedSphere = Animated.createAnimatedComponent(Sphere);
+const AnimatedBox = Animated.createAnimatedComponent(Box);
+
 class Portal extends React.Component {
 
     constructor() {
@@ -13,8 +16,9 @@ class Portal extends React.Component {
             animationRequestId: null,
             animatedScale: new Animated.Value(1),
             rotate: 0,
-            opacity: 0.75,
-            showArrow: true
+            opacity: new Animated.Value(0.75),
+            borderOpacity: new Animated.Value(0.2),
+            arrowOpacity: new Animated.Value(0.8)
         };
     }
 
@@ -33,27 +37,77 @@ class Portal extends React.Component {
     }
 
     mouseIn() {
-        this.setState({ showArrow: false, opacity: 1 });
-        Animated.timing(
-            this.state.animatedScale,
-            {
-                toValue: 2,
-                duration: 450,
-                easing: Easing.in
-            }
-        ).start();
+        Animated.parallel([
+            Animated.timing(
+                this.state.borderOpacity,
+                {
+                    toValue: 0,
+                    duration: 600,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.arrowOpacity,
+                {
+                    toValue: 0,
+                    duration: 600,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.opacity,
+                {
+                    toValue: 1,
+                    duration: 500,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.animatedScale,
+                {
+                    toValue: 2,
+                    duration: 450,
+                    easing: Easing.in
+                }
+            )
+        ]).start();
     }
 
     mouseOut() {
-        this.setState({ showArrow: true, opacity: 0.75 });
-        Animated.timing(
-            this.state.animatedScale,
-            {
-                toValue: 1,
-                duration: 250,
-                easing: Easing.in
-            }
-        ).start();
+        Animated.parallel([
+            Animated.timing(
+                this.state.borderOpacity,
+                {
+                    toValue: 0.2,
+                    duration: 400,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.arrowOpacity,
+                {
+                    toValue: 0.8,
+                    duration: 600,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.opacity,
+                {
+                    toValue: 0.75,
+                    duration: 500,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.animatedScale,
+                {
+                    toValue: 1,
+                    duration: 450,
+                    easing: Easing.in
+                }
+            )
+        ]).start();
     }
 
     render() {
@@ -77,7 +131,7 @@ class Portal extends React.Component {
                     onEnter={() => this.mouseIn()}
                     onExit={() => this.mouseOut()}
                 >
-                    <Sphere
+                    <AnimatedSphere
                         style={{
                             opacity: this.state.opacity,
                             transform: [
@@ -90,9 +144,9 @@ class Portal extends React.Component {
                         widthSegments={20}
                         heightSegments={12}
                     />
-                    <Sphere
+                    <AnimatedSphere
                         style={{
-                            opacity: this.state.showArrow ? 0.2 : 0,
+                            opacity: this.state.borderOpacity,
                             transform: [
                                 { translateY: 0 }
                             ]
@@ -102,19 +156,19 @@ class Portal extends React.Component {
                         heightSegments={12}
                     />
                 </VrButton>
-                { this.state.showArrow && <Box
+                <AnimatedBox
                     texture={asset('icons/arrow.png')}
                     dimWidth={1}
                     dimDepth={1}
                     dimHeight={1}
                     style={{
-                            opacity: 0.8,
+                            opacity: this.state.arrowOpacity,
                             transform: [
                                 { translateY: -2 },
                                 { rotateY: this.state.rotate }
                             ]
                         }}
-                />}
+                />
             </Animated.View>
         );
     }
