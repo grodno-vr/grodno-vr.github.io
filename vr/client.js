@@ -22,7 +22,7 @@ function init(bundle, parent, options) {
     allowCarmelDeeplink: true,
     antialias: true,
     hideFullscreen: true,
-    cursorVisibility: 'visible',
+    cursorVisibility: 'auto',
     ...options,
     nativeModules: [domOverlay, persistenceOverlayOverlay]
   });

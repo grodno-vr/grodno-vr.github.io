@@ -49,6 +49,7 @@
     z-index: 999999999;
     top: 0;
     left: 0;
+    overflow: scroll;
 
     display: flex;
 

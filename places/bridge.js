@@ -4,7 +4,7 @@ const bridge = {
     portals: [
         {
             name: 'center',
-            transformPortal: [{translate: [10, 0, -7]}]
+            transformPortal: [{translate: [12, 0, -7]}]
         }
     ],
     labels: [
