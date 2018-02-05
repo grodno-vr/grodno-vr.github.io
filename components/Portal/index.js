@@ -14,8 +14,8 @@ class Portal extends React.Component {
         super();
         this.state = {
             animationRequestId: null,
-            animatedScale: new Animated.Value(1),
             rotate: 0,
+            scale: new Animated.Value(1),
             opacity: new Animated.Value(0.75),
             borderOpacity: new Animated.Value(0.2),
             arrowOpacity: new Animated.Value(0.8)
@@ -63,7 +63,7 @@ class Portal extends React.Component {
                 }
             ),
             Animated.timing(
-                this.state.animatedScale,
+                this.state.scale,
                 {
                     toValue: 2,
                     duration: 450,
@@ -100,7 +100,7 @@ class Portal extends React.Component {
                 }
             ),
             Animated.timing(
-                this.state.animatedScale,
+                this.state.scale,
                 {
                     toValue: 1,
                     duration: 450,
@@ -111,46 +111,40 @@ class Portal extends React.Component {
     }
 
     render() {
-        const { transformPortal, place } = this.props;
+        const { transformPortal, place, style, onClick } = this.props;
+        const { scale, opacity, rotate, borderOpacity, arrowOpacity } = this.state;
 
         return (
             <Animated.View
                 style={[
                     styles.view,
-                    this.props.style,
-                    {
-                        transform: [
-                            ...transformPortal,
-                            { scale: this.state.animatedScale }
-                        ]
-                    }
+                    style,
+                    { transform: [ ...transformPortal, { scale } ] }
                 ]}
             >
                 <VrButton
-                    onClick={() => this.props.onClick(place)}
+                    onClick={() => onClick(place)}
                     onEnter={() => this.mouseIn()}
                     onExit={() => this.mouseOut()}
                 >
                     <AnimatedSphere
-                        style={{
-                            opacity: this.state.opacity,
-                            transform: [
-                                { translateY: 0 },
-                                { rotateY: this.state.rotate }
-                            ]
-                        }}
+                        style={[
+                            styles.sphere,
+                            {
+                                opacity,
+                                transform: [{ rotateY: rotate }]
+                            }
+                        ]}
                         texture={asset(`/places/${place}/portal.jpg`)}
                         radius={1.1}
                         widthSegments={20}
                         heightSegments={12}
                     />
                     <AnimatedSphere
-                        style={{
-                            opacity: this.state.borderOpacity,
-                            transform: [
-                                { translateY: 0 }
-                            ]
-                        }}
+                        style={[
+                            styles.border,
+                            { opacity: borderOpacity }
+                        ]}
                         radius={1.4}
                         widthSegments={20}
                         heightSegments={12}
@@ -161,13 +155,13 @@ class Portal extends React.Component {
                     dimWidth={1}
                     dimDepth={1}
                     dimHeight={1}
-                    style={{
-                            opacity: this.state.arrowOpacity,
-                            transform: [
-                                { translateY: -2 },
-                                { rotateY: this.state.rotate }
-                            ]
-                        }}
+                    style={[
+                        styles.box,
+                        {
+                            opacity: arrowOpacity,
+                            transform: [{ rotateY: rotate }]
+                        }
+                    ]}
                 />
             </Animated.View>
         );

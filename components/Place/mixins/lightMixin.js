@@ -70,15 +70,15 @@ const lightMixin = Base => class extends Base {
         // );
     }
 
-    cancelCurrentAnimationRequest() {
-        if (this.animationRequestId) {
-            cancelAnimationFrame(this.animationRequestId);
-        }
-    }
-
-    componentWillUnmount() {
-        this.cancelCurrentAnimationRequest();
-    }
+    // cancelCurrentAnimationRequest() {
+    //     if (this.animationRequestId) {
+    //         cancelAnimationFrame(this.animationRequestId);
+    //     }
+    // }
+    //
+    // componentWillUnmount() {
+    //     this.cancelCurrentAnimationRequest();
+    // }
 };
 
 export default lightMixin;

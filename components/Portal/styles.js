@@ -4,12 +4,20 @@ const styles = StyleSheet.create({
     view: {
         position: 'absolute'
     },
-    arrowView: {
-        position: 'absolute',
-        height: 1,
-        width: 1,
-        backgroundColor: 'black',
-        borderRadius: 0.5
+    sphere: {
+        transform: [
+            { translateY: 0 }
+        ]
+    },
+    border: {
+        transform: [
+            { translateY: 0 }
+        ]
+    },
+    box: {
+        transform: [
+            { translateY: -2 }
+        ]
     }
 });
 
