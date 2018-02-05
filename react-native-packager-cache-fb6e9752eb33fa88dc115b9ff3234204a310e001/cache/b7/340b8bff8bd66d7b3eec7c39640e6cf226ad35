@@ -1,0 +1,207 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule InitializeCore
+ * 
+ */
+
+/* eslint-disable strict */
+/* globals window: true */
+
+/**
+ * Sets up global variables typical in most JavaScript environments.
+ *
+ *   1. Global timers (via `setTimeout` etc).
+ *   2. Global console object.
+ *   3. Hooks for printing stack traces with source maps.
+ *
+ * Leaves enough room in the environment for implementing your own:
+ *
+ *   1. Require system.
+ *   2. Bridged modules.
+ *
+ */
+'use strict';
+
+if(global.GLOBAL===undefined){
+global.GLOBAL=global;
+}
+
+if(global.window===undefined){
+global.window=global;
+}
+
+var defineLazyObjectProperty=require('defineLazyObjectProperty');
+
+/**
+ * Sets an object's property. If a property with the same name exists, this will
+ * replace it but maintain its descriptor configuration. The property will be
+ * replaced with a lazy getter.
+ *
+ * In DEV mode the original property value will be preserved as `original[PropertyName]`
+ * so that, if necessary, it can be restored. For example, if you want to route
+ * network requests through DevTools (to trace them):
+ *
+ *   global.XMLHttpRequest = global.originalXMLHttpRequest;
+ *
+ * @see https://github.com/facebook/react-native/issues/934
+ */
+function defineLazyProperty(
+object,
+name,
+getValue)
+{
+var descriptor=Object.getOwnPropertyDescriptor(object,name);var _ref=
+
+
+
+
+
+
+
+
+descriptor||{},enumerable=_ref.enumerable,writable=_ref.writable,configurable=_ref.configurable;
+if(descriptor&&!configurable){
+console.error('Failed to set polyfill. '+name+' is not configurable.');
+return;
+}
+
+defineLazyObjectProperty(object,name,{
+get:getValue,
+enumerable:enumerable!==false,
+writable:writable!==false});
+
+}
+
+function polyfillGlobal(name,getValue){
+defineLazyProperty(global,name,getValue);
+}
+
+// Set up process
+global.process=global.process||{};
+global.process.env=global.process.env||{};
+if(!global.process.env.NODE_ENV){
+global.process.env.NODE_ENV='production';
+}
+
+// Setup the Systrace profiling hooks if necessary
+if(global.__RCTProfileIsProfiling){
+var Systrace=require('Systrace');
+Systrace.setEnabled(true);
+}
+
+
+
+
+
+
+// Set up console
+var ExceptionsManager=require('ExceptionsManager');
+ExceptionsManager.installConsoleErrorReporter();
+
+// Set up error handler
+if(!global.__fbDisableExceptionsManager){
+var handleError=function handleError(e,isFatal){
+try{
+ExceptionsManager.handleException(e,isFatal);
+}catch(ee){
+/* eslint-disable no-console-disallow */
+console.log('Failed to print error: ',ee.message);
+/* eslint-enable no-console-disallow */
+throw e;
+}
+};
+
+var ErrorUtils=require('ErrorUtils');
+ErrorUtils.setGlobalHandler(handleError);
+}
+
+// Set up collections
+var _shouldPolyfillCollection=require('_shouldPolyfillES6Collection');
+if(_shouldPolyfillCollection('Map')){
+polyfillGlobal('Map',function(){return require('Map');});
+}
+if(_shouldPolyfillCollection('Set')){
+polyfillGlobal('Set',function(){return require('Set');});
+}
+
+// Set up Promise
+// The native Promise implementation throws the following error:
+// ERROR: Event loop not supported.
+polyfillGlobal('Promise',function(){return require('Promise');});
+
+// Set up regenerator.
+polyfillGlobal('regeneratorRuntime',function(){
+// The require just sets up the global, so make sure when we first
+// invoke it the global does not exist
+delete global.regeneratorRuntime;
+require('regenerator-runtime/runtime');
+return global.regeneratorRuntime;
+});
+
+// Set up timers
+var defineLazyTimer=function defineLazyTimer(name){
+polyfillGlobal(name,function(){return require('JSTimers')[name];});
+};
+defineLazyTimer('setTimeout');
+defineLazyTimer('setInterval');
+defineLazyTimer('setImmediate');
+defineLazyTimer('clearTimeout');
+defineLazyTimer('clearInterval');
+defineLazyTimer('clearImmediate');
+defineLazyTimer('requestAnimationFrame');
+defineLazyTimer('cancelAnimationFrame');
+defineLazyTimer('requestIdleCallback');
+defineLazyTimer('cancelIdleCallback');
+
+// Set up XHR
+// The native XMLHttpRequest in Chrome dev tools is CORS aware and won't
+// let you fetch anything from the internet
+polyfillGlobal('XMLHttpRequest',function(){return require('XMLHttpRequest');});
+polyfillGlobal('FormData',function(){return require('FormData');});
+
+polyfillGlobal('fetch',function(){return require('fetch').fetch;});
+polyfillGlobal('Headers',function(){return require('fetch').Headers;});
+polyfillGlobal('Request',function(){return require('fetch').Request;});
+polyfillGlobal('Response',function(){return require('fetch').Response;});
+polyfillGlobal('WebSocket',function(){return require('WebSocket');});
+polyfillGlobal('Blob',function(){return require('Blob');});
+polyfillGlobal('URL',function(){return require('URL');});
+
+// Set up alert
+if(!global.alert){
+global.alert=function(text){
+// Require Alert on demand. Requiring it too early can lead to issues
+// with things like Platform not being fully initialized.
+require('Alert').alert('Alert',''+text);
+};
+}
+
+// Set up Geolocation
+var navigator=global.navigator;
+if(navigator===undefined){
+global.navigator=navigator={};
+}
+
+// see https://github.com/facebook/react-native/issues/10881
+defineLazyProperty(navigator,'product',function(){return'ReactNative';});
+defineLazyProperty(navigator,'geolocation',function(){return require('Geolocation');});
+
+// Just to make sure the JS gets packaged up. Wait until the JS environment has
+// been initialized before requiring them.
+var BatchedBridge=require('BatchedBridge');
+BatchedBridge.registerLazyCallableModule('Systrace',function(){return require('Systrace');});
+BatchedBridge.registerLazyCallableModule('JSTimers',function(){return require('JSTimers');});
+BatchedBridge.registerLazyCallableModule('HeapCapture',function(){return require('HeapCapture');});
+BatchedBridge.registerLazyCallableModule('SamplingProfiler',function(){return require('SamplingProfiler');});
+BatchedBridge.registerLazyCallableModule('RCTLog',function(){return require('RCTLog');});
+BatchedBridge.registerLazyCallableModule('RCTDeviceEventEmitter',function(){return require('RCTDeviceEventEmitter');});
+BatchedBridge.registerLazyCallableModule('RCTNativeAppEventEmitter',function(){return require('RCTNativeAppEventEmitter');});
+BatchedBridge.registerLazyCallableModule('PerformanceLogger',function(){return require('PerformanceLogger');});
+
+// Set up devtools

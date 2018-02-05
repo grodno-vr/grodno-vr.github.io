@@ -1,0 +1,31 @@
+Object.defineProperty(exports,"__esModule",{value:true});var _react=require("react");var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactVr=require("react-vr");
+
+var _components=require("./components");
+var _places=require("./places");var _places2=babelHelpers.interopRequireDefault(_places);var
+
+
+GrodnoVR=function(_React$Component){babelHelpers.inherits(GrodnoVR,_React$Component);
+function GrodnoVR(){babelHelpers.classCallCheck(this,GrodnoVR);var _this=babelHelpers.possibleConstructorReturn(this,(GrodnoVR.__proto__||Object.getPrototypeOf(GrodnoVR)).call(this));
+
+_this.placeKeys=Object.keys(_places2.default);var _this$placeKeys=babelHelpers.slicedToArray(
+
+_this.placeKeys,1),firstPlace=_this$placeKeys[0];
+_this.state={currentPlace:firstPlace};return _this;
+}babelHelpers.createClass(GrodnoVR,[{key:"render",value:function render()
+
+{var _this2=this;var
+currentPlace=this.state.currentPlace;
+
+return(
+_react2.default.createElement(_components.Place,{
+place:_places2.default[currentPlace],
+onChange:function onChange(placeId){
+_this2.setState({currentPlace:placeId});
+}}));
+
+
+}}]);return GrodnoVR;}(_react2.default.Component);exports.default=GrodnoVR;
+;
+
+_reactVr.AppRegistry.registerComponent('GrodnoVR',function(){return GrodnoVR;});

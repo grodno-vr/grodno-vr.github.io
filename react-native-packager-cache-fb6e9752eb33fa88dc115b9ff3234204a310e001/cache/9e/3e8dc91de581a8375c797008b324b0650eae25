@@ -1,0 +1,74 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule LiveEnvCamera
+ */
+'use strict';
+
+var NativeMethodsMixin=require('NativeMethodsMixin');
+var React=require('React');
+var ReactNativeViewAttributes=require('ReactNativeViewAttributes');
+var View=require('View');
+var requireNativeComponent=require('requireNativeComponent');
+var StyleSheetPropType=require('StyleSheetPropType');
+var LayoutAndTransformPropTypes=require('LayoutAndTransformPropTypes');
+
+var createReactClass=require('create-react-class');
+
+/**
+ * Displays the environment facing camera. By default the camera is position:'absolute'
+ * `<LiveEnvCamera />`
+ * The camera image is displayed on geometry that is 1000m away from the viewer
+ */
+var LiveEnvCamera=createReactClass({displayName:"LiveEnvCamera",
+mixins:[NativeMethodsMixin],
+
+propTypes:babelHelpers.extends({},
+View.propTypes,{
+style:StyleSheetPropType(LayoutAndTransformPropTypes)}),
+
+
+viewConfig:{
+uiViewClassName:'LiveEnvCamera',
+validAttributes:babelHelpers.extends({},
+ReactNativeViewAttributes.RCTView)},
+
+
+
+getDefaultProps:function getDefaultProps(){
+return{};
+},
+
+render:function render(){
+var props=babelHelpers.extends({},this.props)||{};
+props.style=props.style||{};
+if(!props.style.position){
+props.style.position='absolute';
+}
+// default panos to being a render group
+if(!props.style.renderGroup){
+props.style.renderGroup=true;
+}
+
+return(
+React.createElement(RKLiveEnvCamera,babelHelpers.extends({},
+props,{
+testID:this.props.testID,
+onStartShouldSetResponder:function onStartShouldSetResponder(){return true;},
+onResponderTerminationRequest:function onResponderTerminationRequest(){return false;}}),
+this.props.children));
+
+
+}});
+
+
+var RKLiveEnvCamera=requireNativeComponent('LiveEnvCamera',LiveEnvCamera,{
+nativeOnly:{}});
+
+
+module.exports=LiveEnvCamera;

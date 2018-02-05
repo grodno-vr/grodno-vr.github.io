@@ -1,0 +1,81 @@
+Object.defineProperty(exports,"__esModule",{value:true});exports.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+registerModelLoader=registerModelLoader;exports.
+
+
+
+createModelInstance=createModelInstance;var _three=require("three");var THREE=babelHelpers.interopRequireWildcard(_three);var _ObjModelLoader=require("../Loaders/ObjModelLoader");var _ObjModelLoader2=babelHelpers.interopRequireDefault(_ObjModelLoader);var _GLTF2ModelLoader=require("../Loaders/GLTF2ModelLoader");var _GLTF2ModelLoader2=babelHelpers.interopRequireDefault(_GLTF2ModelLoader);var modelLoaders=[];/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */function registerModelLoader(modelLoader){modelLoaders.push(modelLoader);}function createModelInstance(modelDefinition,parent,litMaterial,unlitMaterial){if(!modelLoaders){return null;}for(var index=0;index<modelLoaders.length;index++){
+if(modelLoaders[index].canLoad(modelDefinition)){
+return modelLoaders[index].createInstance(
+modelDefinition,
+parent,
+litMaterial,
+unlitMaterial);
+
+}
+}
+return null;
+}
+// register the default obj loader
+registerModelLoader(new _GLTF2ModelLoader2.default());
+registerModelLoader(new _ObjModelLoader2.default());

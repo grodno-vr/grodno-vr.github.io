@@ -1,0 +1,35 @@
+Object.defineProperty(exports,"__esModule",{value:true});
+
+
+
+
+
+
+
+
+
+
+var _Module2=require("./Module");var _Module3=babelHelpers.interopRequireDefault(_Module2);
+
+/**
+ * @file
+ * @class AndroidConstants
+ * @extends Module
+ * @category runtime-modules
+ */var
+AndroidConstants=function(_Module){babelHelpers.inherits(AndroidConstants,_Module);
+
+
+function AndroidConstants(){babelHelpers.classCallCheck(this,AndroidConstants);var _this=babelHelpers.possibleConstructorReturn(this,(AndroidConstants.__proto__||Object.getPrototypeOf(AndroidConstants)).call(this,
+'AndroidConstants'));
+_this.Version=22;return _this;
+}return AndroidConstants;}(_Module3.default);/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */exports.default=AndroidConstants;

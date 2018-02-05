@@ -1,0 +1,55 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule MatrixMath
+ */
+
+'use strict';
+
+var MatrixMath=require('react-native/Libraries/Utilities/MatrixMath');
+
+/**
+ * Returns the rotation around the X, Y & Z axes
+ */
+MatrixMath.rotationMatrixToDegreesXYZ=function(matrix){
+// prettier-ignore
+var _matrix=babelHelpers.slicedToArray(
+
+
+
+
+matrix,16),m00=_matrix[0],m01=_matrix[1],m02=_matrix[2],m03=_matrix[3],m10=_matrix[4],m11=_matrix[5],m12=_matrix[6],m13=_matrix[7],m20=_matrix[8],m21=_matrix[9],m22=_matrix[10],m23=_matrix[11],m30=_matrix[12],m31=_matrix[13],m32=_matrix[14],m33=_matrix[15];
+
+// Check if the matrix is singular
+var sy=Math.sqrt(m00*m00+m10*m10);
+if(sy>0.0001){
+return[Math.atan2(m21,m22),Math.atan2(-m20,sy),Math.atan2(m10,m00)];
+}else{
+return[Math.atan2(-m12,m11),Math.atan2(-m20,0),0];
+}
+};
+
+MatrixMath.createRotateX=function(radians){
+var mat=MatrixMath.createIdentityMatrix();
+MatrixMath.reuseRotateXCommand(mat,radians);
+return mat;
+};
+
+MatrixMath.createRotateY=function(radians){
+var mat=MatrixMath.createIdentityMatrix();
+MatrixMath.reuseRotateYCommand(mat,radians);
+return mat;
+};
+
+MatrixMath.createRotateZ=function(radians){
+var mat=MatrixMath.createIdentityMatrix();
+MatrixMath.reuseRotateZCommand(mat,radians);
+return mat;
+};
+
+module.exports=MatrixMath;

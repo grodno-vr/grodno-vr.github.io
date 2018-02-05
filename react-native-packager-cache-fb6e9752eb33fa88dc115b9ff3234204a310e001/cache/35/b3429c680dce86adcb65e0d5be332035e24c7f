@@ -1,0 +1,32 @@
+Object.defineProperty(exports,"__esModule",{value:true});exports.default=
+
+
+
+
+
+
+
+
+
+
+
+merge;/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *//**
+ * Merges the properties of two objects into one
+ */function merge(foo,bar){var merged={};for(var each in bar){if(foo.hasOwnProperty(each)&&bar.hasOwnProperty(each)){if(typeof foo[each]==='object'&&typeof bar[each]==='object'){merged[each]=merge(foo[each],bar[each]);}else{merged[each]=bar[each];}}else if(bar.hasOwnProperty(each)){
+merged[each]=bar[each];
+}
+}
+for(var _each in foo){
+if(!(_each in bar)&&foo.hasOwnProperty(_each)){
+merged[_each]=foo[_each];
+}
+}
+return merged;
+}

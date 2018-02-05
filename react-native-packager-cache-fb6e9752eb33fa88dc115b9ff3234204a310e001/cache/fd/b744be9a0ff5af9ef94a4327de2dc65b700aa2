@@ -1,0 +1,32 @@
+'use strict';
+
+var React=require('react');
+
+function cloneReferencedElement(element,config){
+var cloneRef=config.ref;
+var originalRef=element.ref;for(var _len=arguments.length,children=Array(_len>2?_len-2:0),_key=2;_key<_len;_key++){children[_key-2]=arguments[_key];}
+if(originalRef==null||cloneRef==null){
+return React.cloneElement.apply(React,[element,config].concat(children));
+}
+
+if(typeof originalRef!=='function'){
+
+
+
+
+
+
+
+return React.cloneElement.apply(React,[element,config].concat(children));
+}
+
+return React.cloneElement.apply(React,[element,babelHelpers.extends({},
+config,{
+ref:function ref(component){
+cloneRef(component);
+originalRef(component);
+}})].concat(
+children));
+}
+
+module.exports=cloneReferencedElement;

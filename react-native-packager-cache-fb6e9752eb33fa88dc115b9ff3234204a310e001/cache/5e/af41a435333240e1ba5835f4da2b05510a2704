@@ -1,0 +1,95 @@
+Object.defineProperty(exports,"__esModule",{value:true});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _BaseView=require("./BaseView");var _BaseView2=babelHelpers.interopRequireDefault(_BaseView);
+var _merge=require("../Utils/merge");var _merge2=babelHelpers.interopRequireDefault(_merge);
+var _ovrui=require("ovrui");var OVRUI=babelHelpers.interopRequireWildcard(_ovrui);
+var _three=require("three");var THREE=babelHelpers.interopRequireWildcard(_three);/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *//**
+ * RCTSpotLight: runtime implementation of the <SpotLight >
+ * https://threejs.org/docs/index.html#api/lights/SpotLight
+ * @class RCTSpotLight
+ * @extends RCTBaseView
+ */var RCTSpotLight=function(_RCTBaseView){babelHelpers.inherits(RCTSpotLight,_RCTBaseView);/**
+   * constructor: allocates the required resources and sets defaults
+   */function RCTSpotLight(guiSys){babelHelpers.classCallCheck(this,RCTSpotLight);var _this=babelHelpers.possibleConstructorReturn(this,(RCTSpotLight.__proto__||Object.getPrototypeOf(RCTSpotLight)).call(this));var light=new THREE.SpotLight();_this.view=new OVRUI.UIView(guiSys);_this.view.add(light);// In "physically correct" mode, the product of color * intensity is
+// interpreted as luminous intensity measured in candelas.
+Object.defineProperty(_this.props,'intensity',{set:function set(value){light.intensity=value;
+}});
+
+// If non-zero, light will attenuate linearly from maximum intensity at light position down to zero at distance.
+Object.defineProperty(_this.props,'distance',{
+set:function set(value){
+light.distance=value;
+}});
+
+// The amount the light dims along the distance of the light
+// In "physically correct" mode, decay = 2 leads to physically realistic light falloff.
+Object.defineProperty(_this.props,'decay',{
+set:function set(value){
+light.decay=value;
+}});
+
+// Maximum angle of light dispersion from its direction whose upper bound is Math.PI/2.
+Object.defineProperty(_this.props,'angle',{
+set:function set(value){
+light.angle=value*Math.PI/180;
+}});
+
+// Percent of the spotlight cone that is attenuated due to penumbra.
+// Takes values between zero and 100. Default is zero.
+Object.defineProperty(_this.props,'penumbra',{
+set:function set(value){
+light.penumbra=Math.min(Math.max(value,0),100)/100.0;
+}});
+
+// Color of the light.
+Object.defineProperty(_this.style,'color',{
+set:function set(value){
+light.color.set(value);
+}});
+
+
+// defaults that match three.js
+_this.props.intensity=1;
+_this.props.distance=0;
+_this.props.decay=1;
+_this.props.angle=180;
+_this.props.penumbra=0;return _this;
+}
+
+/**
+   * Describes the properties representable by this view type and merges
+   * with super type
+   */babelHelpers.createClass(RCTSpotLight,null,[{key:"describe",value:function describe()
+{
+return(0,_merge2.default)(babelHelpers.get(RCTSpotLight.__proto__||Object.getPrototypeOf(RCTSpotLight),"describe",this).call(this),{
+// declare the native props sent from react to runtime
+NativeProps:{
+intensity:'number',
+distance:'number',
+decay:'number',
+angle:'number',
+penumbra:'number'}});
+
+
+}}]);return RCTSpotLight;}(_BaseView2.default);exports.default=RCTSpotLight;

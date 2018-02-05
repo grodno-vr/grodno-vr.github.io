@@ -1,0 +1,181 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule PerformanceLogger
+ * 
+ * @format
+ */
+'use strict';
+
+var Systrace=require('Systrace');
+
+var infoLog=require('infoLog');
+var performanceNow=
+global.nativePerformanceNow||require('fbjs/lib/performanceNow');
+
+
+
+
+
+
+
+
+var timespans={};
+var extras={};
+var cookies={};
+
+var PRINT_TO_CONSOLE=false;
+
+/**
+ * This is meant to collect and log performance data in production, which means
+ * it needs to have minimal overhead.
+ */
+var PerformanceLogger={
+addTimespan:function addTimespan(key,lengthInMs,description){
+if(timespans[key]){
+
+
+
+
+
+
+return;
+}
+
+timespans[key]={
+description:description,
+totalTime:lengthInMs};
+
+},
+
+startTimespan:function startTimespan(key,description){
+if(timespans[key]){
+
+
+
+
+
+
+return;
+}
+
+timespans[key]={
+description:description,
+startTime:performanceNow()};
+
+cookies[key]=Systrace.beginAsyncEvent(key);
+
+
+
+},
+
+stopTimespan:function stopTimespan(key){
+var timespan=timespans[key];
+if(!timespan||!timespan.startTime){
+
+
+
+
+
+
+return;
+}
+if(timespan.endTime){
+
+
+
+
+
+
+return;
+}
+
+timespan.endTime=performanceNow();
+timespan.totalTime=timespan.endTime-(timespan.startTime||0);
+
+
+
+
+Systrace.endAsyncEvent(key,cookies[key]);
+delete cookies[key];
+},
+
+clear:function clear(){
+timespans={};
+extras={};
+},
+
+clearCompleted:function clearCompleted(){
+for(var _key in timespans){
+if(timespans[_key].totalTime){
+delete timespans[_key];
+}
+}
+extras={};
+},
+
+clearExceptTimespans:function clearExceptTimespans(keys){
+timespans=Object.keys(timespans).reduce(function(previous,key){
+if(keys.indexOf(key)!==-1){
+previous[key]=timespans[key];
+}
+return previous;
+},{});
+extras={};
+},
+
+currentTimestamp:function currentTimestamp(){
+return performanceNow();
+},
+
+getTimespans:function getTimespans(){
+return timespans;
+},
+
+hasTimespan:function hasTimespan(key){
+return!!timespans[key];
+},
+
+logTimespans:function logTimespans(){
+for(var _key2 in timespans){
+if(timespans[_key2].totalTime){
+infoLog(_key2+': '+timespans[_key2].totalTime+'ms');
+}
+}
+},
+
+addTimespans:function addTimespans(newTimespans,labels){
+for(var ii=0,l=newTimespans.length;ii<l;ii+=2){
+var label=labels[ii/2];
+PerformanceLogger.addTimespan(
+label,
+newTimespans[ii+1]-newTimespans[ii],
+label);
+
+}
+},
+
+setExtra:function setExtra(key,value){
+if(extras[key]){
+
+
+
+
+
+
+return;
+}
+extras[key]=value;
+},
+
+getExtras:function getExtras(){
+return extras;
+}};
+
+
+module.exports=PerformanceLogger;

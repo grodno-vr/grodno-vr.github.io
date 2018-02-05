@@ -1,0 +1,22 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule VibrationIOS
+ */
+
+'use strict';
+
+var React=require('React');var
+
+DummyVibrationIOS=function(_React$Component){babelHelpers.inherits(DummyVibrationIOS,_React$Component);function DummyVibrationIOS(){babelHelpers.classCallCheck(this,DummyVibrationIOS);return babelHelpers.possibleConstructorReturn(this,(DummyVibrationIOS.__proto__||Object.getPrototypeOf(DummyVibrationIOS)).apply(this,arguments));}babelHelpers.createClass(DummyVibrationIOS,[{key:"render",value:function render()
+{
+return null;
+}}]);return DummyVibrationIOS;}(React.Component);
+
+
+module.exports=DummyVibrationIOS;

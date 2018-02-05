@@ -1,0 +1,42 @@
+
+
+
+
+
+require("../process");
+var _reactVrWeb=require("react-vr-web");
+var _persistenceOverlayModule=require("../native-modules/persistenceOverlayModule");var _persistenceOverlayModule2=babelHelpers.interopRequireDefault(_persistenceOverlayModule);
+var _domOverlayModule=require("../native-modules/domOverlayModule");var _domOverlayModule2=babelHelpers.interopRequireDefault(_domOverlayModule);// Auto-generated content.
+// This file contains the boilerplate to set up your React app.
+// If you want to modify your application, start in "index.vr.js"
+// Auto-generated content.
+function init(bundle,parent,options){var domOverlayContainer=document.createElement('div');var persistenceOverlayContainer=document.createElement('div');
+
+domOverlayContainer.id='dom-overlay';
+persistenceOverlayContainer.id='persistence-overlay';
+
+var domOverlay=new _domOverlayModule2.default(domOverlayContainer);
+var persistenceOverlayOverlay=new _persistenceOverlayModule2.default(persistenceOverlayContainer);
+
+var vr=new _reactVrWeb.VRInstance(bundle,'GrodnoVR',parent,babelHelpers.extends({
+allowCarmelDeeplink:true,
+antialias:true,
+hideFullscreen:true,
+cursorVisibility:'auto'},
+options,{
+nativeModules:[domOverlay,persistenceOverlayOverlay]}));
+
+
+vr.player._wrapper.appendChild(domOverlayContainer);
+vr.player._wrapper.appendChild(persistenceOverlayContainer);
+
+vr.render=function(){
+// Any custom behavior you want to perform on each frame goes here
+// vr.scene.rotation.y = vr.scene.rotation.y - 0.002;
+};
+// Begin the animation loop
+vr.start();
+return vr;
+}
+
+window.ReactVR={init:init};

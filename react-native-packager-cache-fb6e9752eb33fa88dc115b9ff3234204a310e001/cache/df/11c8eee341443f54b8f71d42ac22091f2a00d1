@@ -1,0 +1,195 @@
+Object.defineProperty(exports,"__esModule",{value:true});var _react=require("react");var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactVr=require("react-vr");
+var _=require("../.");
+
+var _lightMixin=require("./mixins/lightMixin");var _lightMixin2=babelHelpers.interopRequireDefault(_lightMixin);
+var _styles=require("./styles");var _styles2=babelHelpers.interopRequireDefault(_styles);var
+
+DomOverlayModule=_reactVr.NativeModules.DomOverlayModule,PersistenceOverlayModule=_reactVr.NativeModules.PersistenceOverlayModule;
+var SuperClass=(0,_lightMixin2.default)(_react2.default.Component);
+var AnimatedPano=_reactVr.Animated.createAnimatedComponent(_reactVr.Pano);var
+
+Place=function(_SuperClass){babelHelpers.inherits(Place,_SuperClass);
+
+function Place(){babelHelpers.classCallCheck(this,Place);var _this=babelHelpers.possibleConstructorReturn(this,(Place.__proto__||Object.getPrototypeOf(Place)).call(this));
+
+
+_this.headsetRotation=_reactVr.VrHeadModel.rotation();
+_this.state=babelHelpers.extends({},
+_this.state,{
+loading:true,
+showOldImages:false,
+selectedLabel:null,
+rotate:0,
+rotateY:new _reactVr.Animated.Value(0)});return _this;
+
+}babelHelpers.createClass(Place,[{key:"startLoading",value:function startLoading()
+
+{
+this.setState({loading:true});
+if(_reactVr.VrHeadModel.inVR()){
+// TODO render VR loading indicator
+}else{
+DomOverlayModule.loading();
+}
+}},{key:"stopLoading",value:function stopLoading()
+
+{
+this.setState({loading:false});
+if(_reactVr.VrHeadModel.inVR()){
+// TODO hide VR loading indicator
+}else{
+DomOverlayModule.closeOverlay();
+}
+}},{key:"rotateCamera",value:function rotateCamera()
+
+{var offset=arguments.length>0&&arguments[0]!==undefined?arguments[0]:0;
+this.headsetRotation=_reactVr.VrHeadModel.rotation();var _ref=
+this.headsetRotation||[],_ref2=babelHelpers.slicedToArray(_ref,2),rotateY=_ref2[1];
+if(rotateY+offset>180){
+console.log(rotateY);
+}
+
+_reactVr.Animated.timing(
+this.state.rotateY,
+{
+toValue:rotateY+offset,
+duration:600}).
+
+start();
+}},{key:"componentDidMount",value:function componentDidMount()
+
+{
+this.startLoading();
+this.headsetRotation=_reactVr.VrHeadModel.rotation();
+}},{key:"renderLocalizationControls",value:function renderLocalizationControls()
+
+{
+if(_reactVr.VrHeadModel.inVR()){
+// TODO render VR controls
+}else{
+PersistenceOverlayModule.renderLocalizationButtons({
+buttons:['ENG','RU','BY']});
+
+}
+}},{key:"renderLabels",value:function renderLabels()
+
+{var _this2=this;var _props$place=
+this.props.place;_props$place=_props$place===undefined?{}:_props$place;var _props$place$labels=_props$place.labels,labels=_props$place$labels===undefined?[]:_props$place$labels;
+
+return labels.map(function(label,index){return _this2.renderLabel(label,index);});
+}},{key:"renderLabel",value:function renderLabel(
+
+label,index){var _this3=this;
+return(
+_react2.default.createElement(_.Label,{
+key:index+"-"+label.name,
+style:babelHelpers.extends({},label.viewStyle),
+heading:label.text,
+onEyeClick:function onEyeClick(){
+if(label.oldImages&&label.oldImages.length){
+_this3.putOutLight(0.6,function(){});
+_this3.rotateCamera(label.offset);
+_this3.setState({showOldImages:true,selectedLabel:index});
+}
+},
+onInfoClick:function onInfoClick(){return _this3.openInformation(label.text,label.description);}}));
+
+
+}},{key:"openInformation",value:function openInformation(
+
+title,description){
+if(_reactVr.VrHeadModel.inVR()){
+// TODO open native modal
+}else{
+DomOverlayModule.openInformation({
+title:title,
+description:description||'Has no description'});
+
+}
+}},{key:"renderOldImages",value:function renderOldImages()
+
+{var _this4=this;var _props$place2=
+this.props.place,place=_props$place2===undefined?{}:_props$place2;var
+selectedLabel=this.state.selectedLabel;var _place$labels=
+place.labels,labels=_place$labels===undefined?[]:_place$labels;
+var images=(labels[selectedLabel]||{}).oldImages||[];
+
+return images.map(function(image,index){return _this4.renderOldImage(image,index);});
+}},{key:"renderOldImage",value:function renderOldImage(
+
+image,index){var _this5=this;
+return(
+_react2.default.createElement(_.OldImage,{
+key:index+"-"+image.source,
+onClick:function onClick(){
+_this5.onLight(function(){});
+_this5.setState({showOldImages:false});
+},
+style:babelHelpers.extends({},image.style),
+year:image.year,
+source:image.source}));
+
+
+}},{key:"renderPortals",value:function renderPortals()
+
+{var _this6=this;var _props$place3=
+this.props.place;_props$place3=_props$place3===undefined?{}:_props$place3;var _props$place3$portals=_props$place3.portals,portals=_props$place3$portals===undefined?[]:_props$place3$portals;
+
+return portals.map(function(portal,index){return _this6.renderPortal(portal,index);});
+}},{key:"renderPortal",value:function renderPortal(
+
+portal,index){var _this7=this;var
+transformPortal=portal.transformPortal,name=portal.name;
+
+return(
+_react2.default.createElement(_.Portal,{
+key:name+"-"+index,
+transformPortal:transformPortal,
+place:name,
+onClick:function onClick(placeId){
+_this7.rotateCamera();
+_this7.startLoading();
+_this7.offLight(function(){return _this7.props.onChange(placeId);});
+}}));
+
+
+}},{key:"render",value:function render()
+
+{var _this8=this;var _props=
+this.props,_props$place4=_props.place,place=_props$place4===undefined?{}:_props$place4,_props$style=_props.style,style=_props$style===undefined?{}:_props$style;var _state=
+this.state,loading=_state.loading,showOldImages=_state.showOldImages,light=_state.light;
+
+return(
+_react2.default.createElement(_reactVr.Animated.View,{style:[
+_styles2.default.placeView,
+{transform:[{rotateY:this.state.rotateY}]}]},
+
+this.renderLocalizationControls(),
+_react2.default.createElement(AnimatedPano,{
+onLoad:function onLoad(){return _this8.onLight(function(){return _this8.stopLoading();});},
+source:(0,_reactVr.asset)("/places/"+place.name+"/background.jpg"),
+stereo:'TOP_BOTTOM_3D',
+style:babelHelpers.extends({},
+style,{
+position:'absolute',
+opacity:light,
+tintColor:loading?'grey':'white'})}),
+
+
+
+
+
+
+
+
+!loading&&!showOldImages&&this.renderLabels(),
+!loading&&!showOldImages&&this.renderPortals(),
+
+!loading&&showOldImages&&this.renderOldImages()));
+
+
+}}]);return Place;}(SuperClass);exports.default=
+
+
+Place;

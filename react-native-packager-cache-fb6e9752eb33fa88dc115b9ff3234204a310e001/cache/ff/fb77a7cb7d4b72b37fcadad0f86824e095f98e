@@ -1,0 +1,138 @@
+Object.defineProperty(exports,"__esModule",{value:true});
+
+
+
+
+
+
+
+
+
+
+var _Module2=require("./Module");var _Module3=babelHelpers.interopRequireDefault(_Module2);
+
+
+
+
+
+
+
+
+
+
+var IDLE_CALLBACK_THRESHOLD=1;// Minimum idle execution time of 1ms
+
+/**
+ * The Timing Module allows the browser client to synchronize React timers with
+ * the frame rate of the client.
+ * This module is internal to the runtime and not designed to be called directly
+ * Timers to the React code are distributed by event messages sent via the
+ * WebWorker using the React Native Context
+ * @class Timing
+ * @extends Module
+ *//**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */var Timing=function(_Module){babelHelpers.inherits(Timing,_Module);/**
+   * Constructs a Timing Module with a React Native Context
+   * The Context is used to trigger the registered timer callbacks on each frame
+   */function Timing(rnctx){babelHelpers.classCallCheck(this,Timing);var _this=babelHelpers.possibleConstructorReturn(this,(Timing.__proto__||Object.getPrototypeOf(Timing)).call(this,'Timing'));
+_this._timers={};
+_this._rnctx=rnctx;
+_this._sendIdleEvents=false;
+// Ideal frame size, in milliseconds
+_this._targetFrameDuration=1000.0/(rnctx.isLowLatency?90.0:60.0);return _this;
+}
+
+/**
+   * Creates a new timer, and associates it with a specific callback.
+   * @param callbackID - The callback triggered when this timer completes
+   * @param duration - The time before the timer completes, in milliseconds
+   * @param jsSchedulingTime - The baseline time to measure against
+   * @param repeats - Whether the timer repeats, or runs once
+   */babelHelpers.createClass(Timing,[{key:"createTimer",value:function createTimer(
+callbackID,duration,jsSchedulingTime,repeats){
+var currentTimeMillis=Date.now();
+var currentDateNowTimeMillis=jsSchedulingTime+16.666666666666668;
+var adjustedDuration=Math.max(0.0,jsSchedulingTime-currentDateNowTimeMillis+duration);
+var initialTargetTime=currentTimeMillis+adjustedDuration;
+this._timers[String(callbackID)]={
+callbackID:callbackID,
+duration:duration,
+jsSchedulingTime:initialTargetTime,
+repeats:repeats};
+
+}
+
+/**
+   * Removes the timer associated with a specific callback
+   * @paramID - callbackID associated with React
+   */},{key:"deleteTimer",value:function deleteTimer(
+callbackID){
+delete this._timers[String(callbackID)];
+}
+
+/**
+   * Enable or disable the sending of idle events on each frame
+   * When these are sent, they trigger requestIdleCallback callbacks on the
+   * React side.
+   * @param sendIdle - boolean flag to enable or disable sending idle events
+   */},{key:"setSendIdleEvents",value:function setSendIdleEvents(
+sendIdle){
+this._sendIdleEvents=sendIdle;
+}
+
+/**
+   * Update all timers, triggering callbacks for timers that have completed,
+   * and cleaning up those that are not repeating.
+   */},{key:"frame",value:function frame(
+frameStart){
+var toRemove=[];
+var timers=[];
+var time=Date.now();
+for(var timer in this._timers){
+var t=this._timers[timer];
+if(t.jsSchedulingTime<=time){
+timers.push(this._timers[timer].callbackID);
+if(t.repeats){
+t.jsSchedulingTime+=t.duration;
+}else{
+toRemove.push(timer);
+}
+}
+}
+// timer information is distributed in a single message with mulitiple params
+// which minimizes the bridge traffic when many timers are used
+if(timers.length){
+this._rnctx.callFunction('JSTimers','callTimers',[timers]);
+}
+
+for(var _iterator=toRemove,_isArray=Array.isArray(_iterator),_i=0,_iterator=_isArray?_iterator:_iterator[typeof Symbol==="function"?Symbol.iterator:"@@iterator"]();;){var _ref;if(_isArray){if(_i>=_iterator.length)break;_ref=_iterator[_i++];}else{_i=_iterator.next();if(_i.done)break;_ref=_i.value;}var _timer=_ref;
+delete this._timers[_timer];
+}
+}
+
+/**
+   * Check to see if there's enough time left in the frame execution to run
+   * idle callbacks. If there is, trigger them across the bridge.
+   * @param frameStart - A timestamp representing the start time of this frame,
+   *   used to determine whether there is any idle time left
+   */},{key:"idle",value:function idle(
+frameStart){
+if(!this._sendIdleEvents){
+return;
+}
+var now=window.performance?performance.now():Date.now();
+var frameElapsed=now-frameStart;
+if(this._targetFrameDuration-frameElapsed>=IDLE_CALLBACK_THRESHOLD){
+this._rnctx.callFunction('JSTimers','callIdleCallbacks',[
+Date.now()-frameElapsed]);
+
+}
+}}]);return Timing;}(_Module3.default);exports.default=Timing;

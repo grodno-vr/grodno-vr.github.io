@@ -1,0 +1,137 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule VrSoundEffects
+ * 
+ */
+'use strict';Object.defineProperty(exports,"__esModule",{value:true});exports.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+getSupportedResource=getSupportedResource;exports.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+load=load;exports.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+play=play;exports.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+volume=volume;exports.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+unload=unload;var _reactNative=require("react-native");var RCTDeviceEventEmitter=require('RCTDeviceEventEmitter');var AudioModule=_reactNative.NativeModules.AudioModule;var loadedSounds={};var loadedSoundsRefs={};// see docs/VrSoundEffects.docblock.md for docblock (not auto-extracted unless part of a class)
+/**
+ * Takes an object mapping audio formats to resources, and returns the first
+ * resource that's supported on the current system.
+ */function getSupportedResource(formats){if(!formats){return null;}if(formats.uri){return formats;}var supported=AudioModule.supportedFormats;for(var _format in formats){if(supported.indexOf(_format)>-1){return formats[_format];}}return null;}/**
+ * Load the given audio resource. Audio clips must be loaded before playing.
+ */function load(formats){var resource=getSupportedResource(formats);if(!resource||!resource.uri){console.warn("VrSoundEffects.load(resource) expected resource in format {url: 'http'}, got:",resource);return;}var url=resource.uri;var sound={handle:url,src:url,config:{}};if(loadedSounds[url]){loadedSoundsRefs[url]+=1;}else{loadedSoundsRefs[url]=1;loadedSounds[url]=sound;loadedSounds[url].ready=false;AudioModule.addHandle(url,sound.config);AudioModule.setUrl(url,sound.src);AudioModule.load(url);}}/**
+ * Play the audio resource indicated by the handle. Resource must have
+ * previously been loaded.
+ */function play(formats){var resource=getSupportedResource(formats);if(!resource||!resource.uri){console.warn("VrSoundEffects.load(resource) expected resource in format {url: 'http'}, got:",resource);return;}var url=resource.uri;if(!loadedSounds[url]||!loadedSounds[url].ready){console.warn('VrSoundEffects: must load sound before playing',url);return;}AudioModule.play(url);}/**
+ * Adjust the volume for this sound.
+ */function volume(formats,volume){var resource=getSupportedResource(formats);var url=resource.uri;if(!loadedSounds[url]||!loadedSounds[url].ready){console.warn('VrSoundEffects: must load sound before adjusting volume',url);return;}if(volume<0){console.warn('VrSoundEffects: volume cannot be negative',volume);return;}AudioModule.setVolume(url,volume);}/**
+ * Dispose of any resources associated with this handle.
+ */function unload(formats,volume){var resource=getSupportedResource(formats);var url=resource.uri;if(loadedSounds[url]){loadedSoundsRefs[url]-=1;if(loadedSoundsRefs[url]===0){AudioModule.unload(url);delete loadedSounds[url];delete loadedSoundsRefs[url];}}}function _onAudioCanPlay(handle){
+if(loadedSounds[handle]){
+loadedSounds[handle].ready=true;
+}
+}
+
+RCTDeviceEventEmitter.addListener('onAudioCanPlay',_onAudioCanPlay);

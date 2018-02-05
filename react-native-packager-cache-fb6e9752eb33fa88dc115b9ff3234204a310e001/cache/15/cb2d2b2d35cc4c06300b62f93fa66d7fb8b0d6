@@ -1,0 +1,22 @@
+Object.defineProperty(exports,"__esModule",{value:true});var _react=require("react");var _react2=babelHelpers.interopRequireDefault(_react);
+
+var Information=function Information(props){return(
+_react2.default.createElement("div",{className:"media-container"},
+_react2.default.createElement("div",{className:"media-container__close close",onClick:props.onClose},"Close"),
+_react2.default.createElement("div",{className:"media-container__layout"},
+_react2.default.createElement("div",{className:"media-content"},
+_react2.default.createElement("header",{className:"media-content__header"},
+_react2.default.createElement("h1",{className:"heading"},props.title)),
+
+_react2.default.createElement("article",{className:"media-content__article article"},
+props.description.split('\n').map(function(paragraph,index){return _react2.default.createElement("p",{key:"paragraph-"+index},paragraph);}))))));};exports.default=
+
+
+
+
+
+
+
+
+
+Information;

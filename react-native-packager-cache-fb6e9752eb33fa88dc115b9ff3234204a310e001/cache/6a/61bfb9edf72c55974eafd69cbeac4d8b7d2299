@@ -1,0 +1,469 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule VrButton
+ */
+'use strict';
+
+var PropTypes=require('prop-types');
+var React=require('React');
+var View=require('View');
+var StyleSheetPropType=require('StyleSheetPropType');
+var ViewStylePropTypes=require('ViewStylePropTypes');
+var VrSoundEffects=require('VrSoundEffects');
+
+var createReactClass=require('create-react-class');
+var keyMirror=require('fbjs/lib/keyMirror');
+
+var States=keyMirror({
+FOCUS_OUT:null,
+FOCUS_IN:null,
+FOCUS_IN_PRESS:null,
+FOCUS_IN_LONG_PRESS:null,
+ERROR:null});
+
+
+/**
+ * Quick lookup for states that are considered to be "pressing"
+ */
+var IsPressingIn={
+FOCUS_IN_PRESS:true,
+FOCUS_IN_LONG_PRESS:true};
+
+
+/**
+ * Quick lookup for states that are considered to be "long pressing"
+ */
+var IsLongPressingIn={
+FOCUS_IN_LONG_PRESS:true};
+
+
+/**
+ * Inputs to the state machine.
+ */
+var Signals=keyMirror({
+ENTER:null,
+EXIT:null,
+KEY_PRESSED:null,
+KEY_RELEASED:null,
+LONG_PRESS_DETECTED:null});
+
+
+/**
+ * Mapping from States x Signals => States
+ */
+var Transitions={
+FOCUS_OUT:{
+ENTER:States.FOCUS_IN,
+EXIT:States.FOCUS_OUT,
+KEY_PRESSED:States.FOCUS_OUT,
+KEY_RELEASED:States.FOCUS_OUT,
+LONG_PRESS_DETECTED:States.ERROR},
+
+FOCUS_IN:{
+ENTER:States.FOCUS_IN,
+EXIT:States.FOCUS_OUT,
+KEY_PRESSED:States.FOCUS_IN_PRESS,
+KEY_RELEASED:States.FOCUS_IN,
+LONG_PRESS_DETECTED:States.ERROR},
+
+FOCUS_IN_PRESS:{
+ENTER:States.FOCUS_IN_PRESS,
+EXIT:States.FOCUS_OUT,
+KEY_PRESSED:States.FOCUS_IN_PRESS,
+KEY_RELEASED:States.FOCUS_IN,
+LONG_PRESS_DETECTED:States.FOCUS_IN_LONG_PRESS},
+
+FOCUS_IN_LONG_PRESS:{
+ENTER:States.FOCUS_IN_LONG_PRESS,
+EXIT:States.FOCUS_OUT,
+KEY_PRESSED:States.FOCUS_IN_LONG_PRESS,
+KEY_RELEASED:States.FOCUS_IN,
+LONG_PRESS_DETECTED:States.FOCUS_IN_LONG_PRESS},
+
+ERROR:{
+ENTER:States.FOCUS_IN,
+EXIT:States.FOCUS_OUT,
+KEY_PRESSED:States.FOCUS_OUT,
+KEY_RELEASED:States.FOCUS_OUT,
+LONG_PRESS_DETECTED:States.FOCUS_OUT}};
+
+
+
+var SOUND_PROP_NAMES=['onClickSound','onLongClickSound','onEnterSound','onExitSound'];
+
+var LONG_PRESS_THRESHOLD=500;
+
+/**
+ * This Component is a helper for managing the interaction state machine for a gaze button.
+ * By default, a VrButton has no appearance and only acts as a wrapper to
+ * capture events, but it can be styled in the same ways as a View.
+ *
+ *```
+ * <VrButton
+ *   style={{width: 0.7}}
+ *   onClick={()=>this._onViewClicked()}>
+ *   <Image style={{width:1, height:1}}
+ *     source={{uri:'../../Assets/Images/gaze_cursor_cross_hi.png'}}
+ *     inset={[0.2,0.2,0.2,0.2]}
+ *     insetSize={[0.05,0.45,0.55,0.15]} >
+ *   </Image>
+ * </VrButton>
+ *```
+ *
+ * The State Machine for button state:
+ * ```
+ * +-------------+
+ * |  FOCUS_OUT  | <---------------------------------------------------------+
+ * +-------------+ <--------------------+                                    |
+ *   +        ^                         |                                    |
+ *   | ENTER  | EXIT                    | EXIT                           EXIT|
+ *   v        +                         +                                    +
+ * +-----------+  KEY_PRESSED  +----------------+ LONG DELAY+---------------------+
+ * | FOCUS_IN  | +-----------> | FOCUS_IN_PRESS | +-------> | FOCUS_IN_LONG_PRESS |
+ * +-----------+               +----------------+           +---------------------+
+ *   ^        ^                         +                                    +
+ *   |        |     KEY_RELEASED        |                                    |
+ *   |        +-------------------------+          KEY_RELEASED              |
+ *   +-----------------------------------------------------------------------+
+ *
+ * Standard component dispatching click events
+ * These input events are considered primary keys and handled by VrButton:
+ *  - Button A on XBOX Gamepad
+ *  - Space button on keyboard
+ *  - Left click on Mouse
+ *  - Touch on screen
+ * ```
+ *
+ * VrButton can trigger sound effects when the user interacts with it.
+ * These sounds are asset() statements, or resource declaration in the form
+ * `{uri: 'PATH'}`. Since different browsers support different audio formats,
+ * you can also supply a map of formats to their corresponding resource objects,
+ * and React VR can select the sound supported by the browser:
+ * ```
+ * <VrButton
+ *   onClickSound={{
+ *    ogg: asset('click.ogg'),
+ *    mp3: asset('click.mp3'),
+ *   }}>
+ * ```
+ * You can read more about supported audio formats in the docs for the
+ * [Sound Effects](docs/vrsoundeffects.html) API.
+ */
+
+var VrButton=createReactClass({displayName:"VrButton",
+propTypes:babelHelpers.extends({},
+View.propTypes,{
+style:StyleSheetPropType(ViewStylePropTypes),
+
+/**
+     * If `true`, this component can't be interacted with.
+     */
+disabled:PropTypes.bool,
+
+/**
+     * If `true`, long-press will not trigger `onLongClick` or `onClick`.
+     * Default=`false`
+     */
+ignoreLongClick:PropTypes.bool,
+
+/**
+     * Invoked on short click event or if there is no long click handler
+     */
+onClick:PropTypes.func,
+
+/**
+     * Invoked on long click event
+     */
+onLongClick:PropTypes.func,
+
+/**
+     * Custom duration to define long click (milliseconds)
+     */
+longClickDelayMS:PropTypes.number,
+
+/**
+     * Invoked when button hit enters
+     */
+onEnter:PropTypes.func,
+
+/**
+     * Invoked when button hit exits
+     */
+onExit:PropTypes.func,
+
+/**
+     * Invoked when button is focused and key pressed
+     */
+onButtonPress:PropTypes.func,
+
+/**
+     * Invoked when button is focused and key released
+     */
+onButtonRelease:PropTypes.func,
+
+/**
+     * Sound resource to play when the button is clicked
+     */
+onClickSound:PropTypes.object,
+
+/**
+     * Sound resource to play when the button is long-clicked
+     */
+onLongClickSound:PropTypes.object,
+
+/**
+     * Sound resource to play when gaze or cursor enters the button
+     */
+onEnterSound:PropTypes.object,
+
+/**
+     * Sound resource to play when gaze or cursor exits the button
+     */
+onExitSound:PropTypes.object}),
+
+
+getDefaultProps:function getDefaultProps(){
+return{
+disabled:false,
+ignoreLongClick:false};
+
+},
+
+getInitialState:function getInitialState(){
+return{
+buttonState:States.FOCUS_OUT};
+
+},
+
+componentWillMount:function componentWillMount(){
+// Cache any sounds attached to this button.
+for(var _iterator=SOUND_PROP_NAMES,_isArray=Array.isArray(_iterator),_i=0,_iterator=_isArray?_iterator:_iterator[typeof Symbol==="function"?Symbol.iterator:"@@iterator"]();;){var _ref;if(_isArray){if(_i>=_iterator.length)break;_ref=_iterator[_i++];}else{_i=_iterator.next();if(_i.done)break;_ref=_i.value;}var name=_ref;
+var resource=this.props[name];
+if(resource){
+VrSoundEffects.load(resource);
+}
+}
+if(this.props.ignoreLongClick&&this.props.onLongClick){
+console.warn('VrButton ignoring onLongClick property since ignoreLongClick is true');
+}
+},
+
+componentWillReceiveProps:function componentWillReceiveProps(nextProps){
+// Cache any new sounds.
+for(var _iterator2=SOUND_PROP_NAMES,_isArray2=Array.isArray(_iterator2),_i2=0,_iterator2=_isArray2?_iterator2:_iterator2[typeof Symbol==="function"?Symbol.iterator:"@@iterator"]();;){var _ref2;if(_isArray2){if(_i2>=_iterator2.length)break;_ref2=_iterator2[_i2++];}else{_i2=_iterator2.next();if(_i2.done)break;_ref2=_i2.value;}var name=_ref2;
+var resource=VrSoundEffects.getSupportedResource(this.props[name]);
+var nextResource=VrSoundEffects.getSupportedResource(nextProps[name]);
+var uri=resource?resource.uri:null;
+var nextUri=nextResource?nextResource.uri:null;
+if(uri!==nextUri){
+nextResource&&VrSoundEffects.load(nextResource);
+resource&&VrSoundEffects.unload(resource);
+}
+}
+},
+
+componentWillUnmount:function componentWillUnmount(){
+this.longPressDelayTimeout&&clearTimeout(this.longPressDelayTimeout);
+// Unload any sounds used by this button.
+for(var _iterator3=SOUND_PROP_NAMES,_isArray3=Array.isArray(_iterator3),_i3=0,_iterator3=_isArray3?_iterator3:_iterator3[typeof Symbol==="function"?Symbol.iterator:"@@iterator"]();;){var _ref3;if(_isArray3){if(_i3>=_iterator3.length)break;_ref3=_iterator3[_i3++];}else{_i3=_iterator3.next();if(_i3.done)break;_ref3=_i3.value;}var name=_ref3;
+var resource=this.props[name];
+resource&&VrSoundEffects.unload(resource);
+}
+},
+
+/**
+   * Verify whether a input event is a key released event for VrButton
+   *
+   * @param event - the input event
+   */
+_isKeyReleased:function _isKeyReleased(event){
+// Currently WebVR can only recognize XboxController as 'standard' mapping. But it seems key 0 is the primary key
+// for most gamepad controller. We should revisit this once the functionality of mapping is fully implemented.
+return(
+event.type==='GamepadInputEvent'&&event.button===0&&event.eventType==='keyup'||
+event.type==='KeyboardInputEvent'&&
+event.code==='Space'&&
+event.eventType==='keyup'||
+event.type==='MouseInputEvent'&&event.button===0&&event.eventType==='mouseup'||
+event.type==='TouchInputEvent'&&event.eventType==='touchend');
+
+},
+
+/**
+   * Verify whether a input event is a key pressed event for VrButton
+   *
+   * @param event - the input event
+   */
+_isKeyPressed:function _isKeyPressed(event){
+// Currently WebVR can only recognize XboxController as 'standard' mapping. But it seems key 0 is the primary key
+// for most gamepad controller. We should revisit this once the functionality of mapping is fully implemented.
+return(
+event.type==='GamepadInputEvent'&&
+event.button===0&&
+event.eventType==='keydown'&&
+!event.repeat||
+event.type==='KeyboardInputEvent'&&
+event.code==='Space'&&
+event.eventType==='keydown'&&
+!event.repeat||
+event.type==='MouseInputEvent'&&event.button===0&&event.eventType==='mousedown'||
+event.type==='TouchInputEvent'&&(
+event.eventType==='touchstart'||event.eventType==='touchmove'));
+
+},
+
+_onInput:function _onInput(event){
+if(this.props.disabled){
+return;
+}
+
+if(this._isKeyReleased(event.nativeEvent.inputEvent)){
+this._receiveSignal(Signals.KEY_RELEASED,event);
+}else if(this._isKeyPressed(event.nativeEvent.inputEvent)){
+this._receiveSignal(Signals.KEY_PRESSED,event);
+}
+},
+
+_onEnter:function _onEnter(event){
+if(this.props.disabled){
+return;
+}
+
+this._receiveSignal(Signals.ENTER,event);
+this.props.onEnter&&this.props.onEnter(event);
+var resource=this.props.onEnterSound;
+resource&&VrSoundEffects.play(resource);
+},
+
+_onExit:function _onExit(event){
+if(this.props.disabled){
+return;
+}
+
+this._receiveSignal(Signals.EXIT,event);
+this.props.onExit&&this.props.onExit(event);
+var resource=this.props.onExitSound;
+resource&&VrSoundEffects.play(resource);
+},
+
+_cancelLongPressDelayTimeout:function _cancelLongPressDelayTimeout(){
+this.longPressDelayTimeout&&clearTimeout(this.longPressDelayTimeout);
+this.longPressDelayTimeout=null;
+},
+
+_handleLongDelay:function _handleLongDelay(event){
+this.longPressDelayTimeout=null;
+var curState=this.state.buttonState;
+if(!IsPressingIn[curState]){
+console.error(
+'Attempted to transition from state `'+
+curState+
+'` to `'+
+States.FOCUS_IN_LONG_PRESS+
+'`, which is not supported. This is '+
+'most likely due to `VrButton.longPressDelayTimeout` not being canceled.');
+
+}else{
+this._receiveSignal(Signals.LONG_PRESS_DETECTED,event);
+}
+},
+
+/**
+   * Receives a state machine signal, performs side effects of the transition
+   * and stores the new state. Validates the transition as well.
+   *
+   * @param signal - State machine signal.
+   */
+_receiveSignal:function _receiveSignal(signal,event){
+var curState=this.state.buttonState;
+var nextState=Transitions[curState]&&Transitions[curState][signal];
+if(!nextState){
+console.error('Unrecognized signal `'+signal+'` or state `'+curState);
+}
+if(nextState===States.ERROR){
+console.error('VrButton cannot transition from `'+curState+'` to `'+signal);
+}
+if(curState!==nextState){
+this._performSideEffectsForTransition(curState,nextState,signal,event);
+this.state.buttonState=nextState;
+}
+},
+
+/**
+   * Perform side effects for transition between button states
+   *
+   * @param curState - Current Touchable state.
+   * @param nextState - Next Touchable state.
+   * @param signal - Signal that triggered the transition.
+   * @param event - Native event.
+   */
+_performSideEffectsForTransition:function _performSideEffectsForTransition(curState,nextState,signal,event){
+// Cancel long press timeout if lost focus or key released.
+var isFinalSignal=signal===Signals.EXIT||signal===Signals.KEY_RELEASED;
+if(isFinalSignal){
+this._cancelLongPressDelayTimeout();
+}
+
+// Set long press timeout
+if(!IsPressingIn[curState]&&IsPressingIn[nextState]&&signal===Signals.KEY_PRESSED){
+this._cancelLongPressDelayTimeout();
+var longDelayMS=this.props.longClickDelayMS?
+Math.max(this.props.longClickDelayMS,10):
+LONG_PRESS_THRESHOLD;
+this.longPressDelayTimeout=setTimeout(this._handleLongDelay.bind(this,event),longDelayMS);
+}
+
+// Dispatch click events
+if(IsPressingIn[curState]&&signal===Signals.KEY_RELEASED){
+if(IsLongPressingIn[curState]&&(this.props.onLongClick||this.props.ignoreLongClick)){
+if(!this.props.ignoreLongClick){
+this.props.onLongClick(event);
+var resource=this.props.onLongClickSound;
+resource&&VrSoundEffects.play(resource);
+}
+}else{
+this.props.onClick&&this.props.onClick(event);
+var _resource=this.props.onClickSound;
+_resource&&VrSoundEffects.play(_resource);
+}
+// Dispatch onButtonReleased event
+this.props.onButtonRelease&&this.props.onButtonRelease(event);
+}
+// Dispatch onButtonPressed event
+if(!IsPressingIn[curState]&&IsPressingIn[nextState]&&signal===Signals.KEY_PRESSED){
+this.props.onButtonPress&&this.props.onButtonPress(event);
+}
+},
+
+/**
+   * Reset button state to FOCUS_OUT if button is disabled
+   */
+_resetButtonState:function _resetButtonState(){
+this._cancelLongPressDelayTimeout();
+this.state.buttonState=States.FOCUS_OUT;
+},
+
+render:function render(){
+if(this.props.disabled){
+this._resetButtonState();
+}
+return(
+React.createElement(View,babelHelpers.extends({},
+this.props,{
+onInput:this._onInput,
+onEnter:this._onEnter,
+onExit:this._onExit,
+testID:this.props.testID}),
+this.props.children));
+
+
+}});
+
+
+module.exports=VrButton;
