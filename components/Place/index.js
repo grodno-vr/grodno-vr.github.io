@@ -1,5 +1,5 @@
 import React from 'react';
-import { asset, Pano, View, Animated, NativeModules, VrHeadModel } from 'react-vr';
+import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel } from 'react-vr';
 import { OldImage, Portal, Label, Knights } from '../.';
 
 import lightMixin from './mixins/lightMixin';
@@ -166,6 +166,7 @@ class Place extends SuperClass {
                 { transform: [{ rotateY: this.state.rotateY }] }
             ]}>
                 { this.renderLocalizationControls() }
+                <Sound source={asset('audio/rosna-livada.mp3')} />
                 <AnimatedPano
                     onLoad={() => this.onLight(() => this.stopLoading())}
                     source={asset(`/places/${place.name}/background.jpg`)}
