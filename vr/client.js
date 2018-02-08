@@ -5,23 +5,15 @@
 // Auto-generated content.
 import '../process';
 import { VRInstance } from 'react-vr-web';
-
 import * as THREE from 'three';
-import * as OVRUI from 'ovrui';
-import ControllerRayCaster from 'react-vr-controller-raycaster';
 
 import PersistenceOverlayModule from '../native-modules/persistenceOverlayModule';
 import DomOverlayModule from '../native-modules/domOverlayModule';
+import RayCastersModule from '../native-modules/rayCastersModule';
 
-
-const SimpleRaycaster = {
-  getType: () => "simple",
-  getRayOrigin: () => [0, 0, 0],
-  getRayDirection: () => [0, 0, -1],
-  drawsCursor: () => true
-};
 
 function init(bundle, parent, options) {
+  const scene = new THREE.Scene();
   const domOverlayContainer = document.createElement('div');
   const persistenceOverlayContainer = document.createElement('div');
 
@@ -30,14 +22,10 @@ function init(bundle, parent, options) {
 
   const domOverlay = new DomOverlayModule(domOverlayContainer);
   const persistenceOverlayOverlay = new PersistenceOverlayModule(persistenceOverlayContainer);
-  const scene = new THREE.Scene();
+  const rayCastersFactory = new RayCastersModule(scene);
 
   const vr = new VRInstance(bundle, 'GrodnoVR', parent, {
-    raycasters: [
-      SimpleRaycaster,
-      new ControllerRayCaster({scene, color: '#ff0000'}),
-      new OVRUI.MouseRayCaster()
-    ],
+    raycasters: rayCastersFactory.createRayCasters(),
     scene: scene,
     cursorVisibility: 'visible',
     allowCarmelDeeplink: true,

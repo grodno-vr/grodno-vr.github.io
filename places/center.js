@@ -35,7 +35,7 @@ const center = {
                     source: 'places/center/old/vitaut.jpg',
                     year: '1898 – 1920',
                     style: {
-                        transform: [{translate: [1, 5.5, -8]}, { rotateY: -35 }],
+                        transform: [{translate: [11, 5.5, -18]}, { rotateY: -35 }],
                         width: 8,
                         height: 4.9
                     }
@@ -44,7 +44,7 @@ const center = {
                     source: 'places/center/old/vitaut3.jpg',
                     year: '1900',
                     style: {
-                        transform: [{translate: [7, 5.5, -4]}, { scale: 1.2 }, { rotateY: -50 }],
+                        transform: [{translate: [17, 5.5, -14]}, { scale: 1.2 }, { rotateY: -50 }],
                         width: 7,
                         height: 4.2
                     }
@@ -53,7 +53,7 @@ const center = {
                     source: 'places/center/old/vitaut1.jpg',
                     year: '1923 – 1930',
                     style: {
-                        transform: [{translate: [7, 1, -4]}, { scale: 1.2 }, { rotateY: -50 }],
+                        transform: [{translate: [17, 1, -14]}, { scale: 1.2 }, { rotateY: -50 }],
                         width: 7,
                         height: 4.2
                     }
@@ -62,7 +62,7 @@ const center = {
                     source: 'places/center/old/vitaut2.jpg',
                     year: '1936',
                     style: {
-                        transform: [{translate: [1, 1, -8]}, { scale: 1.1 }, { rotateY: -35 }],
+                        transform: [{translate: [11, 1, -18]}, { scale: 1.1 }, { rotateY: -35 }],
                         width: 7,
                         height: 3.9
                     }
@@ -84,7 +84,7 @@ const center = {
                     source: 'places/center/old/textile_palace1.jpeg',
                     year: '1950th',
                     style: {
-                        transform: [{translate: [-7, 7, -10]}, { rotateX: 10 }],
+                        transform: [{translate: [-7, 7, -20]}, { rotateX: 10 }],
                         width: 7,
                         height: 3.9
                     }
@@ -93,7 +93,7 @@ const center = {
                     source: 'places/center/old/textile_palace4.jpeg',
                     year: '1957',
                     style: {
-                        transform: [{translate: [-1, 7, -10]}, { rotateX: 10 }],
+                        transform: [{translate: [-1, 7, -20]}, { rotateX: 10 }],
                         width: 7,
                         height: 3.9
                     }
@@ -102,7 +102,7 @@ const center = {
                     source: 'places/center/old/textile_palace.jpeg',
                     year: '1960th',
                     style: {
-                        transform: [{translate: [-1, 3, -10]}],
+                        transform: [{translate: [-1, 3, -20]}],
                         width: 7,
                         height: 3.9
                     }
@@ -111,7 +111,7 @@ const center = {
                     source: 'places/center/old/textile_palace2.jpeg',
                     year: '1960th',
                     style: {
-                        transform: [{translate: [-7, 3, -10]}],
+                        transform: [{translate: [-7, 3, -20]}],
                         width: 7,
                         height: 3.9
                     }
@@ -120,7 +120,7 @@ const center = {
                     source: 'places/center/old/textile_palace3.jpeg',
                     year: '1960',
                     style: {
-                        transform: [{translate: [-7, -1, -10]}, { rotateX: -10 }],
+                        transform: [{translate: [-7, -1, -20]}, { rotateX: -10 }],
                         width: 7,
                         height: 3.9
                     }
@@ -129,7 +129,7 @@ const center = {
                     source: 'places/center/old/textile_palace5.jpg',
                     year: '1958',
                     style: {
-                        transform: [{translate: [-1, -1, -10]}, { rotateX: -10 }],
+                        transform: [{translate: [-1, -1, -20]}, { rotateX: -10 }],
                         width: 7,
                         height: 3.9
                     }
