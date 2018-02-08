@@ -8,20 +8,39 @@ const Easing = require('Easing');
 const AnimatedSphere = Animated.createAnimatedComponent(Sphere);
 const AnimatedBox = Animated.createAnimatedComponent(Box);
 
-class Portal extends React.Component {
+const SPHERE_Z = 0;
+const BOX_Z = -2;
 
-    constructor() {
-        super();
+/**
+ * Портал - это VR-компонент, позволяющий переходить из одной локации в другую.
+ * 
+ * Информация о порталах хранится в конфигурации мест, в разделе 'portals'.
+ * 
+ * В свою очередь, каждое место хранит свое уменьшенное 360-изображение,
+ * специально для отображения портала этого места.
+ * 
+ * Шаблон: (/places/{name}/portal.jpg)
+ */
+class Portal extends React.Component {
+    /**
+     *
+     * @param args
+     */
+    constructor(...args) {
+        super(...args);
         this.state = {
             animationRequestId: null,
-            animatedScale: new Animated.Value(1),
             rotate: 0,
+            scale: new Animated.Value(1),
             opacity: new Animated.Value(0.75),
             borderOpacity: new Animated.Value(0.2),
             arrowOpacity: new Animated.Value(0.8)
         };
     }
 
+    /**
+     * 
+     */
     componentDidMount() {
         const step = () => {
             this.setState({ rotate: this.state.rotate - 1 });
@@ -30,12 +49,18 @@ class Portal extends React.Component {
         this.animationRequestId = requestAnimationFrame(step);
     }
 
+    /**
+     * 
+     */
     componentWillUnmount() {
         if (this.animationRequestId) {
             cancelAnimationFrame(this.animationRequestId);
         }
     }
 
+    /**
+     * 
+     */
     mouseIn() {
         Animated.parallel([
             Animated.timing(
@@ -63,7 +88,7 @@ class Portal extends React.Component {
                 }
             ),
             Animated.timing(
-                this.state.animatedScale,
+                this.state.scale,
                 {
                     toValue: 2,
                     duration: 450,
@@ -73,6 +98,9 @@ class Portal extends React.Component {
         ]).start();
     }
 
+    /**
+     * 
+     */
     mouseOut() {
         Animated.parallel([
             Animated.timing(
@@ -100,7 +128,7 @@ class Portal extends React.Component {
                 }
             ),
             Animated.timing(
-                this.state.animatedScale,
+                this.state.scale,
                 {
                     toValue: 1,
                     duration: 450,
@@ -110,33 +138,33 @@ class Portal extends React.Component {
         ]).start();
     }
 
+    /**
+     * 
+     * @returns {XML}
+     */
     render() {
-        const { transformPortal, place } = this.props;
+        const { transformPortal, place, style, onClick } = this.props;
+        const { scale, opacity, rotate, borderOpacity, arrowOpacity } = this.state;
 
         return (
             <Animated.View
                 style={[
                     styles.view,
-                    this.props.style,
-                    {
-                        transform: [
-                            ...transformPortal,
-                            { scale: this.state.animatedScale }
-                        ]
-                    }
+                    style,
+                    { transform: [ ...transformPortal, { scale } ] }
                 ]}
             >
                 <VrButton
-                    onClick={() => this.props.onClick(place)}
+                    onClick={() => onClick(place)}
                     onEnter={() => this.mouseIn()}
                     onExit={() => this.mouseOut()}
                 >
                     <AnimatedSphere
                         style={{
-                            opacity: this.state.opacity,
+                            opacity,
                             transform: [
-                                { translateY: 0 },
-                                { rotateY: this.state.rotate }
+                                { translateY: SPHERE_Z },
+                                { rotateY: rotate }
                             ]
                         }}
                         texture={asset(`/places/${place}/portal.jpg`)}
@@ -146,9 +174,9 @@ class Portal extends React.Component {
                     />
                     <AnimatedSphere
                         style={{
-                            opacity: this.state.borderOpacity,
+                            opacity: borderOpacity,
                             transform: [
-                                { translateY: 0 }
+                                { translateY: SPHERE_Z }
                             ]
                         }}
                         radius={1.4}
@@ -162,12 +190,12 @@ class Portal extends React.Component {
                     dimDepth={1}
                     dimHeight={1}
                     style={{
-                            opacity: this.state.arrowOpacity,
-                            transform: [
-                                { translateY: -2 },
-                                { rotateY: this.state.rotate }
-                            ]
-                        }}
+                        opacity: arrowOpacity,
+                        transform: [
+                            { translateY: BOX_Z },
+                            { rotateY: rotate }
+                        ]
+                    }}
                 />
             </Animated.View>
         );

@@ -1,9 +1,0 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.WebLoading=exports.VRLoading=exports.Knights=exports.OldImage=exports.Information=exports.Portal=exports.Label=exports.Place=undefined;var _Place=require("./Place");var _Place2=babelHelpers.interopRequireDefault(_Place);
-var _Label=require("./Label");var _Label2=babelHelpers.interopRequireDefault(_Label);
-var _Portal=require("./Portal");var _Portal2=babelHelpers.interopRequireDefault(_Portal);
-var _Information=require("./Information");var _Information2=babelHelpers.interopRequireDefault(_Information);
-var _OldImage=require("./OldImage");var _OldImage2=babelHelpers.interopRequireDefault(_OldImage);
-var _Loading=require("./Loading");
-var _Knights=require("./Knights");var _Knights2=babelHelpers.interopRequireDefault(_Knights);exports.
-
-Place=_Place2.default;exports.Label=_Label2.default;exports.Portal=_Portal2.default;exports.Information=_Information2.default;exports.OldImage=_OldImage2.default;exports.Knights=_Knights2.default;exports.VRLoading=_Loading.VRLoading;exports.WebLoading=_Loading.WebLoading;
