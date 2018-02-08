@@ -14,12 +14,12 @@ import PersistenceOverlayModule from '../native-modules/persistenceOverlayModule
 import DomOverlayModule from '../native-modules/domOverlayModule';
 
 
-// const SimpleRaycaster = {
-//   getType: () => "simple",
-//   getRayOrigin: () => [0, 0, 0],
-//   getRayDirection: () => [0, 0, -1],
-//   drawsCursor: () => true
-// };
+const SimpleRaycaster = {
+  getType: () => "simple",
+  getRayOrigin: () => [0, 0, 0],
+  getRayDirection: () => [0, 0, -1],
+  drawsCursor: () => true
+};
 
 function init(bundle, parent, options) {
   const domOverlayContainer = document.createElement('div');
@@ -34,6 +34,7 @@ function init(bundle, parent, options) {
 
   const vr = new VRInstance(bundle, 'GrodnoVR', parent, {
     raycasters: [
+      SimpleRaycaster,
       new ControllerRayCaster({scene, color: '#ff0000'}),
       new OVRUI.MouseRayCaster()
     ],
