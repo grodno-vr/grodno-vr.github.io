@@ -1,4 +1,0 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.WebLoading=exports.VRLoading=undefined;var _VRLoading=require("./VRLoading");var _VRLoading2=babelHelpers.interopRequireDefault(_VRLoading);
-var _WebLoading=require("./WebLoading");var _WebLoading2=babelHelpers.interopRequireDefault(_WebLoading);exports.
-
-VRLoading=_VRLoading2.default;exports.WebLoading=_WebLoading2.default;
