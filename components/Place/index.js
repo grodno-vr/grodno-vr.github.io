@@ -166,7 +166,7 @@ class Place extends SuperClass {
                 { transform: [{ rotateY: this.state.rotateY }] }
             ]}>
                 { this.renderLocalizationControls() }
-                <Sound source={asset('audio/rosna-livada.mp3')} />
+                <Sound source={asset('audio/vapor.mp3')} />
                 <AnimatedPano
                     onLoad={() => this.onLight(() => this.stopLoading())}
                     source={asset(`/places/${place.name}/background.jpg`)}
