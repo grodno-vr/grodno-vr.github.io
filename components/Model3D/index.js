@@ -8,26 +8,26 @@ class Model3D extends React.Component {
     constructor(...args) {
         super(...args);
         this.state = {
-            // animationRequestId: null,
+            animationRequestId: null,
             rotate: 0,
             scale: new Animated.Value(1),
             opacity: new Animated.Value(0.75)
         };
     }
 
-    // componentDidMount() {
-    //     const step = () => {
-    //         this.setState({ rotate: this.state.rotate - 1 });
-    //         this.animationRequestId = requestAnimationFrame(step);
-    //     };
-    //     this.animationRequestId = requestAnimationFrame(step);
-    // }
-    //
-    // componentWillUnmount() {
-    //     if (this.animationRequestId) {
-    //         cancelAnimationFrame(this.animationRequestId);
-    //     }
-    // }
+    componentDidMount() {
+        const step = () => {
+            this.setState({ rotate: this.state.rotate - 1 });
+            this.animationRequestId = requestAnimationFrame(step);
+        };
+        this.animationRequestId = requestAnimationFrame(step);
+    }
+
+    componentWillUnmount() {
+        if (this.animationRequestId) {
+            cancelAnimationFrame(this.animationRequestId);
+        }
+    }
 
     mouseIn() {
         Animated.timing(
@@ -58,7 +58,7 @@ class Model3D extends React.Component {
                             transform: [
                                 { translate: [-5, 10, -70] },
                                 { scale: this.state.scale },
-                                { rotateZ: 40 }, { rotateY: 10 }, { rotateX: 100 }
+                                { rotateZ: 40 }, { rotateY: this.state.rotate }, { rotateX: 100 }
                             ]
                         }}
                 lit={true}

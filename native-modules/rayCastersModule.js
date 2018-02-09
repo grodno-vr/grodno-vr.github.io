@@ -15,9 +15,9 @@ class RayCastersModule {
     createRayCasters() {
         const { scene, simpleDotRaycaster } = this;
         return [
-            simpleDotRaycaster,
-            new ControllerRayCaster({ scene, color: '#ff0000'}),
-            new OVRUI.MouseRayCaster()
+            simpleDotRaycaster
+            //new ControllerRayCaster({ scene, color: '#ff0000'}),
+            // new OVRUI.MouseRayCaster()
         ];
     }
 }
