@@ -29,7 +29,7 @@ class VRInformation extends React.Component {
     }
 
     render() {
-        const { text, translateX, onClose } = this.props;
+        const { text, translateX, onClose, changeRotation } = this.props;
         const { opacity, scale } = this.state;
 
         return (
@@ -68,6 +68,15 @@ class VRInformation extends React.Component {
                     >
                         {text}
                     </Text>
+                    <VrButton
+                        style={{}}
+                        onClick={() => changeRotation()}
+                    >
+                        <Image
+                            source={asset('icons/rotate.png')}
+                            style={{ width: 50, height: 50, marginLeft: 100, marginTop: 100 }}
+                        />
+                    </VrButton>
                 </Animated.View>
             </CylindricalPanel>
         );

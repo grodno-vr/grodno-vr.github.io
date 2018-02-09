@@ -26,6 +26,7 @@ class Place extends SuperClass {
             showInfo: false,
             selectedLabel: null,
             rotate: 0,
+            modelRotation: 10,
             rotateY: new Animated.Value(0)
         };
     }
@@ -127,8 +128,9 @@ class Place extends SuperClass {
                     text={description}
                     translateX={720}
                     onClose={() => this.setState({ showInfo: false })}
+                    changeRotation={() => this.setState({ modelRotation: this.state.modelRotation + 5 })}
                 />
-                <Model3D />
+                <Model3D rotate={this.state.modelRotation} />
             </AmbientLight>
         );
     }
