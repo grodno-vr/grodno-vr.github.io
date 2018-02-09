@@ -1,5 +1,5 @@
 import React from 'react';
-import { asset, Model, Animated } from 'react-vr';
+import { asset, Model, Animated, Sphere } from 'react-vr';
 
 const AnimatedModel = Animated.createAnimatedComponent(Model);
 
@@ -51,22 +51,29 @@ class Model3D extends React.Component {
 
     render() {
         return (
-            <AnimatedModel
-                onEnter={() => this.mouseIn()}
-                onExit={() => this.mouseOut()}
-                style={{
+            <Sphere
+                style={{ opacity: 0.1 }}
+                radius={2}
+                widthSegments={20}
+                heightSegments={12}
+            >
+                <AnimatedModel
+                    onEnter={() => this.mouseIn()}
+                    onExit={() => this.mouseOut()}
+                    style={{
                             transform: [
-                                { translate: [-5, 10, -70] },
+                                { translate: [-5, 10, -67] },
                                 { scale: this.state.scale },
                                 { rotateZ: 40 }, { rotateY: this.state.rotate }, { rotateX: 100 }
                             ]
                         }}
-                lit={true}
-                source={{
-                            obj: asset('models/coat/coat_clean.obj'),
-                            mtl: asset('models/coat/coat_clean_tex.mtl')
-                }}
-            />
+                    lit={true}
+                    source={{
+                        obj: asset('models/coat/coat_clean.obj'),
+                        mtl: asset('models/coat/coat_clean_tex.mtl')
+                    }}
+                />
+            </Sphere>
         );
     }
 }
