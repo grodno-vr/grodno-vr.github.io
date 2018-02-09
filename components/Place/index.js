@@ -1,5 +1,5 @@
 import React from 'react';
-import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel } from 'react-vr';
+import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel, Model, DirectionalLight, Text, CylindricalPanel } from 'react-vr';
 import { OldImage, Portal, Label, Knights } from '../.';
 
 import lightMixin from './mixins/lightMixin';
@@ -7,7 +7,9 @@ import styles from './styles';
 
 const { DomOverlayModule, PersistenceOverlayModule } = NativeModules;
 const SuperClass = lightMixin(React.Component);
+
 const AnimatedPano = Animated.createAnimatedComponent(Pano);
+const AnimatedModel = Animated.createAnimatedComponent(Model);
 
 class Place extends SuperClass {
 
@@ -17,6 +19,7 @@ class Place extends SuperClass {
         this.headsetRotation = VrHeadModel.rotation();
         this.state = {
             ...this.state,
+            scale: new Animated.Value(1),
             loading: true,
             showOldImages: false,
             selectedLabel: null,
@@ -156,6 +159,20 @@ class Place extends SuperClass {
         );
     }
 
+    componentDidMount() {
+        const step = () => {
+            this.setState({ rotate: this.state.rotate - 1.5 });
+            this.animationRequestId = requestAnimationFrame(step);
+        };
+        this.animationRequestId = requestAnimationFrame(step);
+    }
+
+    componentWillUnmount() {
+        if (this.animationRequestId) {
+            cancelAnimationFrame(this.animationRequestId);
+        }
+    }
+
     render() {
         const { place = {}, style = {} } = this.props;
         const { loading, showOldImages, light } = this.state;
@@ -166,7 +183,9 @@ class Place extends SuperClass {
                 { transform: [{ rotateY: this.state.rotateY }] }
             ]}>
                 { this.renderLocalizationControls() }
-                <Sound source={asset('audio/vapor.mp3')} />
+                {
+                    // <Sound source={asset('audio/vapor.mp3')} />
+                }
                 <AnimatedPano
                     onLoad={() => this.onLight(() => this.stopLoading())}
                     source={asset(`/places/${place.name}/background.jpg`)}
@@ -178,6 +197,66 @@ class Place extends SuperClass {
                         tintColor: loading ? 'grey' : 'white'
                     }}
                 />
+                { place.name === 'vilenskaja' && <DirectionalLight intensity={1}>
+                    <CylindricalPanel layer={{width: 2000, height: 720, radius: 700}} style={{position: 'absolute'}}>
+                        <View
+                            style={{
+                              opacity: 0.85,
+                              width: 900,
+                              height: 620,
+                              // alignItems: 'center',
+                              // justifyContent: 'center',
+                              backgroundColor: 'black'
+                            }}
+                        >
+                            <Text
+                                style={{
+                                    margin: 10,
+                                    fontSize: 30,
+                                    fontWeight: '300',
+                                    width: 600,
+                                    height: 100
+                                }}
+                            >
+                                Architectural coat of arms (first half of 18th century) in Hrodna, Belarus.
+                            </Text>
+                        </View>
+                    </CylindricalPanel>
+                    <AnimatedModel
+                        onEnter={() => {
+                            Animated.timing(
+                                this.state.scale,
+                                {
+                                    toValue: 1.2,
+                                    duration: 450
+                                }
+                            ).start();
+                        }}
+                        onExit={() => {
+                            Animated.timing(
+                                this.state.scale,
+                                {
+                                    toValue: 1,
+                                    duration: 450
+                                }
+                            ).start();
+                        }}
+                        style={{
+                            transform: [
+                                { translate: [-45, 15, -60] },
+                                { scale: this.state.scale },
+                                { rotateZ: 40 }, { rotateY: this.state.rotate }, { rotateX: 100 }
+                            ]
+                        }}
+                        lit={true}
+                        source={{
+                            obj: asset('models/coat/coat_clean.obj'),
+                            mtl: asset('models/coat/coat_clean_tex.mtl')
+                        }}
+                    />
+                </DirectionalLight>
+
+                }
                 {
                     // Do not touch this!!!
                     // <Knights
