@@ -11,21 +11,8 @@ const AnimatedBox = Animated.createAnimatedComponent(Box);
 const SPHERE_Z = 0;
 const BOX_Z = -2;
 
-/**
- * Портал - это VR-компонент, позволяющий переходить из одной локации в другую.
- * 
- * Информация о порталах хранится в конфигурации мест, в разделе 'portals'.
- * 
- * В свою очередь, каждое место хранит свое уменьшенное 360-изображение,
- * специально для отображения портала этого места.
- * 
- * Шаблон: (/places/{name}/portal.jpg)
- */
 class Portal extends React.Component {
-    /**
-     *
-     * @param args
-     */
+
     constructor(...args) {
         super(...args);
         this.state = {
@@ -38,9 +25,6 @@ class Portal extends React.Component {
         };
     }
 
-    /**
-     * 
-     */
     componentDidMount() {
         const step = () => {
             this.setState({ rotate: this.state.rotate - 1 });
@@ -48,19 +32,13 @@ class Portal extends React.Component {
         };
         this.animationRequestId = requestAnimationFrame(step);
     }
-
-    /**
-     * 
-     */
+    
     componentWillUnmount() {
         if (this.animationRequestId) {
             cancelAnimationFrame(this.animationRequestId);
         }
     }
-
-    /**
-     * 
-     */
+    
     mouseIn() {
         Animated.parallel([
             Animated.timing(
@@ -97,10 +75,7 @@ class Portal extends React.Component {
             )
         ]).start();
     }
-
-    /**
-     * 
-     */
+    
     mouseOut() {
         Animated.parallel([
             Animated.timing(
@@ -137,11 +112,7 @@ class Portal extends React.Component {
             )
         ]).start();
     }
-
-    /**
-     * 
-     * @returns {XML}
-     */
+    
     render() {
         const { transformPortal, place, style, onClick } = this.props;
         const { scale, opacity, rotate, borderOpacity, arrowOpacity } = this.state;

@@ -13,6 +13,10 @@ const center = {
         {
             name: 'vilenskaja',
             transformPortal: [{translate: [15, 0, -7]}]
+        },
+        {
+            name: 'castle',
+            transformPortal: [{translate: [7, 0, -15]}]
         }
     ],
     labels: [

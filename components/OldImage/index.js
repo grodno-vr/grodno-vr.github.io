@@ -5,17 +5,8 @@ import styles from './styles';
 
 const Easing = require('Easing');
 
-/**
- * Старое изображение - VR-компонент, который отображает старую фотографию или
- * картину какого-то объекта, также отображается метка с годом создания этой фотографии.
- *
- * Полный путь в изображению указывается в свойстве 'source'.
- */
 class OldImage extends React.Component {
-    /**
-     * 
-     * @param args
-     */
+
     constructor(...args) {
         super(...args);
         this.state = {
@@ -24,10 +15,7 @@ class OldImage extends React.Component {
             translate: new Animated.Value(0)
         };
     }
-
-    /**
-     * 
-     */
+    
     componentDidMount() {
         Animated.parallel([
             Animated
@@ -42,31 +30,21 @@ class OldImage extends React.Component {
                 )
         ]).start();
     }
-
-    /**
-     * 
-     */
+    
     mouseIn() {
         Animated.timing(
             this.state.translate,
             { toValue: 1.5, duration: 100, easing: Easing.in }
         ).start();
     }
-
-    /**
-     * 
-     */
+    
     mouseOut() {
         Animated.timing(
             this.state.translate,
             { toValue: 0, duration: 100, easing: Easing.in }
         ).start();
     }
-
-    /**
-     * 
-     * @returns {XML}
-     */
+    
     render() {
         const { style: { transform, width, height }, source, year, onClick } = this.props;
         const { opacity, scale, translate } = this.state;
