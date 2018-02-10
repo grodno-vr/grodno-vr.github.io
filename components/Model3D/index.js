@@ -7,12 +7,21 @@ class Model3D extends React.Component {
 
     constructor(...args) {
         super(...args);
-        // this.state = {
-        //     animationRequestId: null,
-        //     rotate: new Animated.Value(10),
-        //     scale: new Animated.Value(1),
-        //     opacity: new Animated.Value(0.75)
-        // };
+        this.state = {
+            animationRequestId: null,
+            rotate: new Animated.Value(8.1)
+        };
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const { rotate } = nextProps;
+        Animated.timing(
+            this.state.rotate,
+            {
+                toValue: rotate,
+                duration: 450
+            }
+        ).start();
     }
 
     // rotate() {
@@ -32,7 +41,7 @@ class Model3D extends React.Component {
                 style={{
                         transform: [
                             { translate: [-5, 8, -67] },
-                            { rotateZ: 40 }, { rotateY: this.props.rotate }, { rotateX: 100 }
+                            { rotateZ: 40 }, { rotateY: this.state.rotate }, { rotateX: 100 }
                         ]
                     }}
                 lit={true}

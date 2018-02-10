@@ -5,7 +5,6 @@
 // Auto-generated content.
 import '../process';
 import { VRInstance } from 'react-vr-web';
-import * as THREE from 'three';
 
 import PersistenceOverlayModule from '../native-modules/persistenceOverlayModule';
 import DomOverlayModule from '../native-modules/domOverlayModule';
