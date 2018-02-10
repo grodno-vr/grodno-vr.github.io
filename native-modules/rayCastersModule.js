@@ -1,5 +1,5 @@
-import * as OVRUI from 'ovrui';
-import ControllerRayCaster from 'react-vr-controller-raycaster';
+// import * as OVRUI from 'ovrui';
+// import ControllerRayCaster from 'react-vr-controller-raycaster';
 
 class RayCastersModule {
     constructor(scene) {
@@ -13,7 +13,7 @@ class RayCastersModule {
     }
 
     createRayCasters() {
-        const { scene, simpleDotRaycaster } = this;
+        const { simpleDotRaycaster } = this;
         return [
             simpleDotRaycaster
             //new ControllerRayCaster({ scene, color: '#ff0000'}),
