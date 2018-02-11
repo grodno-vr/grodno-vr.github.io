@@ -1,14 +1,15 @@
-// import * as OVRUI from 'ovrui';
+import * as OVRUI from 'ovrui';
 // import ControllerRayCaster from 'react-vr-controller-raycaster';
 
 class RayCastersModule {
     constructor(/*scene*/) {
         // this.scene = scene;
+
         this.simpleDotRaycaster = {
             getType: () => 'simpleDot',
             getRayOrigin: () => [0, 0, 0],
             getRayDirection: () => [0, 0, -1],
-            drawsCursor: () => true,
+            drawsCursor: () => true
             // getMaxLength: () => 20
         };
     }
@@ -16,9 +17,9 @@ class RayCastersModule {
     createRayCasters() {
         const { simpleDotRaycaster/*, scene*/ } = this;
         return [
-            simpleDotRaycaster
+            simpleDotRaycaster,
             // new ControllerRayCaster({ scene, color: '#ff0000'}),
-            // new OVRUI.MouseRayCaster()
+            new OVRUI.MouseRayCaster()
         ];
     }
 }

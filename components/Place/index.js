@@ -1,6 +1,6 @@
 import React from 'react';
 import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel } from 'react-vr';
-import { OldImage, Portal, Label } from '../.';
+import { OldImage, Portal, Label, VRLoading } from '../.';
 import VRInformation from '../Information/VRInformation';
 
 
@@ -63,7 +63,10 @@ class Place extends SuperClass {
                         this.setState({ showOldImages: true, selectedLabel: index });
                     }
                 }}
-                onInfoClick={() => this.openInformation(label, index)}
+                onInfoClick={() => {
+                    this.rotateCamera(label.offset);
+                    this.openInformation(label, index);
+                }}
             />
         );
     }
@@ -84,12 +87,14 @@ class Place extends SuperClass {
         const { place = {} } = this.props;
         const { selectedLabel } = this.state;
         const { labels = [] } = place;
-        const { text, description, model, infoPosition } = labels[selectedLabel] || {};
+        const { text, description, model, infoPosition, infoWidth } = labels[selectedLabel] || {};
 
+        // component based on CylindricalPanel, you should use values in pixels
         return (
             <VRInformation
                 title={text}
                 description={description}
+                width={infoWidth || 1000}
                 model={model}
                 translateX={infoPosition || 720}
                 onClose={() => this.setState({ showInfo: false })}
@@ -155,7 +160,10 @@ class Place extends SuperClass {
             ]}>
                 { this.renderLocalizationControls() }
                 {
-                    // <Sound source={asset('audio/vapor.mp3')} />
+                    (place.name === 'castle') && <Sound loop={true} source={asset('audio/birds.mp3')} />
+                }
+                {
+                    loading && VrHeadModel.inVR() && <VRLoading />
                 }
                 <AnimatedPano
                     onLoad={() => this.onLight(() => this.stopLoading())}

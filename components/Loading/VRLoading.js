@@ -3,7 +3,7 @@ import { Text } from 'react-vr';
 
 import styles from './styles';
 
-const Spinner = () => {
+const VRLoading = () => {
     return (
         <Text style={styles.text}>
             Loading....
@@ -11,4 +11,4 @@ const Spinner = () => {
     );
 };
 
-export default Spinner;
+export default VRLoading;
