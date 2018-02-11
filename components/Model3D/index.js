@@ -9,14 +9,14 @@ class Model3D extends React.Component {
         super(...args);
         this.state = {
             animationRequestId: null,
-            rotate: new Animated.Value(8.1)
+            rotation: new Animated.Value(50)
         };
     }
 
     componentWillReceiveProps(nextProps) {
         const { rotate } = nextProps;
         Animated.timing(
-            this.state.rotate,
+            this.state.rotation,
             {
                 toValue: rotate,
                 duration: 450
@@ -24,30 +24,22 @@ class Model3D extends React.Component {
         ).start();
     }
 
-    // rotate() {
-    //     this.setState({ rotate: this.state.rotate + 1 });
-    //     // Animated.timing(
-    //     //     this.state.rotate,
-    //     //     {
-    //     //         toValue: 1,
-    //     //         duration: 450
-    //     //     }
-    //     // ).start();
-    // }
-
     render() {
+        const { style, obj, mtl } = this.props.details || {};
+
         return (
             <AnimatedModel
                 style={{
+                        ...style,
                         transform: [
-                            { translate: [-5, 8, -67] },
-                            { rotateZ: 40 }, { rotateY: this.state.rotate }, { rotateX: 100 }
+                            ...style.transform,
+                            { rotateY: this.state.rotation }
                         ]
                     }}
                 lit={true}
                 source={{
-                    obj: asset('models/coat/coat_clean.obj'),
-                    mtl: asset('models/coat/coat_clean_tex.mtl')
+                    obj: asset(obj),
+                    mtl: asset(mtl)
                 }}
             />
         );

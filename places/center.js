@@ -21,7 +21,6 @@ const center = {
     ],
     labels: [
         {
-            buttonStyle: {},
             offset: 50,
             viewStyle: {
                 transform: [{translate: [20, 4, -20]}, { scale : 5.5 }, { rotateY: -20 }]
@@ -31,9 +30,22 @@ const center = {
                 textAlign: 'center'
             },
             text: 'Church of Vitaut the Great',
-            description: `St. Mary\'s Church (Belarusian: Касцёл Найсвяцейшай Дзевы Марыі, Lithuanian: Švč. Mergelės Marijos bažnyčia, Polish: Kościół Najświętszej Maryi Panny) was a parish church (fara) in the city of Grodno (modern Hrodna, Belarus).\n
-            It was founded by Vytautas, Grand Duke of Lithuania before 1389. Because of its founder, it was commonly referred to as Vytautas\' Church (Belarusian: Фара Вітаўта, Lithuanian: Vytauto bažnyčia, Polish: fara witoldowa).\n
+            description: `St. Mary\'s Church was a parish church (fara) in the city of Grodno (modern Hrodna, Belarus).\n
+            It was founded by Vytautas, Grand Duke of Lithuania before 1389. Because of its founder, it was commonly referred to as Vytautas\' Church.\n
             Rebuilt as a Gothic church around 1494, it was one of the principal catholic churches of Hrodna until the advent of Soviet rule after World War II. Neglected, it was finally demolished in 1961.`,
+            infoPosition: 2500,
+            model: {
+                style: {
+                    transform: [
+                        { translate: [25, -1, -12] },
+                        { rotateZ: 140 },
+                        { rotateX: 60 }
+                    ]
+                },
+                obj: 'models/fara/Fara_cleaned.obj',
+                mtl: 'models/fara/Fara_cleaned_tex.mtl'
+
+            },
             oldImages: [
                 {
                     source: 'places/center/old/vitaut.jpg',
@@ -74,7 +86,6 @@ const center = {
             ]
         },
         {
-            buttonStyle: {},
             viewStyle: {
                 transform: [{translate: [-1, 5, -20]}, { scale : 4.5 }]
             },
@@ -83,6 +94,8 @@ const center = {
                 textAlign: 'center'
             },
             text: 'Textile Culture Palace',
+            description: '<None>',
+            infoPosition: 1800,
             oldImages: [
                 {
                     source: 'places/center/old/textile_palace1.jpeg',
@@ -141,7 +154,6 @@ const center = {
             ]
         },
         {
-            buttonStyle: {},
             offset: -110,
             viewStyle: {
                 transform: [{translate: [-5, 2, 2]}, { scale: 2 }, { rotateY: 110 }]
@@ -185,6 +197,8 @@ const center = {
                 textAlign: 'center'
             },
             text: 'House of merchant Muravjov',
+            description: '<None>',
+            infoPosition: 3200,
             oldImages: [
                 {
                     source: 'places/center/old/muravjov.jpg',
@@ -225,7 +239,6 @@ const center = {
             ]
         },
         {
-            buttonStyle: {},
             offset: 130,
             viewStyle: {
                 transform: [{translate: [12, 9, 12]}, { scale : 4 }, { rotateY: -130 }]
@@ -235,10 +248,11 @@ const center = {
                 textAlign: 'center'
             },
             text: 'St. Francis Xavier Cathedral',
-            description: `St. Francis Xavier Cathedral is a Roman Catholic cathedral in Grodno, Belarus. Originally a Jesuit church, it became a cathedral in 1991, when the new diocese of Grodno was erected.
-            The construction of the church started in 1687. The completed building in Baroque style was consecrated in 1705 to St. Francis Xavier. The monastery was dissolved in 1773 and the church became a parish one. The church survived World War II with no serious damage.
-            In 1960 it was officially closed for a public religious services (for 27 years). The communist authorities tried to convert the building into a museum or a concert hall. Despite this the people attended the church every Sunday for a common player, songs and rosary. 
+            description: `Jesuit church, it became a cathedral in 1991.\n
+            The construction of the church started in 1687. The completed building in Baroque style was consecrated in 1705 to St. Francis Xavier. The monastery was dissolved in 1773 and the church became a parish one. The church survived World War II with no serious damage.\n
+            In 1960 it was officially closed for a public religious services (for 27 years). The communist authorities tried to convert the building into a museum or a concert hall. Despite this the people attended the church every Sunday for a common player, songs and rosary.\n 
             The religious services were restored in 1987. In 1990 the church was granted the title of minor basilica, and a year later it became a cathedral for a diocese of Grodno.`,
+            infoPosition: 3700,
             oldImages: [
                 {
                     source: 'places/center/old/cathedral.jpg',

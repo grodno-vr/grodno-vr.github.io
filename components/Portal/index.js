@@ -17,26 +17,38 @@ class Portal extends React.Component {
         super(...args);
         this.state = {
             animationRequestId: null,
-            rotate: 0,
+            rotate: new Animated.Value(0),
             scale: new Animated.Value(1),
             opacity: new Animated.Value(0.75),
             borderOpacity: new Animated.Value(0.2),
             arrowOpacity: new Animated.Value(0.8)
         };
+        this._rotateTo = 360;
     }
 
     componentDidMount() {
-        const step = () => {
-            this.setState({ rotate: this.state.rotate - 1 });
-            this.animationRequestId = requestAnimationFrame(step);
-        };
-        this.animationRequestId = requestAnimationFrame(step);
+        this.rotateOnce();
+        // const step = () => {
+        //     this.setState({ rotate: this.state.rotate - 1 });
+        //     this.animationRequestId = requestAnimationFrame(step);
+        // };
+        // this.animationRequestId = requestAnimationFrame(step);
     }
     
-    componentWillUnmount() {
-        if (this.animationRequestId) {
-            cancelAnimationFrame(this.animationRequestId);
-        }
+    // componentWillUnmount() {
+    //     if (this.animationRequestId) {
+    //         cancelAnimationFrame(this.animationRequestId);
+    //     }
+    // }
+
+
+    rotateOnce() {
+        this.state.rotate.setValue(0);
+        Animated.timing(this.state.rotate, {
+            toValue: this._rotateTo,
+            duration: 10000,
+        }).start(() => this.rotateOnce());
+        this._rotateTo = -this._rotateTo;
     }
     
     mouseIn() {
