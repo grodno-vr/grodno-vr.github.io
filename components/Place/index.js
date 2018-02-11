@@ -1,68 +1,32 @@
 import React from 'react';
-import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel, AmbientLight } from 'react-vr';
-import { OldImage, Portal, Label, Model3D } from '../.';
+import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel } from 'react-vr';
+import { OldImage, Portal, Label } from '../.';
 import VRInformation from '../Information/VRInformation';
 
 
 import lightMixin from './mixins/lightMixin';
+import cameraMixin from './mixins/cameraMixin';
+import loadingMixin from './mixins/loadingMixin';
+
 import styles from './styles';
 
-const { DomOverlayModule, PersistenceOverlayModule } = NativeModules;
-const SuperClass = lightMixin(React.Component);
+const { PersistenceOverlayModule } = NativeModules;
+const SuperClass = loadingMixin(cameraMixin(lightMixin(React.Component)));
 
 const AnimatedPano = Animated.createAnimatedComponent(Pano);
 
 class Place extends SuperClass {
 
-    constructor() {
-        super();
-
-        this.headsetRotation = VrHeadModel.rotation();
+    constructor(...args) {
+        super(args);
         this.state = {
             ...this.state,
             scale: new Animated.Value(1),
             loading: true,
             showOldImages: false,
             showInfo: false,
-            selectedLabel: null,
-            rotate: 0,
-            modelRotation: 10.1,
-            rotateY: new Animated.Value(0)
+            selectedLabel: null
         };
-    }
-
-    startLoading() {
-        this.setState({ loading: true });
-        if (VrHeadModel.inVR()) {
-            // TODO render VR loading indicator
-        } else {
-            DomOverlayModule.loading();
-        }
-    }
-
-    stopLoading() {
-        this.setState({ loading: false });
-        if (VrHeadModel.inVR()) {
-            // TODO hide VR loading indicator
-        } else {
-            DomOverlayModule.closeOverlay();
-        }
-    }
-
-    rotateCamera(offset = 0) {
-        this.headsetRotation = VrHeadModel.rotation();
-        const [ , rotateY ] = this.headsetRotation || [];
-        if (rotateY + offset > 180) {
-            console.log(rotateY);
-        }
-
-        Animated.timing(
-            this.state.rotateY,
-            {
-                toValue: rotateY + offset,
-                duration: 600
-            }
-        ).start();
     }
 
     componentDidMount() {
@@ -105,33 +69,31 @@ class Place extends SuperClass {
     }
 
     openInformation(label, index) {
-        const { text, description = 'Has no description' } = label;
-
-        if (text === 'Commonwealth Coat of Arms') {
-            this.setState({ showInfo: true, selectedLabel: index });
-        } else if (VrHeadModel.inVR()) {
-            // TODO open native modal
-        } else {
-            DomOverlayModule.openInformation({ title: text, description });
-        }
+        // const { text, description = 'Has no description' } = label;
+        this.setState({ showInfo: true, selectedLabel: index });
+        // if (true) {
+        //     this.setState({ showInfo: true, selectedLabel: index });
+        // } else if (VrHeadModel.inVR()) {
+        //     // TODO open native modal
+        // } else {
+        //     DomOverlayModule.openInformation({ title: text, description });
+        // }
     }
 
     renderVRInformation() {
         const { place = {} } = this.props;
         const { selectedLabel } = this.state;
         const { labels = [] } = place;
-        const { text, description, model } = labels[selectedLabel] || {};
+        const { text, description, model, infoPosition } = labels[selectedLabel] || {};
 
         return (
-            <AmbientLight intensity={1}>
-                <VRInformation
-                    text={description}
-                    translateX={720}
-                    onClose={() => this.setState({ showInfo: false })}
-                    changeRotation={() => this.setState({ modelRotation: this.state.modelRotation + 35.1 })}
-                />
-                <Model3D rotate={this.state.modelRotation} />
-            </AmbientLight>
+            <VRInformation
+                title={text}
+                description={description}
+                model={model}
+                translateX={infoPosition || 720}
+                onClose={() => this.setState({ showInfo: false })}
+            />
         );
     }
 

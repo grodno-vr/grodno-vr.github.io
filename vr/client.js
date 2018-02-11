@@ -12,7 +12,6 @@ import RayCastersModule from '../native-modules/rayCastersModule';
 
 
 function init(bundle, parent, options) {
-  // const scene = new THREE.Scene();
   const domOverlayContainer = document.createElement('div');
   const persistenceOverlayContainer = document.createElement('div');
 
@@ -25,7 +24,6 @@ function init(bundle, parent, options) {
 
   const vr = new VRInstance(bundle, 'GrodnoVR', parent, {
     raycasters: rayCastersFactory.createRayCasters(),
-    // scene: scene,
     cursorVisibility: 'visible',
     allowCarmelDeeplink: true,
     antialias: true,
