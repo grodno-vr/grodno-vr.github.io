@@ -25,23 +25,23 @@ const center = {
             viewStyle: {
                 transform: [{translate: [20, 4, -20]}, { scale : 5.5 }, { rotateY: -20 }]
             },
-            textStyle: {
-                fontSize: 0.2,
-                textAlign: 'center'
-            },
             text: 'Church of Vitaut the Great',
             description: `St. Mary\'s Church was a parish church (fara) in the city of Grodno (modern Hrodna, Belarus).\n
             It was founded by Vytautas, Grand Duke of Lithuania before 1389. Because of its founder, it was commonly referred to as Vytautas\' Church.\n
             Rebuilt as a Gothic church around 1494, it was one of the principal catholic churches of Hrodna until the advent of Soviet rule after World War II. Neglected, it was finally demolished in 1961.`,
-            infoPosition: 2500,
+            infoPosition: 2500, // pixels
+            infoWidth: 1300, // pixels
             model: {
                 style: {
                     transform: [
-                        { translate: [25, -1, -12] },
+                        { translate: [42, -1, -10] },
+                        { scale: 1.5 },
                         { rotateZ: 140 },
-                        { rotateX: 60 }
+                        { rotateX: 70 },
+                        { rotateY: 50 }
                     ]
                 },
+                rotationAxis: 'rotateZ',
                 obj: 'models/fara/Fara_cleaned.obj',
                 mtl: 'models/fara/Fara_cleaned_tex.mtl'
 
@@ -88,10 +88,6 @@ const center = {
         {
             viewStyle: {
                 transform: [{translate: [-1, 5, -20]}, { scale : 4.5 }]
-            },
-            textStyle: {
-                fontSize: 0.2,
-                textAlign: 'center'
             },
             text: 'Textile Culture Palace',
             description: '<None>',
@@ -158,13 +154,10 @@ const center = {
             viewStyle: {
                 transform: [{translate: [-5, 2, 2]}, { scale: 2 }, { rotateY: 110 }]
             },
-            textStyle: {
-                fontSize: 0.2,
-                textAlign: 'center'
-            },
             text: 'Batory (Market or Soviet) Square',
             description: `Batory Square is the historical name (during the Polish period in 1921 - 1939) of Soviet (Savyetskaya) Square - the central square for the city of Hrodna in Belarus. \n
             It was named after Stephen Báthory, King of Rzeczpospolita who had a residence here in the 16th century.`,
+            infoPosition: 100,
             oldImages: [
                 {
                     source: 'places/center/old/square.jpg',
@@ -187,14 +180,9 @@ const center = {
             ]
         },
         {
-            buttonStyle: {},
             offset: 90,
             viewStyle: {
                 transform: [{translate: [18, 5, -1]}, { scale : 4 }, { rotateY: -75 }]
-            },
-            textStyle: {
-                fontSize: 0.2,
-                textAlign: 'center'
             },
             text: 'House of merchant Muravjov',
             description: '<None>',
@@ -242,10 +230,6 @@ const center = {
             offset: 130,
             viewStyle: {
                 transform: [{translate: [12, 9, 12]}, { scale : 4 }, { rotateY: -130 }]
-            },
-            textStyle: {
-                fontSize: 0.2,
-                textAlign: 'center'
             },
             text: 'St. Francis Xavier Cathedral',
             description: `Jesuit church, it became a cathedral in 1991.\n

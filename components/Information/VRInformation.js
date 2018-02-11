@@ -9,7 +9,7 @@ class VRInformation extends React.Component {
     constructor(...args) {
         super(...args);
         this.state = {
-            modelRotation: 30.1,
+            modelRotation: 50.1,
             opacity: new Animated.Value(0.1),
             scale: new Animated.Value(0.1)
         };
@@ -32,23 +32,23 @@ class VRInformation extends React.Component {
 
     renderModelControls() {
         return (
-            <View style={{ flex: 1 }}>
+            <View style={{ height: 70, flexDirection: 'column', alignItems: 'flex-end' }}>
                 <VrButton
                     style={{}}
-                    onClick={() => this.setState({ modelRotation: this.state.modelRotation + 1.1 })}
+                    onClick={() => this.setState({ modelRotation: this.state.modelRotation + 15.1 })}
                 >
                     <Image
-                        source={asset('icons/rotate.png')}
-                        style={{ width: 100, height: 100, marginLeft: 100, marginTop: 100 }}
+                        source={asset('icons/rotate-left.png')}
+                        style={{ width: 60, height: 60, margin: 10 }}
                     />
                 </VrButton>
                 <VrButton
                     style={{}}
-                    onClick={() => this.setState({ modelRotation: this.state.modelRotation - 1.1 })}
+                    onClick={() => this.setState({ modelRotation: this.state.modelRotation - 15.1 })}
                 >
                     <Image
-                        source={asset('icons/rotate.png')}
-                        style={{ width: 100, height: 100, marginLeft: 100, marginTop: 100 }}
+                        source={asset('icons/rotate-right.png')}
+                        style={{ width: 60, height: 60, margin: 10 }}
                     />
                 </VrButton>
             </View>
@@ -56,7 +56,7 @@ class VRInformation extends React.Component {
     }
 
     render() {
-        const { title, description, model, translateX, onClose } = this.props;
+        const { title, description, model, translateX, width, onClose } = this.props;
         const { opacity, scale } = this.state;
 
         return (
@@ -69,14 +69,14 @@ class VRInformation extends React.Component {
                         style={{
                         transform: [{ scale }, { translateX }],
                         opacity,
-                        width: 1000,
+                        width,
                         height: 820,
                         backgroundColor: 'black'
                     }}
                     >
                         <View
                             style={{
-                            width: 1000,
+                            width,
                             alignItems: 'flex-end',
                         }}
                         >
@@ -98,12 +98,12 @@ class VRInformation extends React.Component {
                                     width: model ? 600 : 900
                                 }}
                         >
-                            {`${title}\n\n${description}`}
+                            {`${title.toUpperCase()}\n\n${description}`}
                         </Text>
                         { model && this.renderModelControls() }
                     </Animated.View>
                 </CylindricalPanel>
-                { model && <Model3D rotatation={this.state.modelRotation} details={model} /> }
+                { model && <Model3D rotation={this.state.modelRotation} details={model} /> }
             </AmbientLight>
         );
     }

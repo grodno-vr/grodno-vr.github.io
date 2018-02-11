@@ -17,15 +17,20 @@ const castle = {
                 textAlign: 'center'
             },
             text: 'Commonwealth Coat of Arms',
-            description: 'Architectural Polish-Lithuanian commonwealth coat of arms (first half of 18th century). More information about Hrodna (Grodno) history: http://harodnia.com',
+            description: `Architectural Polish-Lithuanian commonwealth coat of arms (first half of 18th century).\n
+            More information about Hrodna (Grodno) history: http://harodnia.com`,
+            infoPosition: 1800, // pixels
             model: {
                 style: {
                     transform: [
-                        { translate: [-5, 8, -67] },
+                        { translate: [-5, 2, -67] },
+                        { scale: 1.1 },
                         { rotateZ: 40 },
-                        { rotateX: 100 }
+                        { rotateX: 100 },
+                        { rotateY: 10 }
                     ]
                 },
+                rotationAxis: 'rotateZ',
                 obj: 'models/coat/coat_clean.obj',
                 mtl: 'models/coat/coat_clean_tex.mtl'
 
