@@ -2,7 +2,7 @@ import React from 'react';
 import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel } from 'react-vr';
 import { OldImage, Portal, Label, VRLoading } from '../.';
 import VRInformation from '../Information/VRInformation';
-
+import Gallery from '../Gallery';
 
 import lightMixin from './mixins/lightMixin';
 import cameraMixin from './mixins/cameraMixin';
@@ -17,8 +17,8 @@ const AnimatedPano = Animated.createAnimatedComponent(Pano);
 
 class Place extends SuperClass {
 
-    constructor(...args) {
-        super(args);
+    constructor(props) {
+        super(props);
         this.state = {
             ...this.state,
             scale: new Animated.Value(1),
@@ -87,7 +87,7 @@ class Place extends SuperClass {
         const { place = {} } = this.props;
         const { selectedLabel } = this.state;
         const { labels = [] } = place;
-        const { text, description, model, infoPosition, infoWidth } = labels[selectedLabel] || {};
+        const { text, description, model, infoPosition, infoWidth, infoHeight } = labels[selectedLabel] || {};
 
         // component based on CylindricalPanel, you should use values in pixels
         return (
@@ -95,6 +95,7 @@ class Place extends SuperClass {
                 title={text}
                 description={description}
                 width={infoWidth || 1000}
+                height={infoHeight || 820}
                 model={model}
                 translateX={infoPosition || 720}
                 onClose={() => this.setState({ showInfo: false })}
@@ -106,9 +107,19 @@ class Place extends SuperClass {
         const { place = {} } = this.props;
         const { selectedLabel } = this.state;
         const { labels = [] } = place;
-        const images = (labels[selectedLabel] || {}).oldImages || [];
+        const label = labels[selectedLabel] || {};
 
-        return images.map((image, index) => this.renderOldImage(image, index));
+        return (
+            <Gallery
+                images={label.oldImages || []}
+                style={label.galleryStyle || {}}
+                onClose={() => {
+                    this.onLight(() => {});
+                    this.setState({ showOldImages: false });
+                }}
+            />
+        );
+        // return images.map((image, index) => this.renderOldImage(image, index));
     }
 
     renderOldImage(image, index) {

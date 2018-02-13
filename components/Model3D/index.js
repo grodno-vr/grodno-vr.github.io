@@ -1,5 +1,5 @@
 import React from 'react';
-import { asset, Model, Animated, VrButton, Image, View } from 'react-vr';
+import { asset, Model, Animated } from 'react-vr';
 
 const AnimatedModel = Animated.createAnimatedComponent(Model);
 const Easing = require('Easing');

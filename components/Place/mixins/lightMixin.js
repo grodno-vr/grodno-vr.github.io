@@ -2,8 +2,8 @@ import { Animated } from 'react-vr';
 
 const lightMixin = Base => class extends Base {
 
-    constructor(...args) {
-        super(args);
+    constructor(props) {
+        super(props);
         // 1 - day, 0 - night
         this.state = { ...this.state, light: new Animated.Value(0.001) };
     }

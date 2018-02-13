@@ -2,14 +2,18 @@ import React from 'react';
 import { Text, View, Animated, CylindricalPanel, VrButton, Image, AmbientLight, asset } from 'react-vr';
 import { Model3D } from '../.';
 
+import styles from './styles';
+
 const Easing = require('Easing');
 
 class VRInformation extends React.Component {
 
-    constructor(...args) {
-        super(...args);
+    constructor(props) {
+        super(props);
         this.state = {
             modelRotation: 50.1,
+            closeOpacity: new Animated.Value(0.4),
+            closeScale: new Animated.Value(1.4),
             opacity: new Animated.Value(0.1),
             scale: new Animated.Value(0.1)
         };
@@ -30,16 +34,58 @@ class VRInformation extends React.Component {
         ]).start();
     }
 
+    mouseInClose() {
+        Animated.parallel([
+            Animated
+                .timing(
+                    this.state.closeOpacity,
+                    { toValue: 1, duration: 500, easing: Easing.in }
+                ),
+            Animated
+                .timing(
+                    this.state.closeScale,
+                    { toValue: 0.9, duration: 800, easing: Easing.in }
+                )
+        ]).start();
+    }
+
+    mouseOutClose() {
+        Animated.parallel([
+            Animated
+                .timing(
+                    this.state.closeOpacity,
+                    { toValue: 0.4, duration: 500, easing: Easing.in }
+                ),
+            Animated
+                .timing(
+                    this.state.closeScale,
+                    { toValue: 1.4, duration: 800, easing: Easing.in }
+                )
+        ]).start();
+    }
+
     renderModelControls() {
+        const { model } = this.props;
+        const { transform } = model.controls;
+        const { opacity, scale } = this.state;
+
         return (
-            <View style={{ height: 70, flexDirection: 'column', alignItems: 'flex-end' }}>
+            <Animated.View
+                style={[
+                    styles.modelControls,
+                    {
+                        transform: [{ scale }, ...transform],
+                        opacity
+                    }
+                ]}
+            >
                 <VrButton
                     style={{}}
                     onClick={() => this.setState({ modelRotation: this.state.modelRotation + 15.1 })}
                 >
                     <Image
                         source={asset('icons/rotate-left.png')}
-                        style={{ width: 60, height: 60, margin: 10 }}
+                        style={styles.modelControl}
                     />
                 </VrButton>
                 <VrButton
@@ -48,45 +94,50 @@ class VRInformation extends React.Component {
                 >
                     <Image
                         source={asset('icons/rotate-right.png')}
-                        style={{ width: 60, height: 60, margin: 10 }}
+                        style={styles.modelControl}
                     />
                 </VrButton>
-            </View>
+            </Animated.View>
         );
     }
 
     render() {
-        const { title, description, model, translateX, width, onClose } = this.props;
-        const { opacity, scale } = this.state;
+        const { title, description, model, translateX, width, height, onClose } = this.props;
+        const { opacity, scale, closeOpacity, closeScale } = this.state;
 
         return (
             <AmbientLight intensity={1}>
                 <CylindricalPanel
                     layer={{ width: 4096, height: 820, radius: 700 }}
-                    style={{ position: 'absolute' }}
+                    style={{ position: 'absolute', flexDirection: 'column' }}
                 >
                     <Animated.View
                         style={{
-                        transform: [{ scale }, { translateX }],
-                        opacity,
-                        width,
-                        height: 820,
-                        backgroundColor: 'black'
-                    }}
+                            transform: [{ scale }, { translateX }],
+                            opacity,
+                            width,
+                            height,
+                            backgroundColor: 'black'
+                        }}
                     >
                         <View
-                            style={{
-                            width,
-                            alignItems: 'flex-end',
-                        }}
+                            style={{ width, alignItems: 'flex-end' }}
                         >
                             <VrButton
                                 onClick={() => onClose()}
-                                style={{ width: 50, height: 50, marginRight: 50, marginTop: 40 }}
+                                onEnter={() => this.mouseInClose()}
+                                onExit={() => this.mouseOutClose()}
+                                style={styles.closeButton}
                             >
-                                <Image
+                                <Animated.Image
                                     source={asset('icons/x.png')}
-                                    style={{ width: 50, height: 50, margin: 10 }}
+                                    style={[
+                                        styles.closeImage,
+                                        {
+                                            opacity: closeOpacity,
+                                            transform: [{ scale: closeScale }]
+                                        }
+                                    ]}
                                 />
                             </VrButton>
                         </View>
@@ -100,10 +151,12 @@ class VRInformation extends React.Component {
                         >
                             {`${title.toUpperCase()}\n\n${description}`}
                         </Text>
-                        { model && this.renderModelControls() }
                     </Animated.View>
                 </CylindricalPanel>
+
                 { model && <Model3D rotation={this.state.modelRotation} details={model} /> }
+                { model && this.renderModelControls() }
+
             </AmbientLight>
         );
     }

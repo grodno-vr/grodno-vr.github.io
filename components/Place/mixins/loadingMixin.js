@@ -4,8 +4,8 @@ const { DomOverlayModule } = NativeModules;
 
 const cameraMixin = Base => class extends Base {
 
-    constructor(...args) {
-        super(args);
+    constructor(props) {
+        super(props);
         this.state = { ...this.state, loading: false };
     }
 

@@ -2,8 +2,8 @@ import { Animated, VrHeadModel } from 'react-vr';
 
 const cameraMixin = Base => class extends Base {
 
-    constructor(...args) {
-        super(args);
+    constructor(props) {
+        super(props);
         this.headsetRotation = VrHeadModel.rotation();
         this.state = { ...this.state, rotateY: new Animated.Value(0) };
     }

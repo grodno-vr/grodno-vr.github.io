@@ -23,7 +23,7 @@ const castle = {
             model: {
                 style: {
                     transform: [
-                        { translate: [-5, 2, -67] },
+                        { translate: [2, 10, -67] },
                         { scale: 1.1 },
                         { rotateZ: 40 },
                         { rotateX: 100 },
@@ -32,8 +32,10 @@ const castle = {
                 },
                 rotationAxis: 'rotateZ',
                 obj: 'models/coat/coat_clean.obj',
-                mtl: 'models/coat/coat_clean_tex.mtl'
-
+                mtl: 'models/coat/coat_clean_tex.mtl',
+                controls: {
+                    transform: [{translate: [-2, -1, -15]}, { rotateY: -10 }]
+                }
             },
             oldImages: []
         }
