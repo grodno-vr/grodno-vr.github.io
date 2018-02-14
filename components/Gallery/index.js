@@ -34,12 +34,12 @@ class Gallery extends React.Component {
             Animated
                 .timing(
                     this.state.scale,
-                    { toValue: 0.1, duration: 300, easing: Easing.in }
+                    { toValue: 0.1, duration: 600, easing: Easing.in }
                 ),
             Animated
                 .timing(
                     this.state.opacity,
-                    { toValue: 0.1, duration: 400, easing: Easing.in }
+                    { toValue: 0.1, duration: 600, easing: Easing.in }
                 )
         ]).start(() => this.setState({ selectedImage: nextImageIndex }));
     }
@@ -66,41 +66,33 @@ class Gallery extends React.Component {
         
         return (
             <Animated.View
-                style={{
-                    transform: [{ scale }],
-                    opacity: opacity,
-                    // backgroundColor: 'black',
-                    height: 6,
-                    position: 'absolute',
-                    ...style
-                }}
+                style={[
+                    styles.galleryView,
+                    {
+                        transform: [{ scale }],
+                        opacity: opacity,
+                        ...style
+                    }
+                ]}
             >
-                <View style={{ alignItems: 'center' }}>
+                <View style={styles.yearView}>
                     <Text style={styles.yearLabel}>
                         {currentImage.year}
                     </Text>
                 </View>
-                <View
-                    style={{
-                        flexDirection: 'row',
-                        alignItems: 'center'
-                    }}
-                >
-                    <Arrow img={'icons/gallery-arrow-left.png'} onClick={() => this.nextImage(-1)} />
+
+                <View style={styles.imageView}>
+                    <Arrow direction={'left'} onClick={() => this.nextImage(-1)} />
 
                     <Animated.Image
                         onLoad={() => this.imageLoadHandler()}
                         source={asset(currentImage.source)}
-                        style={[
-                        styles.image,
-                        {
-                            ...currentImage.style
-                        }
-                    ]}
+                        style={[ styles.image, {...currentImage.style}]}
                     />
 
-                    <Arrow img={'icons/gallery-arrow-right.png'} onClick={() => this.nextImage(1)} />
+                    <Arrow direction={'right'} onClick={() => this.nextImage(1)} />
                 </View>
+
                 <View style={{ alignItems: 'center' }}>
                     <Close onClick={() => onClose()} />
                 </View>

@@ -109,7 +109,7 @@ class VRInformation extends React.Component {
             <AmbientLight intensity={1}>
                 <CylindricalPanel
                     layer={{ width: 4096, height: 820, radius: 700 }}
-                    style={{ position: 'absolute', flexDirection: 'column' }}
+                    style={{ transform: [{ translateY: 5 }], position: 'absolute', flexDirection: 'column' }}
                 >
                     <Animated.View
                         style={{

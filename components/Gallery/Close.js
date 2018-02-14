@@ -1,10 +1,12 @@
 import React from 'react';
 import { Animated, VrButton, Image, asset } from 'react-vr';
 
+import styles from './styles';
+
 const AnimatedButton = Animated.createAnimatedComponent(VrButton);
 const Easing = require('Easing');
 
-class Arrow extends React.Component {
+class Close extends React.Component {
 
     constructor(props) {
         super(props);
@@ -53,25 +55,21 @@ class Arrow extends React.Component {
                 onClick={() => onClick()}
                 onEnter={() => this.mouseIn()}
                 onExit={() => this.mouseOut()}
-                style={{
-                    transform: [{ scale }],
-                    opacity,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: 'black',
-                    borderRadius: 1,
-                    width: 1,
-                    height: 1,
-                    marginTop: 1
-                }}
+                style={[
+                    styles.closeButton,
+                    {
+                        transform: [{ scale }],
+                        opacity
+                    }
+                ]}
             >
                 <Animated.Image
                     source={asset('icons/x.png')}
-                    style={{ width: 0.5, height: 0.5 }}
+                    style={styles.closeImage}
                 />
             </AnimatedButton>
         );
     }
 }
 
-export default Arrow;
+export default Close;

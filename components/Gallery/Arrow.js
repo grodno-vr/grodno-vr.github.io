@@ -1,6 +1,8 @@
 import React from 'react';
 import { Animated, VrButton, Image, asset } from 'react-vr';
 
+import styles from './styles';
+
 const AnimatedButton = Animated.createAnimatedComponent(VrButton);
 const Easing = require('Easing');
 
@@ -45,7 +47,7 @@ class Arrow extends React.Component {
     }
 
     render() {
-        const { img, onClick } = this.props;
+        const { onClick, direction } = this.props;
         const { opacity, scale } = this.state;
 
         return (
@@ -53,24 +55,17 @@ class Arrow extends React.Component {
                 onClick={() => onClick()}
                 onEnter={() => this.mouseIn()}
                 onExit={() => this.mouseOut()}
-                style={{
-                    transform: [{ scale }],
-                    width: 2,
-                    height: 2,
-                    opacity,
-                    margin: 0.5,
-                    borderRadius: 0.5,
-                    backgroundColor: 'black',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}
+                style={[
+                    styles.arrowButton,
+                    {
+                        transform: [{ scale }],
+                        opacity
+                    }
+                ]}
             >
                 <Image
-                    source={asset(img)}
-                    style={{
-                    width: 1.5,
-                    height: 1.5
-                }}
+                    source={asset(`icons/gallery-arrow-${direction}.png`)}
+                    style={styles.arrowImage}
                 />
             </AnimatedButton>
         );

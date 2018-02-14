@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic');
 
+/************************************* Web Loading **************************************************/
 .loading {
     position: fixed;
-    width: 90px;
-    height: 50px;
-    top: calc(50% - 25px);
-    left: calc(50% - 45px);
+    width: 110px;
+    height: 60px;
+    top: calc(50% - 30px);
+    left: calc(50% - 55px);
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: normal;
@@ -24,6 +25,30 @@
     -o-user-select: none;
     -webkit-user-select: none;
 }
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid rgba(128, 128, 128, 0.37);
+    border-right: 6px solid rgba(225, 225, 225, 0.58);
+    width: 12px;
+    height: 12px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: auto;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/************************************* Web Localization **************************************************/
 
 .localization-buttons {
     position: fixed;
@@ -56,7 +81,7 @@
     -o-user-select: none;
     -webkit-user-select: none;
 }
-
+/************************************* Web Information **************************************************/
 .media-container {
     position: fixed;
     z-index: 999999999;

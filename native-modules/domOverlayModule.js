@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Module } from 'react-vr-web';
-import Information from '../components/Information';
+
+import WebInformation from '../components/Information/WebInformation';
 import WebLoading from '../components/Loading/WebLoading';
 
 class DomOverlayModule extends Module {
@@ -15,7 +16,7 @@ class DomOverlayModule extends Module {
 
     openInformation(props) {
         ReactDOM.render(
-            <Information {...props} onClose={this._closeOverlay} />,
+            <WebInformation {...props} onClose={this._closeOverlay} />,
             this._overlayContainer,
         );
     }

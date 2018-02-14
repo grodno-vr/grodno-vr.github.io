@@ -1,17 +1,15 @@
 import React from 'react';
-import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel } from 'react-vr';
-import { OldImage, Portal, Label, VRLoading } from '../.';
-import VRInformation from '../Information/VRInformation';
-import Gallery from '../Gallery';
+import { asset, Pano, View, Sound, Animated, NativeModules } from 'react-vr';
+import { Portal, Label, Gallery, VRInformation } from '../.';
 
 import lightMixin from './mixins/lightMixin';
 import cameraMixin from './mixins/cameraMixin';
 import loadingMixin from './mixins/loadingMixin';
+import localizationMixin from './mixins/localizationMixin';
 
 import styles from './styles';
 
-const { PersistenceOverlayModule } = NativeModules;
-const SuperClass = loadingMixin(cameraMixin(lightMixin(React.Component)));
+const SuperClass = localizationMixin(loadingMixin(cameraMixin(lightMixin(React.Component))));
 
 const AnimatedPano = Animated.createAnimatedComponent(Pano);
 
@@ -31,17 +29,6 @@ class Place extends SuperClass {
 
     componentDidMount() {
         this.startLoading();
-        this.headsetRotation = VrHeadModel.rotation();
-    }
-
-    renderLocalizationControls() {
-        if (VrHeadModel.inVR()) {
-            // TODO render VR controls
-        } else {
-            PersistenceOverlayModule.renderLocalizationButtons({
-                buttons: ['ENG', 'RU', 'BY']
-            });
-        }
     }
 
     renderLabels() {
@@ -103,38 +90,25 @@ class Place extends SuperClass {
         );
     }
 
-    renderOldImages() {
+    renderGallery() {
         const { place = {} } = this.props;
         const { selectedLabel } = this.state;
         const { labels = [] } = place;
         const label = labels[selectedLabel] || {};
+        const { oldImages = [], galleryStyle } = label;
 
-        return (
-            <Gallery
-                images={label.oldImages || []}
-                style={label.galleryStyle || {}}
-                onClose={() => {
+        if (galleryStyle && oldImages.length) {
+            return (
+                <Gallery
+                    images={oldImages}
+                    style={galleryStyle}
+                    onClose={() => {
                     this.onLight(() => {});
                     this.setState({ showOldImages: false });
                 }}
-            />
-        );
-        // return images.map((image, index) => this.renderOldImage(image, index));
-    }
-
-    renderOldImage(image, index) {
-        return (
-            <OldImage
-                key={`${index}-${image.source}`}
-                onClick={() => {
-                    this.onLight(() => {});
-                    this.setState({ showOldImages: false });
-                }}
-                style={{...image.style}}
-                year={image.year}
-                source={image.source}
-            />
-        );
+                />
+            );
+        }
     }
 
     renderPortals() {
@@ -173,9 +147,7 @@ class Place extends SuperClass {
                 {
                     (place.name === 'castle') && <Sound loop={true} source={asset('audio/birds.mp3')} />
                 }
-                {
-                    loading && VrHeadModel.inVR() && <VRLoading />
-                }
+                { this.renderLoading() }
                 <AnimatedPano
                     onLoad={() => this.onLight(() => this.stopLoading())}
                     source={asset(`/places/${place.name}/background.jpg`)}
@@ -192,7 +164,7 @@ class Place extends SuperClass {
                 { !loading && !showOldImages && !showInfo && this.renderPortals() }
 
                 { !loading && !showOldImages && showInfo && this.renderVRInformation() }
-                { !loading && showOldImages && !showInfo && this.renderOldImages() }
+                { !loading && showOldImages && !showInfo && this.renderGallery() }
             </Animated.View>
         );
     }
