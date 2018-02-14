@@ -1,61 +1,32 @@
 import React from 'react';
-import { asset, Pano, View, Animated, NativeModules, VrHeadModel } from 'react-vr';
-import { OldImage, Portal, Label, Knights } from '../.';
+import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel } from 'react-vr';
+import { OldImage, Portal, Label, VRLoading } from '../.';
+import VRInformation from '../Information/VRInformation';
+import Gallery from '../Gallery';
 
 import lightMixin from './mixins/lightMixin';
+import cameraMixin from './mixins/cameraMixin';
+import loadingMixin from './mixins/loadingMixin';
+
 import styles from './styles';
 
-const { DomOverlayModule, PersistenceOverlayModule } = NativeModules;
-const SuperClass = lightMixin(React.Component);
+const { PersistenceOverlayModule } = NativeModules;
+const SuperClass = loadingMixin(cameraMixin(lightMixin(React.Component)));
+
+const AnimatedPano = Animated.createAnimatedComponent(Pano);
 
 class Place extends SuperClass {
 
-    constructor() {
-        super();
-
-        this.headsetRotation = VrHeadModel.rotation();
+    constructor(props) {
+        super(props);
         this.state = {
             ...this.state,
+            scale: new Animated.Value(1),
             loading: true,
             showOldImages: false,
-            selectedLabel: null,
-            rotate: 0,
-            rotateY: new Animated.Value(0)
+            showInfo: false,
+            selectedLabel: null
         };
-    }
-
-    startLoading() {
-        this.setState({ loading: true });
-        if (VrHeadModel.inVR()) {
-            // TODO render VR loading indicator
-        } else {
-            DomOverlayModule.loading();
-        }
-    }
-
-    stopLoading() {
-        this.setState({ loading: false });
-        if (VrHeadModel.inVR()) {
-            // TODO hide VR loading indicator
-        } else {
-            DomOverlayModule.closeOverlay();
-        }
-    }
-
-    rotateCamera(offset = 0) {
-        this.headsetRotation = VrHeadModel.rotation();
-        const [ , rotateY ] = this.headsetRotation || [];
-        if (rotateY + offset > 180) {
-            console.log(rotateY);
-        }
-
-        Animated.timing(
-            this.state.rotateY,
-            {
-                toValue: rotateY + offset,
-                duration: 600
-            }
-        ).start();
     }
 
     componentDidMount() {
@@ -92,29 +63,63 @@ class Place extends SuperClass {
                         this.setState({ showOldImages: true, selectedLabel: index });
                     }
                 }}
-                onInfoClick={() => this.openInformation(label.text, label.description)}
+                onInfoClick={() => {
+                    this.rotateCamera(label.offset);
+                    this.openInformation(label, index);
+                }}
             />
         );
     }
 
-    openInformation(title, description) {
-        if (VrHeadModel.inVR()) {
-            // TODO open native modal
-        } else {
-            DomOverlayModule.openInformation({
-                title: title,
-                description: description || 'Has no description'
-            });
-        }
+    openInformation(label, index) {
+        // const { text, description = 'Has no description' } = label;
+        this.setState({ showInfo: true, selectedLabel: index });
+        // if (true) {
+        //     this.setState({ showInfo: true, selectedLabel: index });
+        // } else if (VrHeadModel.inVR()) {
+        //     // TODO open native modal
+        // } else {
+        //     DomOverlayModule.openInformation({ title: text, description });
+        // }
+    }
+
+    renderVRInformation() {
+        const { place = {} } = this.props;
+        const { selectedLabel } = this.state;
+        const { labels = [] } = place;
+        const { text, description, model, infoPosition, infoWidth, infoHeight } = labels[selectedLabel] || {};
+
+        // component based on CylindricalPanel, you should use values in pixels
+        return (
+            <VRInformation
+                title={text}
+                description={description}
+                width={infoWidth || 1000}
+                height={infoHeight || 820}
+                model={model}
+                translateX={infoPosition || 720}
+                onClose={() => this.setState({ showInfo: false })}
+            />
+        );
     }
 
     renderOldImages() {
         const { place = {} } = this.props;
         const { selectedLabel } = this.state;
         const { labels = [] } = place;
-        const images = (labels[selectedLabel] || {}).oldImages || [];
+        const label = labels[selectedLabel] || {};
 
-        return images.map((image, index) => this.renderOldImage(image, index));
+        return (
+            <Gallery
+                images={label.oldImages || []}
+                style={label.galleryStyle || {}}
+                onClose={() => {
+                    this.onLight(() => {});
+                    this.setState({ showOldImages: false });
+                }}
+            />
+        );
+        // return images.map((image, index) => this.renderOldImage(image, index));
     }
 
     renderOldImage(image, index) {
@@ -157,7 +162,7 @@ class Place extends SuperClass {
 
     render() {
         const { place = {}, style = {} } = this.props;
-        const { loading, showOldImages, light } = this.state;
+        const { loading, showOldImages, showInfo, light } = this.state;
 
         return (
             <Animated.View style={[
@@ -165,7 +170,13 @@ class Place extends SuperClass {
                 { transform: [{ rotateY: this.state.rotateY }] }
             ]}>
                 { this.renderLocalizationControls() }
-                <Pano
+                {
+                    (place.name === 'castle') && <Sound loop={true} source={asset('audio/birds.mp3')} />
+                }
+                {
+                    loading && VrHeadModel.inVR() && <VRLoading />
+                }
+                <AnimatedPano
                     onLoad={() => this.onLight(() => this.stopLoading())}
                     source={asset(`/places/${place.name}/background.jpg`)}
                     stereo={'TOP_BOTTOM_3D'}
@@ -176,16 +187,12 @@ class Place extends SuperClass {
                         tintColor: loading ? 'grey' : 'white'
                     }}
                 />
-                {
-                    // Do not touch this!!!
-                    // <Knights
-                    //     transform={[{ translate: [-5, -12, -20] }, { scale: 1 }, { rotateX: 270, rotateY: this.state.rotate }]}
-                    // />
-                }
-                { !loading && !showOldImages && this.renderLabels() }
-                { !loading && !showOldImages && this.renderPortals() }
 
-                { !loading && showOldImages && this.renderOldImages() }
+                { !loading && !showOldImages && !showInfo && this.renderLabels() }
+                { !loading && !showOldImages && !showInfo && this.renderPortals() }
+
+                { !loading && !showOldImages && showInfo && this.renderVRInformation() }
+                { !loading && showOldImages && !showInfo && this.renderOldImages() }
             </Animated.View>
         );
     }

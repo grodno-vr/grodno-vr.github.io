@@ -17,6 +17,12 @@
     color: white;
     border: 3px solid rgb(255, 255, 255);
     cursor: default;
+
+    /* TODO: После релиза CSS4 убрать это */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
 }
 
 .localization-buttons {
@@ -35,7 +41,6 @@
     text-align: center;
     justify-content: center;
     background-color: black;
-    /*color: gray;*/
     margin: 2px;
     border: 3px solid white;
     border-radius: 5px;
@@ -44,11 +49,20 @@
     pointer-events: initial;
 }
 
+.localization-button p {
+    /* TODO: После релиза CSS4 убрать это */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+}
+
 .media-container {
     position: fixed;
     z-index: 999999999;
     top: 0;
     left: 0;
+    overflow: scroll;
 
     display: flex;
 

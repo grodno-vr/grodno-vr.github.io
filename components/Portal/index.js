@@ -5,84 +5,149 @@ import styles from './styles';
 
 const Easing = require('Easing');
 
+const AnimatedSphere = Animated.createAnimatedComponent(Sphere);
+const AnimatedBox = Animated.createAnimatedComponent(Box);
+
+const SPHERE_Z = 0;
+const BOX_Z = -2;
+
 class Portal extends React.Component {
 
-    constructor() {
-        super();
+    constructor(...args) {
+        super(...args);
         this.state = {
             animationRequestId: null,
-            animatedScale: new Animated.Value(1),
-            rotate: 0,
-            opacity: 0.75,
-            showArrow: true
+            rotate: new Animated.Value(0),
+            scale: new Animated.Value(1),
+            opacity: new Animated.Value(0.75),
+            borderOpacity: new Animated.Value(0.2),
+            arrowOpacity: new Animated.Value(0.8)
         };
+        this._rotateTo = 360;
     }
 
     componentDidMount() {
-        const step = () => {
-            this.setState({ rotate: this.state.rotate - 1 });
-            this.animationRequestId = requestAnimationFrame(step);
-        };
-        this.animationRequestId = requestAnimationFrame(step);
+        this.rotateOnce();
+        // const step = () => {
+        //     this.setState({ rotate: this.state.rotate - 1 });
+        //     this.animationRequestId = requestAnimationFrame(step);
+        // };
+        // this.animationRequestId = requestAnimationFrame(step);
     }
+    
+    // componentWillUnmount() {
+    //     if (this.animationRequestId) {
+    //         cancelAnimationFrame(this.animationRequestId);
+    //     }
+    // }
 
-    componentWillUnmount() {
-        if (this.animationRequestId) {
-            cancelAnimationFrame(this.animationRequestId);
-        }
+
+    rotateOnce() {
+        this.state.rotate.setValue(0);
+        Animated.timing(this.state.rotate, {
+            toValue: this._rotateTo,
+            duration: 10000,
+        }).start(() => this.rotateOnce());
+        this._rotateTo = -this._rotateTo;
     }
-
+    
     mouseIn() {
-        this.setState({ showArrow: false, opacity: 1 });
-        Animated.timing(
-            this.state.animatedScale,
-            {
-                toValue: 2,
-                duration: 450,
-                easing: Easing.in
-            }
-        ).start();
+        Animated.parallel([
+            Animated.timing(
+                this.state.borderOpacity,
+                {
+                    toValue: 0,
+                    duration: 600,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.arrowOpacity,
+                {
+                    toValue: 0,
+                    duration: 600,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.opacity,
+                {
+                    toValue: 1,
+                    duration: 500,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.scale,
+                {
+                    toValue: 2,
+                    duration: 450,
+                    easing: Easing.in
+                }
+            )
+        ]).start();
     }
-
+    
     mouseOut() {
-        this.setState({ showArrow: true, opacity: 0.75 });
-        Animated.timing(
-            this.state.animatedScale,
-            {
-                toValue: 1,
-                duration: 250,
-                easing: Easing.in
-            }
-        ).start();
+        Animated.parallel([
+            Animated.timing(
+                this.state.borderOpacity,
+                {
+                    toValue: 0.2,
+                    duration: 400,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.arrowOpacity,
+                {
+                    toValue: 0.8,
+                    duration: 600,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.opacity,
+                {
+                    toValue: 0.75,
+                    duration: 500,
+                    easing: Easing.in
+                }
+            ),
+            Animated.timing(
+                this.state.scale,
+                {
+                    toValue: 1,
+                    duration: 450,
+                    easing: Easing.in
+                }
+            )
+        ]).start();
     }
-
+    
     render() {
-        const { transformPortal, place } = this.props;
+        const { transformPortal, place, style, onClick } = this.props;
+        const { scale, opacity, rotate, borderOpacity, arrowOpacity } = this.state;
 
         return (
             <Animated.View
                 style={[
                     styles.view,
-                    this.props.style,
-                    {
-                        transform: [
-                            ...transformPortal,
-                            { scale: this.state.animatedScale }
-                        ]
-                    }
+                    style,
+                    { transform: [ ...transformPortal, { scale } ] }
                 ]}
             >
                 <VrButton
-                    onClick={() => this.props.onClick(place)}
+                    onClick={() => onClick(place)}
                     onEnter={() => this.mouseIn()}
                     onExit={() => this.mouseOut()}
                 >
-                    <Sphere
+                    <AnimatedSphere
                         style={{
-                            opacity: this.state.opacity,
+                            opacity,
                             transform: [
-                                { translateY: 0 },
-                                { rotateY: this.state.rotate }
+                                { translateY: SPHERE_Z },
+                                { rotateY: rotate }
                             ]
                         }}
                         texture={asset(`/places/${place}/portal.jpg`)}
@@ -90,11 +155,11 @@ class Portal extends React.Component {
                         widthSegments={20}
                         heightSegments={12}
                     />
-                    <Sphere
+                    <AnimatedSphere
                         style={{
-                            opacity: this.state.showArrow ? 0.2 : 0,
+                            opacity: borderOpacity,
                             transform: [
-                                { translateY: 0 }
+                                { translateY: SPHERE_Z }
                             ]
                         }}
                         radius={1.4}
@@ -102,19 +167,19 @@ class Portal extends React.Component {
                         heightSegments={12}
                     />
                 </VrButton>
-                { this.state.showArrow && <Box
+                <AnimatedBox
                     texture={asset('icons/arrow.png')}
                     dimWidth={1}
                     dimDepth={1}
                     dimHeight={1}
                     style={{
-                            opacity: 0.8,
-                            transform: [
-                                { translateY: -2 },
-                                { rotateY: this.state.rotate }
-                            ]
-                        }}
-                />}
+                        opacity: arrowOpacity,
+                        transform: [
+                            { translateY: BOX_Z },
+                            { rotateY: rotate }
+                        ]
+                    }}
+                />
             </Animated.View>
         );
     }
