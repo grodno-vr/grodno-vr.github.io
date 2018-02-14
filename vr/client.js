@@ -5,8 +5,11 @@
 // Auto-generated content.
 import '../process';
 import { VRInstance } from 'react-vr-web';
+
 import PersistenceOverlayModule from '../native-modules/persistenceOverlayModule';
 import DomOverlayModule from '../native-modules/domOverlayModule';
+import RayCastersModule from '../native-modules/rayCastersModule';
+
 
 function init(bundle, parent, options) {
   const domOverlayContainer = document.createElement('div');
@@ -17,12 +20,14 @@ function init(bundle, parent, options) {
 
   const domOverlay = new DomOverlayModule(domOverlayContainer);
   const persistenceOverlayOverlay = new PersistenceOverlayModule(persistenceOverlayContainer);
+  const rayCastersFactory = new RayCastersModule();
 
   const vr = new VRInstance(bundle, 'GrodnoVR', parent, {
+    raycasters: rayCastersFactory.createRayCasters(),
+    cursorVisibility: 'visible',
     allowCarmelDeeplink: true,
     antialias: true,
     hideFullscreen: true,
-    cursorVisibility: 'visible',
     ...options,
     nativeModules: [domOverlay, persistenceOverlayOverlay]
   });
