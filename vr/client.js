@@ -9,9 +9,13 @@ import { VRInstance } from 'react-vr-web';
 import PersistenceOverlayModule from '../native-modules/persistenceOverlayModule';
 import DomOverlayModule from '../native-modules/domOverlayModule';
 import RayCastersModule from '../native-modules/rayCastersModule';
-
+import AjaxHandlerModule from '../native-modules/ajaxHandlerModule';
 
 function init(bundle, parent, options) {
+
+  const ajaxModule = new AjaxHandlerModule();
+  wrapXMLHttpRequest(ajaxModule);
+
   const domOverlayContainer = document.createElement('div');
   const persistenceOverlayContainer = document.createElement('div');
 
@@ -29,7 +33,7 @@ function init(bundle, parent, options) {
     antialias: true,
     hideFullscreen: true,
     ...options,
-    nativeModules: [domOverlay, persistenceOverlayOverlay]
+    nativeModules: [domOverlay, persistenceOverlayOverlay, ajaxModule]
   });
 
   vr.player._wrapper.appendChild(domOverlayContainer);
@@ -44,4 +48,31 @@ function init(bundle, parent, options) {
   return vr;
 }
 
-window.ReactVR = {init};
+window.ReactVR = {init, handlers: []};
+
+function wrapXMLHttpRequest(ajaxModule) {
+  const _send = XMLHttpRequest.prototype.send;
+
+  XMLHttpRequest.prototype.send = function() {
+    var callback = this.onreadystatechange;
+    this.onreadystatechange = function() {
+      if (this.readyState) {
+        const handlers = ajaxModule.getHandlers();
+        const keys = Object.keys(handlers);
+
+        for(let i = 0; i < keys.length; i++) {
+          const key = keys[i];
+          if (this.responseURL.indexOf(key)) {
+            // handlers[key] && handlers[key](this);
+            handlers[key] && console.log('Got it:', key);
+            ajaxModule.unregisterHandler(key);
+          }
+        }
+      }
+
+      callback && callback.apply(this, arguments);
+    };
+
+    _send.apply(this, arguments);
+  };
+}

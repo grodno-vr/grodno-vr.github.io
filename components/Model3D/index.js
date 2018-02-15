@@ -1,13 +1,14 @@
 import React from 'react';
-import { asset, Model, Animated } from 'react-vr';
+import { asset, Model, Animated, NativeModules } from 'react-vr';
 
+const { AjaxHandlersModule } = NativeModules;
 const AnimatedModel = Animated.createAnimatedComponent(Model);
 const Easing = require('Easing');
 
 class Model3D extends React.Component {
 
-    constructor(...args) {
-        super(...args);
+    constructor(props) {
+        super(props);
         this.state = { rotation: new Animated.Value(50) };
     }
 
@@ -24,9 +25,14 @@ class Model3D extends React.Component {
         ).start();
     }
 
+    componentDidMount() {
+        AjaxHandlersModule.registerHandler(this.props.details.mtl);
+        AjaxHandlersModule.registerHandler(this.props.details.obj);
+    }
+
     render() {
         const { style, obj, mtl, rotationAxis } = this.props.details || {};
-
+        
         return (
             <AnimatedModel
                 style={{
@@ -41,7 +47,6 @@ class Model3D extends React.Component {
                     obj: asset(obj),
                     mtl: asset(mtl)
                 }}
-                onLoad={() => console.log('Loaded...')}
             />
         );
     }
