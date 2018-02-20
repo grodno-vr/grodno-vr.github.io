@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, View, Animated, CylindricalPanel, VrButton, Image, AmbientLight, asset } from 'react-vr';
-import { Model3D } from '../.';
+import { Text, View, Animated, CylindricalPanel, Image, AmbientLight, asset } from 'react-vr';
+import { Model3D, GazeButton } from '../.';
 
 import styles from './styles';
 
@@ -79,7 +79,7 @@ class VRInformation extends React.Component {
                     }
                 ]}
             >
-                <VrButton
+                <GazeButton
                     style={{}}
                     onClick={() => this.setState({ modelRotation: this.state.modelRotation + 15.1 })}
                 >
@@ -87,8 +87,8 @@ class VRInformation extends React.Component {
                         source={asset('icons/rotate-left.png')}
                         style={styles.modelControl}
                     />
-                </VrButton>
-                <VrButton
+                </GazeButton>
+                <GazeButton
                     style={{}}
                     onClick={() => this.setState({ modelRotation: this.state.modelRotation - 15.1 })}
                 >
@@ -96,7 +96,7 @@ class VRInformation extends React.Component {
                         source={asset('icons/rotate-right.png')}
                         style={styles.modelControl}
                     />
-                </VrButton>
+                </GazeButton>
             </Animated.View>
         );
     }
@@ -123,7 +123,7 @@ class VRInformation extends React.Component {
                         <View
                             style={{ width, alignItems: 'flex-end' }}
                         >
-                            <VrButton
+                            <GazeButton
                                 onClick={() => onClose()}
                                 onEnter={() => this.mouseInClose()}
                                 onExit={() => this.mouseOutClose()}
@@ -139,7 +139,7 @@ class VRInformation extends React.Component {
                                         }
                                     ]}
                                 />
-                            </VrButton>
+                            </GazeButton>
                         </View>
                         <View style={{
                             flexDirection: 'row',

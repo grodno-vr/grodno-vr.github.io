@@ -1,5 +1,6 @@
 const castle = {
     name: 'castle',
+    sound: 'audio/birds.mp3',
     style: {},
     portals: [
         {

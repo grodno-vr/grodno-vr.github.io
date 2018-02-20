@@ -1,5 +1,6 @@
 const brigits = {
     name: 'brigits',
+    sound: 'audio/back-1.wav',
     style: {},
     portals: [
         {

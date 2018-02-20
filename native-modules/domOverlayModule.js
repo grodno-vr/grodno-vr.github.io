@@ -9,14 +9,12 @@ class DomOverlayModule extends Module {
 
     constructor(overlayContainer) {
         super('DomOverlayModule');
-
-        this._closeOverlay = this.closeOverlay.bind(this);
         this._overlayContainer = overlayContainer;
     }
 
     openInformation(props) {
         ReactDOM.render(
-            <WebInformation {...props} onClose={this._closeOverlay} />,
+            <WebInformation {...props} onClose={() => this.closeOverlay()} />,
             this._overlayContainer,
         );
     }

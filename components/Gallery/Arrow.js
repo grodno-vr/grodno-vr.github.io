@@ -1,9 +1,9 @@
 import React from 'react';
-import { Animated, VrButton, Image, asset } from 'react-vr';
+import { Animated, Image, asset } from 'react-vr';
+import { GazeButton } from '../.';
 
 import styles from './styles';
 
-const AnimatedButton = Animated.createAnimatedComponent(VrButton);
 const Easing = require('Easing');
 
 class Arrow extends React.Component {
@@ -51,7 +51,7 @@ class Arrow extends React.Component {
         const { opacity, scale } = this.state;
 
         return (
-            <AnimatedButton
+            <GazeButton
                 onClick={() => onClick()}
                 onEnter={() => this.mouseIn()}
                 onExit={() => this.mouseOut()}
@@ -67,7 +67,7 @@ class Arrow extends React.Component {
                     source={asset(`icons/arrow-${direction}.png`)}
                     style={styles.arrowImage}
                 />
-            </AnimatedButton>
+            </GazeButton>
         );
     }
 }

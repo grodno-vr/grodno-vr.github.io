@@ -1,9 +1,9 @@
 import React from 'react';
 import { Animated, VrButton, Image, asset } from 'react-vr';
+import { GazeButton } from '../.';
 
 import styles from './styles';
 
-const AnimatedButton = Animated.createAnimatedComponent(VrButton);
 const Easing = require('Easing');
 
 class Close extends React.Component {
@@ -51,7 +51,7 @@ class Close extends React.Component {
         const { opacity, scale } = this.state;
 
         return (
-            <AnimatedButton
+            <GazeButton
                 onClick={() => onClick()}
                 onEnter={() => this.mouseIn()}
                 onExit={() => this.mouseOut()}
@@ -67,7 +67,7 @@ class Close extends React.Component {
                     source={asset('icons/x.png')}
                     style={styles.closeImage}
                 />
-            </AnimatedButton>
+            </GazeButton>
         );
     }
 }

@@ -1,5 +1,6 @@
 const center = {
     name: 'center',
+    sound: 'audio/back.wav',
     style: {},
     portals: [
         {

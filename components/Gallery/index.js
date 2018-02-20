@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Animated, VrButton, Image, asset } from 'react-vr';
+import { Text, View, Animated, Image, asset } from 'react-vr';
 
 import Arrow from './Arrow';
 import Close from './Close';

@@ -1,5 +1,6 @@
 import React from 'react';
 import { asset, VrButton, Image, Animated } from 'react-vr';
+import { GazeButton } from '../.';
 
 import styles from './styles';
 
@@ -42,7 +43,7 @@ class LabelButton extends React.Component {
                     { transform: [{ scale: this.state.scale }] }
                 ]}
             >
-                <VrButton
+                <GazeButton
                     style={styles.btn}
                     onClick={() => onClick()}
                 >
@@ -50,7 +51,7 @@ class LabelButton extends React.Component {
                         source={asset(icon)}
                         style={styles.icon}
                     />
-                </VrButton>
+                </GazeButton>
             </Animated.View>
         );
     }

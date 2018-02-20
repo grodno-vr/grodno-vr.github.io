@@ -1,6 +1,6 @@
 import React from 'react';
-import { asset, Animated, VrButton, Sphere, Box } from 'react-vr';
-
+import { asset, Animated, Sphere, Box } from 'react-vr';
+import { GazeButton } from '../.';
 import styles from './styles';
 
 const Easing = require('Easing');
@@ -28,25 +28,14 @@ class Portal extends React.Component {
 
     componentDidMount() {
         this.rotateOnce();
-        // const step = () => {
-        //     this.setState({ rotate: this.state.rotate - 1 });
-        //     this.animationRequestId = requestAnimationFrame(step);
-        // };
-        // this.animationRequestId = requestAnimationFrame(step);
     }
-    
-    // componentWillUnmount() {
-    //     if (this.animationRequestId) {
-    //         cancelAnimationFrame(this.animationRequestId);
-    //     }
-    // }
 
 
     rotateOnce() {
         this.state.rotate.setValue(0);
         Animated.timing(this.state.rotate, {
             toValue: this._rotateTo,
-            duration: 10000,
+            duration: 10000
         }).start(() => this.rotateOnce());
         this._rotateTo = -this._rotateTo;
     }
@@ -137,7 +126,7 @@ class Portal extends React.Component {
                     { transform: [ ...transformPortal, { scale } ] }
                 ]}
             >
-                <VrButton
+                <GazeButton
                     onClick={() => onClick(place)}
                     onEnter={() => this.mouseIn()}
                     onExit={() => this.mouseOut()}
@@ -166,7 +155,7 @@ class Portal extends React.Component {
                         widthSegments={20}
                         heightSegments={12}
                     />
-                </VrButton>
+                </GazeButton>
                 <AnimatedBox
                     texture={asset('icons/arrow.png')}
                     dimWidth={1}

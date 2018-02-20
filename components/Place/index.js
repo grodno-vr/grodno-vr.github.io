@@ -67,23 +67,25 @@ class Place extends SuperClass {
     }
 
     renderVRInformation() {
-        const { place = {} } = this.props;
-        const { selectedLabel } = this.state;
-        const { labels = [] } = place;
-        const { text, description, model, infoPosition, infoWidth, infoHeight } = labels[selectedLabel] || {};
-
-        // component based on CylindricalPanel, you should use values in pixels
-        return (
-            <VRInformation
-                title={text}
-                description={description}
-                width={infoWidth || 1000}
-                height={infoHeight || 820}
-                model={model}
-                translateX={infoPosition || 720}
-                onClose={() => this.setState({ showInfo: false })}
-            />
-        );
+        if (VrHeadModel.inVR()) {
+            const { place = {} } = this.props;
+            const { selectedLabel } = this.state;
+            const { labels = [] } = place;
+            const { text, description = 'Has no description', model, infoPosition, infoWidth, infoHeight } = labels[selectedLabel] || {};
+            
+            // component based on CylindricalPanel, you should use values in pixels
+            return (
+                <VRInformation
+                    title={text}
+                    description={description}
+                    width={infoWidth || 1000}
+                    height={infoHeight || 820}
+                    model={model}
+                    translateX={infoPosition || 720}
+                    onClose={() => this.setState({ showInfo: false })}
+                />
+            );   
+        }
     }
 
     renderGallery() {
@@ -140,10 +142,11 @@ class Place extends SuperClass {
                 { transform: [{ rotateY: this.state.rotateY }] }
             ]}>
                 { this.renderLocalizationControls() }
-                {
-                    (place.name === 'castle') && <Sound loop={true} source={asset('audio/birds.mp3')} />
-                }
+                
+                { place.sound && <Sound loop={true} source={asset(place.sound)} /> }
+                
                 { this.renderLoading() }
+                
                 <AnimatedPano
                     onLoad={() => this.onLight(() => this.stopLoading())}
                     source={asset(`/places/${place.name}/background.jpg`)}
