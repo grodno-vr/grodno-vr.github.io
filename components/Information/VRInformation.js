@@ -141,16 +141,27 @@ class VRInformation extends React.Component {
                                 />
                             </VrButton>
                         </View>
-                        <Text
-                            style={{
+                        <View style={{
+                            flexDirection: 'row',
+                            alignItems: 'center'
+                        }}>
+                            <Text
+                                style={{
                                     margin: 20,
                                     fontSize: 30,
                                     fontWeight: '300',
                                     width: model ? 600 : 900
                                 }}
-                        >
-                            {`${title.toUpperCase()}\n\n${description}`}
-                        </Text>
+                            >
+                                {`${title.toUpperCase()}\n\n${description}`}
+                            </Text>
+                            { model && <View style={{
+                                justifyContent: 'center',
+                                alignItems: 'flex-end'
+                            }}>
+                                { /* <Image style={{ opacity: 0.1, width: 200, height: 200 }} source={asset('icons/3d-placeholder.png')} /> */ }
+                            </View> }
+                        </View>
                     </Animated.View>
                 </CylindricalPanel>
 

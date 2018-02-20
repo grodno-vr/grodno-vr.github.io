@@ -1,14 +1,12 @@
 import React from 'react';
-import { asset, Pano, View, Sound, Animated, NativeModules } from 'react-vr';
-import { Portal, Label, Gallery, VRInformation } from '../.';
+import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel } from 'react-vr';
 
-import lightMixin from './mixins/lightMixin';
-import cameraMixin from './mixins/cameraMixin';
-import loadingMixin from './mixins/loadingMixin';
-import localizationMixin from './mixins/localizationMixin';
+import { Portal, Label, Gallery, VRInformation } from '../.';
+import { lightMixin, cameraMixin, loadingMixin, localizationMixin } from './mixins';
 
 import styles from './styles';
 
+const { DomOverlayModule } = NativeModules;
 const SuperClass = localizationMixin(loadingMixin(cameraMixin(lightMixin(React.Component))));
 
 const AnimatedPano = Animated.createAnimatedComponent(Pano);
@@ -59,15 +57,13 @@ class Place extends SuperClass {
     }
 
     openInformation(label, index) {
-        // const { text, description = 'Has no description' } = label;
-        this.setState({ showInfo: true, selectedLabel: index });
-        // if (true) {
-        //     this.setState({ showInfo: true, selectedLabel: index });
-        // } else if (VrHeadModel.inVR()) {
-        //     // TODO open native modal
-        // } else {
-        //     DomOverlayModule.openInformation({ title: text, description });
-        // }
+        const { text, description = 'Has no description' } = label;
+
+        if (VrHeadModel.inVR()) {
+            this.setState({ showInfo: true, selectedLabel: index });
+        } else {
+            DomOverlayModule.openInformation({ title: text, description });
+        }
     }
 
     renderVRInformation() {

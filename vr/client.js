@@ -27,14 +27,25 @@ function init(bundle, parent, options) {
   const rayCastersFactory = new RayCastersModule();
 
   const vr = new VRInstance(bundle, 'GrodnoVR', parent, {
-    raycasters: rayCastersFactory.createRayCasters(),
+    raycasters: [rayCastersFactory.createMouseRayCaster()],
+    onEnterVR: () => setupRayCaster(rayCastersFactory.createVrDotRayCater()),
+    onExitVR: () => setupRayCaster(rayCastersFactory.createMouseRayCaster()),
     cursorVisibility: 'visible',
+
     allowCarmelDeeplink: true,
     antialias: true,
     hideFullscreen: true,
+    enableHotReload: true,
     ...options,
+
     nativeModules: [domOverlay, persistenceOverlayOverlay, ajaxModule]
   });
+
+  function setupRayCaster(rayCaster) {
+    // console.log(vr.guiSys);
+    if (vr && vr.guiSys)
+    vr.guiSys._raycasters = [rayCaster];
+  }
 
   vr.player._wrapper.appendChild(domOverlayContainer);
   vr.player._wrapper.appendChild(persistenceOverlayContainer);

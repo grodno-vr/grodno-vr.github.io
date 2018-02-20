@@ -4,8 +4,10 @@ import * as OVRUI from 'ovrui';
 class RayCastersModule {
     constructor(/*scene*/) {
         // this.scene = scene;
+    }
 
-        this.simpleDotRaycaster = {
+    createVrDotRayCater() {
+        return {
             getType: () => 'simpleDot',
             getRayOrigin: () => [0, 0, 0],
             getRayDirection: () => [0, 0, -1],
@@ -13,14 +15,9 @@ class RayCastersModule {
             // getMaxLength: () => 20
         };
     }
-
-    createRayCasters() {
-        const { simpleDotRaycaster/*, scene*/ } = this;
-        return [
-            simpleDotRaycaster,
-            // new ControllerRayCaster({ scene, color: '#ff0000'}),
-            new OVRUI.MouseRayCaster()
-        ];
+    
+    createMouseRayCaster() {
+        return new OVRUI.MouseRayCaster();        
     }
 }
 

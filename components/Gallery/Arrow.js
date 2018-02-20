@@ -64,7 +64,7 @@ class Arrow extends React.Component {
                 ]}
             >
                 <Image
-                    source={asset(`icons/gallery-arrow-${direction}.png`)}
+                    source={asset(`icons/arrow-${direction}.png`)}
                     style={styles.arrowImage}
                 />
             </AnimatedButton>

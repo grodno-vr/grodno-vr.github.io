@@ -33,27 +33,27 @@ const styles = StyleSheet.create({
         width: 2,
         height: 2,
         margin: 0.5,
-        borderRadius: 0.5,
+        borderRadius: 1,
         backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center'
     },
     arrowImage: {
-        width: 1.5,
-        height: 1.5
+        width: 1.2,
+        height: 1.2
     },
     closeButton: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'black',
         borderRadius: 1,
-        width: 1,
-        height: 1,
+        width: 1.2,
+        height: 1.2,
         marginTop: 1
     },
     closeImage: {
-        width: 0.5,
-        height: 0.5
+        width: 0.6,
+        height: 0.6
     }
 });
 
