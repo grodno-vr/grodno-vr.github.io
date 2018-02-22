@@ -130,6 +130,7 @@ class Portal extends React.Component {
                     onClick={() => onClick(place)}
                     onEnter={() => this.mouseIn()}
                     onExit={() => this.mouseOut()}
+                    onEnterSound={asset('audio/hover.wav')}
                 >
                     <AnimatedSphere
                         style={{

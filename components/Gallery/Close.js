@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, VrButton, Image, asset } from 'react-vr';
+import { Animated, Text, View, Image, asset } from 'react-vr';
 import { GazeButton } from '../.';
 
 import styles from './styles';
@@ -15,7 +15,7 @@ class Close extends React.Component {
             scale: new Animated.Value(1)
         };
     }
-
+    
     mouseIn() {
         Animated.parallel([
             Animated
@@ -26,7 +26,7 @@ class Close extends React.Component {
             Animated
                 .timing(
                     this.state.scale,
-                    { toValue: 1.1, duration: 800, easing: Easing.in }
+                    { toValue: 1.3, duration: 800, easing: Easing.in }
                 )
         ]).start();
     }
@@ -51,23 +51,29 @@ class Close extends React.Component {
         const { opacity, scale } = this.state;
 
         return (
-            <GazeButton
-                onClick={() => onClick()}
-                onEnter={() => this.mouseIn()}
-                onExit={() => this.mouseOut()}
-                style={[
-                    styles.closeButton,
-                    {
-                        transform: [{ scale }],
-                        opacity
-                    }
-                ]}
-            >
-                <Animated.Image
-                    source={asset('icons/x.png')}
-                    style={styles.closeImage}
-                />
-            </GazeButton>
+            <View style={styles.centerView}>
+                <GazeButton
+                    onClick={() => onClick()}
+                    onEnter={() => this.mouseIn()}
+                    onExit={() => this.mouseOut()}
+                    onEnterSound={asset('audio/hover-1.wav')}
+                    style={[
+                        styles.closeButton,
+                        {
+                            transform: [{ scale }],
+                            opacity
+                        }
+                    ]}
+                >
+                    <Image
+                        source={asset('icons/x.png')}
+                        style={styles.closeImage}
+                    />
+                </GazeButton>
+                <Text style={styles.tooltipButton}>
+                    Close
+                </Text>
+            </View>
         );
     }
 }

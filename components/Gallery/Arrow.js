@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, Image, asset } from 'react-vr';
+import { Animated, View, Image, Text, asset } from 'react-vr';
 import { GazeButton } from '../.';
 
 import styles from './styles';
@@ -26,7 +26,7 @@ class Arrow extends React.Component {
             Animated
                 .timing(
                     this.state.scale,
-                    { toValue: 1.1, duration: 800, easing: Easing.in }
+                    { toValue: 1.3, duration: 800, easing: Easing.in }
                 )
         ]).start();
     }
@@ -47,27 +47,34 @@ class Arrow extends React.Component {
     }
 
     render() {
-        const { onClick, direction } = this.props;
+        const { onClick, direction, text } = this.props;
         const { opacity, scale } = this.state;
 
         return (
-            <GazeButton
-                onClick={() => onClick()}
-                onEnter={() => this.mouseIn()}
-                onExit={() => this.mouseOut()}
-                style={[
-                    styles.arrowButton,
-                    {
-                        transform: [{ scale }],
-                        opacity
-                    }
-                ]}
-            >
-                <Image
-                    source={asset(`icons/arrow-${direction}.png`)}
-                    style={styles.arrowImage}
-                />
-            </GazeButton>
+            <View style={styles.centerView}>
+                <GazeButton
+                    onClick={() => onClick()}
+                    onEnter={() => this.mouseIn()}
+                    onExit={() => this.mouseOut()}
+                    onEnterSound={asset('audio/hover-1.wav')}
+                    style={[
+                        styles.arrowButton,
+                        {
+                            transform: [{ scale }],
+                            opacity
+                        }
+                    ]}
+                >
+                    <Image
+                        source={asset(`icons/arrow-${direction}.png`)}
+                        style={styles.arrowImage}
+                    />
+                </GazeButton>
+                <Text style={styles.tooltipButton}>
+                    {text}
+                </Text>
+
+            </View>
         );
     }
 }

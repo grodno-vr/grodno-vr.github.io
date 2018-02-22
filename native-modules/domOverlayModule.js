@@ -13,6 +13,8 @@ class DomOverlayModule extends Module {
     }
 
     openInformation(props) {
+        window._rayCastersController.turnOffRayCasters();
+
         ReactDOM.render(
             <WebInformation {...props} onClose={() => this.closeOverlay()} />,
             this._overlayContainer,
@@ -27,6 +29,8 @@ class DomOverlayModule extends Module {
     }
 
     closeOverlay() {
+        window._rayCastersController.turnOnRayCasters();
+
         ReactDOM.unmountComponentAtNode(this._overlayContainer);
     }
 

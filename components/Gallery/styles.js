@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         // borderColor: 'gray',
         borderRadius: 0.6
     },
-    yearView: {
+    centerView: {
         alignItems: 'center'
     },
     yearLabel: {
@@ -29,31 +29,43 @@ const styles = StyleSheet.create({
         height: 0.7,
         color: 'white'
     },
+   tooltipButton: {
+        opacity: 0.4,
+        padding: 0.1,
+        marginTop: 0.2,
+        textAlign: 'center',
+        fontSize: 0.3,
+        height: 0.5,
+        color: 'white'  
+    },
     arrowButton: {
-        width: 2,
-        height: 2,
-        margin: 0.5,
+        width: 0.8,
+        height: 0.8,
+        marginLeft: 0.5,
+        marginRight: 0.5,
+        marginBottom: 0.1,
+        marginTop: 0.5,
         borderRadius: 1,
         backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center'
     },
     arrowImage: {
-        width: 1.2,
-        height: 1.2
+        width: 0.4,
+        height: 0.4
     },
     closeButton: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'black',
         borderRadius: 1,
-        width: 1.2,
-        height: 1.2,
-        marginTop: 1
+        width: 0.8,
+        height: 0.8,
+        marginTop: 0.5
     },
     closeImage: {
-        width: 0.6,
-        height: 0.6
+        width: 0.4,
+        height: 0.4
     }
 });
 

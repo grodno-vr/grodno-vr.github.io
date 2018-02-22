@@ -29,8 +29,8 @@ class GazeButton extends React.Component {
                     this.setState({ hasFocus: true });
                     this.lastTimeoutId = setTimeout(() => {
                         this.setState({ hasFocus: false });
-                        VrSoundEffects.play(asset('audio/hover.wav'));
-                        setTimeout(onClick, 0);
+                        VrSoundEffects.play(asset('audio/click.wav'));
+                        onClick();
                     }, GAZE_TIMEOUT);
                 }}
                 onExit={() => {
@@ -39,8 +39,8 @@ class GazeButton extends React.Component {
                       clearTimeout(this.lastTimeoutId);
                       this.lastTimeoutId = 0;
                 }}
-                // onEnterSound={asset('audio/click.wav')}
-                onClickSound={asset('audio/hover.wav')}
+                // onEnterSound={asset('audio/hover-1.wav')}
+                onClickSound={asset('audio/click.wav')}
                 // onLongClickSound={onClickSound}
             >
                 {children}

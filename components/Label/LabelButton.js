@@ -46,6 +46,7 @@ class LabelButton extends React.Component {
                 <GazeButton
                     style={styles.btn}
                     onClick={() => onClick()}
+                    onEnterSound={asset('audio/hover-1.wav')}
                 >
                     <Image
                         source={asset(icon)}

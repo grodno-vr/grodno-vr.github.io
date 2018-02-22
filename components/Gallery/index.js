@@ -75,26 +75,24 @@ class Gallery extends React.Component {
                     }
                 ]}
             >
-                <View style={styles.yearView}>
+                <View style={styles.centerView}>
                     <Text style={styles.yearLabel}>
                         {currentImage.year}
                     </Text>
                 </View>
 
                 <View style={styles.imageView}>
-                    <Arrow direction={'left'} onClick={() => this.nextImage(-1)} />
+                    <Arrow direction="left" text="Back" onClick={() => this.nextImage(-1)} />
 
                     <Animated.Image
                         onLoad={() => this.imageLoadHandler()}
                         source={asset(currentImage.source)}
                         style={[ styles.image, {...currentImage.style}]}
                     />
-
-                    <Arrow direction={'right'} onClick={() => this.nextImage(1)} />
+                    <Arrow direction="right" text="Next" onClick={() => this.nextImage(1)} />
                 </View>
-
-                <View style={{ alignItems: 'center' }}>
-                    <Close onClick={() => onClose()} />
+                <View style={styles.centerView}>
+                   <Close onClick={() => onClose()} />
                 </View>
             </Animated.View>
         );

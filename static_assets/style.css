@@ -24,6 +24,7 @@
     -ms-user-select: none;
     -o-user-select: none;
     -webkit-user-select: none;
+    user-select: none;
 }
 
 .loader {
@@ -80,6 +81,7 @@
     -ms-user-select: none;
     -o-user-select: none;
     -webkit-user-select: none;
+    user-select: none;
 }
 /************************************* Web Information **************************************************/
 .media-container {
