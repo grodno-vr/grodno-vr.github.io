@@ -59,7 +59,7 @@ class Place extends SuperClass {
     openInformation(label, index) {
         const { text, description = 'Has no description' } = label;
 
-        if (VrHeadModel.inVR()) {
+        if (true) {
             this.setState({ showInfo: true, selectedLabel: index });
         } else {
             DomOverlayModule.openInformation({ title: text, description });
@@ -67,7 +67,7 @@ class Place extends SuperClass {
     }
 
     renderVRInformation() {
-        if (VrHeadModel.inVR()) {
+        if (true) {
             const { place = {} } = this.props;
             const { selectedLabel } = this.state;
             const { labels = [] } = place;

@@ -148,7 +148,7 @@ class VRInformation extends React.Component {
                             <Text
                                 style={{
                                     margin: 20,
-                                    fontSize: 30,
+                                    fontSize: 24,
                                     fontWeight: '300',
                                     width: model ? 600 : 900
                                 }}
