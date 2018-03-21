@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
         borderRadius: 0.6
     },
     centerView: {
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     yearLabel: {
         backgroundColor: 'black',
@@ -43,7 +44,6 @@ const styles = StyleSheet.create({
         height: 0.8,
         marginLeft: 0.5,
         marginRight: 0.5,
-        marginBottom: 0.1,
         marginTop: 0.5,
         borderRadius: 1,
         backgroundColor: 'black',

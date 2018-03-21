@@ -22,7 +22,7 @@ const center = {
     ],
     labels: [
         {
-            offset: 50,
+            offset: 38,
             viewStyle: {
                 transform: [{translate: [20, 4, -20]}, { scale : 5.5 }, { rotateY: -40 }]
             },
@@ -52,7 +52,7 @@ const center = {
                 }
             },
             galleryStyle: {
-                transform: [{translate: [1, 4, -6]}, { rotateY: -45 }]
+                transform: [{translate: [1, 4, -5]}, { rotateY: -38 }]
             },
             oldImages: [
                 {
@@ -97,7 +97,7 @@ const center = {
             description: '<None>',
             infoPosition: 1800,
             galleryStyle: {
-                transform: [{translate: [-6, 4, -9]}]
+                transform: [{translate: [-4, 4, -6]}, { rotateY: 5 }]
             },
             oldImages: [
                 {
@@ -151,7 +151,7 @@ const center = {
             ]
         },
         {
-            offset: -110,
+            offset: -120,
             viewStyle: {
                 transform: [{translate: [-8, 2, 2]}, { scale: 2 }, { rotateY: 110 }]
             },
@@ -160,7 +160,7 @@ const center = {
             It was named after Stephen Báthory, King of Rzeczpospolita who had a residence here in the 16th century.`,
             infoPosition: 100,
             galleryStyle: {
-                transform: [{translate: [-15, 4, 4]}, { rotateY: 110 }]
+                transform: [{translate: [-10, 4, 3]}, { rotateY: 120 }]
             },
             oldImages: [
                 {
@@ -182,7 +182,7 @@ const center = {
             ]
         },
         {
-            offset: 90,
+            offset: 85,
             viewStyle: {
                 transform: [{translate: [18, 5, -1]}, { scale : 4 }, { rotateY: -75 }]
             },
@@ -190,7 +190,7 @@ const center = {
             description: '<None>',
             infoPosition: 3200,
             galleryStyle: {
-                transform: [{translate: [5, 5, -1]}, { rotateY: -80 }]
+                transform: [{translate: [8, 6, -1]}, { rotateY: -85 }]
             },
             oldImages: [
                 {
@@ -228,7 +228,7 @@ const center = {
             ]
         },
         {
-            offset: 130,
+            offset: 140,
             viewStyle: {
                 transform: [{translate: [12, 9, 12]}, { scale : 4 }, { rotateY: -130 }]
             },
@@ -239,7 +239,7 @@ const center = {
             The religious services were restored in 1987. In 1990 the church was granted the title of minor basilica, and a year later it became a cathedral for a diocese of Grodno.`,
             infoPosition: 3700,
             galleryStyle: {
-                transform: [{translate: [0, 4, 5]}, { rotateY: -130 }]
+                transform: [{translate: [2, 4.5, 7]}, { rotateY: -140 }]
             },
             oldImages: [
                 {

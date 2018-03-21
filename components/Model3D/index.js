@@ -1,7 +1,6 @@
 import React from 'react';
-import { asset, Model, Animated, NativeModules } from 'react-vr';
+import { asset, Model, Animated } from 'react-vr';
 
-const { AjaxHandlersModule } = NativeModules;
 const AnimatedModel = Animated.createAnimatedComponent(Model);
 const Easing = require('Easing');
 
@@ -23,11 +22,6 @@ class Model3D extends React.Component {
                 easing: Easing.in
             }
         ).start();
-    }
-
-    componentDidMount() {
-        AjaxHandlersModule.registerHandler(this.props.details.mtl);
-        AjaxHandlersModule.registerHandler(this.props.details.obj);
     }
 
     render() {

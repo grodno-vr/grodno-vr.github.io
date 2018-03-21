@@ -31,7 +31,7 @@ const castle = {
                 obj: 'models/coat/coat_clean.obj',
                 mtl: 'models/coat/coat_clean_tex.mtl',
                 controls: {
-                    transform: [{translate: [-2, -1, -15]}, { rotateY: -10 }]
+                    transform: [{translate: [-3, -1, -15]}, { rotateY: -10 }]
                 }
             },
             oldImages: []
