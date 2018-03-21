@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Animated, CylindricalPanel, Image, AmbientLight, asset } from 'react-vr';
+import { Text, View, VrButton, Animated, CylindricalPanel, Image, AmbientLight, asset } from 'react-vr';
 import { Model3D, GazeButton } from '../.';
 
 import styles from './styles';
@@ -64,6 +64,19 @@ class VRInformation extends React.Component {
         ]).start();
     }
 
+    startModelRotation(offset) {
+        this.timerId = setInterval(() => {
+            this.setState({ modelRotation: this.state.modelRotation + offset });
+        }, 500);
+    }
+
+    stopModelRotation() {
+        if (this.timerId) {
+            clearTimeout(this.timerId);
+            this.timerId = null;
+        }
+    }
+
     renderModelControls() {
         const { model } = this.props;
         const { transform } = model.controls;
@@ -79,24 +92,26 @@ class VRInformation extends React.Component {
                     }
                 ]}
             >
-                <GazeButton
-                    style={{}}
-                    onClick={() => this.setState({ modelRotation: this.state.modelRotation + 15.1 })}
+                <VrButton
+                    style={styles.modelControlBtn}
+                    onEnter={() => this.startModelRotation(15.1)}
+                    onExit={() => this.stopModelRotation()}
                 >
                     <Image
                         source={asset('icons/rotate-left.png')}
-                        style={styles.modelControl}
+                        style={styles.modelControlImg}
                     />
-                </GazeButton>
-                <GazeButton
-                    style={{}}
-                    onClick={() => this.setState({ modelRotation: this.state.modelRotation - 15.1 })}
+                </VrButton>
+                <VrButton
+                    style={styles.modelControlBtn}
+                    onEnter={() => this.startModelRotation(-15.1)}
+                    onExit={() => this.stopModelRotation()}
                 >
                     <Image
                         source={asset('icons/rotate-right.png')}
-                        style={styles.modelControl}
+                        style={styles.modelControlImg}
                     />
-                </GazeButton>
+                </VrButton>
             </Animated.View>
         );
     }

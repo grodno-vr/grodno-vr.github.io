@@ -106,7 +106,7 @@ class Gallery extends React.Component {
 
                 </View>
                 <View style={[styles.centerView, { flexDirection: 'row', transform: [{ rotateX: -27 }] }]}>
-                    <Arrow direction="left" text="Back" onClick={() => this.nextImage(-1)} />
+                    <Arrow direction="left" text="Prev" onClick={() => this.nextImage(-1)} />
                     <Close onClick={() => onClose()} />
                     <Arrow direction="right" text="Next" onClick={() => this.nextImage(1)} />
                 </View>

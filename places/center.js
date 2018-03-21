@@ -52,7 +52,7 @@ const center = {
                 }
             },
             galleryStyle: {
-                transform: [{translate: [3, 4, -7]}, { rotateY: -38 }]
+                transform: [{translate: [1, 4, -5]}, { rotateY: -38 }]
             },
             oldImages: [
                 {
@@ -97,7 +97,7 @@ const center = {
             description: '<None>',
             infoPosition: 1800,
             galleryStyle: {
-                transform: [{translate: [-4, 4, -9]}, { rotateY: 5 }]
+                transform: [{translate: [-4, 4, -6]}, { rotateY: 5 }]
             },
             oldImages: [
                 {
@@ -160,7 +160,7 @@ const center = {
             It was named after Stephen Báthory, King of Rzeczpospolita who had a residence here in the 16th century.`,
             infoPosition: 100,
             galleryStyle: {
-                transform: [{translate: [-12, 4, 4]}, { rotateY: 120 }]
+                transform: [{translate: [-10, 4, 3]}, { rotateY: 120 }]
             },
             oldImages: [
                 {
