@@ -20,16 +20,15 @@ const castle = {
             model: {
                 style: {
                     transform: [
-                        { translate: [2, 10, -67] },
-                        { scale: 1.1 },
-                        { rotateZ: 40 },
-                        { rotateX: 100 },
-                        { rotateY: 10 }
+                        { translate: [12, 5, -21] }
                     ]
                 },
                 rotationAxis: 'rotateZ',
-                obj: 'models/coat/coat_clean.obj',
-                mtl: 'models/coat/coat_clean_tex.mtl',
+                // obj: 'models/coat/coat_clean.obj',
+                // mtl: 'models/coat/coat_clean_tex.mtl',
+                obj: 'models/getto/getto.obj',
+                mtl: 'models/getto/getto.mtl',
+
                 controls: {
                     transform: [{translate: [-2, -1, -15]}, { rotateY: -10 }]
                 }
