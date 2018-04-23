@@ -11,13 +11,27 @@ class Gallery extends React.Component {
 
     constructor(props) {
         super(props);
+        this._initRotate = 0;
         this.state = {
+            rotateY: new Animated.Value(0),
             selectedImage: 0,
             opacity: new Animated.Value(0.1),
             scale: new Animated.Value(0.1)
         };
     }
-    
+
+    componentDidMount() {
+        this.rotateOnce();
+    }
+
+    rotateOnce() {
+        this._initRotate = this._initRotate === -5 ? 5 : -5;
+        Animated.timing(this.state.rotateY, {
+            toValue: this._initRotate,
+            duration: 1600
+        }).start(() => this.rotateOnce());
+    }
+
     nextImage(step) {
         const { images = [] } = this.props; 
         let nextImageIndex = this.state.selectedImage + step;
@@ -63,7 +77,7 @@ class Gallery extends React.Component {
         const { selectedImage, scale, opacity } = this.state;
         const { images = [], style, onClose } = this.props;
         const currentImage = images[selectedImage] || {};
-        
+
         return (
             <Animated.View
                 style={[
@@ -75,24 +89,26 @@ class Gallery extends React.Component {
                     }
                 ]}
             >
-                <View style={styles.centerView}>
+                <View style={[styles.centerView, { transform: [{ rotateX: 6 }] }]}>
                     <Text style={styles.yearLabel}>
                         {currentImage.year}
                     </Text>
                 </View>
 
                 <View style={styles.imageView}>
-                    <Arrow direction="left" text="Back" onClick={() => this.nextImage(-1)} />
+
 
                     <Animated.Image
                         onLoad={() => this.imageLoadHandler()}
                         source={asset(currentImage.source)}
-                        style={[ styles.image, {...currentImage.style}]}
+                        style={[ styles.image, {...currentImage.style, transform: [{ rotateY : this.state.rotateY, rotateX: -6 }]}]}
                     />
-                    <Arrow direction="right" text="Next" onClick={() => this.nextImage(1)} />
+
                 </View>
-                <View style={styles.centerView}>
-                   <Close onClick={() => onClose()} />
+                <View style={[styles.centerView, { flexDirection: 'row', transform: [{ rotateX: -27 }] }]}>
+                    <Arrow direction="left" text="Prev" onClick={() => this.nextImage(-1)} />
+                    <Close onClick={() => onClose()} />
+                    <Arrow direction="right" text="Next" onClick={() => this.nextImage(1)} />
                 </View>
             </Animated.View>
         );

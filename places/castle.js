@@ -30,7 +30,7 @@ const castle = {
                 mtl: 'models/getto/getto.mtl',
 
                 controls: {
-                    transform: [{translate: [-2, -1, -15]}, { rotateY: -10 }]
+                    transform: [{translate: [-3, -1, -15]}, { rotateY: -10 }]
                 }
             },
             oldImages: []
