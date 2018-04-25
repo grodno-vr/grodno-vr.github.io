@@ -4,20 +4,20 @@ const bridge = {
     portals: [
         {
             name: 'center',
-            transformPortal: [{translate: [12, 0, -7]}]
+            transformPortal: [{translate: [12, 0, 7]}]
         }
     ],
     labels: [
         {
-            offset: 30,
+            offset: 90,
             viewStyle: {
-                transform: [{translate: [2, 3, -5]}, { scale : 1.5 }, { rotateY: -40 }]
+                transform: [{translate: [8, 2, 0]}, { scale : 2 }, { rotateY: -90 }]
             },
             text: 'Liberation Memorial (T-34/85 Tank)',
             description: '<None>',
-            infoPosition: 2300,
+            infoPosition: 3300,
             galleryStyle: {
-                transform: [{translate: [-2, 6, -10]}, { rotateY: -30 }]
+                transform: [{translate: [5, 6, 0]}, { rotateY: -90 }]
             },
             oldImages: [
                 {
@@ -39,16 +39,16 @@ const bridge = {
             ]
         },
         {
-            offset: -80,
+            offset: 45,
             viewStyle: {
-                transform: [{translate: [-15, 7, -5]}, { scale : 3 }, { rotateY: 90 }]
+                transform: [{translate: [7, 3, -6]}, { scale : 2.2 }, { rotateY: -45 }]
             },
             text: 'Drama Theater',
             description: `A regional drama theater was established by a Decree of the BSSR Council of Ministers (1947).\n
             The official opening of the theater was marked with the premiere performance of the play "V Odnom Gorode" (In a Certain City) by A. Safronov.`,
-            infoPosition: 700,
+            infoPosition: 2500,
             galleryStyle: {
-                transform: [{translate: [-16, 6, -2]}, { rotateY: 80 }]
+                transform: [{translate: [3, 6, -6]}, { rotateY: -45 }]
             },
             oldImages: [
                 {
@@ -94,15 +94,15 @@ const bridge = {
             ]
         },
         {
-            offset: -80,
+            offset: 40,
             viewStyle: {
-                transform: [{translate: [-17, 5, -2]}, { scale : 3 }, { rotateY: 80 }]
+                transform: [{translate: [7, 2, -7]}, { scale : 2 }, { rotateY: -30 }]
             },
             text: 'Church of the Bernardine Sisters',
             description: '<None>',
-            infoPosition: 600,
+            infoPosition: 2400,
             galleryStyle: {
-                transform: [{translate: [-18, 6, -1]}, { rotateY: 80 }]
+                transform: [{translate: [2, 6, -8]}, { rotateY: -40 }]
             },
             oldImages: [
                 {
@@ -140,15 +140,15 @@ const bridge = {
             ]
         },
         {
-            offset: -110,
+            offset: 0,
             viewStyle: {
-                transform: [{translate: [-17, 2, 10]}, { scale : 3 }, { rotateY: 120 }]
+                transform: [{translate: [0, 1, -9]}, { scale : 2 }, { rotateY: 0 }]
             },
             text: 'Church of the Holy Cross, Carmelite Monastery',
             description: '<None>',
-            infoPosition: 80,
+            infoPosition: 1880,
             galleryStyle: {
-                transform: [{translate: [-18, 5, 8]}, { rotateY: 110 }]
+                transform: [{translate: [-4, 6, -8]}, { rotateY: 0 }]
             },
             oldImages: [
                 {
@@ -186,20 +186,17 @@ const bridge = {
             ]
         },
         {
-            buttonStyle: {},
-            offset: 180,
+            offset: -45,
             viewStyle: {
-                transform: [{translate: [1, 5, 10]}, { scale : 2 }, { rotateY: 190 }]
+                transform: [{translate: [-8, 5, -4]}, { scale : 2.5 }, { rotateY: 60 }]
             },
             text: 'Church of the Holy Cross Discovery',
             description: `In the early XV century a part of modern Grodno came to possession of the Order of the Bernardins by order of Alexander Yagellonchik. As a result, the monks built a wooden monastery there in 1494. Grodno reached its peak in the XVI century: at the time, Stefan Batory made the town be an unofficial capital of the Polish-Lithuanian Commonwealth. His successor King Sigizmund III Vaza ordered to build a brick church on the basis of the Bernardine monastery.\n
             The Vilno bishop Evstahy Valovich finished the construction of the church and consecrated it on 13 May 1618. However, after a little while, a fire outbreak occurred in the building in 1655. It severely damaged the church. It took almost five years to reconstruct the church: the altars were restored; it was agreed to build a chapel of St. Barbara near the church. One century later, the interior of the church was decorated with three additional altars of St. Mikhail.\n
             In 1863, the monastery was eliminated and the church became parochial. Over its long existence, the church has suffered lots of changes in its exterior.`,
-            infoPosition: 3600,
-            infoHeight: 2200, // pixels
-            infoWidth: 1000, // pixels
+            infoPosition: 1600,
             galleryStyle: {
-                transform: [{translate: [-4, 7, 12]}, { rotateY: 190 }]
+                transform: [{translate: [-12, 8, -5]}, { rotateY: 60 }]
             },
             oldImages: [
                 {

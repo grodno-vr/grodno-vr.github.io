@@ -14,57 +14,8 @@
     <style>body { margin: 0; }</style>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="./static_assets/style.css" type="text/css" >
-    <style>
-        @import url(https://fonts.googleapis.com/css?family=Lato);
-        @import url(https://fonts.googleapis.com/css?family=Gugi);
-
-        body {
-            background: black;
-            font: 1rem "Lato", "Helvetica";
-        }
-
-        header {
-            border-bottom: 1px solid #444444;
-        }
-
-        .banner {
-            padding: 0.5em;
-            max-width: 188px;
-        }
-
-        .banner h1 {
-            color: white;
-            margin: 0 0 0 .2em;
-            font-family: 'Gugi';
-            font-size: 2em;
-        }
-
-        .banner h1 > span {
-            font-weight: 600;
-        }
-
-        .banner small {
-            background: yellow;
-            border-radius: .3em;
-            font-weight: 600;
-            display: block;
-            color: black;
-            padding: 0 1em;
-            text-align: right;
-        }
-    </style>
 </head>
-<body>
-<header>
-    <div class="banner">
-        <h1>Grodno <span>VR</span></h1>
-        <small>Explore in 360&deg;</small>
-    </div>
-    <nav>
-
-    </nav>
-</header>
-<main id="canvas" style="cursor: none"></main>
+<body style="cursor: none">
 <!-- When you're ready to deploy your app, update this line to point to your compiled client.bundle.js -->
 <script src="./vr/build/client.bundle.js?platform=vr"></script>
 <script>
@@ -74,7 +25,7 @@
         // your compiled index.bundle.js
         './vr/build/index.bundle.js?platform=vr&dev=true',
         // Attach it to the body tag
-        document.getElementById('canvas')
+        document.body
     );
 </script>
 </body>
