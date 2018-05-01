@@ -1,308 +1,252 @@
+<html>
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114159334-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-114159334-1');
+    </script>
+
     <title>Grodno VR</title>
-    <style>body { margin: 0; }</style>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="./static_assets/style.css" type="text/css" >
+
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Lato);
+        @import url(https://fonts.googleapis.com/css?family=Poppins:400,700;);
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            background: black;
+            font: 1rem "Lato", "Helvetica";
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #444444;
+        }
+
+        header img {
+            transform: rotate(15deg);
+            height: 80px;
+        }
+
+        header nav {
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        nav.github-link a {
+            color: white;
+            text-decoration: none;
+            padding: 0 16px;
+        }
+
+        nav.github-link img {
+            height: 40px;
+        }
+
+        nav.github-link {
+            transition: opacity .3s ease-out;
+        }
+
+        nav.github-link:hover {
+            opacity: 0.6;
+        }
+
+        .logo {
+            display: flex;
+        }
+
+        .banner {
+            color: white;
+            padding: 0.5em;
+            max-width: 188px;
+        }
+
+        .banner h1 {
+            margin: 0 0 0 .2em;
+            font-size: 2em;
+        }
+
+        .banner small {
+            border-radius: .3em;
+            display: block;
+            padding: 0 1em;
+            text-align: right;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        button {
+            border: 2px solid white;
+            outline: none;
+            color: #fff;
+            background: #1c1e20;
+            font-size: 1.5em;
+            padding: .5em;
+            border-radius: 2em;
+            min-width: 10em;
+            max-width: 3em;
+            transition: all .3s ease-in;
+        }
+
+        button:hover {
+            color: #1c1e20;
+            background: #fff;
+        }
+
+        figure {
+            font-family: 'Poppins:400,700', Arial, sans-serif;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            margin: 8px;
+            min-width: 250px;
+            max-width: 310px;
+            width: 100%;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: left;
+            font-size: 16px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        }
+        figure * {
+             -webkit-transition: all 0.35s;
+            transition: all 0.35s;
+             -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        figure img {
+            max-width: 100%;
+            vertical-align: top;
+            opacity: 0.4;
+        }
+
+        figure:hover img {
+            max-width: 100%;
+            vertical-align: top;
+            opacity: 1;
+        }
+
+        figure figcaption {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        figure h3 {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 3px 0;
+        }
+        figure .title1 {
+            font-weight: 700;
+        }
+        figure .title2 {
+            color: #a58e7c;
+            font-weight: 300;
+        }
+        figure .title3 {
+            font-weight: 700;
+            font-size: 14px;
+        }
+        figure a {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        figure:hover img,
+        figure.hover img {
+             -webkit-transform: scale(1.3) rotate(5deg);
+            transform: scale(1.3) rotate(5deg);
+        }
+
+        figure:hover {
+            transition: 2s ease-out;
+            outline: 2px solid white;
+        }
+    </style>
 </head>
 <body>
-<script src="./third-party/webvr-polyfill.js"></script>
-<script>
-    new WebVRPolyfill();
-</script>
-<!-- When you're ready to deploy your app, update this line to point to your compiled client.bundle.js -->
-<script src="./vr/build/client.bundle.js?platform=vr"></script>
-<script>
-    // Initialize the React VR application
-    ReactVR.init(
-        // When you're ready to deploy your app, update this line to point to
-        // your compiled index.bundle.js
-        '../index.vr.bundle.js?platform=vr&dev=true',
-        // Attach it to the body tag
-        document.body
-    );
-</script>
+    <header>
+        <div class="logo">
+            <div class="banner">
+                <h1>Grodno <span>VR</span></h1>
+                <small>Explore in 360&deg;</small>
+            </div>
+            <img src="ico.svg" />
+        </div>
+        <nav class="github-link">
+            <a href="https://github.com/grodno-vr/grodno-vr.github.io">
+                <img src="githubico.svg" />
+                <span>GitHub</span>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <figure>
+                <img src="./static_assets/places/center/old/vitaut2.jpg" alt="profile-sample2"/>
+                <figcaption>
+                    <h3 class="title1">The</h3>
+                    <h3 class="title2">Winter</h3>
+                    <h3 class="title3">Collection</h3>
+                </figcaption>
+                <a href="#"></a>
+            </figure>
+            <figure>
+                <img src="./static_assets/places/center/old/vitaut.jpg" alt="profile-sample7"/>
+                <figcaption>
+                    <h3 class="title1">The</h3>
+                    <h3 class="title2">Summer</h3>
+                    <h3 class="title3">Collection</h3>
+                </figcaption>
+                <a href="#"></a>
+            </figure>
+            <figure>
+                <img src="./static_assets/places/center/old/vitaut3.jpg" alt="profile-sample6"/>
+                <figcaption>
+                    <h3 class="title1">The</h3>
+                    <h3 class="title2">Autumn</h3>
+                    <h3 class="title3">Collection</h3>
+                </figcaption>
+                <a href="#"></a>
+            </figure>
+        </section>
+
+        <section>
+            <button onclick="window.location.replace('/demo.html')">Start Demo</button>
+        </section>
+    </main>
+
 </body>
 </html>
-
-<!--<html>-->
-<!--<head>-->
-    <!--&lt;!&ndash; Global site tag (gtag.js) - Google Analytics &ndash;&gt;-->
-    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114159334-1"></script>-->
-    <!--<script>-->
-        <!--window.dataLayer = window.dataLayer || [];-->
-        <!--function gtag(){dataLayer.push(arguments);}-->
-        <!--gtag('js', new Date());-->
-
-        <!--gtag('config', 'UA-114159334-1');-->
-    <!--</script>-->
-
-    <!--<title>Grodno VR</title>-->
-
-    <!--<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">-->
-
-    <!--<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">-->
-    <!--<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">-->
-    <!--<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">-->
-    <!--<link rel="manifest" href="/site.webmanifest">-->
-    <!--<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4b46be">-->
-    <!--<meta name="apple-mobile-web-app-title" content="Grodno VR">-->
-    <!--<meta name="application-name" content="Grodno VR">-->
-    <!--<meta name="msapplication-TileColor" content="#603cba">-->
-    <!--<meta name="theme-color" content="#ffffff">-->
-
-
-    <!--<style>-->
-        <!--@import url(https://fonts.googleapis.com/css?family=Lato);-->
-        <!--@import url(https://fonts.googleapis.com/css?family=Poppins:400,700;);-->
-
-        <!--body {-->
-            <!--display: flex;-->
-            <!--flex-direction: column;-->
-            <!--align-items: stretch;-->
-            <!--justify-content: flex-start;-->
-            <!--background: black;-->
-            <!--font: 1rem "Lato", "Helvetica";-->
-        <!--}-->
-
-        <!--header {-->
-            <!--display: flex;-->
-            <!--justify-content: space-between;-->
-            <!--border-bottom: 1px solid #444444;-->
-        <!--}-->
-
-        <!--header img {-->
-            <!--transform: rotate(15deg);-->
-            <!--height: 80px;-->
-        <!--}-->
-
-        <!--header nav {-->
-            <!--text-align: right;-->
-            <!--display: flex;-->
-            <!--justify-content: flex-end;-->
-            <!--align-items: center;-->
-            <!--font-size: 24px;-->
-        <!--}-->
-
-        <!--nav.github-link a {-->
-            <!--color: white;-->
-            <!--text-decoration: none;-->
-            <!--padding: 0 16px;-->
-        <!--}-->
-
-        <!--nav.github-link img {-->
-            <!--height: 40px;-->
-        <!--}-->
-
-        <!--nav.github-link {-->
-            <!--transition: opacity .3s ease-out;-->
-        <!--}-->
-
-        <!--nav.github-link:hover {-->
-            <!--opacity: 0.6;-->
-        <!--}-->
-
-        <!--.logo {-->
-            <!--display: flex;-->
-        <!--}-->
-
-        <!--.banner {-->
-            <!--color: white;-->
-            <!--padding: 0.5em;-->
-            <!--max-width: 188px;-->
-        <!--}-->
-
-        <!--.banner h1 {-->
-            <!--margin: 0 0 0 .2em;-->
-            <!--font-size: 2em;-->
-        <!--}-->
-
-        <!--.banner small {-->
-            <!--border-radius: .3em;-->
-            <!--display: block;-->
-            <!--padding: 0 1em;-->
-            <!--text-align: right;-->
-        <!--}-->
-
-        <!--main {-->
-            <!--display: flex;-->
-            <!--justify-content: center;-->
-            <!--flex-direction: column;-->
-            <!--align-items: center;-->
-            <!--flex: 1;-->
-        <!--}-->
-
-        <!--button {-->
-            <!--border: 2px solid white;-->
-            <!--outline: none;-->
-            <!--color: #fff;-->
-            <!--background: #1c1e20;-->
-            <!--font-size: 1.5em;-->
-            <!--padding: .5em;-->
-            <!--border-radius: 2em;-->
-            <!--min-width: 10em;-->
-            <!--max-width: 3em;-->
-            <!--transition: all .3s ease-in;-->
-        <!--}-->
-
-        <!--button:hover {-->
-            <!--color: #1c1e20;-->
-            <!--background: #fff;-->
-        <!--}-->
-
-        <!--.snip1581 {-->
-            <!--font-family: 'Poppins:400,700', Arial, sans-serif;-->
-            <!--position: relative;-->
-            <!--display: inline-block;-->
-            <!--overflow: hidden;-->
-            <!--margin: 8px;-->
-            <!--min-width: 250px;-->
-            <!--max-width: 310px;-->
-            <!--width: 100%;-->
-            <!--background-color: #000000;-->
-            <!--color: #ffffff;-->
-            <!--text-align: left;-->
-            <!--font-size: 16px;-->
-            <!--box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);-->
-        <!--}-->
-        <!--.snip1581 * {-->
-            <!-- -webkit-transition: all 0.35s;-->
-            <!--transition: all 0.35s;-->
-            <!-- -webkit-box-sizing: border-box;-->
-            <!--box-sizing: border-box;-->
-        <!--}-->
-        <!--.snip1581 img {-->
-            <!--max-width: 100%;-->
-            <!--vertical-align: top;-->
-            <!--opacity: 0.4;-->
-        <!--}-->
-
-        <!--.snip1581:hover img {-->
-            <!--max-width: 100%;-->
-            <!--vertical-align: top;-->
-            <!--opacity: 1;-->
-        <!--}-->
-
-        <!--.snip1581 figcaption {-->
-            <!--position: absolute;-->
-            <!--top: 0;-->
-            <!--bottom: 0;-->
-            <!--left: 0;-->
-            <!--right: 0;-->
-            <!--padding: 20px;-->
-            <!--background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);-->
-            <!--background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);-->
-            <!--display: flex;-->
-            <!--flex-direction: column;-->
-            <!--justify-content: flex-end;-->
-        <!--}-->
-        <!--.snip1581 h3 {-->
-            <!--font-size: 16px;-->
-            <!--font-weight: 400;-->
-            <!--line-height: 1;-->
-            <!--letter-spacing: 1px;-->
-            <!--text-transform: uppercase;-->
-            <!--margin: 3px 0;-->
-        <!--}-->
-        <!--.snip1581 .title1 {-->
-            <!--font-weight: 700;-->
-        <!--}-->
-        <!--.snip1581 .title2 {-->
-            <!--color: #a58e7c;-->
-            <!--font-weight: 300;-->
-        <!--}-->
-        <!--.snip1581 .title3 {-->
-            <!--font-weight: 700;-->
-            <!--font-size: 14px;-->
-        <!--}-->
-        <!--.snip1581 a {-->
-            <!--position: absolute;-->
-            <!--top: 0;-->
-            <!--bottom: 0;-->
-            <!--left: 0;-->
-            <!--right: 0;-->
-        <!--}-->
-        <!--.snip1581:hover img,-->
-        <!--.snip1581.hover img {-->
-            <!-- -webkit-transform: scale(1.3) rotate(5deg);-->
-            <!--transform: scale(1.3) rotate(5deg);-->
-        <!--}-->
-
-        <!--figure:hover {-->
-            <!--transition: 2s ease-out;-->
-            <!--outline: 2px solid white;-->
-        <!--}-->
-    <!--</style>-->
-<!--</head>-->
-<!--<body>-->
-    <!--<header>-->
-        <!--<div class="logo">-->
-            <!--<div class="banner">-->
-                <!--<h1>Grodno <span>VR</span></h1>-->
-                <!--<small>Explore in 360&deg;</small>-->
-            <!--</div>-->
-            <!--<img src="ico.svg" />-->
-        <!--</div>-->
-        <!--<nav class="github-link">-->
-            <!--<a href="https://github.com/grodno-vr/grodno-vr.github.io">-->
-                <!--<img src="githubico.svg" />-->
-                <!--<span>GitHub</span>-->
-            <!--</a>-->
-        <!--</nav>-->
-    <!--</header>-->
-    <!--<main>-->
-        <!--&lt;!&ndash;<section class="fSec">&ndash;&gt;-->
-            <!--&lt;!&ndash;Самый простой способ открыть для себя мир VR. ПК не требуется! Цена от 199 $**&ndash;&gt;-->
-        <!--&lt;!&ndash;</section>&ndash;&gt;-->
-
-        <!--<section>-->
-            <!--<figure class="snip1581"><img src="./static_assets/places/center/old/vitaut2.jpg" alt="profile-sample2"/>-->
-                <!--<figcaption>-->
-                    <!--<h3 class="title1">The</h3>-->
-                    <!--<h3 class="title2">Winter</h3>-->
-                    <!--<h3 class="title3">Collection</h3>-->
-                <!--</figcaption><a href="#"></a>-->
-            <!--</figure>-->
-            <!--<figure class="snip1581"><img src="./static_assets/places/center/old/vitaut.jpg" alt="profile-sample7"/>-->
-                <!--<figcaption>-->
-                    <!--<h3 class="title1">The</h3>-->
-                    <!--<h3 class="title2">Summer</h3>-->
-                    <!--<h3 class="title3">Collection</h3>-->
-                <!--</figcaption><a href="#"></a>-->
-            <!--</figure>-->
-            <!--<figure class="snip1581"><img src="./static_assets/places/center/old/vitaut3.jpg" alt="profile-sample6"/>-->
-                <!--<figcaption>-->
-                    <!--<h3 class="title1">The</h3>-->
-                    <!--<h3 class="title2">Autumn</h3>-->
-                    <!--<h3 class="title3">Collection</h3>-->
-                <!--</figcaption><a href="#"></a>-->
-            <!--</figure>-->
-
-
-        <!--</section>-->
-
-        <!--<section>-->
-            <!--<button>Start Demo</button>-->
-        <!--</section>-->
-        <!--&lt;!&ndash;<a href="/demo.html">> Посмотреть демо версию проекта</a>&ndash;&gt;-->
-    <!--</main>-->
-    <!--<footer>-->
-
-    <!--</footer>-->
-<!--&lt;!&ndash;<h1>Проект Grodno VR</h1>&ndash;&gt;-->
-<!--&lt;!&ndash;<img src="./static_assets/places/center/old/vitaut2.jpg" style="width: 270px; height: 150px">&ndash;&gt;-->
-<!--&lt;!&ndash;<p>Проект находится в стадии разработки.</p>&ndash;&gt;-->
-
-<!--&lt;!&ndash;<p>Чем можно помочь проекту?</p>&ndash;&gt;-->
-<!--&lt;!&ndash;<ul>&ndash;&gt;-->
-    <!--&lt;!&ndash;<li>Нужны старинные фото и открытки с изображением зданий / объектов Гродно.</li>&ndash;&gt;-->
-    <!--&lt;!&ndash;<li>Нужны 3D-модели зданий / объектов Гродно.</li>&ndash;&gt;-->
-    <!--&lt;!&ndash;<li>Нужны граммотные текстовки и подписи для зданий / объектов на английском, русском и беларуском языках.</li>&ndash;&gt;-->
-    <!--&lt;!&ndash;<li>Нужны 360/сферические фото различных городских локаций.</li>&ndash;&gt;-->
-<!--&lt;!&ndash;</ul>&ndash;&gt;-->
-
-<!--&lt;!&ndash;<p>Если вы можете чем-то помочь проекту, то смело пишите на <a href="mailto:artur.basak@instinctools.ru?subject=GrodnoVR">artur.basak@instinctools.ru</a> или <a href="skype:archik408?add">skype:archik408</a></p>&ndash;&gt;-->
-
-<!--&lt;!&ndash;<a href="/demo.html">> Посмотреть демо версию проекта</a>&ndash;&gt;-->
-
-<!--</body>-->
-<!--</html>-->

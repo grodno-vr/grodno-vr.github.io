@@ -194,7 +194,7 @@ const bridge = {
             description: `In the early XV century a part of modern Grodno came to possession of the Order of the Bernardins by order of Alexander Yagellonchik. As a result, the monks built a wooden monastery there in 1494. Grodno reached its peak in the XVI century: at the time, Stefan Batory made the town be an unofficial capital of the Polish-Lithuanian Commonwealth. His successor King Sigizmund III Vaza ordered to build a brick church on the basis of the Bernardine monastery.\n
             The Vilno bishop Evstahy Valovich finished the construction of the church and consecrated it on 13 May 1618. However, after a little while, a fire outbreak occurred in the building in 1655. It severely damaged the church. It took almost five years to reconstruct the church: the altars were restored; it was agreed to build a chapel of St. Barbara near the church. One century later, the interior of the church was decorated with three additional altars of St. Mikhail.\n
             In 1863, the monastery was eliminated and the church became parochial. Over its long existence, the church has suffered lots of changes in its exterior.`,
-            infoPosition: 1600,
+            infoPosition: 1000,
             galleryStyle: {
                 transform: [{translate: [-12, 8, -5]}, { rotateY: 60 }]
             },

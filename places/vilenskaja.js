@@ -4,7 +4,7 @@ const vilenskaja = {
     portals: [
         {
             name: 'center',
-            transformPortal: [{translate: [8, 0, -12]}]
+            transformPortal: [{translate: [-2, 0, 12]}]
         }
     ],
     labels: []

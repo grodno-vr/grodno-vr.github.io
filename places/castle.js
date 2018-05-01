@@ -1,10 +1,10 @@
 const castle = {
     name: 'castle',
-    sound: 'audio/birds.mp3',
+    // sound: 'audio/birds.mp3',
     style: {},
     portals: [
         {
-            name: 'center',
+            name: 'zamkovaja',
             transformPortal: [{translate: [5, 0, 15]}]
         }
     ],
@@ -24,11 +24,8 @@ const castle = {
                     ]
                 },
                 rotationAxis: 'rotateZ',
-                // obj: 'models/coat/coat_clean.obj',
-                // mtl: 'models/coat/coat_clean_tex.mtl',
-                obj: 'models/getto/getto.obj',
-                mtl: 'models/getto/getto.mtl',
-
+                obj: 'models/coat/coat_clean.obj',
+                mtl: 'models/coat/coat_clean_tex.mtl',
                 controls: {
                     transform: [{translate: [-3, -1, -15]}, { rotateY: -10 }]
                 }
@@ -45,7 +42,7 @@ const castle = {
             The palace compound was designed by Carl Friedrich Pöppelmann. Construction was carried out between 1734 and 1751 under the supervision of several other Saxon architects, including Johann Friedrich Knöbel and Joachim Daniel von Jauch. The palace was completed under the direction of Giuseppe de Sacco in 1789 and remained home for King Stanisław II August until 1797.`,
             infoPosition: 1800, // pixels
             galleryStyle: {
-                transform: [{translate: [-6, 4, -10]}]
+                transform: [{translate: [-5, 6, -10]}]
             },
             oldImages: [
                 {
