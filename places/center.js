@@ -32,32 +32,32 @@ const center = {
             Rebuilt as a Gothic church around 1494, it was one of the principal catholic churches of Hrodna until the advent of Soviet rule after World War II. Neglected, it was finally demolished in 1961.\n
             (at the right you can find 3D representation of 16th century church)`,
             infoPosition: 500, // pixels
-            // infoWidth: 1300, // pixels,
-            // infoHeight: 900, // pixels
-            // model: {
-            //     style: {
-            //         transform: [
-            //             { translate: [42, -1, -10] },
-            //             { scale: 1.5 },
-            //             { rotateZ: 140 },
-            //             { rotateX: 70 },
-            //             { rotateY: 50 }
-            //         ]
-            //     },
-            //     rotationAxis: 'rotateZ',
-            //     obj: 'models/fara/Fara_cleaned.obj',
-            //     mtl: 'models/fara/Fara_cleaned_tex.mtl',
-            //     controls: {
-            //         transform: [{translate: [6, -1, -4]}, { rotateY: -70 }]
-            //     }
-            // },
+            infoWidth: 1300, // pixels,
+            infoHeight: 900, // pixels
+            model: {
+                style: {
+                    transform: [
+                        { translate: [-30, 1, -22] },
+                        { scale: 1.5 },
+                        { rotateZ: 120 },
+                        { rotateX: 80 },
+                        { rotateY: 50 }
+                    ]
+                },
+                rotationAxis: 'rotateZ',
+                obj: 'models/fara/Fara_cleaned.obj',
+                mtl: 'models/fara/Fara_cleaned_tex.mtl',
+                controls: {
+                    transform: [{translate: [-20, -2, -8]}, { rotateY: 50 }]
+                }
+            },
             galleryStyle: {
                 transform: [{translate: [-12, 5, -2]}, { rotateY: 80 }]
             },
             oldImages: [
                 {
                     source: 'places/center/old/vitaut.jpg',
-                    year: '1898 – 1920',
+                    year: '1898 – 1920, photo from newgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -65,7 +65,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut3.jpg',
-                    year: '1900',
+                    year: '1900, photo from wikimedia.org',
                     style: {
                         width: 7,
                         height: 4.2
@@ -73,7 +73,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut1.jpg',
-                    year: '1923 – 1930',
+                    year: '1923 – 1930, photo from s13.ru',
                     style: {
                         width: 7,
                         height: 4.2
@@ -81,7 +81,15 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut2.jpg',
-                    year: '1936',
+                    year: '1936, photo from radzima.org',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/center/old/vitaut4.jpg',
+                    year: '1930th, photo from katolik.life',
                     style: {
                         width: 7,
                         height: 4.2
@@ -103,7 +111,7 @@ const center = {
             oldImages: [
                 {
                     source: 'places/center/old/textile_palace1.jpeg',
-                    year: '1950th',
+                    year: '1950th, photo from harodnia.com',
                     style: {
                         width: 7,
                         height: 3.9
@@ -111,7 +119,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace4.jpeg',
-                    year: '1957',
+                    year: '1957, photo from newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -119,7 +127,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace.jpeg',
-                    year: '1960th',
+                    year: '1960th, photo from newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -127,7 +135,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace2.jpeg',
-                    year: '1960th',
+                    year: '1960th, photo from newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -135,7 +143,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace3.jpeg',
-                    year: '1960',
+                    year: '1960, photo from newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -143,7 +151,23 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace5.jpg',
-                    year: '1958',
+                    year: '1958, photo from newgrodno.by',
+                    style: {
+                        width: 7,
+                        height: 3.9
+                    }
+                },
+                {
+                    source: 'places/center/old/textile_palace6.jpg',
+                    year: '1970-80th, photo from newgrodno.by',
+                    style: {
+                        width: 7,
+                        height: 3.9
+                    }
+                },
+                {
+                    source: 'places/center/old/textile_palace7.jpg',
+                    year: '1970-80th, photo from newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -268,7 +292,7 @@ const center = {
                     }
                 },
                 {
-                    source: 'places/center/old/cathedral3.jpg',
+                    source: 'places/center/old/cathedral3.png',
                     year: '1924',
                     style: {
                         width: 7,

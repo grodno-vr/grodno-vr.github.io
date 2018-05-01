@@ -20,7 +20,11 @@ const castle = {
             model: {
                 style: {
                     transform: [
-                        { translate: [12, 5, -21] }
+                        { translate: [2, 10, -67] },
+                        { scale: 1.1 },
+                        { rotateZ: 40 },
+                        { rotateX: 100 },
+                        { rotateY: 10 }
                     ]
                 },
                 rotationAxis: 'rotateZ',
