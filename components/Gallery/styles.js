@@ -21,17 +21,17 @@ const styles = StyleSheet.create({
     },
     yearLabel: {
         backgroundColor: 'black',
-        borderRadius: 0.1,
-        padding: 0.1,
+        borderRadius: 0.2,
+        padding: 0.2,
         marginBottom: 0.2,
         textAlign: 'center',
-        fontSize: 0.35,
+        fontSize: 0.3,
         opacity: 0.5,
         height: 0.7,
         color: 'white'
     },
    tooltipButton: {
-        opacity: 0.4,
+        opacity: 0.9,
         padding: 0.1,
         marginTop: 0.2,
         textAlign: 'center',

@@ -26,7 +26,7 @@ const center = {
             viewStyle: {
                 transform: [{translate: [-14, 3, -2]}, { scale : 4 }, { rotateY: 90 }]
             },
-            text: 'Church of Vitaut the Great',
+            text: 'Костел Св. Девы Марии (Фара Витовта)',
             description: `St. Mary\'s Church was a parish church (fara) in the city of Grodno (modern Hrodna, Belarus).\n
             It was founded by Vitaut, Grand Duke of Lithuania before 1389. Because of its founder, it was commonly referred to as Vitautas\' Church.\n
             Rebuilt as a Gothic church around 1494, it was one of the principal catholic churches of Hrodna until the advent of Soviet rule after World War II. Neglected, it was finally demolished in 1961.\n
@@ -56,8 +56,16 @@ const center = {
             },
             oldImages: [
                 {
+                    source: 'places/center/old/vitaut5.jpg',
+                    year: '1915-1918 г., фото wikimedia.org',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
                     source: 'places/center/old/vitaut.jpg',
-                    year: '1898 – 1920, photo from newgrodno.by',
+                    year: '1898 – 1920 г., фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -65,7 +73,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut3.jpg',
-                    year: '1900, photo from wikimedia.org',
+                    year: '1900 г., фото wikimedia.org',
                     style: {
                         width: 7,
                         height: 4.2
@@ -73,7 +81,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut1.jpg',
-                    year: '1923 – 1930, photo from s13.ru',
+                    year: '1923 – 1930 г., фото s13.ru',
                     style: {
                         width: 7,
                         height: 4.2
@@ -81,7 +89,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut2.jpg',
-                    year: '1936, photo from radzima.org',
+                    year: '1936 г., фото radzima.org',
                     style: {
                         width: 7,
                         height: 4.2
@@ -89,7 +97,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut4.jpg',
-                    year: '1930th, photo from katolik.life',
+                    year: '1930-е, фото katolik.life',
                     style: {
                         width: 7,
                         height: 4.2
@@ -102,7 +110,7 @@ const center = {
             viewStyle: {
                 transform: [{translate: [-9, 4, 5]}, { scale : 3 }, { rotateY: 115 }]
             },
-            text: 'Textile Culture Palace',
+            text: 'Дворец культуры текстильщиков',
             description: '<None>',
             infoPosition: 100,
             galleryStyle: {
@@ -111,7 +119,7 @@ const center = {
             oldImages: [
                 {
                     source: 'places/center/old/textile_palace1.jpeg',
-                    year: '1950th, photo from harodnia.com',
+                    year: '1950-e, фото harodnia.com',
                     style: {
                         width: 7,
                         height: 3.9
@@ -119,7 +127,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace4.jpeg',
-                    year: '1957, photo from newgrodno.by',
+                    year: '1957г., фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -127,7 +135,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace.jpeg',
-                    year: '1960th, photo from newgrodno.by',
+                    year: '1960-е, фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -135,7 +143,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace2.jpeg',
-                    year: '1960th, photo from newgrodno.by',
+                    year: '1960-е, фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -143,7 +151,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace3.jpeg',
-                    year: '1960, photo from newgrodno.by',
+                    year: '1960 г., фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -151,7 +159,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace5.jpg',
-                    year: '1958, photo from newgrodno.by',
+                    year: '1958 г., фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -159,7 +167,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace6.jpg',
-                    year: '1970-80th, photo from newgrodno.by',
+                    year: '1970-80-е, фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -167,7 +175,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace7.jpg',
-                    year: '1970-80th, photo from newgrodno.by',
+                    year: '1970-80-е, фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -180,7 +188,7 @@ const center = {
             viewStyle: {
                 transform: [{translate: [8, 3, 5]}, { scale: 3 }, { rotateY: -110 }]
             },
-            text: 'Batory (Market or Soviet) Square',
+            text: 'Площадь Батория (Раночная или Советская)',
             description: `Batory Square is the historical name (during the Polish period in 1921 - 1939) of Soviet (Savyetskaya) Square - the central square for the city of Hrodna in Belarus. \n
             It was named after Stephen Báthory, King of Rzeczpospolita who had a residence here in the 16th century.`,
             infoPosition: 3500,
@@ -190,7 +198,7 @@ const center = {
             oldImages: [
                 {
                     source: 'places/center/old/square.jpg',
-                    year: '1939',
+                    year: '1939 г., фото grodno.net',
                     style: {
                         width: 7,
                         height: 3.9
@@ -198,7 +206,23 @@ const center = {
                 },
                 {
                     source: 'places/center/old/square1.jpg',
-                    year: 'XIX c.',
+                    year: 'XIX в., фото radzima.org',
+                    style: {
+                        width: 7,
+                        height: 3.9
+                    }
+                },
+                {
+                    source: 'places/center/old/square2.jpg',
+                    year: 'XIX в., фото radzima.org',
+                    style: {
+                        width: 7,
+                        height: 3.9
+                    }
+                },
+                {
+                    source: 'places/center/old/square3.jpg',
+                    year: 'XIX в., фото s13',
                     style: {
                         width: 7,
                         height: 3.9
@@ -257,7 +281,7 @@ const center = {
             viewStyle: {
                 transform: [{translate: [1, 5.25, -10]}, { scale : 3 }, { rotateY: -15 }]
             },
-            text: 'Собор Св. Франциска Ксаверия',
+            text: 'Собор Св. Франциска Ксаверия (Фарный)',
             description: `Jesuit church, it became a cathedral in 1991.\n
             The construction of the church started in 1687. The completed building in Baroque style was consecrated in 1705 to St. Francis Xavier. The monastery was dissolved in 1773 and the church became a parish one. The church survived World War II with no serious damage.\n
             In 1960 it was officially closed for a public religious services (for 27 years). The communist authorities tried to convert the building into a museum or a concert hall. Despite this the people attended the church every Sunday for a common player, songs and rosary.\n 
@@ -269,7 +293,7 @@ const center = {
             oldImages: [
                 {
                     source: 'places/center/old/cathedral.jpg',
-                    year: 'XVII c.',
+                    year: 'XVII в., фото radzima.org, автор Я.Булгак',
                     style: {
                         width: 7,
                         height: 3.9
@@ -277,7 +301,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/cathedral1.jpg',
-                    year: '1914 - 1918',
+                    year: '1914 - 1918 г., фото ay.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -285,7 +309,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/cathedral2.jpg',
-                    year: '1924',
+                    year: '1924 г., фото wikimapia.org',
                     style: {
                         width: 7,
                         height: 3.9
@@ -293,7 +317,15 @@ const center = {
                 },
                 {
                     source: 'places/center/old/cathedral3.png',
-                    year: '1924',
+                    year: '1924 г., фото tut.by',
+                    style: {
+                        width: 7,
+                        height: 3.9
+                    }
+                },
+                {
+                    source: 'places/center/old/cathedral4.png',
+                    year: '1873 г., фото wikimedia.org, рисунок Н.Орда',
                     style: {
                         width: 7,
                         height: 3.9

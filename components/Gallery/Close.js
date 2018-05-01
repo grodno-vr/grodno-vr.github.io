@@ -71,7 +71,7 @@ class Close extends React.Component {
                     />
                 </GazeButton>
                 <Text style={styles.tooltipButton}>
-                    Close
+                    Закрыть
                 </Text>
             </View>
         );
