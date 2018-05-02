@@ -57,7 +57,7 @@ const center = {
             oldImages: [
                 {
                     source: 'places/center/old/vitaut5.jpg',
-                    year: '1915-1918 г., фото wikimedia.org',
+                    year: '1915-1918 гг. Фото wikimedia.org',
                     style: {
                         width: 7,
                         height: 4.2
@@ -65,7 +65,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut.jpg',
-                    year: '1898 – 1920 г., фото newgrodno.by',
+                    year: '1898 – 1920 гг. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -73,7 +73,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut3.jpg',
-                    year: '1900 г., фото wikimedia.org',
+                    year: '1900 г. Фото wikimedia.org',
                     style: {
                         width: 7,
                         height: 4.2
@@ -81,7 +81,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut1.jpg',
-                    year: '1923 – 1930 г., фото s13.ru',
+                    year: '1923 – 1930 гг. Фото s13.ru',
                     style: {
                         width: 7,
                         height: 4.2
@@ -89,7 +89,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut2.jpg',
-                    year: '1936 г., фото radzima.org',
+                    year: '1936 г. Фото radzima.org',
                     style: {
                         width: 7,
                         height: 4.2
@@ -97,7 +97,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/vitaut4.jpg',
-                    year: '1930-е, фото katolik.life',
+                    year: '1930-е, Фото katolik.life',
                     style: {
                         width: 7,
                         height: 4.2
@@ -110,8 +110,9 @@ const center = {
             viewStyle: {
                 transform: [{translate: [-9, 4, 5]}, { scale : 3 }, { rotateY: 115 }]
             },
-            text: 'Дворец культуры текстильщиков',
-            description: '<None>',
+            text: 'Дворец Культуры Текстильщиков',
+            description: 'Более полувека на центральной площади Гродно стоит большое здание с колоннами. \n' +
+            'Некогда это был Дворец культуры Гродненского тонкосуконного комбината – по сути, культурный центр города. Но со временем он потерял свое значение.',
             infoPosition: 100,
             galleryStyle: {
                 transform: [{translate: [-10, 5, 3]}, { rotateY: 125 }]
@@ -119,7 +120,7 @@ const center = {
             oldImages: [
                 {
                     source: 'places/center/old/textile_palace1.jpeg',
-                    year: '1950-e, фото harodnia.com',
+                    year: '1950-e, Фото harodnia.com',
                     style: {
                         width: 7,
                         height: 3.9
@@ -127,7 +128,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace4.jpeg',
-                    year: '1957г., фото newgrodno.by',
+                    year: '1957 г. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -135,7 +136,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace.jpeg',
-                    year: '1960-е, фото newgrodno.by',
+                    year: '1960-е, Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -143,7 +144,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace2.jpeg',
-                    year: '1960-е, фото newgrodno.by',
+                    year: '1960-е, Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -151,7 +152,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace3.jpeg',
-                    year: '1960 г., фото newgrodno.by',
+                    year: '1960 г. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -159,7 +160,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace5.jpg',
-                    year: '1958 г., фото newgrodno.by',
+                    year: '1958 г. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -167,7 +168,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace6.jpg',
-                    year: '1970-80-е, фото newgrodno.by',
+                    year: '1970-80-е, Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -175,7 +176,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/textile_palace7.jpg',
-                    year: '1970-80-е, фото newgrodno.by',
+                    year: '1970-80-е, Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -198,7 +199,7 @@ const center = {
             oldImages: [
                 {
                     source: 'places/center/old/square.jpg',
-                    year: '1939 г., фото grodno.net',
+                    year: '1939 г. Фото grodno.net',
                     style: {
                         width: 7,
                         height: 3.9
@@ -206,7 +207,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/square1.jpg',
-                    year: 'XIX в., фото radzima.org',
+                    year: 'XIX в. Фото radzima.org',
                     style: {
                         width: 7,
                         height: 3.9
@@ -214,7 +215,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/square2.jpg',
-                    year: 'XIX в., фото radzima.org',
+                    year: 'XIX в. Фото radzima.org',
                     style: {
                         width: 7,
                         height: 3.9
@@ -222,7 +223,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/square3.jpg',
-                    year: 'XIX в., фото s13',
+                    year: 'XIX в. Фото s13',
                     style: {
                         width: 7,
                         height: 3.9
@@ -236,42 +237,58 @@ const center = {
                 transform: [{translate: [-6, 3, -9]}, { scale : 3 }, { rotateY: 25 }]
             },
             text: 'Дом купца Муравьева',
-            description: '<None>',
+            description: '',
             infoPosition: 1400,
             galleryStyle: {
-                transform: [{translate: [-8, 7, -8]}, { rotateY: 35 }]
+                transform: [{translate: [-8, 5, -8]}, { rotateY: 35 }]
             },
             oldImages: [
                 {
-                    source: 'places/center/old/muravjov.jpg',
-                    year: 'XIX c.',
+                    source: 'places/center/old/muravjov5.jpg',
+                    year: '1910 г. Фото newgrodno.by',
                     style: {
-                        width: 3.9,
-                        height: 7
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/center/old/muravjov.jpg',
+                    year: 'XIX в. Фото newgrodno.by',
+                    style: {
+                        width: 7,
+                        height: 4.2
                     }
                 },
                 {
                     source: 'places/center/old/muravjov1.jpg',
-                    year: '1980',
+                    year: '1990-е, Фото newgrodno.by',
                     style: {
-                        width: 3.9,
-                        height: 7
+                        width: 7,
+                        height: 4.2
                     }
                 },
                 {
                     source: 'places/center/old/muravjov2.jpg',
-                    year: '1987',
+                    year: '1987 г. Фото newgrodno.by',
                     style: {
-                        width: 3.9,
-                        height: 6
+                        width: 7,
+                        height: 4.2
                     }
                 },
                 {
                     source: 'places/center/old/muravjov3.jpg',
-                    year: '2006',
+                    year: '2006 г. Фото s13.ru',
                     style: {
                         width: 7,
-                        height: 5
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/center/old/muravjov4.jpg',
+                    year: '1975 г. Фото newgrodno.by',
+                    style: {
+                        width: 7,
+                        height: 4.2
                     }
                 }
             ]
@@ -293,7 +310,7 @@ const center = {
             oldImages: [
                 {
                     source: 'places/center/old/cathedral.jpg',
-                    year: 'XVII в., фото radzima.org, автор Я.Булгак',
+                    year: 'XVII в. Фото radzima.org, автор Я.Булгак',
                     style: {
                         width: 7,
                         height: 3.9
@@ -301,7 +318,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/cathedral1.jpg',
-                    year: '1914 - 1918 г., фото ay.by',
+                    year: '1914 - 1918 гг. Фото ay.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -309,7 +326,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/cathedral2.jpg',
-                    year: '1924 г., фото wikimapia.org',
+                    year: '1924 г. Фото wikimapia.org',
                     style: {
                         width: 7,
                         height: 3.9
@@ -317,7 +334,7 @@ const center = {
                 },
                 {
                     source: 'places/center/old/cathedral3.png',
-                    year: '1924 г., фото tut.by',
+                    year: '1924 г. Фото tut.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -325,10 +342,18 @@ const center = {
                 },
                 {
                     source: 'places/center/old/cathedral4.png',
-                    year: '1873 г., фото wikimedia.org, рисунок Н.Орда',
+                    year: '1873 г. Фото wikimedia.org, рисунок Н.Орда',
                     style: {
                         width: 7,
                         height: 3.9
+                    }
+                },
+                {
+                    source: 'places/center/old/1965.jpg',
+                    year: '1965 г. Фото facebook.com, источник БГАКФФД',
+                    style: {
+                        width: 7,
+                        height: 4.1
                     }
                 }
             ]

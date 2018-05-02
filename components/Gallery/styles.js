@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         color: 'white'
     },
    tooltipButton: {
-        opacity: 0.9,
+        opacity: 0.5,
         padding: 0.1,
         marginTop: 0.2,
         textAlign: 'center',
