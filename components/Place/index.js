@@ -2,12 +2,12 @@ import React from 'react';
 import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel } from 'react-vr';
 
 import { Portal, Label, Gallery, VRInformation } from '../.';
-import { lightMixin, cameraMixin, loadingMixin, localizationMixin } from './mixins';
+import { lightMixin, cameraMixin, loadingMixin } from './mixins';
 
 import styles from './styles';
 
 const { DomOverlayModule } = NativeModules;
-const SuperClass = localizationMixin(loadingMixin(cameraMixin(lightMixin(React.Component))));
+const SuperClass = loadingMixin(cameraMixin(lightMixin(React.Component)));
 
 const AnimatedPano = Animated.createAnimatedComponent(Pano);
 
@@ -141,8 +141,6 @@ class Place extends SuperClass {
                 styles.placeView,
                 { transform: [{ rotateY: this.state.rotateY }] }
             ]}>
-                { this.renderLocalizationControls() }
-                
                 { place.sound && <Sound loop={true} source={asset(place.sound)} /> }
                 
                 { this.renderLoading() }
