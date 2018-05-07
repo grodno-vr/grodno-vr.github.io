@@ -13,7 +13,7 @@ class Model3D extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         const { rotation } = nextProps;
-
+console.log(rotation);
         Animated.timing(
             this.state.rotation,
             {

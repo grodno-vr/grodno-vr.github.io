@@ -4,5 +4,10 @@ import brigits from './brigits';
 import vilenskaja from './vilenskaja';
 import castle from './castle';
 import zamkovaja from './zamkovaja';
+import zags from './zags';
+import towers from './towers';
+import sobor from './sobor';
+import kirha from './kirha';
+import ozheshko from './ozheshko';
 
-export default { center, bridge, brigits, vilenskaja, castle, zamkovaja };
+export default { center, bridge, brigits, vilenskaja, castle, zamkovaja, zags, towers, ozheshko, kirha, sobor };

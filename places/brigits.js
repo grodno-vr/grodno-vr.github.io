@@ -1,45 +1,79 @@
 const brigits = {
     name: 'brigits',
-    sound: 'audio/back-1.wav',
+    //sound: 'audio/back-1.wav',
     style: {},
     portals: [
         {
             name: 'center',
-            transformPortal: [{translate: [12, 0, 1]}]
+            transformPortal: [{translate: [3, 0, -10]}]
         }
     ],
     labels: [
         {
-            offset: 75,
+            offset: 0,
             viewStyle: {
-                transform: [{translate: [12, 4, 0]}, { scale : 2.5 }, { rotateY: -90 }]
+                transform: [{translate: [0, 4, -8]}, { scale : 2.5 }]
             },
             textStyle: {
                 fontSize: 0.2,
                 textAlign: 'center'
             },
-            text: 'Monastery of St. Brigitte',
-            description: `Church of the Annunciation and the Blessed Virgin Mary and the Brigit monastery - an architectural monument of the early baroque. The monastery was founded in 1634 on donations of Marshal of the Grand Duchy of Lithuania Krzysztof Veselovsky and his wife Alexandra.\n
-            There is miraculously survived the oldest wooden building in Belarus of 1630s behind the church. It is built without a single nail. His appointment - a hostel for brigit nuns.`,
-            infoPosition: 3000, // pixels
+            text: 'Монастырь Бригиток',
+            description: `Костёл Благовещения Пресвятой Девы Марии и Монастырь Бригиток - памятник архитектуры раннего барокко (так называемого любельского типа ренессансного костёла) с элементами готики и возрождения был построен в Гродно в 1634-1642 годах на улице Язерской (позже улица Скидельская, Купеческая, Бригитская), застройка которой на то время была деревянной.\n
+                          Ансамбль бывшего монастыря бригиток включает в себя костёл, жилой корпус, деревянный лямус и каменную стену. Сам ансамбль является памятником архитектуры республиканского значения.\n
+                          Основан на средства Кшиштофа Веселовского, государственного деятеля Великого княжества Литовского, маршалка великого литовского (в 1635-1637) и его жены Александры Марианны из Собеских.\n
+                          \n\nТекст wikipedia.org `,
+            infoPosition: 1700, // pixels
             galleryStyle: {
-                transform: [{translate: [4, 6, -2]}, { rotateY: -80 }]
+                transform: [{translate: [-4, 5.5, -9]}]
             },
             oldImages: [
                 {
-                    source: 'places/brigits/old/brigits_20.jpg',
-                    year: 'XX c.',
-                    style: {
-                        width: 8,
-                        height: 7.8
-                    }
-                },
-                {
-                    source: 'places/brigits/old/brigits_20-1.jpg',
-                    year: 'XX c.',
+                    source: 'places/brigits/old/brigits_XX-1.png',
+                    year: 'XIX - XX вв. Фото old.grodno.net',
                     style: {
                         width: 8,
                         height: 4.9
+                    }
+                },
+                {
+                    source: 'places/brigits/old/brigits_XX-2.png',
+                    year: 'XIX - XX вв. Фото old.grodno.net, автор Я.Булгак',
+                    style: {
+                        width: 8,
+                        height: 4.9
+                    }
+                },
+                {
+                    source: 'places/brigits/old/brigits_XX-3.png',
+                    year: 'XIX - XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 8,
+                        height: 4.9
+                    }
+                },
+                {
+                    source: 'places/brigits/old/brigits_XX-4.png',
+                    year: 'XIX - XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 8,
+                        height: 4.9
+                    }
+                },
+                {
+                    source: 'places/brigits/old/brigits_XX-5.png',
+                    year: 'XIX - XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 8,
+                        height: 4.9
+                    }
+                },
+                {
+                    source: 'places/brigits/old/brigits_XX.png',
+                    year: 'XIX - XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 8,
+                        height: 5.1
                     }
                 }
             ]

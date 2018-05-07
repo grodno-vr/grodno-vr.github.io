@@ -284,6 +284,14 @@ const center = {
                     }
                 },
                 {
+                    source: 'places/center/old/muravjov1958.jpg',
+                    year: '1958 г. Фото old.grodno.net',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
                     source: 'places/center/old/muravjov4.jpg',
                     year: '1975 г. Фото newgrodno.by',
                     style: {
