@@ -12,220 +12,136 @@ const ozheshko = {
         }
     ],
     labels: [
-        // {
-        //     offset: -130,
-        //     viewStyle: {
-        //         transform: [{translate: [-6, 3, 8]}, { scale : 3 }, { rotateY: 150 }]
-        //     },
-        //     text: 'Доминиканский монастырь (Гимназия)',
-        //     description: `Здание бывшего доминиканского монастыря (первая половина XVIII в.), доминиканской школы и гимназии, губернской мужской гимназии, женской гимназии имени Эмилии Плятер.\n
-        //     Среди учителей гимназии были историки Евстафий Орловский (1863-1913) и Иосиф Иодковский (1890-1950), языковед Йонас Яблонскис (1860-1930), памятная табличка с его профилем находится на одной из стен гимназии.\n
-        //     Учениками гимназии были знаменитые ученые и общественно-политические деятели, в том числе прославленный цирковой силач Якуба Чеховской.\n`,
-        //     infoPosition: 1, // pixels
-        //     infoWidth: 1300, // pixels,
-        //     infoHeight: 900, // pixels
-        //     model: {
-        //         style: {
-        //             position: 'absolute',
-        //             width: 5,
-        //             height: 5,
-        //             transform: [
-        //                 { translate: [-9, 10, 4] },
-        //                 { scale: 1 },
-        //                 { rotateZ: -140 },
-        //                 { rotateX: -40 },
-        //                 { rotateY: -70 }
-        //             ]
-        //         },
-        //         rotationAxis: 'rotateZ',
-        //         obj: 'models/yonas/yonas.obj',
-        //         mtl: 'models/yonas/yonas.mtl',
-        //         controls: {
-        //             transform: [{translate: [-18, -0.5, 0]}, { rotateY: 90 }]
-        //         }
-        //     },
-        //     galleryStyle: {
-        //         transform: [{translate: [-10, 4.5, 6]}, { rotateY: 140 }]
-        //     },
-        //     oldImages: [
-        //         {
-        //             source: 'places/vilenskaja/old/gimnasiumXX.jpg',
-        //             year: 'XX в. Фото vgr.by',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/gimnasiumXX-1.png',
-        //             year: 'XX в. Фото vgr.by',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/gimnasium1930-1.png',
-        //             year: '1930-е, Фото oldgrodno.by, автор Ф.Ворошильский',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/gimnasium1930.png',
-        //             year: '1930-е, Фото old.grodno.net, автор Ф.Ворошильский',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/gimnasium1944.png',
-        //             year: '1944 г. Фото oldgrodno.by',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         }
-        //     ]
-        // },
-        // {
-        //     offset: -90,
-        //     viewStyle: {
-        //         transform: [{translate: [-13, 3, 1]}, { scale : 3 }, { rotateY: 90 }]
-        //     },
-        //     text: 'Памятник-бюст Маршала Соколовского В. Д.',
-        //     description: `Будущий Маршал СССР Василий Данилович Соколовский появился на свет в д. Козлики, входившей на то время в Белостокский уезд Гродненской губернии (теперь деревня находится в Белостокском повяте Подляского воеводства Польши) 9 (21) июля 1897 года. \n
-        //                   В.Д. Соколовский является известным советским военачальником, Маршалом Советского Союза, Героем Советского Союза, а также автором труда под названием «Военная стратегия».
-        //                   Торжественное открытие монумента было осуществлено в 1973 году.\n
-        //                   До 1960-ого года рядом с этим монументом стоял памятник И. В. Сталину. Согласно одной из легенд, скульптура И. В. Сталина была закопана в глубокой яме, вырытой рядом с памятником.`,
-        //     infoPosition: 500, // pixels
-        //     galleryStyle: {
-        //         transform: [{translate: [-11, 4.5, 0]}, { rotateY: 90 }]
-        //     },
-        //     oldImages: [
-        //         {
-        //             source: 'places/vilenskaja/old/sokolovXIX-XX.jpg',
-        //             year: 'XIX-XX вв. Фото old.grodno.net',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/sokolov1958.jpg',
-        //             year: '1958 г. Фото old.grodno.net',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/sokolovXX.png',
-        //             year: 'XX вв. Фото hrodno.life',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/sokolovXX-1.png',
-        //             year: 'XX в. Фото  oldgrodno.by',
-        //             style: {
-        //                 width: 7,
-        //                 height: 5.2
-        //             }
-        //         },
-        //     ]
-        // },
-        // {
-        //     offset: 120,
-        //     viewStyle: {
-        //         transform: [{translate: [8, 4, 8]}, { scale : 3 }, { rotateY: -120 }]
-        //     },
-        //     text: 'Кинотеатр "Гродно"',
-        //     description: `Напротив скверика в 1961 г. открыли кинотеатр «Гродно», который стал первым широкоэкранным, а затем и широкоформатным кинотеатром в области. Кинотеатр пользовался огромным спросом среди населения.\n
-        //     Цветные широкоэкранные фильмы, тем более широкоформатные, тогда были в диковинку и народ буквально валом валил на каждую премьеру. Вспоминается фильм «Человек-амфибия». Когда он появился в кинопрокате, в городе возник небывалый ажиотаж. Билеты приобрести можно было, простояв несколько часов в очереди, которая в 2-3 ряда от касс тянулась аж до проезжей части улицы. Работали кассы предварительной продажи билетов, но и они не спасали положение.\n
-        //     \n\nТекст kinogrodno.by`,
-        //     infoPosition: 3700, // pixels
-        //     galleryStyle: {
-        //         transform: [{translate: [3, 5, 5]}, { rotateY: -120 }]
-        //     },
-        //     oldImages: [
-        //         {
-        //             source: 'places/vilenskaja/old/kino1960th.png',
-        //             year: '1960-е, Фото oldgrodno.by',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/kino1965.png',
-        //             year: '1965 г. Фото oldgrodno.by',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/kino1975.png',
-        //             year: '1975 г. Фото oldgrodno.by',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/kino1979.png',
-        //             year: '1979 г. Фото oldgrodno.by',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/kino1930th.jpg',
-        //             year: '1920-30 гг. Фото old.grodno.net',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         }
-        //
-        //     ]
-        // },
-        // {
-        //     offset: 0,
-        //     viewStyle: {
-        //         transform: [{translate: [1, 2, -5]}, { scale : 1.5 }]
-        //     },
-        //     text: 'ул. Доминиканская (Советская)',
-        //     description: `Советская, Доминиканская, Соборная или Виленская - центральная пешеходная улица города (с 1964 г). В 1930-е улицу выложили брусчаткой. Несколько раз у нее изменялись названия.`,
-        //     infoPosition: 1800, // pixels
-        //     galleryStyle: {
-        //         transform: [{translate: [-3, 5, -8]}]
-        //     },
-        //     oldImages: [
-        //         {
-        //             source: 'places/vilenskaja/old/dominikXIX-XX.jpg',
-        //             year: 'XIX-XX вв. Фото old.grodno.net',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         },
-        //         {
-        //             source: 'places/vilenskaja/old/dominikXIX-XX-1.jpg',
-        //             year: 'XIX-XX вв. Фото old.grodno.net',
-        //             style: {
-        //                 width: 7,
-        //                 height: 4.2
-        //             }
-        //         }
-        //     ]
-        // }
+        {
+            offset: -100,
+            viewStyle: {
+                transform: [{translate: [-10, 4, 1]}, { scale : 3 }, { rotateY: 100 }]
+            },
+            text: 'Здание женской Мариинской гимназии',
+            description: `Здание женской Мариинской гимназии в Гродно было возведено в 1893 году в неоклассическом стиле. Автор проекта – инженер и статский советник Василий Федорович Небольсин.\n
+                          Женская Мариинская гимназия в Гродно существовала в Гродно с 1860 года и строительство для неё собственного нового здания было настоящим событием. В гимназии получали образование дочери чиновников, дворян и духовных лиц. Образование было семиклассным. После Октябрьской революции 1917 года гимназия была закрыта, однако её здание продолжило служить образовательным целям.\n
+                          В 1940 году в здании гимназии был открыт первый на территории Западной Беларуси учительский институт. После Второй Мировой войны он был преобразован в педагогический. В 1978 году на его базе открыт Гродненский университет имени Янки Купалы, которому и по сей день здание женской Мариинской гимназии в Гродно принадлежит.\n
+                          \n\n Текст holiday.by`,
+            infoPosition: 300, // pixels
+            galleryStyle: {
+                transform: [{translate: [-12, 5, 0]}, { rotateY: 100 }]
+            },
+            oldImages: [
+                {
+                    source: 'places/ozheshko/old/gimnasiumXIX-XX.png',
+                    year: 'XIX-XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/ozheshko/old/gimnasiumXIX-XX-1.png',
+                    year: 'XIX-XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/ozheshko/old/gimnasiumXIX-XX-2.png',
+                    year: 'XIX-XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/ozheshko/old/gimnasium1957.png',
+                    year: '1957 r. Фото oldgrodno.by',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/ozheshko/old/gimnasium2013.jpg',
+                    year: '2016 г. Фото radzima.org',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/ozheshko/old/gimnasium2016.jpg',
+                    year: '2017 г. Фото galina-lukas.ru',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/ozheshko/old/gimnasium2017.png',
+                    year: '2013 г. Фото holiday.by',
+                    style: {
+                        width: 7,
+                        height: 4
+                    }
+                }
+            ]
+        },
+        {
+            offset: 0,
+            viewStyle: {
+                transform: [{translate: [1, 2, -5]}, { scale : 1.5 }]
+            },
+            text: 'Дом Элизы Ожешко',
+            description: `Дом-музей Элизы Ожешко в Гродно - архитектурный памятник, являющийся точной копией дома знаменитой писательницы. В нём она жила после переезда в Гродно в 1894 году до своей смерти в мае 1910 года.\n
+                          В завещании Элизы Ожешко было указано, что после её смерти дом необходимо было передать Гродненскому обществу опеки над детьми. В 1911 году воля писательницы была исполнена. В середине 20-х годов в доме разместили торговую школу, а в 1940 году - музыкальную. К счастью, постройка уцелела в годы войны. По завершении военных действий Облпроект разместил здесь своё управление. Затем дом стал станицей переливания крови, а ещё позднее инвентаризационным бюро. Пристанищем для Дома Пионеров здание стало в 1948 году.\n
+                          Читальный зал библиотеки открыли в 1958 году. В этом же году был открыт и музей писательницы. Время не пощадило старую постройку. В 1976 году обветшалое здание разобрали, а новая его копия построена рядом, подальше от дороги. Ещё одну реконструкцию здание пережило в 2009 году.\n
+                          \n\n Текст grodno.in `,
+            infoPosition: 1800, // pixels
+            galleryStyle: {
+                transform: [{translate: [-3, 5, -8]}]
+            },
+            oldImages: [
+                {
+                    source: 'places/ozheshko/old/ozheshkoXIX-XX.png',
+                    year: 'XIX-XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/ozheshko/old/ozheshkoXX.png',
+                    year: 'XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/ozheshko/old/ozheshkoXX-1.png',
+                    year: 'XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/ozheshko/old/ozheshkoXX-2.png',
+                    year: 'XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/ozheshko/old/ozheshko1926.png',
+                    year: '1926 г. Фото old.grodno.net',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+            ]
+        }
     ]
 };
 

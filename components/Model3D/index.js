@@ -8,12 +8,12 @@ class Model3D extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { rotation: new Animated.Value(50) };
+        this.state = { rotation: new Animated.Value(50), scale: new Animated.Value(1) };
     }
 
     componentWillReceiveProps(nextProps) {
         const { rotation } = nextProps;
-console.log(rotation);
+
         Animated.timing(
             this.state.rotation,
             {
@@ -24,17 +24,36 @@ console.log(rotation);
         ).start();
     }
 
+    startModelScaling() {
+        Animated
+            .timing(
+                this.state.scale,
+                { toValue: 2, duration: 500, easing: Easing.in }
+            ).start();
+    }
+
+    stopModelScaling() {
+        Animated
+            .timing(
+                this.state.scale,
+                { toValue: 1, duration: 500, easing: Easing.in }
+            ).start();
+    }
+
     render() {
         const { style, obj, mtl, rotationAxis } = this.props.details || {};
-        
+        const transform = [...style.transform, { scale: this.state.scale } ];
+        if (rotationAxis) {
+            transform.push({ [rotationAxis]: this.state.rotation });
+        }
+
         return (
             <AnimatedModel
+                onEnter={() => this.startModelScaling()}
+                onExit={() => this.stopModelScaling()}
                 style={{
                     ...style,
-                    transform: [
-                        ...style.transform,
-                        { [rotationAxis]: this.state.rotation }
-                    ]
+                    transform
                 }}
                 lit={true}
                 source={{

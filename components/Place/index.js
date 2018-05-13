@@ -57,13 +57,14 @@ class Place extends SuperClass {
     }
 
     openInformation(label, index) {
-        const { text, description = 'Has no description' } = label;
+        const { /*text,*/ description } = label;
 
-        if (true) {
+        if (description) {
             this.setState({ showInfo: true, selectedLabel: index });
-        } else {
-            DomOverlayModule.openInformation({ title: text, description });
         }
+        // else {
+        //     DomOverlayModule.openInformation({ title: text, description });
+        // }
     }
 
     renderVRInformation() {

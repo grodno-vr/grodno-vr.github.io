@@ -126,11 +126,10 @@ const zamkovaja = {
             model: {
                 style: {
                     transform: [
-                        { translate: [12, 3.5, -10] },
-                        { scale: 0.7 },
-                        { rotateZ: -60 },
-                        { rotateX: -8 },
-                        { rotateY: -8 }
+                        { translate: [18, 3.5, -18] },
+                        { rotateZ: -55 },
+                        { rotateX: 0 },
+                        { rotateY: -10 }
                     ]
                 },
                 rotationAxis: 'rotateZ',
@@ -155,6 +154,36 @@ const zamkovaja = {
                 {
                     source: 'places/zamkovaja/old/ghetto1.jpg',
                     year: '1941 г. Фото wikipedia.org',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                }
+            ]
+        },
+        {
+            offset: -180,
+            viewStyle: {
+                transform: [{translate: [-1, 2, 5]}, { scale : 1.5 }, { rotateY: 180 }]
+            },
+            text: 'Дом быта',
+            // description: ``,
+            infoPosition: 500, // pixels
+            galleryStyle: {
+                transform: [{translate: [-5, 5, 8]}, { rotateY: 180 }]
+            },
+            oldImages: [
+                {
+                    source: 'places/zamkovaja/old/dom1971.jpg',
+                    year: '1971 г. Фото old.grodno.net',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/zamkovaja/old/dom1971-1.jpg',
+                    year: '1971 г. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2

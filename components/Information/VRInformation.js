@@ -79,7 +79,7 @@ class VRInformation extends React.Component {
 
     renderModelControls() {
         const { model } = this.props;
-        const { transform } = model.controls;
+        const { transform, disabled } = model.controls;
         const { opacity, scale } = this.state;
 
         return (
@@ -94,8 +94,8 @@ class VRInformation extends React.Component {
             >
                 <VrButton
                     style={styles.modelControlBtn}
-                    onEnter={() => this.startModelRotation(15.1)}
-                    onExit={() => this.stopModelRotation()}
+                    onEnter={() => !disabled && this.startModelRotation(15.1)}
+                    onExit={() => !disabled && this.stopModelRotation()}
                 >
                     <Image
                         source={asset('icons/rotate-left.png')}
@@ -104,8 +104,8 @@ class VRInformation extends React.Component {
                 </VrButton>
                 <VrButton
                     style={styles.modelControlBtn}
-                    onEnter={() => this.startModelRotation(-15.1)}
-                    onExit={() => this.stopModelRotation()}
+                    onEnter={() => !disabled && this.startModelRotation(-15.1)}
+                    onExit={() => !disabled && this.stopModelRotation()}
                 >
                     <Image
                         source={asset('icons/rotate-right.png')}

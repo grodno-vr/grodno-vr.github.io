@@ -54,14 +54,17 @@
 
         nav.github-link img {
             height: 40px;
-        }
-
-        nav.github-link {
-            transition: opacity .3s ease-out;
+            will-change: transform;
+            transition: transform 0.2s ease-out;
         }
 
         nav.github-link:hover {
-            opacity: 0.6;
+            text-shadow: 0 0 .2em, 0 0 .4em;
+            cursor: pointer;
+        }
+
+        nav.github-link:hover img {
+            transform: rotate(-5deg);
         }
 
         .logo {
@@ -221,7 +224,7 @@
     <main>
         <section>
             <figure>
-                <img src="./static_assets/places/center/old/vitaut2.jpg" alt="profile-sample2"/>
+                <img src="./static_assets/images/dominik.png" alt="profile-sample2"/>
                 <figcaption>
                     <h3 class="title1">Начать с</h3>
                     <h3 class="title2">Ж/Д Вокзал</h3>
@@ -229,7 +232,7 @@
                 <a href="#"></a>
             </figure>
             <figure>
-                <img src="./static_assets/places/center/old/vitaut.jpg" alt="profile-sample7"/>
+                <img src="./static_assets/images/dominik.png" alt="profile-sample7"/>
                 <figcaption>
                     <h3 class="title1">Начать с</h3>
                     <h3 class="title2">Площадь Советская</h3>
@@ -237,7 +240,7 @@
                 <a href="#"></a>
             </figure>
             <figure>
-                <img src="./static_assets/places/center/old/vitaut3.jpg" alt="profile-sample6"/>
+                <img src="./static_assets/images/dominik.png" alt="profile-sample6"/>
                 <figcaption>
                     <h3 class="title1">Начать с</h3>
                     <h3 class="title2">Каложской церкви</h3>

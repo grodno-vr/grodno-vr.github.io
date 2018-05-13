@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
     },
     imageView: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     image: {
         // TODO: Chrome browser has a bug - border blinking
