@@ -96,6 +96,26 @@ const ozheshko = {
                           Читальный зал библиотеки открыли в 1958 году. В этом же году был открыт и музей писательницы. Время не пощадило старую постройку. В 1976 году обветшалое здание разобрали, а новая его копия построена рядом, подальше от дороги. Ещё одну реконструкцию здание пережило в 2009 году.\n
                           \n\n Текст grodno.in `,
             infoPosition: 1800, // pixels
+            infoWidth: 1300, // pixels,
+            infoHeight: 900, // pixels
+            model: {
+                disabled: true,
+                style: {
+                    transform: [
+                        { translate: [-3, 8, -5] },
+                        { rotateZ: -110 },
+                        { rotateX: 15 },
+                        { rotateY: -15 }
+                    ]
+                },
+                rotationAxis: 'rotateZ',
+                obj: 'models/ozheshko/ozheshko.obj',
+                mtl: 'models/ozheshko/ozheshko.mtl',
+                controls: {
+                    disabled: true,
+                    transform: [{translate: [-1, -0.5, -10]}, { rotateY: -30 }]
+                }
+            },
             galleryStyle: {
                 transform: [{translate: [-3, 5, -8]}]
             },

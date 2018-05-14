@@ -65,7 +65,7 @@ class VRLoading extends React.Component {
                     </Image>
                 </Animated.View>
                 <Text style={styles.text}>
-                    Loading....
+                    Загрузка....
                 </Text>
             </View>
         );
