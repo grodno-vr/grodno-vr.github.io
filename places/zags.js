@@ -1,5 +1,6 @@
 const zags = {
     name: 'zags',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {

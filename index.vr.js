@@ -1,8 +1,9 @@
 import React from 'react';
-import { AppRegistry } from 'react-vr';
-
+import { AppRegistry, NativeModules } from 'react-vr';
 import { Place } from './components';
 import places from './places';
+
+const Location = NativeModules.Location;
 
 
 export default class GrodnoVR extends React.Component {
@@ -11,7 +12,10 @@ export default class GrodnoVR extends React.Component {
         this.placeKeys = Object.keys(places);
 
         const [firstPlace] = this.placeKeys;
-        this.state = { currentPlace: firstPlace };
+        const parameters = Location.search.replace('?', '');
+        const place = parameters.split('=')[1];
+        const currentPlace = this.placeKeys.indexOf(place) > -1 ? place : firstPlace;
+        this.state = { currentPlace };
     }
 
     render() {

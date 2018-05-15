@@ -1,5 +1,6 @@
 const ozheshko = {
     name: 'ozheshko',
+    sound: 'audio/ozheshko.m4a',
     style: {},
     portals: [
         {

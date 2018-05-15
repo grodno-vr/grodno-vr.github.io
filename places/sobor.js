@@ -1,5 +1,6 @@
 const sobor = {
     name: 'sobor',
+    sound: 'audio/sobor.m4a',
     style: {},
     portals: [
         {

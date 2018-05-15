@@ -3,7 +3,7 @@ const zamkovaja = {
     style: {},
     portals: [
         {
-            name: 'castle',
+            name: 'castles',
             transformPortal: [{translate: [-13, 0, 2]}]
         },
         {

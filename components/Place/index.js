@@ -6,7 +6,7 @@ import { lightMixin, cameraMixin, loadingMixin } from './mixins';
 
 import styles from './styles';
 
-const { DomOverlayModule } = NativeModules;
+// const { DomOverlayModule } = NativeModules;
 const SuperClass = loadingMixin(cameraMixin(lightMixin(React.Component)));
 
 const AnimatedPano = Animated.createAnimatedComponent(Pano);

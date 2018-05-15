@@ -4,7 +4,7 @@ const castle = {
     style: {},
     portals: [
         {
-            name: 'zamkovaja',
+            name: 'castles',
             transformPortal: [{translate: [5, 0, 15]}]
         }
     ],
