@@ -7,6 +7,10 @@ const bridge = {
             transformPortal: [{translate: [10, 0, 6]}]
         },
         {
+            name: 'monastery',
+            transformPortal: [{translate: [12, 0, -2]}]
+        },
+        {
             name: 'towers',
             transformPortal: [{translate: [-12, 1, -1]}]
         }

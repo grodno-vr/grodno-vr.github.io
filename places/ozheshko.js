@@ -8,6 +8,10 @@ const ozheshko = {
             transformPortal: [{translate: [4, 0, 12]}]
         },
         {
+            name: 'toys',
+            transformPortal: [{translate: [-2, 0.5, 14]}]
+        },
+        {
             name: 'sobor',
             transformPortal: [{translate: [-4, 0, -10]}]
         }
@@ -160,7 +164,7 @@ const ozheshko = {
                         width: 7,
                         height: 4.2
                     }
-                },
+                }
             ]
         }
     ]

@@ -8,6 +8,10 @@ const zags = {
             transformPortal: [{translate: [-1, 0, -12]}]
         },
         {
+            name: 'lenina',
+            transformPortal: [{translate: [-1, 0, 13]}]
+        },
+        {
             name: 'ozheshko',
             transformPortal: [{translate: [-10, 0, 8]}]
         }
@@ -111,6 +115,14 @@ const zags = {
                 {
                     source: 'places/zags/old/dominikXIX-2.png',
                     year: 'XIX-XX вв. Фото old.grodno.net',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/zags/old/dominikXX.png',
+                    year: 'XX в. Фото kinogrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
