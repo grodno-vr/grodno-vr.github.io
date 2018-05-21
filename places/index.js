@@ -14,6 +14,9 @@ import synagoge from './synagoge';
 import lenina from './lenina';
 import toys from './toys';
 import monastery from './monastery';
+import kalozha from './kalozha';
+import swiss_valley from './swiss_valley';
+import zoo from './zoo';
 
 export default {
     center,
@@ -31,5 +34,8 @@ export default {
     synagoge,
     lenina,
     toys,
-    monastery
+    monastery,
+    kalozha,
+    swiss_valley,
+    zoo
 };

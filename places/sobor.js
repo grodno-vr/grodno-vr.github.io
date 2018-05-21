@@ -10,6 +10,10 @@ const sobor = {
         {
             name: 'kirha',
             transformPortal: [{translate: [8, 0, -9]}]
+        },
+        {
+            name: 'zoo',
+            transformPortal: [{translate: [10, 0, 2]}]
         }
     ],
     labels: [

@@ -8,6 +8,10 @@ const synagoge = {
             transformPortal: [{translate: [4, 1.5, 12]}]
         },
         {
+            name: 'kalozha',
+            transformPortal: [{translate: [-13, 1, -2]}]
+        },
+        {
             name: 'zamkovaja',
             transformPortal: [{translate: [14, 2, -3]}]
         }

@@ -8,6 +8,10 @@ const lenina = {
             transformPortal: [{translate: [-8, 0, -12]}]
         },
         {
+            name: 'swiss_valley',
+            transformPortal: [{translate: [-10, 0, -8]}]
+        },
+        {
             name: 'toys',
             transformPortal: [{translate: [-16, 0, -3]}]
         },

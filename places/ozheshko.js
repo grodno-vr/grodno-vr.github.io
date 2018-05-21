@@ -8,7 +8,7 @@ const ozheshko = {
             transformPortal: [{translate: [4, 0, 12]}]
         },
         {
-            name: 'toys',
+            name: 'swiss_valley',
             transformPortal: [{translate: [-2, 0.5, 14]}]
         },
         {
