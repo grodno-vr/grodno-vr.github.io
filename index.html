@@ -9,6 +9,14 @@
         gtag('config', 'UA-114159334-1');
 
         window.place = 'center';
+        window.imgLoaded = 0;
+
+        function offBlur() {
+            if (window.imgLoaded == 8) {
+                const main = document.querySelector('main');
+                main.classList.remove('blur');
+            }
+        }
 
         window.onload = function () {
             const figures = document.getElementsByTagName('figure');
@@ -25,6 +33,8 @@
                     window.place = figures[i].getAttribute('id');
                 }
             }
+
+            offBlur();
         }
     </script>
 
@@ -130,6 +140,11 @@
             justify-content: center;
             flex-direction: column;
             align-items: center;
+            transition: filter 1s;
+        }
+
+        .blur {
+            filter: blur(10px);
         }
 
         main > section {
@@ -264,10 +279,10 @@
             </a>
         </nav>
     </header>
-    <main>
+    <main class="blur">
         <section>
             <figure id="ozheshko">
-                <img src="./static_assets/images/ozheshko.png" alt="Улица Элизы Ожешко"/>
+                <img src="./static_assets/images/ozheshko.png" onload="imgLoaded++; offBlur()" alt="Улица Элизы Ожешко"/>
                 <figcaption>
                     <h3 class="title1">Начать с</h3>
                     <h3 class="title2">Улица Элизы Ожешко</h3>
@@ -275,7 +290,7 @@
                 <!--<a href=""></a>-->
             </figure>
             <figure id="center">
-                <img src="./static_assets/images/square.png" alt="Площадь Советская"/>
+                <img src="./static_assets/images/square.png" onload="imgLoaded++; offBlur()" alt="Площадь Советская"/>
                 <figcaption>
                     <h3 class="title1">Начать с</h3>
                     <h3 class="title2">Площадь Советская</h3>
@@ -283,7 +298,7 @@
                 <!--<a href=""></a>-->
             </figure>
             <figure id="towers">
-                <img src="./static_assets/images/towers.png" alt="Водонапорные Башни"/>
+                <img src="./static_assets/images/towers.png" onload="imgLoaded++; offBlur()" alt="Водонапорные Башни"/>
                 <figcaption>
                     <h3 class="title1">Начать с</h3>
                     <h3 class="title2">Водонапорные Башни</h3>
@@ -291,7 +306,7 @@
                 <!--<a href=""></a>-->
             </figure>
             <figure id="castles">
-                <img src="./static_assets/images/castles.png" alt="Старый и Новый Замки"/>
+                <img src="./static_assets/images/castles.png" onload="imgLoaded++; offBlur()" alt="Старый и Новый Замки"/>
                 <figcaption>
                     <h3 class="title1">Начать с</h3>
                     <h3 class="title2">Старый и Новый Замки</h3>
@@ -299,7 +314,7 @@
                 <!--<a href=""></a>-->
             </figure>
             <figure id="kalozha">
-                <img src="./static_assets/images/kalozha.png" alt="Свято-Борисо-Глебская Коложская Церковь"/>
+                <img src="./static_assets/images/kalozha.png" onload="imgLoaded++; offBlur()" alt="Свято-Борисо-Глебская Коложская Церковь"/>
                 <figcaption>
                     <h3 class="title1">Начать с</h3>
                     <h3 class="title2">Коложская Церковь</h3>
@@ -307,7 +322,7 @@
                 <!--<a href=""></a>-->
             </figure>
             <figure id="lenina">
-                <img src="./static_assets/images/lenina.png" alt="Площадь А. Тизенгауза (Площадь В.И. Ленина)"/>
+                <img src="./static_assets/images/lenina.png" onload="imgLoaded++; offBlur()" alt="Площадь А. Тизенгауза (Площадь В.И. Ленина)"/>
                 <figcaption>
                     <h3 class="title1">Начать с</h3>
                     <h3 class="title2">Площадь А. Тизенгауза</h3>
@@ -315,7 +330,7 @@
                 <!--<a href=""></a>-->
             </figure>
             <figure id="swiss_valley">
-                <img src="./static_assets/images/swiss_valley.png" alt="Швейцарская долина (Парк Ж.Э.Жилибера)"/>
+                <img src="./static_assets/images/swiss_valley.png" onload="imgLoaded++; offBlur()" alt="Швейцарская долина (Парк Ж.Э.Жилибера)"/>
                 <figcaption>
                     <h3 class="title1">Начать с</h3>
                     <h3 class="title2">Швейцарская долина</h3>
@@ -323,7 +338,7 @@
                 <!--<a href=""></a>-->
             </figure>
             <figure id="synagoge">
-                <img src="./static_assets/images/synagoge.png" alt="Большая Хоральная Синагога"/>
+                <img src="./static_assets/images/synagoge.png" onload="imgLoaded++; offBlur()" alt="Большая Хоральная Синагога"/>
                 <figcaption>
                     <h3 class="title1">Начать с</h3>
                     <h3 class="title2">Хоральная Синагога</h3>
