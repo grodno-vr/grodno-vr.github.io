@@ -26,8 +26,8 @@ npm run start
 http://localhost:8081/vr
 ```
 
-![Mobile 1](./media/mobile1.png)
-![Mobile 2](./media/mobile2.png)
+![Mobile 1](./media/mobile1.jpg)
+![Mobile 2](./media/mobile2.jpg)
 
 Если браузер на вашей платформе поддерживает [WebVR](https://webvr.info), то вы можете перейти в режим стереоизображения посредством нажатия на кнопку "View in VR":
 
