@@ -51,14 +51,6 @@ const castle = {
             },
             oldImages: [
                 {
-                    source: 'places/castle/old/castle_19.jpg',
-                    year: 'XIX в. Фото oldgrodno.by',
-                    style: {
-                        width: 8,
-                        height: 4.9
-                    }
-                },
-                {
                     source: 'places/castle/old/castleXX.png',
                     year: 'XX в. Фото oldgrodno.by',
                     style: {
