@@ -8,16 +8,24 @@ const lenina = {
             transformPortal: [{translate: [-8, 0, -12]}]
         },
         {
+            name: 'pochta',
+            transformPortal: [{translate: [-3, 0, -14]}]
+        },
+        {
             name: 'swiss_valley',
             transformPortal: [{translate: [-10, 0, -8]}]
         },
         {
-            name: 'toys',
+            name: 'fire',
             transformPortal: [{translate: [-16, 0, -3]}]
         },
         {
             name: 'zags',
             transformPortal: [{translate: [14, 0, 4]}]
+        },
+        {
+            name: 'garadnica',
+            transformPortal: [{translate: [-14, 0, 7]}]
         }
     ],
     labels: [
@@ -131,6 +139,22 @@ const lenina = {
                 {
                     source: 'places/lenina/old/squareXIX-XX-2.png',
                     year: 'XIX-XX вв. Фото vgr.by',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/lenina/old/squareXIX-XX-3.png',
+                    year: 'XIX-XX вв.',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/lenina/old/squareXIX-XX-4.png',
+                    year: 'XIX-XX вв.',
                     style: {
                         width: 7,
                         height: 4.2

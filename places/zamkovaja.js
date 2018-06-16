@@ -30,8 +30,16 @@ const zamkovaja = {
             },
             oldImages: [
                 {
+                    source: 'places/zamkovaja/old/zamkovajaLeftXX-3.png',
+                    year: 'XX в.',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
                     source: 'places/zamkovaja/old/zamkovajaLeftXX.jpg',
-                    year: 'XX в. Фото grodnonews.by, автор В.Саяпин',
+                    year: 'XX в. Фото grodnonews.by, В.Саяпин',
                     style: {
                         width: 7,
                         height: 4.2
@@ -39,7 +47,7 @@ const zamkovaja = {
                 },
                 {
                     source: 'places/zamkovaja/old/zamkovajaLeftXX-1.jpg',
-                    year: 'XX в. Фото grodnonews.by, автор В.Саяпин',
+                    year: 'XX в. Фото grodnonews.by, В.Саяпин',
                     style: {
                         width: 7,
                         height: 4.2
@@ -47,7 +55,7 @@ const zamkovaja = {
                 },
                 {
                     source: 'places/zamkovaja/old/zamkovajaLeftXX-2.jpg',
-                    year: 'XX в. Фото grodnonews.by, автор Ф.Ворошильский',
+                    year: 'XX в. Фото grodnonews.by, Ф.Ворошильский',
                     style: {
                         width: 7,
                         height: 4.2

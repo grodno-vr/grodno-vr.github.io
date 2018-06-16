@@ -83,6 +83,22 @@ const castle = {
                     }
                 },
                 {
+                    source: 'places/castle/old/castle1944-45.png',
+                    year: '1944-45 гг.',
+                    style: {
+                        width: 8,
+                        height: 4.9
+                    }
+                },
+                {
+                    source: 'places/castle/old/castle1944-45-1.png',
+                    year: '1944-45 гг.',
+                    style: {
+                        width: 8,
+                        height: 4.9
+                    }
+                },
+                {
                     source: 'places/castle/old/castle1987.png',
                     year: '1987 г. Фото oldgrodno.by',
                     style: {

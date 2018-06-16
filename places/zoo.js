@@ -24,6 +24,14 @@ const zoo = {
             },
             oldImages: [
                 {
+                    source: 'places/zoo/old/zooXIX-XX.png',
+                    year: 'XIX-XX вв.',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
                     source: 'places/zoo/old/zooXX.png',
                     year: 'XX в. Фото oldgrodno.by, Ф.Ворошильский',
                     style: {
@@ -121,6 +129,14 @@ const zoo = {
                 {
                     source: 'places/zoo/old/railwayXIX.png',
                     year: 'XIX в. Фото oldgrodno.by',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
+                    source: 'places/zoo/old/railwayXIX-XX.png',
+                    year: 'XIX-XX вв.',
                     style: {
                         width: 7,
                         height: 4.2

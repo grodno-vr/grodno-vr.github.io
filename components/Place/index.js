@@ -68,13 +68,13 @@ class Place extends SuperClass {
     }
 
     renderVRInformation() {
-        if (true) {
+        if (/* inVR */ true) {
             const { place = {} } = this.props;
             const { selectedLabel } = this.state;
             const { labels = [] } = place;
             const { text, description = 'Has no description', model, infoPosition, infoWidth, infoHeight } = labels[selectedLabel] || {};
             
-            // component based on CylindricalPanel, you should use values in pixels
+            // Component based on CylindricalPanel, you should use values in pixels
             return (
                 <VRInformation
                     title={text}

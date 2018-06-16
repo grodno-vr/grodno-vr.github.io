@@ -19,7 +19,6 @@
     border: 3px solid rgb(255, 255, 255);
     cursor: default;
 
-    /* TODO: После релиза CSS4 убрать это */
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
@@ -76,7 +75,6 @@
 }
 
 .localization-button p {
-    /* TODO: После релиза CSS4 убрать это */
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;

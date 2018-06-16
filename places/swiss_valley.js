@@ -4,10 +4,14 @@ const swiss_valley = {
     portals: [
         {
             name: 'lenina',
-            transformPortal: [{translate: [10, 1, -8]}]
+            transformPortal: [{translate: [10, 1.5, -8]}]
         },
         {
-            name: 'toys',
+            name: 'pochta',
+            transformPortal: [{translate: [6, 2, -14]}]
+        },
+        {
+            name: 'fire',
             transformPortal: [{translate: [2, 1.5, 10]}]
         },
         {

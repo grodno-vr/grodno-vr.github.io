@@ -4,7 +4,7 @@ const ozheshko = {
     style: {},
     portals: [
         {
-            name: 'zags',
+            name: 'pochta',
             transformPortal: [{translate: [4, 0, 12]}]
         },
         {
@@ -125,6 +125,14 @@ const ozheshko = {
                 transform: [{translate: [-3, 5, -8]}]
             },
             oldImages: [
+                {
+                    source: 'places/ozheshko/old/ozheshkoXIX-XX-1.png',
+                    year: 'XIX-XX вв.',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
                 {
                     source: 'places/ozheshko/old/ozheshkoXIX-XX.png',
                     year: 'XIX-XX вв. Фото old.grodno.net',

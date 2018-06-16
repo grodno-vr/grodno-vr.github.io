@@ -12,7 +12,7 @@ const zags = {
             transformPortal: [{translate: [-1, 0, 13]}]
         },
         {
-            name: 'ozheshko',
+            name: 'pochta',
             transformPortal: [{translate: [-10, 0, 8]}]
         }
     ],
@@ -31,6 +31,14 @@ const zags = {
                 transform: [{translate: [-11, 4.5, 4]}, { rotateY: 120 }]
             },
             oldImages: [
+                {
+                    source: 'places/zags/old/ozheshkoXIX-XX.png',
+                    year: 'XIX-XX вв.',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
                 {
                     source: 'places/zags/old/ozheshkoXIX.png',
                     year: 'XIX-XX вв. Фото old.grodno.net',
@@ -96,6 +104,14 @@ const zags = {
                 transform: [{translate: [-5, 5, -8]}, { rotateY: 10 }]
             },
             oldImages: [
+                {
+                    source: 'places/zags/old/dominikXIX-XX.png',
+                    year: 'XIX-XX вв.',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
                 {
                     source: 'places/zags/old/dominikXIX.png',
                     year: 'XIX-XX вв. Фото old.grodno.net',

@@ -17,6 +17,12 @@ import monastery from './monastery';
 import kalozha from './kalozha';
 import swiss_valley from './swiss_valley';
 import zoo from './zoo';
+import fire from './fire';
+import garadnica from './garadnica';
+import pochta from './pochta';
+import palace from './palace';
+import lilea from './lilea';
+import agro from './agro';
 
 export default {
     center,
@@ -37,5 +43,11 @@ export default {
     monastery,
     kalozha,
     swiss_valley,
-    zoo
+    zoo,
+    fire,
+    garadnica,
+    pochta,
+    palace,
+    lilea,
+    agro
 };

@@ -45,6 +45,14 @@ const vilenskaja = {
             },
             oldImages: [
                 {
+                    source: 'places/vilenskaja/old/gimnasiumXX-2.png',
+                    year: 'XX в.',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
                     source: 'places/vilenskaja/old/gimnasiumXX.jpg',
                     year: 'XX в. Фото vgr.by',
                     style: {

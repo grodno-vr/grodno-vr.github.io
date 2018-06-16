@@ -5,6 +5,10 @@ const kirha = {
         {
             name: 'sobor',
             transformPortal: [{translate: [11, 0, -6]}]
+        },
+        {
+            name: 'agro',
+            transformPortal: [{translate: [-6, 0, -12]}]
         }
     ],
     labels: [
@@ -61,6 +65,46 @@ const kirha = {
                     style: {
                         width: 4,
                         height: 6
+                    }
+                }
+            ]
+        },
+        {
+            offset: 110,
+            viewStyle: {
+                transform: [{translate: [8, 4, 2]}, { rotateY: -120 }, { scale : 3 }]
+            },
+            text: 'Гимназия им. А. Мицкевича',
+            description: `Здание Реального училища им. цесаревича Алексея построено в 1907(8) г. Дата на фасаде 1913 г. скорее всего символизирует 300-летие династии Романовых.\n
+                          В 20-30-е гг. в здании находилась гимназия им. Адама Мицкевича. Именно в этой гимназии преподавал биологию создатель и инициатор первого в Беларуси зоопарка - Ян Кохановский. Именно на базе гимназии появился живой уголок позже легший в освнову Гродненского зоопарка.\n
+                          В конце войны в здании размещался военный госпиталь, а затем Гродненский областной комитет КПБ. В настоящее время – корпус аграрного университета.`,
+            infoPosition: 3500, // pixels
+            galleryStyle: {
+                transform: [{translate: [8, 6, 2]}, { rotateY: -110 }, { scale: 1.5 }]
+            },
+            oldImages: [
+                {
+                    source: 'places/kirha/old/gimnaziaXX-1.png',
+                    year: 'XX в. Фото ggau.by',
+                    style: {
+                        width: 6,
+                        height: 4
+                    }
+                },
+                {
+                    source: 'places/kirha/old/gimnaziaXX-2.png',
+                    year: '1930-е, Фото oldgrodno.by',
+                    style: {
+                        width: 6,
+                        height: 4
+                    }
+                },
+                {
+                    source: 'places/kirha/old/gimnaziaXX-3.png',
+                    year: 'XX в. Фото old.grodno.net',
+                    style: {
+                        width: 6,
+                        height: 4
                     }
                 }
             ]

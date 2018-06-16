@@ -182,6 +182,14 @@ const center = {
                         width: 7,
                         height: 4.2
                     }
+                },
+                {
+                    source: 'places/center/old/vitaut1960th.png',
+                    year: '1960-е',
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
                 }
             ]
         },

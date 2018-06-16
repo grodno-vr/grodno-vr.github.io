@@ -136,6 +136,14 @@ const bridge = {
             },
             oldImages: [
                 {
+                    source: 'places/bridge/old/bernardineSisterXX.png',
+                    year: 'XX в.',
+                    style: {
+                        width: 8,
+                        height: 4.9
+                    }
+                },
+                {
                     source: 'places/bridge/old/bernardineSisters1944.png',
                     year: '1944 г. Фото s13.ru',
                     style: {
@@ -189,6 +197,14 @@ const bridge = {
                 transform: [{translate: [-4, 6, -8]}, { rotateY: 0 }]
             },
             oldImages: [
+                {
+                    source: 'places/bridge/old/holyCrossXIX-XX.png',
+                    year: 'XIX-XX вв.',
+                    style: {
+                        width: 8,
+                        height: 4.9
+                    }
+                },
                 {
                     source: 'places/bridge/old/holyCross.jpg',
                     year: 'XIX в. Фото radzima.org',

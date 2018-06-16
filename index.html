@@ -69,7 +69,8 @@
 
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
             border-bottom: .0625em solid #444444;
         }
 
@@ -115,6 +116,8 @@
 
         .logo {
             display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .banner {
@@ -272,83 +275,93 @@
             </div>
             <img src="static_assets/images/ico.svg" />
         </div>
-        <nav class="github-link">
-            <a href="https://github.com/grodno-vr/grodno-vr.github.io">
-                <img src="static_assets/images/githubico.svg" />
-                <span>GitHub</span>
-            </a>
-        </nav>
+        <!--<nav class="github-link">-->
+            <!--<a href="https://github.com/grodno-vr/grodno-vr.github.io">-->
+                <!--<img src="static_assets/images/githubico.svg" />-->
+                <!--<span>GitHub</span>-->
+            <!--</a>-->
+        <!--</nav>-->
     </header>
-    <main class="blur">
-        <section>
-            <figure id="ozheshko">
-                <img src="./static_assets/images/ozheshko.png" onload="imgLoaded++; offBlur()" alt="Улица Элизы Ожешко"/>
-                <figcaption>
-                    <h3 class="title1">Начать с</h3>
-                    <h3 class="title2">Улица Элизы Ожешко</h3>
-                </figcaption>
-                <!--<a href=""></a>-->
-            </figure>
-            <figure id="center">
-                <img src="./static_assets/images/square.png" onload="imgLoaded++; offBlur()" alt="Площадь Советская"/>
-                <figcaption>
-                    <h3 class="title1">Начать с</h3>
-                    <h3 class="title2">Площадь Советская</h3>
-                </figcaption>
-                <!--<a href=""></a>-->
-            </figure>
-            <figure id="towers">
-                <img src="./static_assets/images/towers.png" onload="imgLoaded++; offBlur()" alt="Водонапорные Башни"/>
-                <figcaption>
-                    <h3 class="title1">Начать с</h3>
-                    <h3 class="title2">Водонапорные Башни</h3>
-                </figcaption>
-                <!--<a href=""></a>-->
-            </figure>
-            <figure id="castles">
-                <img src="./static_assets/images/castles.png" onload="imgLoaded++; offBlur()" alt="Старый и Новый Замки"/>
-                <figcaption>
-                    <h3 class="title1">Начать с</h3>
-                    <h3 class="title2">Старый и Новый Замки</h3>
-                </figcaption>
-                <!--<a href=""></a>-->
-            </figure>
-            <figure id="kalozha">
-                <img src="./static_assets/images/kalozha.png" onload="imgLoaded++; offBlur()" alt="Свято-Борисо-Глебская Коложская Церковь"/>
-                <figcaption>
-                    <h3 class="title1">Начать с</h3>
-                    <h3 class="title2">Коложская Церковь</h3>
-                </figcaption>
-                <!--<a href=""></a>-->
-            </figure>
-            <figure id="lenina">
-                <img src="./static_assets/images/lenina.png" onload="imgLoaded++; offBlur()" alt="Площадь А. Тизенгауза (Площадь В.И. Ленина)"/>
-                <figcaption>
-                    <h3 class="title1">Начать с</h3>
-                    <h3 class="title2">Площадь А. Тизенгауза</h3>
-                </figcaption>
-                <!--<a href=""></a>-->
-            </figure>
-            <figure id="swiss_valley">
-                <img src="./static_assets/images/swiss_valley.png" onload="imgLoaded++; offBlur()" alt="Швейцарская долина (Парк Ж.Э.Жилибера)"/>
-                <figcaption>
-                    <h3 class="title1">Начать с</h3>
-                    <h3 class="title2">Швейцарская долина</h3>
-                </figcaption>
-                <!--<a href=""></a>-->
-            </figure>
-            <figure id="synagoge">
-                <img src="./static_assets/images/synagoge.png" onload="imgLoaded++; offBlur()" alt="Большая Хоральная Синагога"/>
-                <figcaption>
-                    <h3 class="title1">Начать с</h3>
-                    <h3 class="title2">Хоральная Синагога</h3>
-                </figcaption>
-                <!--<a href=""></a>-->
-            </figure>
-        </section>
+    <main>
+        <!--<section>-->
+            <!--<figure id="ozheshko">-->
+                <!--<img src="./static_assets/images/ozheshko.png" onload="imgLoaded++; offBlur()" alt="Улица Элизы Ожешко"/>-->
+                <!--<figcaption>-->
+                    <!--<h3 class="title1">Начать с</h3>-->
+                    <!--<h3 class="title2">Улица Элизы Ожешко</h3>-->
+                <!--</figcaption>-->
+                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
+            <!--</figure>-->
+            <!--<figure id="center">-->
+                <!--<img src="./static_assets/images/square.png" onload="imgLoaded++; offBlur()" alt="Площадь Советская"/>-->
+                <!--<figcaption>-->
+                    <!--<h3 class="title1">Начать с</h3>-->
+                    <!--<h3 class="title2">Площадь Советская</h3>-->
+                <!--</figcaption>-->
+                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
+            <!--</figure>-->
+            <!--<figure id="towers">-->
+                <!--<img src="./static_assets/images/towers.png" onload="imgLoaded++; offBlur()" alt="Водонапорные Башни"/>-->
+                <!--<figcaption>-->
+                    <!--<h3 class="title1">Начать с</h3>-->
+                    <!--<h3 class="title2">Водонапорные Башни</h3>-->
+                <!--</figcaption>-->
+                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
+            <!--</figure>-->
+            <!--<figure id="castles">-->
+                <!--<img src="./static_assets/images/castles.png" onload="imgLoaded++; offBlur()" alt="Старый и Новый Замки"/>-->
+                <!--<figcaption>-->
+                    <!--<h3 class="title1">Начать с</h3>-->
+                    <!--<h3 class="title2">Старый и Новый Замки</h3>-->
+                <!--</figcaption>-->
+                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
+            <!--</figure>-->
+            <!--<figure id="kalozha">-->
+                <!--<img src="./static_assets/images/kalozha.png" onload="imgLoaded++; offBlur()" alt="Свято-Борисо-Глебская Коложская Церковь"/>-->
+                <!--<figcaption>-->
+                    <!--<h3 class="title1">Начать с</h3>-->
+                    <!--<h3 class="title2">Коложская Церковь</h3>-->
+                <!--</figcaption>-->
+                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
+            <!--</figure>-->
+            <!--<figure id="lenina">-->
+                <!--<img src="./static_assets/images/lenina.png" onload="imgLoaded++; offBlur()" alt="Площадь А. Тизенгауза (Площадь В.И. Ленина)"/>-->
+                <!--<figcaption>-->
+                    <!--<h3 class="title1">Начать с</h3>-->
+                    <!--<h3 class="title2">Площадь А. Тизенгауза</h3>-->
+                <!--</figcaption>-->
+                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
+            <!--</figure>-->
+            <!--<figure id="swiss_valley">-->
+                <!--<img src="./static_assets/images/swiss_valley.png" onload="imgLoaded++; offBlur()" alt="Швейцарская долина (Парк Ж.Э.Жилибера)"/>-->
+                <!--<figcaption>-->
+                    <!--<h3 class="title1">Начать с</h3>-->
+                    <!--<h3 class="title2">Швейцарская долина</h3>-->
+                <!--</figcaption>-->
+                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
+            <!--</figure>-->
+            <!--<figure id="synagoge">-->
+                <!--<img src="./static_assets/images/synagoge.png" onload="imgLoaded++; offBlur()" alt="Большая Хоральная Синагога"/>-->
+                <!--<figcaption>-->
+                    <!--<h3 class="title1">Начать с</h3>-->
+                    <!--<h3 class="title2">Хоральная Синагога</h3>-->
+                <!--</figcaption>-->
+                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
+            <!--</figure>-->
+        <!--</section>-->
 
         <section>
-            <button onclick="window.location.replace(`/demo.html?startLocationID=${window.place}`)">Старт демо</button>
+            <button onclick="window.location.replace(`/demo.html?startLocationID=${'center'/*window.place*/}`)">START DEMO</button>
+        </section>
+        <section>
+            <figure id="center" class="hover">
+                <img src="./static_assets/images/square.png" alt="Площадь Советская"/>
+                <figcaption>
+                    <!--<h3 class="title1">Начать с</h3>-->
+                    <!--<h3 class="title2">Площадь Советская</h3>-->
+                </figcaption>
+                <!--<a href=""></a>-->
+            </figure>
         </section>
     </main>
 

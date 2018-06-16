@@ -46,6 +46,14 @@ const monastery = {
                     }
                 },
                 {
+                    source: 'places/monastery/old/monasteryXX-1.png',
+                    year: 'XX в.',
+                    style: {
+                        width: 5.2,
+                        height: 5
+                    }
+                },
+                {
                     source: 'places/monastery/old/monastery1915-17.png',
                     year: '1915-17 гг. Фото oldgrodno.by',
                     style: {

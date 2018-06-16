@@ -43,6 +43,7 @@ class Model3D extends React.Component {
     render() {
         const { disabled, style, obj, mtl, rotationAxis } = this.props.details || {};
         const transform = [...style.transform, { scale: this.state.scale } ];
+
         if (rotationAxis) {
             transform.push({ [rotationAxis]: this.state.rotation });
         }
