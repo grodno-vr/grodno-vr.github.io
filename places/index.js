@@ -23,6 +23,7 @@ import pochta from './pochta';
 import palace from './palace';
 import lilea from './lilea';
 import agro from './agro';
+import francisk from './francisk';
 
 export default {
     center,
@@ -49,5 +50,6 @@ export default {
     pochta,
     palace,
     lilea,
-    agro
+    agro,
+    francisk
 };

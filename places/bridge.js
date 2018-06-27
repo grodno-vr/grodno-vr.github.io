@@ -13,6 +13,10 @@ const bridge = {
         {
             name: 'towers',
             transformPortal: [{translate: [-12, 1, -1]}]
+        },
+        {
+            name: 'francisk',
+            transformPortal: [{translate: [5, 0, -12]}]
         }
     ],
     labels: [

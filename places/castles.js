@@ -16,6 +16,10 @@ const castles = {
             transformPortal: [{translate: [-8, 0, 10]}]
         },
         {
+            name: 'francisk',
+            transformPortal: [{translate: [-12, 0, -6]}]
+        },
+        {
             name: 'synagoge',
             transformPortal: [{translate: [14, 0, 2]}]
         }
