@@ -18,7 +18,7 @@ const palace = {
             description: `Памятник архитектуры XVIII века, окружённый регулярным парком.\n
                           Являлся городской резиденцией администратора, спроектированной как часть градостроительного ансамбля XVIII века - Городницы, по поручению Антония Тизенгауза, предположительно архитектором И. Мезером, в сотрудничестве с Д. Сакко. По другой версии - Сакко продолжал строительство комплекса, доработав проект.\n
                           В 1793 году подарен королём Станиславом Августом Понятовским подскарбию А. Дзеконскому. В 1789 дворец был продан графу М. Валицкому. В 1858 году комплекс был выкуплен брестским православным епископом Игнатием, для организации резиденции священников гродненской епархии.\n
-                          В 1919 году, во время нахождения в Гродно правительства БНР, в здании дворца размещалась белорусская армейская комендатура.\n
+                          В 1919 году, во время нахождения в Гродно правительства БНР, в здании дворца размещалась беларуская армейская комендатура.\n
                           \nТекст wikipedia.org`,
             infoPosition: 1700, // pixels
             galleryStyle: {
@@ -26,64 +26,24 @@ const palace = {
             },
             oldImages: [
                 {
-                    source: 'places/lenina/old/squareXIX-XX.png',
-                    year: 'XIX-XX вв. Фото oldgrodno.by',
+                    source: 'places/palace/old/valickiXX.png',
+                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
                     }
                 },
                 {
-                    source: 'places/lenina/old/squareXIX-XX-1.png',
-                    year: 'XIX-XX вв. Фото oldgrodno.by',
+                    source: 'places/palace/old/valicki1919.png',
+                    year: '1919 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
                     }
                 },
                 {
-                    source: 'places/lenina/old/squareXIX-XX-2.png',
-                    year: 'XIX-XX вв. Фото vgr.by',
-                    style: {
-                        width: 7,
-                        height: 4.2
-                    }
-                },
-                {
-                    source: 'places/lenina/old/squareXX.png',
-                    year: 'XX вв. Фото s13.ru',
-                    style: {
-                        width: 7,
-                        height: 4.2
-                    }
-                },
-                {
-                    source: 'places/lenina/old/squareXX-1.png',
-                    year: 'XX вв. Фото oldgrodno.by',
-                    style: {
-                        width: 7,
-                        height: 4.2
-                    }
-                },
-                {
-                    source: 'places/lenina/old/square1930th.png',
-                    year: '1930-е, Фото oldgrodno.by',
-                    style: {
-                        width: 7,
-                        height: 4.2
-                    }
-                },
-                {
-                    source: 'places/lenina/old/square1930th-1.png',
-                    year: '1930-е, Фото oldgrodno.by',
-                    style: {
-                        width: 7,
-                        height: 4.2
-                    }
-                },
-                {
-                    source: 'places/lenina/old/square1987.png',
-                    year: '1987 г. Фото oldgrodno.by',
+                    source: 'places/palace/old/valicki1986.png',
+                    year: '1986 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
