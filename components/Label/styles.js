@@ -4,8 +4,8 @@ const BORDER_RADIUS = 0.036;
 
 const styles = StyleSheet.create({
     caption: {
-        width: 2.5,
-        height: 0.32,
+        width: 2.7,
+        height: 0.4,
         opacity: 0.90,
         position: 'absolute',
         flexDirection: 'row',

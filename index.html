@@ -164,8 +164,7 @@
             background: #1c1e20;
             font-size: 1.5em;
             padding: .5em;
-            margin-top: 1em;
-            margin-bottom: 2em;
+            margin: 1em .5em 2em;
             border-radius: 2em;
             min-width: 10em;
             max-width: 3em;
@@ -351,7 +350,12 @@
         <!--</section>-->
 
         <section>
-            <button onclick="window.location.replace(`/demo.html?startLocationID=${'center'/*window.place*/}`)">START DEMO</button>
+            <button onclick="window.location.replace(`/demo.html?locale=en&place=${'center'/*window.place*/}`)">
+                START DEMO
+            </button>
+            <button onclick="window.location.replace(`/demo.html?locale=ru&place=${'center'/*window.place*/}`)">
+                НАЧАТЬ ДЕМО
+            </button>
         </section>
         <section>
             <figure id="center" class="hover">

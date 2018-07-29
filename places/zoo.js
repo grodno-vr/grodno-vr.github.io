@@ -1,5 +1,6 @@
 const zoo = {
     name: 'zoo',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {

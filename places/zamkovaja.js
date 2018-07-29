@@ -1,5 +1,6 @@
 const zamkovaja = {
     name: 'zamkovaja',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -52,7 +53,7 @@ const zamkovaja = {
                 {
                     source: 'places/zamkovaja/old/zamkovajaLeftXX.jpg',
                     year: {
-                        ru: 'XX в. Фото grodnonews.by, автор В.Саяпин',
+                        ru: 'XX в. Фото grodnonews.by, В.Саяпин',
                         en: '20th c. Photo grodnonews.by, V.Sayapin'
                     },
                     style: {
@@ -63,7 +64,7 @@ const zamkovaja = {
                 {
                     source: 'places/zamkovaja/old/zamkovajaLeftXX-1.jpg',
                     year: {
-                        ru: 'XX в. Фото grodnonews.by, автор В.Саяпин',
+                        ru: 'XX в. Фото grodnonews.by, В.Саяпин',
                         en: '20th c. Photo grodnonews.by, V.Sayapin'
                     },
                     style: {
@@ -74,7 +75,7 @@ const zamkovaja = {
                 {
                     source: 'places/zamkovaja/old/zamkovajaLeftXX-2.jpg',
                     year: {
-                        ru: 'XX в. Фото oldgrodno.by, автор Ф.Ворошильский',
+                        ru: 'XX в. Фото oldgrodno.by, Ф.Ворошильский',
                         en: '20th c. Photo oldgrodno.by, F.Woroszylski'
                     },
                     style: {
@@ -108,7 +109,7 @@ const zamkovaja = {
                 {
                     source: 'places/zamkovaja/old/zamkovajaRightXX.jpg',
                     year: {
-                        ru: 'XX в. Фото grodnonews.by, автор В.Саяпин',
+                        ru: 'XX в. Фото grodnonews.by, В.Саяпин',
                         en: '20th c. Photo grodnonews.by, V.Sayapin'
                     },
                     style: {
@@ -119,7 +120,7 @@ const zamkovaja = {
                 {
                     source: 'places/zamkovaja/old/zamkovajaRightXX-1.jpg',
                     year: {
-                        ru: 'XX в. Фото grodnonews.by, автор В.Саяпин',
+                        ru: 'XX в. Фото grodnonews.by, В.Саяпин',
                         en: '20th c. Photo grodnonews.by, V.Sayapin'
                     },
                     style: {
@@ -130,7 +131,7 @@ const zamkovaja = {
                 {
                     source: 'places/zamkovaja/old/zamkovajaRightXX-2.png',
                     year: {
-                        ru: 'XX в. Фото oldgrodno.by, автор Ф.Ворошильский',
+                        ru: 'XX в. Фото oldgrodno.by, Ф.Ворошильский',
                         en: '20th c. Photo oldgrodno.by, F.Woroszylski'
                     },
                     style: {
@@ -152,7 +153,7 @@ const zamkovaja = {
                 {
                     source: 'places/zamkovaja/old/zamkovajaRight1915.png',
                     year: {
-                        ru: '1915 г. Фото oldgrodno.by, автор Ф.Ворошильский',
+                        ru: '1915 г. Фото oldgrodno.by, Ф.Ворошильский',
                         en: '1915, Photo oldgrodno.by, F.Woroszylski'
                     },
                     style: {

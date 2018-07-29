@@ -47,7 +47,7 @@ class Close extends React.Component {
     }
 
     render() {
-        const { onClick } = this.props;
+        const { onClick, locale = 'en' } = this.props;
         const { opacity, scale } = this.state;
 
         return (
@@ -71,7 +71,7 @@ class Close extends React.Component {
                     />
                 </GazeButton>
                 <Text style={styles.tooltipButton}>
-                    Закрыть
+                    {locale === 'ru' ? 'Закрыть' : 'Close'}
                 </Text>
             </View>
         );

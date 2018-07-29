@@ -1,5 +1,6 @@
 const bridge = {
     name: 'bridge',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {

@@ -1,5 +1,6 @@
 const kirha = {
     name: 'kirha',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -38,10 +39,9 @@ const kirha = {
                 {
                     source: 'places/kirha/old/kirhaXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 4,
                         height: 6
@@ -50,10 +50,9 @@ const kirha = {
                 {
                     source: 'places/kirha/old/kirha1915-17.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1915-17 гг. Фото oldgrodno.by',
+                        en: '1915-17, Photo oldgrodno.by'
                     },
-                    year: '1915-17 гг. Фото oldgrodno.by',
                     style: {
                         width: 4,
                         height: 6
@@ -62,10 +61,9 @@ const kirha = {
                 {
                     source: 'places/kirha/old/kirha1915-18.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1915-18 гг. Фото oldgrodno.by',
+                        en: '1915-18, Photo oldgrodno.by'
                     },
-                    year: '1915-18 гг. Фото oldgrodno.by',
                     style: {
                         width: 4,
                         height: 6
@@ -74,10 +72,9 @@ const kirha = {
                 {
                     source: 'places/kirha/old/kirha1950th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1950-е, Фото oldgrodno.by',
+                        en: '1950th, Photo oldgrodno.by'
                     },
-                    year: '1950-е, Фото oldgrodno.by',
                     style: {
                         width: 4,
                         height: 6
@@ -86,10 +83,9 @@ const kirha = {
                 {
                     source: 'places/kirha/old/kirha2012.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '2012 г. Фото trainer.by',
+                        en: '2012, Photo trainer.by'
                     },
-                    year: '2012 г. Фото trainer.by',
                     style: {
                         width: 4,
                         height: 6
@@ -122,10 +118,9 @@ const kirha = {
                 {
                     source: 'places/kirha/old/gimnaziaXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото ggau.by',
+                        en: '20th c. Photo ggau.by'
                     },
-                    year: 'XX в. Фото ggau.by',
                     style: {
                         width: 6,
                         height: 4
@@ -134,10 +129,9 @@ const kirha = {
                 {
                     source: 'places/kirha/old/gimnaziaXX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 6,
                         height: 4
@@ -146,10 +140,9 @@ const kirha = {
                 {
                     source: 'places/kirha/old/gimnaziaXX-3.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото old.grodno.net',
+                        en: '20th c. Photo old.grodno.net'
                     },
-                    year: 'XX в. Фото old.grodno.net',
                     style: {
                         width: 6,
                         height: 4

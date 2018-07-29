@@ -1,5 +1,6 @@
 const vilenskaja = {
     name: 'vilenskaja',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -55,10 +56,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/gimnasiumXX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в.',
+                        en: '20th c.'
                     },
-                    year: 'XX в.',
                     style: {
                         width: 7,
                         height: 4.2
@@ -67,10 +67,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/gimnasiumXX.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото vgr.by',
+                        en: '20th c. Photo vgr.by'
                     },
-                    year: 'XX в. Фото vgr.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -79,10 +78,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/gimnasiumXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото vgr.by',
+                        en: '20th c. Photo vgr.by'
                     },
-                    year: 'XX в. Фото vgr.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -91,10 +89,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/gimnasium1930-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by, Ф.Ворошильский',
+                        en: '1930th, Photo oldgrodno.by, F.Woroszylski'
                     },
-                    year: '1930-е, Фото oldgrodno.by, автор Ф.Ворошильский',
                     style: {
                         width: 7,
                         height: 4.2
@@ -103,10 +100,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/gimnasium1930.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by, Ф.Ворошильский',
+                        en: '1930th, Photo oldgrodno.by, F.Woroszylski'
                     },
-                    year: '1930-е, Фото old.grodno.net, автор Ф.Ворошильский',
                     style: {
                         width: 7,
                         height: 4.2
@@ -115,10 +111,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/gimnasium1944.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1944 г. Фото oldgrodno.by',
+                        en: '1944, Photo oldgrodno.by'
                     },
-                    year: '1944 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -153,10 +148,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/sokolovXIX-XX.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX-XX вв. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -165,10 +159,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/sokolov1958.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1958 г. Фото old.grodno.net',
+                        en: '1958, Photo old.grodno.net'
                     },
-                    year: '1958 г. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -177,10 +170,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/sokolovXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX вв. Фото hrodno.life',
+                        en: '20th c. Photo hrodno.life'
                     },
-                    year: 'XX вв. Фото hrodno.life',
                     style: {
                         width: 7,
                         height: 4.2
@@ -189,10 +181,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/sokolovXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото  oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото  oldgrodno.by',
                     style: {
                         width: 7,
                         height: 5.2
@@ -224,10 +215,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/kino1960th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1960-е, Фото oldgrodno.by',
+                        en: '1960th, Photo oldgrodno.by'
                     },
-                    year: '1960-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -236,10 +226,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/kino1965.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1965 г. Фото oldgrodno.by',
+                        en: '1965, Photo oldgrodno.by'
                     },
-                    year: '1965 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -248,10 +237,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/kino1975.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1975 г. Фото oldgrodno.by',
+                        en: '1975, Photo oldgrodno.by'
                     },
-                    year: '1975 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -260,10 +248,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/kino1979.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1979 г. Фото oldgrodno.by',
+                        en: '1979, Photo oldgrodno.by'
                     },
-                    year: '1979 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -272,10 +259,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/kino1930th.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1920-30 гг. Фото old.grodno.net',
+                        en: '1920-30, Photo old.grodno.net'
                     },
-                    year: '1920-30 гг. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -310,10 +296,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/dominikXIX-XX.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX-XX вв. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -322,10 +307,9 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/dominikXIX-XX-1.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX-XX вв. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2

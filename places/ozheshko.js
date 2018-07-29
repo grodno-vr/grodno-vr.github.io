@@ -43,10 +43,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/gimnasiumXIX-XX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX-XX вв. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -55,10 +54,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/gimnasiumXIX-XX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX-XX вв. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -67,10 +65,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/gimnasiumXIX-XX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX-XX вв. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -79,10 +76,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/gimnasium1957.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1957 r. Фото oldgrodno.by',
+                        en: '1957, Photo oldgrodno.by'
                     },
-                    year: '1957 r. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -91,10 +87,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/gimnasium2013.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '2016 г. Фото radzima.org',
+                        en: '2016, Photo radzima.org'
                     },
-                    year: '2016 г. Фото radzima.org',
                     style: {
                         width: 7,
                         height: 4.2
@@ -103,10 +98,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/gimnasium2016.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '2017 г. Фото galina-lukas.ru',
+                        en: '2017, Photo galina-lukas.ru'
                     },
-                    year: '2017 г. Фото galina-lukas.ru',
                     style: {
                         width: 7,
                         height: 4.2
@@ -115,10 +109,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/gimnasium2017.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '2013 г. Фото holiday.by',
+                        en: '2013, Photo holiday.by'
                     },
-                    year: '2013 г. Фото holiday.by',
                     style: {
                         width: 7,
                         height: 4
@@ -172,10 +165,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/ozheshkoXIX-XX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв.',
+                        en: '19-20th c.'
                     },
-                    year: 'XIX-XX вв.',
                     style: {
                         width: 7,
                         height: 4.2
@@ -184,10 +176,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/ozheshkoXIX-XX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX-XX вв. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -196,10 +187,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/ozheshkoXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX вв. Фото old.grodno.net',
+                        en: '20th c. Photo old.grodno.net'
                     },
-                    year: 'XX вв. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -208,10 +198,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/ozheshkoXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX вв. Фото old.grodno.net',
+                        en: '20th c. Photo old.grodno.net'
                     },
-                    year: 'XX вв. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -220,10 +209,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/ozheshkoXX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX вв. Фото old.grodno.net',
+                        en: '20th c. Photo old.grodno.net'
                     },
-                    year: 'XX вв. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -232,10 +220,9 @@ const ozheshko = {
                 {
                     source: 'places/ozheshko/old/ozheshko1926.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1926 г. Фото old.grodno.net',
+                        en: '1926, Photo old.grodno.net'
                     },
-                    year: '1926 г. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2

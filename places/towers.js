@@ -1,5 +1,6 @@
 const towers = {
     name: 'towers',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -33,7 +34,10 @@ const towers = {
             oldImages: [
                 {
                     source: 'places/towers/old/towersXX.png',
-                    year: 'XX в. Фото oldgrodno.by',
+                    year: {
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
+                    },
                     style: {
                         width: 7,
                         height: 4.2
@@ -42,10 +46,9 @@ const towers = {
                 {
                     source: 'places/towers/old/towers1930th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -54,10 +57,9 @@ const towers = {
                 {
                     source: 'places/towers/old/towers1970th.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1970-е, Фото grodnonews.by',
+                        en: '1970th, Photo grodnonews.by'
                     },
-                    year: '1970-е, Фото grodnonews.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -66,10 +68,9 @@ const towers = {
                 {
                     source: 'places/towers/old/towers1915-17.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1915-17 гг. Фото oldgrodno.by',
+                        en: '1915-17, Photo oldgrodno.by'
                     },
-                    year: '1915-17 гг. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -78,10 +79,9 @@ const towers = {
                 {
                     source: 'places/towers/old/towers1968.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1968 г. Фото oldgrodno.by',
+                        en: '1968, Photo oldgrodno.by'
                     },
-                    year: '1968 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2

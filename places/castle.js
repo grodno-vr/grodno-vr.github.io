@@ -1,6 +1,6 @@
 const castle = {
     name: 'castle',
-    // sound: 'audio/birds.mp3',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -71,10 +71,9 @@ const castle = {
                 {
                     source: 'places/castle/old/castleXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -83,10 +82,9 @@ const castle = {
                 {
                     source: 'places/castle/old/castleXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -95,10 +93,9 @@ const castle = {
                 {
                     source: 'places/castle/old/castle1917.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1917 г. Фото oldgrodno.by',
+                        en: '1917, Photo oldgrodno.by'
                     },
-                    year: '1917 г. Фото oldgrodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -107,10 +104,9 @@ const castle = {
                 {
                     source: 'places/castle/old/castle1941-44.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1941-44 гг. Фото oldgrodno.by',
+                        en: '1941-44, Photo oldgrodno.by'
                     },
-                    year: '1941-44 гг. Фото oldgrodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -119,10 +115,9 @@ const castle = {
                 {
                     source: 'places/castle/old/castle1944-45.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1944-45 гг.',
+                        en: '1944-45 years'
                     },
-                    year: '1944-45 гг.',
                     style: {
                         width: 8,
                         height: 4.9
@@ -131,10 +126,9 @@ const castle = {
                 {
                     source: 'places/castle/old/castle1944-45-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1944-45 гг.',
+                        en: '1944-45 years'
                     },
-                    year: '1944-45 гг.',
                     style: {
                         width: 8,
                         height: 4.9
@@ -143,10 +137,9 @@ const castle = {
                 {
                     source: 'places/castle/old/castle1987.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1987 г. Фото oldgrodno.by',
+                        en: '1987, Photo oldgrodno.by'
                     },
-                    year: '1987 г. Фото oldgrodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -155,10 +148,9 @@ const castle = {
                 {
                     source: 'places/castle/old/castle2008.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '2008 г. Фото oldgrodno.by',
+                        en: '2008, Photo oldgrodno.by'
                     },
-                    year: '2008 г. Фото oldgrodno.by',
                     style: {
                         width: 8,
                         height: 4.9

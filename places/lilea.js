@@ -1,6 +1,6 @@
 const lilea = {
     name: 'lilea',
-    // sound: 'audio/birds.mp3',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -41,10 +41,9 @@ const lilea = {
                 {
                     source: 'places/lilea/old/lileaXIX-XX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото oldgrodno.by',
+                        en: '19-20th c. Photo oldgrodno.by'
                     },
-                    year: 'XIX-XX вв. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -53,10 +52,9 @@ const lilea = {
                 {
                     source: 'places/lilea/old/lileaXIX-XX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото oldgrodno.by',
+                        en: '19-20th c. Photo oldgrodno.by'
                     },
-                    year: 'XIX-XX вв. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2

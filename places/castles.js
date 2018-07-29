@@ -1,6 +1,6 @@
 const castles = {
     name: 'castles',
-    // sound: 'audio/birds.mp3',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -51,10 +51,9 @@ const castles = {
                 {
                     source: 'places/castles/old/new_castleXVIII.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XVIII в. Фото wikipedia.org',
+                        en: '18th c. Photo wikipedia.org'
                     },
-                    year: 'XVIII в. Фото wikipedia.org',
                     style: {
                         width: 7,
                         height: 4.2
@@ -63,10 +62,9 @@ const castles = {
                 {
                     source: 'places/castles/old/new_castleXIX.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX в. Фото zetgrodno.com',
+                        en: '19th c. Photo zetgrodno.com'
                     },
-                    year: 'XIX в. Фото zetgrodno.com',
                     style: {
                         width: 7,
                         height: 4.2
@@ -75,10 +73,9 @@ const castles = {
                 {
                     source: 'places/castles/old/new_castleXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -87,10 +84,9 @@ const castles = {
                 {
                     source: 'places/castles/old/new_castle1930th-3.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -99,10 +95,9 @@ const castles = {
                 {
                     source: 'places/castles/old/new_castle1944-50.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1944-50 гг. Фото oldgrodno.by',
+                        en: '1944-50, Photo oldgrodno.by'
                     },
-                    year: '1944-50 гг. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -111,10 +106,9 @@ const castles = {
                 {
                     source: 'places/castles/old/new_castle1982.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1982 г. Фото oldgrodno.by',
+                        en: '1982, Photo oldgrodno.by'
                     },
-                    year: '1982 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -123,10 +117,9 @@ const castles = {
                 {
                     source: 'places/castles/old/new_castle1988.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1988 г. Фото oldgrodno.by',
+                        en: '1988, Photo oldgrodno.by'
                     },
-                    year: '1988 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -158,10 +151,9 @@ const castles = {
                 {
                     source: 'places/castles/old/old_castleXVI.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XVI в. Фото allcastles.ru',
+                        en: '16th c. Photo allcastles.ru'
                     },
-                    year: 'XVI в. Фото allcastles.ru',
                     style: {
                         width: 7,
                         height: 4.2
@@ -170,10 +162,9 @@ const castles = {
                 {
                     source: 'places/castles/old/old_castleXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -182,10 +173,9 @@ const castles = {
                 {
                     source: 'places/castles/old/old_castleXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -194,10 +184,9 @@ const castles = {
                 {
                     source: 'places/castles/old/old_castle1930th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -206,10 +195,9 @@ const castles = {
                 {
                     source: 'places/castles/old/old_castle1930th-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -218,10 +206,9 @@ const castles = {
                 {
                     source: 'places/castles/old/old_castle1930th-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2

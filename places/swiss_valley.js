@@ -1,5 +1,6 @@
 const swiss_valley = {
     name: 'swiss_valley',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -43,10 +44,9 @@ const swiss_valley = {
                 {
                     source: 'places/swiss_valley/old/valleyXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -55,10 +55,9 @@ const swiss_valley = {
                 {
                     source: 'places/swiss_valley/old/valleyXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by, Ф.Ворошильский',
+                        en: '20th c. Photo oldgrodno.by, F.Woroszylski'
                     },
-                    year: 'XX в. Фото oldgrodno.by, Ф.Ворошильский',
                     style: {
                         width: 7,
                         height: 4.2
@@ -67,10 +66,9 @@ const swiss_valley = {
                 {
                     source: 'places/swiss_valley/old/valleyXX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by, Ф.Ворошильский',
+                        en: '20th c. Photo oldgrodno.by, F.Woroszylski'
                     },
-                    year: 'XX в. Фото oldgrodno.by, Ф.Ворошильский',
                     style: {
                         width: 7,
                         height: 4.2
@@ -79,10 +77,9 @@ const swiss_valley = {
                 {
                     source: 'places/swiss_valley/old/valleyXX-3.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by, Ф.Ворошильский',
+                        en: '20th c. Photo oldgrodno.by, F.Woroszylski'
                     },
-                    year: 'XX в. Фото oldgrodno.by, Ф.Ворошильский',
                     style: {
                         width: 7,
                         height: 4.2
@@ -91,10 +88,9 @@ const swiss_valley = {
                 {
                     source: 'places/swiss_valley/old/valleyXX-4.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by, Ф.Ворошильский',
+                        en: '20th c. Photo oldgrodno.by, F.Woroszylski'
                     },
-                    year: 'XX в. Фото oldgrodno.by, Ф.Ворошильский',
                     style: {
                         width: 7,
                         height: 4.2

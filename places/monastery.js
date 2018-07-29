@@ -1,6 +1,6 @@
 const monastery = {
     name: 'monastery',
-    // sound: 'audio/birds.mp3',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -41,10 +41,9 @@ const monastery = {
                 {
                     source: 'places/monastery/old/monasteryXIX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XIX в. Фото oldgrodno.by',
                     style: {
                         width: 4.2,
                         height: 6
@@ -53,10 +52,9 @@ const monastery = {
                 {
                     source: 'places/monastery/old/monasteryXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 4.2,
                         height: 6
@@ -65,10 +63,9 @@ const monastery = {
                 {
                     source: 'places/monastery/old/monasteryXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в.',
+                        en: '20th c.'
                     },
-                    year: 'XX в.',
                     style: {
                         width: 5.2,
                         height: 5
@@ -77,10 +74,9 @@ const monastery = {
                 {
                     source: 'places/monastery/old/monastery1915-17.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1915-17 гг. Фото oldgrodno.by',
+                        en: '1915-17, Photo oldgrodno.by'
                     },
-                    year: '1915-17 гг. Фото oldgrodno.by',
                     style: {
                         width: 4.2,
                         height: 6
@@ -89,10 +85,9 @@ const monastery = {
                 {
                     source: 'places/monastery/old/monastery1915-17-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1915-17 гг. Фото oldgrodno.by',
+                        en: '1915-17, Photo oldgrodno.by'
                     },
-                    year: '1915-17 гг. Фото oldgrodno.by',
                     style: {
                         width: 4.2,
                         height: 6
@@ -101,10 +96,9 @@ const monastery = {
                 {
                     source: 'places/monastery/old/monastery1930th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 4.2,
                         height: 6

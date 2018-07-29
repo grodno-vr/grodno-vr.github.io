@@ -36,11 +36,12 @@ class Place extends SuperClass {
     }
 
     renderLabel(label, index) {
+        const { locale = 'en' } = this.props;
         return (
             <Label
                 key={`${index}-${label.name}`}
                 style={{...label.viewStyle}}
-                heading={label.text}
+                heading={label.text[locale] || ' --- '}
                 onEyeClick={() => {
                     if (label.oldImages && label.oldImages.length) {
                         this.putOutLight(0.6, () => {});
@@ -57,9 +58,10 @@ class Place extends SuperClass {
     }
 
     openInformation(label, index) {
-        const { /*text,*/ description } = label;
+        const { locale = 'en' } = this.props;
+        const { /*text,*/ description = [] } = label;
 
-        if (description) {
+        if (description[locale]) {
             this.setState({ showInfo: true, selectedLabel: index });
         }
         // else {
@@ -69,16 +71,16 @@ class Place extends SuperClass {
 
     renderVRInformation() {
         if (/* inVR */ true) {
-            const { place = {} } = this.props;
+            const { place = {}, locale = 'en' } = this.props;
             const { selectedLabel } = this.state;
             const { labels = [] } = place;
-            const { text, description = 'Has no description', model, infoPosition, infoWidth, infoHeight } = labels[selectedLabel] || {};
+            const { text = {}, description = {}, model, infoPosition, infoWidth, infoHeight } = labels[selectedLabel] || {};
             
             // Component based on CylindricalPanel, you should use values in pixels
             return (
                 <VRInformation
-                    title={text}
-                    description={description}
+                    title={text[locale] || ' --- '}
+                    description={description[locale] || ' --- '}
                     width={infoWidth || 1000}
                     height={infoHeight || 820}
                     model={model}
@@ -90,7 +92,7 @@ class Place extends SuperClass {
     }
 
     renderGallery() {
-        const { place = {} } = this.props;
+        const { place = {}, locale = 'en' } = this.props;
         const { selectedLabel } = this.state;
         const { labels = [] } = place;
         const label = labels[selectedLabel] || {};
@@ -99,6 +101,7 @@ class Place extends SuperClass {
         if (galleryStyle && oldImages.length) {
             return (
                 <Gallery
+                    locale={locale}
                     images={oldImages}
                     style={galleryStyle}
                     onClose={() => {

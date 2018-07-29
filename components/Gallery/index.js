@@ -75,7 +75,7 @@ class Gallery extends React.Component {
 
     render() {
         const { selectedImage, scale, opacity } = this.state;
-        const { images = [], style, onClose } = this.props;
+        const { images = [], locale = 'en', style, onClose } = this.props;
         const currentImage = images[selectedImage] || {};
 
         return (
@@ -91,7 +91,7 @@ class Gallery extends React.Component {
             >
                 <View style={[styles.centerView, { transform: [{ rotateX: 6 }] }]}>
                     <Text style={styles.yearLabel}>
-                        {currentImage.year}
+                        {currentImage.year && currentImage.year[locale] || '---'}
                     </Text>
                 </View>
 
@@ -106,9 +106,9 @@ class Gallery extends React.Component {
 
                 </View>
                 <View style={[styles.centerView, { flexDirection: 'row', transform: [{ rotateX: -27 }] }]}>
-                    <Arrow direction="left" text="Назад" onClick={() => this.nextImage(-1)} />
-                    <Close onClick={() => onClose()} />
-                    <Arrow direction="right" text="Вперед" onClick={() => this.nextImage(1)} />
+                    <Arrow direction="left" text={locale === 'ru' ? "Назад" : "Prev"} onClick={() => this.nextImage(-1)} />
+                    <Close locale={locale} onClick={() => onClose()} />
+                    <Arrow direction="right" text={locale === 'ru' ? "Вперед" : "Next"} onClick={() => this.nextImage(1)} />
                 </View>
             </Animated.View>
         );

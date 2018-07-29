@@ -1,6 +1,6 @@
 const brigits = {
     name: 'brigits',
-    //sound: 'audio/back-1.wav',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -20,7 +20,7 @@ const brigits = {
             },
             text: {
                 ru: 'Монастырь Бригиток',
-                en: 'Brigit monastery'
+                en: 'Brigit Monastery'
             },
             description: {
                 ru: `Костёл Благовещения Пресвятой Девы Марии и Монастырь Бригиток - памятник архитектуры раннего барокко (так называемого любельского типа ренессансного костёла) с элементами готики и возрождения был построен в Гродно в 1634-1642 годах на улице Язерской (позже улица Скидельская, Купеческая, Бригитская), застройка которой на то время была деревянной.\n
@@ -39,10 +39,9 @@ const brigits = {
                 {
                     source: 'places/brigits/old/brigits_XX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX - XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX - XX вв. Фото old.grodno.net',
                     style: {
                         width: 8,
                         height: 4.9
@@ -51,10 +50,9 @@ const brigits = {
                 {
                     source: 'places/brigits/old/brigits_XX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX - XX вв. Фото old.grodno.net, автор Я.Булгак',
+                        en: '19-20th c. Photo old.grodno.net, author J.Bulgak'
                     },
-                    year: 'XIX - XX вв. Фото old.grodno.net, автор Я.Булгак',
                     style: {
                         width: 8,
                         height: 4.9
@@ -63,10 +61,9 @@ const brigits = {
                 {
                     source: 'places/brigits/old/brigits_XX-3.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX - XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX - XX вв. Фото old.grodno.net',
                     style: {
                         width: 8,
                         height: 4.9
@@ -75,10 +72,9 @@ const brigits = {
                 {
                     source: 'places/brigits/old/brigits_XX-4.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX - XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX - XX вв. Фото old.grodno.net',
                     style: {
                         width: 8,
                         height: 4.9
@@ -87,10 +83,9 @@ const brigits = {
                 {
                     source: 'places/brigits/old/brigits_XX-5.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX - XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX - XX вв. Фото old.grodno.net',
                     style: {
                         width: 8,
                         height: 4.9
@@ -99,10 +94,9 @@ const brigits = {
                 {
                     source: 'places/brigits/old/brigits_XX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX - XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX - XX вв. Фото old.grodno.net',
                     style: {
                         width: 8,
                         height: 5.1

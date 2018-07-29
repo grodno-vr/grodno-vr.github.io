@@ -1,6 +1,6 @@
 const toys = {
     name: 'toys',
-    // sound: 'audio/birds.mp3',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -39,10 +39,9 @@ const toys = {
                 {
                     source: 'places/toys/old/toysXIX-XX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв.',
+                        en: '19-20th c.'
                     },
-                    year: 'XIX-XX вв.',
                     style: {
                         width: 7,
                         height: 4.2
@@ -51,10 +50,9 @@ const toys = {
                 {
                     source: 'places/toys/old/toysXIX-XX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв.',
+                        en: '19-20th c.'
                     },
-                    year: 'XIX-XX вв.',
                     style: {
                         width: 7,
                         height: 4.2
@@ -63,10 +61,9 @@ const toys = {
                 {
                     source: 'places/toys/old/toysXIX-XX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото old.grodno.net',
+                        en: '19-20th c. Photo old.grodno.net'
                     },
-                    year: 'XIX-XX вв. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -75,10 +72,9 @@ const toys = {
                 {
                     source: 'places/toys/old/toys1930th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото harodnia.com',
+                        en: '1930th, Photo harodnia.com'
                     },
-                    year: '1930-е, Фото harodnia.com',
                     style: {
                         width: 7,
                         height: 4.2
@@ -87,10 +83,9 @@ const toys = {
                 {
                     source: 'places/toys/old/toys1979.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1979 г. Фото oldgrodno.by',
+                        en: '1979, Photo oldgrodno.by'
                     },
-                    year: '1979 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2

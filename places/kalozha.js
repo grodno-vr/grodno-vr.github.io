@@ -1,5 +1,6 @@
 const kalozha = {
     name: 'kalozha',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -36,10 +37,9 @@ const kalozha = {
                 {
                     source: 'places/kalozha/old/kalozhaXIX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX в. Автор Н.Орда',
+                        en: '19th c. author N.Orda'
                     },
-                    year: 'XIX в. Автор Н.Орда',
                     style: {
                         width: 7,
                         height: 4.2
@@ -48,10 +48,9 @@ const kalozha = {
                 {
                     source: 'places/kalozha/old/kalozhaXIX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX в. Автор Н.Орда',
+                        en: '19th c. author N.Orda'
                     },
-                    year: 'XIX в. Автор Н.Орда',
                     style: {
                         width: 7,
                         height: 4.2
@@ -60,10 +59,9 @@ const kalozha = {
                 {
                     source: 'places/kalozha/old/kalozhaXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -72,10 +70,9 @@ const kalozha = {
                 {
                     source: 'places/kalozha/old/kalozhaXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -84,10 +81,9 @@ const kalozha = {
                 {
                     source: 'places/kalozha/old/kalozhaXX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -96,10 +92,9 @@ const kalozha = {
                 {
                     source: 'places/kalozha/old/kalozhaXX-3.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2

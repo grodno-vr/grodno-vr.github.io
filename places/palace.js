@@ -1,6 +1,6 @@
 const palace = {
     name: 'palace',
-    // sound: 'audio/birds.mp3',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -37,10 +37,9 @@ const palace = {
                 {
                     source: 'places/palace/old/valickiXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -49,10 +48,9 @@ const palace = {
                 {
                     source: 'places/palace/old/valicki1919.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1919 г. Фото oldgrodno.by',
+                        en: '1919, Photo oldgrodno.by'
                     },
-                    year: '1919 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -61,10 +59,9 @@ const palace = {
                 {
                     source: 'places/palace/old/valicki1986.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1986 г. Фото oldgrodno.by',
+                        en: '1986, Photo oldgrodno.by'
                     },
-                    year: '1986 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2

@@ -47,10 +47,9 @@ const sobor = {
                 {
                     source: 'places/sobor/old/sobor1915.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1915 г. Фото oldgrodno.by',
+                        en: '1915, Photo oldgrodno.by'
                     },
-                    year: '1915 г. Фото oldgrodno.by',
                     style: {
                         width: 4.6,
                         height: 6.5
@@ -59,10 +58,9 @@ const sobor = {
                 {
                     source: 'places/sobor/old/sobor1930th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 4.6,
                         height: 6.5
@@ -71,10 +69,9 @@ const sobor = {
                 {
                     source: 'places/sobor/old/soborXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 4.6,
                         height: 6.5
@@ -83,10 +80,9 @@ const sobor = {
                 {
                     source: 'places/sobor/old/soborXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 4.6,
                         height: 6.5
@@ -95,10 +91,9 @@ const sobor = {
                 {
                     source: 'places/sobor/old/sobor1941-44.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1941-44 гг. Фото oldgrodno.by',
+                        en: '1941-44, Photo oldgrodno.by'
                     },
-                    year: '1941-44 гг. Фото oldgrodno.by',
                     style: {
                         width: 4.6,
                         height: 6.5
@@ -107,10 +102,9 @@ const sobor = {
                 {
                     source: 'places/sobor/old/sobor1941-44-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1941-44 гг. Фото oldgrodno.by',
+                        en: '1941-44, Photo oldgrodno.by'
                     },
-                    year: '1941-44 гг. Фото oldgrodno.by',
                     style: {
                         width: 4.6,
                         height: 6.5
@@ -164,10 +158,9 @@ const sobor = {
                 {
                     source: 'places/sobor/old/university1960th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1960-е, Фото oldgrodno.by',
+                        en: '1960th, Photo oldgrodno.by'
                     },
-                    year: '1960-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -176,10 +169,9 @@ const sobor = {
                 {
                     source: 'places/sobor/old/university1964.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1964 г. Фото old.grodno.net',
+                        en: '1964, Photo old.grodno.net'
                     },
-                    year: '1964 г. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -188,10 +180,9 @@ const sobor = {
                 {
                     source: 'places/sobor/old/university1967.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1967 г. Фото oldgrodno.by',
+                        en: '1967, Photo oldgrodno.by'
                     },
-                    year: '1967 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -200,10 +191,9 @@ const sobor = {
                 {
                     source: 'places/sobor/old/university1975.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1975 г. Фото grodno.in',
+                        en: '1975, Photo grodno.in'
                     },
-                    year: '1975 г. Фото grodno.in',
                     style: {
                         width: 7,
                         height: 4.2
@@ -212,10 +202,9 @@ const sobor = {
                 {
                     source: 'places/sobor/old/university1992.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1992 г. Фото grodno.in',
+                        en: '1992, Photo grodno.in'
                     },
-                    year: '1992 г. Фото grodno.in',
                     style: {
                         width: 7,
                         height: 4.2

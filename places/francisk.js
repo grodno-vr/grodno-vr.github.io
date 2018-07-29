@@ -1,5 +1,6 @@
 const francisk = {
     name: 'francisk',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -40,10 +41,9 @@ const francisk = {
                 {
                     source: 'places/francisk/old/kostelXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Aвтор Я.Булгак',
+                        en: '20th c. Author J.Bulgak'
                     },
-                    year: 'XX в. Фотограф Я.Булгак',
                     style: {
                         width: 8,
                         height: 4.9
@@ -52,10 +52,9 @@ const francisk = {
                 {
                     source: 'places/francisk/old/kostelXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -64,10 +63,9 @@ const francisk = {
                 {
                     source: 'places/francisk/old/kostelXX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by, Aвтор Я.Булгак',
+                        en: '20th c. Photo oldgrodno.by, author J.Bulgak'
                     },
-                    year: 'XX в. Фото oldgrodno.by, Aвтор Я.Булгак',
                     style: {
                         width: 8,
                         height: 4.9
@@ -76,10 +74,9 @@ const francisk = {
                 {
                     source: 'places/francisk/old/kostelXX-3.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -88,10 +85,9 @@ const francisk = {
                 {
                     source: 'places/francisk/old/kostelXX-4.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 8,
                         height: 4.9

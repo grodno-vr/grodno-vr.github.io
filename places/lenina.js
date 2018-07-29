@@ -1,6 +1,6 @@
 const lenina = {
     name: 'lenina',
-    // sound: 'audio/birds.mp3',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -55,10 +55,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/lenin1950-60.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1950-60 гг. Фото oldgrodno.by',
+                        en: '1950-60, Photo oldgrodno.by'
                     },
-                    year: '1950-60 гг. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -67,10 +66,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/lenin1970th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1970-е, Фото oldgrodno.by',
+                        en: '1970th, Photo oldgrodno.by'
                     },
-                    year: '1970-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -79,10 +77,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/lenin1987.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1987 г. Фото harodnia.com',
+                        en: '1987, Photo harodnia.com'
                     },
-                    year: '1987 г. Фото harodnia.com',
                     style: {
                         width: 7,
                         height: 4.2
@@ -91,10 +88,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/lenin1989.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1989 г. Фото oldgrodno.by',
+                        en: '1989, Photo oldgrodno.by'
                     },
-                    year: '1989 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -103,10 +99,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/leninXX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото grodno.in',
+                        en: '20th c. Photo grodno.in'
                     },
-                    year: 'XX в. Фото grodno.in',
                     style: {
                         width: 5,
                         height: 4.2
@@ -115,10 +110,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/leninistalinXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by, автор И. Пашпекина (Чупровая)',
+                        en: '20th c. Photo oldgrodno.by, author I. Pashpekina'
                     },
-                    year: 'XX в. Фото oldgrodno.by, автор И. Пашпекина (Чупровая)',
                     style: {
                         width: 7,
                         height: 4.2
@@ -127,10 +121,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/leninistalinXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 6,
                         height: 4.2
@@ -168,10 +161,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/squareXIX-XX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото oldgrodno.by',
+                        en: '19-20th c. Photo oldgrodno.by'
                     },
-                    year: 'XIX-XX вв. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -180,10 +172,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/squareXIX-XX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото oldgrodno.by',
+                        en: '19-20th c. Photo oldgrodno.by'
                     },
-                    year: 'XIX-XX вв. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -192,10 +183,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/squareXIX-XX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото vgr.by',
+                        en: '19-20th c. Photo vgr.by'
                     },
-                    year: 'XIX-XX вв. Фото vgr.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -204,10 +194,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/squareXIX-XX-3.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв.',
+                        en: '19-20th c.'
                     },
-                    year: 'XIX-XX вв.',
                     style: {
                         width: 7,
                         height: 4.2
@@ -216,10 +205,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/squareXIX-XX-4.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв.',
+                        en: '19-20th c.'
                     },
-                    year: 'XIX-XX вв.',
                     style: {
                         width: 7,
                         height: 4.2
@@ -228,10 +216,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/squareXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX вв. Фото s13.ru',
+                        en: '20th c. Photo s13.ru'
                     },
-                    year: 'XX вв. Фото s13.ru',
                     style: {
                         width: 7,
                         height: 4.2
@@ -240,10 +227,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/squareXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX вв. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX вв. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -252,10 +238,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/square1930th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -264,10 +249,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/square1930th-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -276,10 +260,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/square1987.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1987 г. Фото oldgrodno.by',
+                        en: '1987, Photo oldgrodno.by'
                     },
-                    year: '1987 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -308,10 +291,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/pochtaXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -320,10 +302,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/pochtaXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -332,10 +313,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/pochtaXX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -344,10 +324,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/pochtaXX-3.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX в. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -356,10 +335,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/pochta1975.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1975 г. Фото oldgrodno.by',
+                        en: '1975, Photo oldgrodno.by'
                     },
-                    year: '1975 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -389,10 +367,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/kino1930th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 5,
                         height: 6.2
@@ -401,10 +378,9 @@ const lenina = {
                 {
                     source: 'places/lenina/old/kino1941-44.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1941-44 гг. Фото oldgrodno.by',
+                        en: '1941-44, Photo oldgrodno.by'
                     },
-                    year: '1941-44 гг. Фото oldgrodno.by',
                     style: {
                         width: 5,
                         height: 6.2

@@ -1,6 +1,6 @@
 const synagoge = {
     name: 'synagoge',
-    // sound: 'audio/birds.mp3',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -41,10 +41,9 @@ const synagoge = {
                 {
                     source: 'places/synagoge/old/synagogeXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX вв. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX вв. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -53,10 +52,9 @@ const synagoge = {
                 {
                     source: 'places/synagoge/old/synagogeXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX вв. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX вв. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -65,10 +63,9 @@ const synagoge = {
                 {
                     source: 'places/synagoge/old/synagoge1972.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1972 г. Фото oldgrodno.by',
+                        en: '1972, Photo oldgrodno.by'
                     },
-                    year: '1972 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -77,10 +74,9 @@ const synagoge = {
                 {
                     source: 'places/synagoge/old/synagoge1988.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1988 г. Фото oldgrodno.by',
+                        en: '1988, Photo oldgrodno.by'
                     },
-                    year: '1988 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -89,10 +85,9 @@ const synagoge = {
                 {
                     source: 'places/synagoge/old/synagoge1992.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1992 г. Фото oldgrodno.by',
+                        en: '1992, Photo oldgrodno.by'
                     },
-                    year: '1992 г. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2

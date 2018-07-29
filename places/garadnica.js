@@ -1,6 +1,6 @@
 const garadnica = {
     name: 'garadnica',
-    // sound: 'audio/birds.mp3',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
@@ -52,10 +52,9 @@ const garadnica = {
                 {
                     source: 'places/lenina/old/squareXIX-XX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото oldgrodno.by',
+                        en: '19-20th c. Photo oldgrodno.by'
                     },
-                    year: 'XIX-XX вв. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -64,10 +63,9 @@ const garadnica = {
                 {
                     source: 'places/lenina/old/squareXIX-XX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото oldgrodno.by',
+                        en: '19-20th c. Photo oldgrodno.by'
                     },
-                    year: 'XIX-XX вв. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -76,10 +74,9 @@ const garadnica = {
                 {
                     source: 'places/lenina/old/squareXIX-XX-2.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв. Фото vgr.by',
+                        en: '19-20th c. Photo vgr.by'
                     },
-                    year: 'XIX-XX вв. Фото vgr.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -88,10 +85,9 @@ const garadnica = {
                 {
                     source: 'places/lenina/old/squareXIX-XX-3.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв.',
+                        en: '19-20th c.'
                     },
-                    year: 'XIX-XX вв.',
                     style: {
                         width: 7,
                         height: 4.2
@@ -100,10 +96,9 @@ const garadnica = {
                 {
                     source: 'places/lenina/old/squareXIX-XX-4.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв.',
+                        en: '19-20th c.'
                     },
-                    year: 'XIX-XX вв.',
                     style: {
                         width: 7,
                         height: 4.2
@@ -112,10 +107,9 @@ const garadnica = {
                 {
                     source: 'places/lenina/old/squareXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX вв. Фото s13.ru',
+                        en: '20th c. Photo s13.ru'
                     },
-                    year: 'XX вв. Фото s13.ru',
                     style: {
                         width: 7,
                         height: 4.2
@@ -124,10 +118,9 @@ const garadnica = {
                 {
                     source: 'places/lenina/old/squareXX-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX вв. Фото oldgrodno.by',
+                        en: '20th c. Photo oldgrodno.by'
                     },
-                    year: 'XX вв. Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -136,10 +129,9 @@ const garadnica = {
                 {
                     source: 'places/lenina/old/square1930th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -148,10 +140,9 @@ const garadnica = {
                 {
                     source: 'places/lenina/old/square1930th-1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото oldgrodno.by',
+                        en: '1930th, Photo oldgrodno.by'
                     },
-                    year: '1930-е, Фото oldgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2

@@ -1,5 +1,6 @@
 const agro = {
     name: 'agro',
+    sound: 'audio/vilenskaja.m4a',
     style: {},
     portals: [
         {
