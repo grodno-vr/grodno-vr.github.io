@@ -17,8 +17,16 @@ const agro = {
             viewStyle: {
                 transform: [{translate: [1, 2, -5]}, { scale : 1.5 }]
             },
-            text: 'Здание Аграрного Университета',
-            description: `----`,
+            text: {
+                ru: 'Здание Аграрного Университета',
+                en: 'Building of Agrarian University'
+
+            },
+            description: {
+                ru: `----`,
+                en: `----`
+
+            },
             infoPosition: 1900, // pixels
             galleryStyle: {
                 transform: [{translate: [-3, 7, -8]}]

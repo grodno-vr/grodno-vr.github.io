@@ -25,11 +25,19 @@ const bridge = {
             viewStyle: {
                 transform: [{translate: [8, 2, 0]}, { scale : 2 }, { rotateY: -90 }]
             },
-            text: 'Памятник Воинам-Освободителям',
-            description: `Памятник воинам-освободителям (танк Т-34/85), расположенный на краю Советской площади. Установлен в память о воинах 2-го и 3-го Белорусских фронтов, участвовавших в освобождении города Гродно 16 июля 1944 года.\n
+            text: {
+                ru: 'Памятник Воинам-Освободителям',
+                en: 'Monument to the Soldiers-Liberators'
+            },
+            description: {
+                ru: `Памятник воинам-освободителям (танк Т-34/85), расположенный на краю Советской площади. Установлен в память о воинах 2-го и 3-го Белорусских фронтов, участвовавших в освобождении города Гродно 16 июля 1944 года.\n
                           Установка памятника состоялась 23 февраля 1968 году на краю уже несуществующего сквера в центре города. Архитектором проекта выступил Г. Федосеенко. Танк Т-34 с номером «200» стоит на сложном постаменте. \n
                           Высота памятника в целом составляет 6 метров.\n
                           \n\n Текст grodno.in`,
+                en: `Monument to the soldiers-liberators (tank T-34/85) is located on the edge of the Soviet square. It was established in the memory of the soldiers of the 2nd and 3rd Belarusian fronts that participated in the liberation of Grodno on July 16, 1944.
+                     The installation of the monument took place on February 23, 1968 on the edge of a currently non-existent square in the city center. Fedoseenko was the architect of the project. Tank T-34 no. 200 stands on a complex pedestal.
+                     In whole the height of the monument amounts to 6 meters.`
+            },
             infoPosition: 3300,
             galleryStyle: {
                 transform: [{translate: [5, 6, 0]}, { rotateY: -90 }]
@@ -37,6 +45,11 @@ const bridge = {
             oldImages: [
                 {
                     source: 'places/bridge/old/tank1.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
+
                     year: '1980 г. Фото oldgrodno.by',
                     style: {
                         width: 8,
@@ -45,6 +58,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/tank.png',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1975 г. Фото grodno.in',
                     style: {
                         width: 8,
@@ -53,6 +70,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/tank2.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '2008 г. Фото tut.by',
                     style: {
                         width: 8,
@@ -61,6 +82,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/tank3.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1968 г. Фото tut.by',
                     style: {
                         width: 8,
@@ -74,10 +99,17 @@ const bridge = {
             viewStyle: {
                 transform: [{translate: [7, 3, -6]}, { scale : 2.2 }, { rotateY: -45 }]
             },
-            text: 'Областной Драматический Театр',
-            description: `В 1947 г. постановлением Совета Министров БССР в Гродно создан областной драматический театр. \n
-            Официальное открытие театра состоялось премьерным спектаклем «В одном городе» по пьесе А.Сафронова.\n
-            \n\nТекст drama.grodno.by`,
+            text: {
+                ru: 'Областной Драматический Театр',
+                en: 'Regional Drama Theatre'
+            },
+            description: {
+                ru: `В 1947 г. постановлением Совета Министров БССР в Гродно создан областной драматический театр. \n
+                        Официальное открытие театра состоялось премьерным спектаклем «В одном городе» по пьесе А.Сафронова.\n
+                        \n\nТекст drama.grodno.by`,
+                en: `Regional drama theatre was established in Grodno in 1947 under the resolution of the BSSR Council of Ministers.
+                     Premiere performance of "In One City" after the the play by Safronov marked the official opening of the theater.`
+            },
             infoPosition: 2500,
             galleryStyle: {
                 transform: [{translate: [3, 6, -6]}, { rotateY: -45 }]
@@ -85,6 +117,10 @@ const bridge = {
             oldImages: [
                 {
                     source: 'places/bridge/old/theater.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1978 - 1984 гг. Фото drama.grodno.by',
                     style: {
                         width: 8,
@@ -93,6 +129,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/theater1.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1978 - 1984 гг. Фото drama.grodno.by',
                     style: {
                         width: 8,
@@ -109,6 +149,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/theater3.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1978 - 1984 гг. Фото drama.grodno.by',
                     style: {
                         width: 8,
@@ -117,6 +161,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/theater4.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1978 - 1984 гг. Фото drama.grodno.by',
                     style: {
                         width: 8,
@@ -130,10 +178,17 @@ const bridge = {
             viewStyle: {
                 transform: [{translate: [7, 2, -7]}, { scale : 2 }, { rotateY: -30 }]
             },
-            text: 'Костел и Монастырь Бернардинок',
-            description: `Католический монастырь бернардинок (позже Свято-Борисоглебский монастырь 1853-58 гг.) ХVII–ХХ вв., ранее размещался на месте драматического театра.\n
+            text: {
+                ru: 'Костел и Монастырь Бернардинок',
+                en: 'Catholic Bernardine Church and Monastery'
+            },
+            description: {
+                ru: `Католический монастырь бернардинок (позже Свято-Борисоглебский монастырь 1853-58 гг.) ХVII–ХХ вв., ранее размещался на месте драматического театра.\n
                           Очень сильно пострадал после Второй Мировой Войны. Снесен в 60-е годы.\n
                           \n\n Текст vgr.by`,
+                en: `The Catholic Bernardine Monastery (later - St. Boris and Gleb Monastery, 1853-58) of the 17th-20th centuries was previously located on the site of a dramatic theater. \n
+                     It suffered very badly after the Second World War. It was demolished in the 60s.`
+            },
             infoPosition: 2400,
             galleryStyle: {
                 transform: [{translate: [2, 6, -8]}, { rotateY: -40 }]
@@ -141,6 +196,10 @@ const bridge = {
             oldImages: [
                 {
                     source: 'places/bridge/old/bernardineSisterXX.png',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: 'XX в.',
                     style: {
                         width: 8,
@@ -149,6 +208,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/bernardineSisters1944.png',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1944 г. Фото s13.ru',
                     style: {
                         width: 8,
@@ -157,6 +220,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/bernardineSisters1900.png',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1900 г. Фото wikimedia.org',
                     style: {
                         width: 8,
@@ -165,6 +232,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/bernardineSisters1934.png',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1934 г. Фото wikimedia.org',
                     style: {
                         width: 8,
@@ -173,6 +244,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/bernardineSisters1922.png',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1922 г. Фото wikimedia.org',
                     style: {
                         width: 8,
@@ -181,6 +256,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/bernardineSisters1940.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1940-е, Фото vgr.by',
                     style: {
                         width: 8,
@@ -194,8 +273,14 @@ const bridge = {
             viewStyle: {
                 transform: [{translate: [0, 1, -9]}, { scale : 2 }, { rotateY: 0 }]
             },
-            text: 'Костел и Монастырь Кармелитов',
-            description: `Костел и монастырь ордена босых кармелитов XVIII в. был разобран в 1903 г. при реконструкции комплекса под казармы гродненского крепостного батальона. Ныне это здание банка.`,
+            text: {
+                ru: 'Костел и Монастырь Кармелитов',
+                en: 'Catholic Church and Monastery of Carmelites'
+            },
+            description: {
+                ru: `Костел и монастырь ордена босых кармелитов XVIII в. был разобран в 1903 г. при реконструкции комплекса под казармы гродненского крепостного батальона. Ныне это здание банка.`,
+                en: `The catholic church and monastery of the Order of Discalced Carmelites of the 18th century was dismantled in 1903 during the reconstruction of the complex for the barracks of Grodno fortress battalion. Today this is a bank building.`
+            },
             infoPosition: 1880,
             galleryStyle: {
                 transform: [{translate: [-4, 6, -8]}, { rotateY: 0 }]
@@ -203,6 +288,10 @@ const bridge = {
             oldImages: [
                 {
                     source: 'places/bridge/old/holyCrossXIX-XX.png',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: 'XIX-XX вв.',
                     style: {
                         width: 8,
@@ -211,6 +300,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/holyCross.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: 'XIX в. Фото radzima.org',
                     style: {
                         width: 8,
@@ -219,6 +312,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/holyCross1.png',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: 'XIX в. Фото grodnonews.by',
                     style: {
                         width: 8,
@@ -227,6 +324,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/holyCross2.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: 'XIX в. Фото radzima.org',
                     style: {
                         width: 8,
@@ -235,6 +336,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/holyCross3.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: 'XVIII в. Фото radzima.org',
                     style: {
                         width: 7,
@@ -248,11 +353,19 @@ const bridge = {
             viewStyle: {
                 transform: [{translate: [-8, 5, -4]}, { scale : 2.5 }, { rotateY: 60 }]
             },
-            text: 'Костёл Обретения Святого Креста',
-            description: `Aрхитектурный комплекс костёла и монастыря бернардинцев. Церковь является старейшим действующим католическим храмом в Гродно и одним из старейших в западной Беларуси.\n
-            Деревянный монастырь был основан в 1494 или 1495 году, на земле подаренной великим князем Литовским и королём Польским Александром Ягеллончиком ордену бернардинцев (францисканцев). Каменный мужской монастырь возведён в 1595-1618 годы, с соизволения короля Сигизмунда III. Отдельные постройки комплекса относятся к XVIII веку.\n
-            Храм Обретения Святого Креста был освящён 13 мая 1618 года, виленским епископом Евстафием Воловичем. Внешний облик комплекса несёт в себе черты готики (апсида), ренессанса и барокко.\n
-            \n\n Текст wikipedia.org`,
+            text: {
+                ru: 'Костёл Обретения Святого Креста',
+                en: 'Catholic church of the Acquisition of the Holy Cross'
+            },
+            description: {
+                ru: `Aрхитектурный комплекс костёла и монастыря бернардинцев. Церковь является старейшим действующим католическим храмом в Гродно и одним из старейших в западной Беларуси.\n
+                        Деревянный монастырь был основан в 1494 или 1495 году, на земле подаренной великим князем Литовским и королём Польским Александром Ягеллончиком ордену бернардинцев (францисканцев). Каменный мужской монастырь возведён в 1595-1618 годы, с соизволения короля Сигизмунда III. Отдельные постройки комплекса относятся к XVIII веку.\n
+                        Храм Обретения Святого Креста был освящён 13 мая 1618 года, виленским епископом Евстафием Воловичем. Внешний облик комплекса несёт в себе черты готики (апсида), ренессанса и барокко.\n
+                        \n\n Текст wikipedia.org`,
+                en: `This is the architectural complex of the Bernardine catholic church and monastery. The church is the oldest active catholic church in Grodno and one of the oldest in Western Belarus.
+                        Wooden monastery was founded in 1494 or 1495 on the land presented to the Bernardines Order  (Franciscans) by the Grand Duke of Lithuania and the King of Poland, Alexander Jagiellon. Stone monastery was built in 1595-1618 with the permission of King Sigismund III. Separate buildings of the complex date back to the 18th century.
+                        The Church of the Acquisition of the Holy Cross was consecrated on May 13, 1618 by the Bishop of Vilna, Eustathius Volovic. External appearance of the complex bears Gothic (apse), Renaissance and Baroque features.`
+            },
             infoPosition: 1000,
             galleryStyle: {
                 transform: [{translate: [-12, 8, -5]}, { rotateY: 60 }]
@@ -260,6 +373,10 @@ const bridge = {
             oldImages: [
                 {
                     source: 'places/bridge/old/bernardine1910.png',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1910 г. Фото ay.by',
                     style: {
                         width: 4.9,
@@ -268,6 +385,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/bernardine1950.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1950-е, Фото radzima.org',
                     style: {
                         width: 4.9,
@@ -276,6 +397,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/bernardine1950-1.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1950-е, Фото radzima.org',
                     style: {
                         width: 8,
@@ -284,6 +409,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/bernardine1962.jpg',
+                    year: {
+                        ru: '',
+                        en: ''
+                    },
                     year: '1962-70-e, Фото grodnonews.by, автор В.Саяпин',
                     style: {
                         width: 8,
