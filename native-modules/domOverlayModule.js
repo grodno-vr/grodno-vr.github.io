@@ -21,9 +21,9 @@ class DomOverlayModule extends Module {
         );
     }
 
-    loading() {
+    loading(props = {}) {
         ReactDOM.render(
-            <WebLoading />,
+            <WebLoading {...props} />,
             this._overlayContainer,
         );
     }

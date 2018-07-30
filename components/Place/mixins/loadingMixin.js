@@ -10,15 +10,20 @@ const cameraMixin = Base => class extends Base {
         super(props);
         this.state = { ...this.state, loading: false };
     }
+
+    loadingText() {
+        const { locale } = this.props;
+        return locale === 'ru' ? 'Загрузка...' : 'Loading...';
+    }
     
     renderLoading() {
-        return this.state.loading && VrHeadModel.inVR() && <VRLoading />;
+        return this.state.loading && VrHeadModel.inVR() && <VRLoading text={this.loadingText()} />;
     }
 
     startLoading() {
         this.setState({ loading: true });
         if (!VrHeadModel.inVR()) {
-            DomOverlayModule.loading();
+            DomOverlayModule.loading({ text: this.loadingText() });
         }
     }
 

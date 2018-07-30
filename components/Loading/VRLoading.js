@@ -44,7 +44,7 @@ class VRLoading extends React.Component {
     }
 
     render() {
-
+        const { text } = this.props;
         return (
             <View style={styles.view}>
                 <Animated.View
@@ -65,7 +65,7 @@ class VRLoading extends React.Component {
                     </Image>
                 </Animated.View>
                 <Text style={styles.text}>
-                    Загрузка....
+                    {text || 'Loading...'}
                 </Text>
             </View>
         );
