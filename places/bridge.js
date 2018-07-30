@@ -47,11 +47,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/tank1.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1980 г. Фото oldgrodno.by',
+                        en: '1980, Photo oldgrodno.by'
                     },
-
-                    year: '1980 г. Фото oldgrodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -60,10 +58,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/tank.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1975 г. Фото grodno.in',
+                        en: '1975, Photo grodno.in'
                     },
-                    year: '1975 г. Фото grodno.in',
                     style: {
                         width: 8,
                         height: 4.9
@@ -72,10 +69,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/tank2.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '2008 г. Фото tut.by',
+                        en: '2008, Photo tut.by'
                     },
-                    year: '2008 г. Фото tut.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -84,10 +80,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/tank3.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1968 г. Фото tut.by',
+                        en: '1968, Photo tut.by'
                     },
-                    year: '1968 г. Фото tut.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -119,10 +114,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/theater.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1978 - 1984 гг. Фото drama.grodno.by',
+                        en: '1978 - 1984, Photo drama.grodno.by'
                     },
-                    year: '1978 - 1984 гг. Фото drama.grodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -131,10 +125,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/theater1.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1978 - 1984 гг. Фото drama.grodno.by',
+                        en: '1978 - 1984, Photo drama.grodno.by'
                     },
-                    year: '1978 - 1984 гг. Фото drama.grodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -142,7 +135,10 @@ const bridge = {
                 },
                 {
                     source: 'places/bridge/old/theater2.jpg',
-                    year: '1978 - 1984 гг. Фото drama.grodno.by',
+                    year: {
+                        ru: '1978 - 1984 гг. Фото drama.grodno.by',
+                        en: '1978 - 1984, Photo drama.grodno.by'
+                    },
                     style: {
                         width: 8,
                         height: 4.9
@@ -151,10 +147,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/theater3.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1978 - 1984 гг. Фото drama.grodno.by',
+                        en: '1978 - 1984, Photo drama.grodno.by'
                     },
-                    year: '1978 - 1984 гг. Фото drama.grodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -163,10 +158,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/theater4.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1978 - 1984 гг. Фото drama.grodno.by',
+                        en: '1978 - 1984, Photo drama.grodno.by'
                     },
-                    year: '1978 - 1984 гг. Фото drama.grodno.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -198,10 +192,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/bernardineSisterXX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XX в.',
+                        en: '20th c.'
                     },
-                    year: 'XX в.',
                     style: {
                         width: 8,
                         height: 4.9
@@ -210,10 +203,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/bernardineSisters1944.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1944 г. Фото s13.ru',
+                        en: '1944, Photo s13.ru'
                     },
-                    year: '1944 г. Фото s13.ru',
                     style: {
                         width: 8,
                         height: 4.9
@@ -222,10 +214,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/bernardineSisters1900.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1900 г. Фото wikimedia.org',
+                        en: '1900, Photo wikimedia.org'
                     },
-                    year: '1900 г. Фото wikimedia.org',
                     style: {
                         width: 8,
                         height: 4.9
@@ -234,10 +225,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/bernardineSisters1934.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1934 г. Фото wikimedia.org',
+                        en: '1934, Photo wikimedia.org'
                     },
-                    year: '1934 г. Фото wikimedia.org',
                     style: {
                         width: 8,
                         height: 4.9
@@ -246,10 +236,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/bernardineSisters1922.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1922 г. Фото wikimedia.org',
+                        en: '1922, Photo wikimedia.org'
                     },
-                    year: '1922 г. Фото wikimedia.org',
                     style: {
                         width: 8,
                         height: 5.5
@@ -258,10 +247,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/bernardineSisters1940.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1940-е, Фото vgr.by',
+                        en: '1940th, Photo vgr.by'
                     },
-                    year: '1940-е, Фото vgr.by',
                     style: {
                         width: 8,
                         height: 5.5
@@ -290,10 +278,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/holyCrossXIX-XX.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX-XX вв.',
+                        en: '19-20th c.'
                     },
-                    year: 'XIX-XX вв.',
                     style: {
                         width: 8,
                         height: 4.9
@@ -302,10 +289,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/holyCross.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX в. Фото radzima.org',
+                        en: '19th c. Photo radzima.org'
                     },
-                    year: 'XIX в. Фото radzima.org',
                     style: {
                         width: 8,
                         height: 4.9
@@ -314,10 +300,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/holyCross1.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX в. Фото grodnonews.by',
+                        en: '19th c. Photo grodnonews.by'
                     },
-                    year: 'XIX в. Фото grodnonews.by',
                     style: {
                         width: 8,
                         height: 4.9
@@ -326,10 +311,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/holyCross2.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX в. Фото radzima.org',
+                        en: '19th c. Photo radzima.org'
                     },
-                    year: 'XIX в. Фото radzima.org',
                     style: {
                         width: 8,
                         height: 4.9
@@ -338,10 +322,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/holyCross3.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XVIII в. Фото radzima.org',
+                        en: '18th c. Photo radzima.org'
                     },
-                    year: 'XVIII в. Фото radzima.org',
                     style: {
                         width: 7,
                         height: 5.5
@@ -375,10 +358,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/bernardine1910.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1910 г. Фото ay.by',
+                        en: '1910, Photo ay.by'
                     },
-                    year: '1910 г. Фото ay.by',
                     style: {
                         width: 4.9,
                         height: 8
@@ -387,10 +369,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/bernardine1950.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1950-е, Фото radzima.org',
+                        en: '1950th, Photo radzima.org'
                     },
-                    year: '1950-е, Фото radzima.org',
                     style: {
                         width: 4.9,
                         height: 8
@@ -399,10 +380,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/bernardine1950-1.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1950-е, Фото radzima.org',
+                        en: '1950th, Photo radzima.org'
                     },
-                    year: '1950-е, Фото radzima.org',
                     style: {
                         width: 8,
                         height: 5.1
@@ -411,10 +391,9 @@ const bridge = {
                 {
                     source: 'places/bridge/old/bernardine1962.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1962-70-e, Фото grodnonews.by, автор В.Саяпин',
+                        en: '1962-70th, Photo grodnonews.by, author V.Sayapin'
                     },
-                    year: '1962-70-e, Фото grodnonews.by, автор В.Саяпин',
                     style: {
                         width: 8,
                         height: 4.9

@@ -45,10 +45,9 @@ const center = {
                 {
                     source: 'places/center/old/textile_palace1.jpeg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1950-e, Фото harodnia.com',
+                        en: '1950th, Photo harodnia.com'
                     },
-                    year: '1950-e, Фото harodnia.com',
                     style: {
                         width: 7,
                         height: 3.9
@@ -57,10 +56,9 @@ const center = {
                 {
                     source: 'places/center/old/textile_palace4.jpeg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1957 г. Фото newgrodno.by',
+                        en: '1957, Photo newgrodno.by'
                     },
-                    year: '1957 г. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -69,10 +67,9 @@ const center = {
                 {
                     source: 'places/center/old/textile_palace.jpeg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1960-е, Фото newgrodno.by',
+                        en: '1960th, Photo newgrodno.by'
                     },
-                    year: '1960-е, Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -81,10 +78,9 @@ const center = {
                 {
                     source: 'places/center/old/textile_palace2.jpeg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1960-е, Фото newgrodno.by',
+                        en: '1960th, Photo newgrodno.by'
                     },
-                    year: '1960-е, Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -93,10 +89,9 @@ const center = {
                 {
                     source: 'places/center/old/textile_palace3.jpeg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1960-е, Фото newgrodno.by',
+                        en: '1960th, Photo newgrodno.by'
                     },
-                    year: '1960 г. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -105,10 +100,9 @@ const center = {
                 {
                     source: 'places/center/old/textile_palace5.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1958 г. Фото newgrodno.by',
+                        en: '1958, Photo newgrodno.by'
                     },
-                    year: '1958 г. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -117,10 +111,9 @@ const center = {
                 {
                     source: 'places/center/old/textile_palace6.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1970-80-е, Фото newgrodno.by',
+                        en: '1970-80th, Photo newgrodno.by'
                     },
-                    year: '1970-80-е, Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -129,10 +122,9 @@ const center = {
                 {
                     source: 'places/center/old/textile_palace7.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1970-80-е, Фото newgrodno.by',
+                        en: '1970-80th, Photo newgrodno.by'
                     },
-                    year: '1970-80-е, Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -186,10 +178,9 @@ const center = {
                 {
                     source: 'places/center/old/vitaut5.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1915-1918 гг. Фото wikimedia.org',
+                        en: '1915-1918, Photo wikimedia.org'
                     },
-                    year: '1915-1918 гг. Фото wikimedia.org',
                     style: {
                         width: 7,
                         height: 4.2
@@ -198,10 +189,9 @@ const center = {
                 {
                     source: 'places/center/old/vitaut.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1898 – 1920 гг. Фото newgrodno.by',
+                        en: '1898 – 1920, Photo newgrodno.by'
                     },
-                    year: '1898 – 1920 гг. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -210,10 +200,9 @@ const center = {
                 {
                     source: 'places/center/old/vitaut3.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1900 г. Фото wikimedia.org',
+                        en: '1900, Photo wikimedia.org'
                     },
-                    year: '1900 г. Фото wikimedia.org',
                     style: {
                         width: 7,
                         height: 4.2
@@ -222,10 +211,9 @@ const center = {
                 {
                     source: 'places/center/old/vitaut1.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1923 – 1930 гг. Фото s13.ru',
+                        en: '1923 – 1930, Photo s13.ru'
                     },
-                    year: '1923 – 1930 гг. Фото s13.ru',
                     style: {
                         width: 7,
                         height: 4.2
@@ -234,10 +222,9 @@ const center = {
                 {
                     source: 'places/center/old/vitaut2.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1936 г. Фото radzima.org',
+                        en: '1936, Photo radzima.org'
                     },
-                    year: '1936 г. Фото radzima.org',
                     style: {
                         width: 7,
                         height: 4.2
@@ -246,10 +233,9 @@ const center = {
                 {
                     source: 'places/center/old/vitaut4.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1930-е, Фото katolik.life',
+                        en: '1930th, Photo katolik.life'
                     },
-                    year: '1930-е, Фото katolik.life',
                     style: {
                         width: 7,
                         height: 4.2
@@ -258,10 +244,9 @@ const center = {
                 {
                     source: 'places/center/old/vitaut1960th.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1960-е',
+                        en: '1960th'
                     },
-                    year: '1960-е',
                     style: {
                         width: 7,
                         height: 4.2
@@ -298,10 +283,9 @@ const center = {
                 {
                     source: 'places/center/old/square.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1939 г. Фото grodno.net',
+                        en: '1939, Photo grodno.net'
                     },
-                    year: '1939 г. Фото grodno.net',
                     style: {
                         width: 7,
                         height: 3.9
@@ -310,10 +294,9 @@ const center = {
                 {
                     source: 'places/center/old/square1.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX в. Фото radzima.org',
+                        en: '19th c. Photo radzima.org'
                     },
-                    year: 'XIX в. Фото radzima.org',
                     style: {
                         width: 7,
                         height: 3.9
@@ -322,10 +305,9 @@ const center = {
                 {
                     source: 'places/center/old/square2.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX в. Фото radzima.org',
+                        en: '19th c. Photo radzima.org'
                     },
-                    year: 'XIX в. Фото radzima.org',
                     style: {
                         width: 7,
                         height: 3.9
@@ -334,10 +316,9 @@ const center = {
                 {
                     source: 'places/center/old/square3.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX в. Фото s13',
+                        en: '19th c. Photo s13'
                     },
-                    year: 'XIX в. Фото s13',
                     style: {
                         width: 7,
                         height: 3.9
@@ -373,10 +354,9 @@ const center = {
                 {
                     source: 'places/center/old/muravjov5.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1910 г. Фото newgrodno.by',
+                        en: '1910, Photo newgrodno.by'
                     },
-                    year: '1910 г. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -385,10 +365,9 @@ const center = {
                 {
                     source: 'places/center/old/muravjov.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XIX в. Фото newgrodno.by',
+                        en: '19th c. Photo newgrodno.by'
                     },
-                    year: 'XIX в. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -397,10 +376,9 @@ const center = {
                 {
                     source: 'places/center/old/muravjov1.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1990-е, Фото newgrodno.by',
+                        en: '1990th, Photo newgrodno.by'
                     },
-                    year: '1990-е, Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -409,10 +387,9 @@ const center = {
                 {
                     source: 'places/center/old/muravjov2.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1987 г. Фото newgrodno.by',
+                        en: '1987, Photo newgrodno.by'
                     },
-                    year: '1987 г. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -421,10 +398,9 @@ const center = {
                 {
                     source: 'places/center/old/muravjov3.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '2006 г. Фото s13.ru',
+                        en: '2006, Photo s13.ru'
                     },
-                    year: '2006 г. Фото s13.ru',
                     style: {
                         width: 7,
                         height: 4.2
@@ -433,10 +409,9 @@ const center = {
                 {
                     source: 'places/center/old/muravjov1958.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1958 г. Фото old.grodno.net',
+                        en: '1958, Photo old.grodno.net'
                     },
-                    year: '1958 г. Фото old.grodno.net',
                     style: {
                         width: 7,
                         height: 4.2
@@ -445,10 +420,9 @@ const center = {
                 {
                     source: 'places/center/old/muravjov4.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1975 г. Фото newgrodno.by',
+                        en: '1975, Photo newgrodno.by'
                     },
-                    year: '1975 г. Фото newgrodno.by',
                     style: {
                         width: 7,
                         height: 4.2
@@ -481,10 +455,9 @@ const center = {
                 {
                     source: 'places/center/old/cathedral.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: 'XVII в. Фото radzima.org, автор Я.Булгак',
+                        en: '17th c. Photo radzima.org, author J.Bulgak'
                     },
-                    year: 'XVII в. Фото radzima.org, автор Я.Булгак',
                     style: {
                         width: 7,
                         height: 3.9
@@ -493,10 +466,9 @@ const center = {
                 {
                     source: 'places/center/old/cathedral1.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1914 - 1918 гг. Фото ay.by',
+                        en: '1914 - 1918, Photo ay.by'
                     },
-                    year: '1914 - 1918 гг. Фото ay.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -505,10 +477,9 @@ const center = {
                 {
                     source: 'places/center/old/cathedral2.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1924 г. Фото wikimapia.org',
+                        en: '1924, Photo wikimapia.org'
                     },
-                    year: '1924 г. Фото wikimapia.org',
                     style: {
                         width: 7,
                         height: 3.9
@@ -517,10 +488,9 @@ const center = {
                 {
                     source: 'places/center/old/cathedral3.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1924 г. Фото tut.by',
+                        en: '1924, Photo tut.by'
                     },
-                    year: '1924 г. Фото tut.by',
                     style: {
                         width: 7,
                         height: 3.9
@@ -529,10 +499,9 @@ const center = {
                 {
                     source: 'places/center/old/cathedral4.png',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1873 г. Фото wikimedia.org, рисунок Н.Орда',
+                        en: '1873, Photo wikimedia.org, author N.Orda'
                     },
-                    year: '1873 г. Фото wikimedia.org, рисунок Н.Орда',
                     style: {
                         width: 7,
                         height: 3.9
@@ -541,10 +510,9 @@ const center = {
                 {
                     source: 'places/center/old/1965.jpg',
                     year: {
-                        ru: '',
-                        en: ''
+                        ru: '1965 г. Фото facebook.com, источник БГАКФФД',
+                        en: '1965, Photo facebook.com, source BGAKFFD'
                     },
-                    year: '1965 г. Фото facebook.com, источник БГАКФФД',
                     style: {
                         width: 7,
                         height: 4.1
