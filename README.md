@@ -60,4 +60,4 @@ npm run bundle
 
 *360-фото:* Артур Басак
 
-*Фото и тексты взяты из публичных сайтов:* wikipedia.org, newgrodno.by, oldgrodno.by, old.grodno.net, grodno.net, grodnonews.by, kinogrodno.by, vgr.by, hrodno.life, harodnia.com, grodno.in, holiday.by, galina-lukas.ru, radzima.org, s13.ru, ggau.by, trainer.by, tut.by, zetgrodno.com, allcastles.ru, ay.by, wikimedia.org, drama.grodno.by, katolik.life
+*Фото и тексты взяты из публичных источников:* wikipedia.org, newgrodno.by, oldgrodno.by, old.grodno.net, grodno.net, grodnonews.by, kinogrodno.by, vgr.by, hrodno.life, harodnia.com, grodno.in, holiday.by, galina-lukas.ru, radzima.org, s13.ru, ggau.by, trainer.by, tut.by, zetgrodno.com, allcastles.ru, ay.by, wikimedia.org, drama.grodno.by, katolik.life
