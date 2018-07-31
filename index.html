@@ -79,32 +79,33 @@
             height: 80px;
         }
 
-        header nav {
-            text-align: right;
+        footer {
+            text-align: center;
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            font-size: 1.5rem;
+            font-size: 1rem;
+            margin: 1em;
         }
 
-        nav.github-link a {
+        footer.github-link a {
             color: white;
             text-decoration: none;
             padding: 0 1em;
         }
 
-        nav.github-link img {
+        footer.github-link img {
             height: 2.5em;
             will-change: transform;
             transition: transform 0.2s ease-out;
         }
 
-        nav.github-link:hover {
+        footer.github-link:hover {
             text-shadow: 0 0 .2em, 0 0 .4em;
             cursor: pointer;
         }
 
-        nav.github-link:hover img {
+        footer.github-link:hover img {
             transform: rotate(-5deg);
         }
 
@@ -368,6 +369,12 @@
                 <!--<a href=""></a>-->
             </figure>
         </section>
+        <footer class="github-link">
+            <a href="https://github.com/grodno-vr/grodno-vr.github.io">
+                <img src="static_assets/images/githubico.svg" />
+                <span>GitHub</span>
+            </a>
+        </footer>
     </main>
 
 </body>
