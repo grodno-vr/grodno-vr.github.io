@@ -137,6 +137,17 @@ const fire = {
                     }
                 },
                 {
+                    source: 'places/fire/old/memorialXX.jpg',
+                    year: {
+                        ru: 'XX в Фото К.Китурко',
+                        en: '20th c. Photo K.Kiturko'
+                    },
+                    style: {
+                        width: 4.5,
+                        height: 5.2
+                    }
+                },
+                {
                     source: 'places/fire/old/palaceXX-1.png',
                     year: {
                         ru: 'XX в.',

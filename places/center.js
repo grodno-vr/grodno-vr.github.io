@@ -374,6 +374,17 @@ const center = {
                     }
                 },
                 {
+                    source: 'places/center/old/muravjovXX.jpg',
+                    year: {
+                        ru: 'XX в. Фото К.Китурко',
+                        en: '20th c. Photo K.Kiturko'
+                    },
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
                     source: 'places/center/old/muravjov1.jpg',
                     year: {
                         ru: '1990-е, Фото newgrodno.by',
