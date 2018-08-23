@@ -84,37 +84,34 @@
         footer {
             text-align: center;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
             font-size: 1rem;
-            margin: 1em;
+            margin-top: 1em;
+            border-top: .0625em solid #444444;
+            padding: 1em;
+            width: 100%;
         }
 
-        footer.github-link a {
+        .github-link a {
             color: white;
             text-decoration: none;
             padding: 0 1em;
         }
 
-        footer.github-link img {
+        .github-link img {
             height: 2.5em;
             will-change: transform;
             transition: transform 0.2s ease-out;
         }
 
-        footer.github-link:hover {
+        .github-link:hover {
             text-shadow: 0 0 .2em, 0 0 .4em;
             cursor: pointer;
         }
 
-        footer.github-link:hover img {
+        .github-link:hover img {
             transform: rotate(-5deg);
-        }
-
-        @media screen and (max-width: 500px) {
-            nav.github-link {
-                display: none;
-            }
         }
 
         .logo {
@@ -149,15 +146,25 @@
             transition: filter 1s;
         }
 
-        .blur {
-            filter: blur(10px);
-        }
-
         main > section {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
+        }
+
+        .text {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        p {
+            max-width: 555px;
+            color: white;
+            padding: 1em 2em 0;
+            text-align: justify;
         }
 
         button {
@@ -187,10 +194,11 @@
             overflow: hidden;
             margin: 0.5em;
             min-width: 250px;
-            max-width: 510px;
+            max-width: 555px;
             max-height: 300px;
             width: 100%;
             background-color: #000000;
+            border-radius: 2em;
             color: #ffffff;
             text-align: left;
             font-size: 1rem;
@@ -204,68 +212,10 @@
             box-sizing: border-box;
         }
 
-        figure.hover {
-            outline: .125em solid white;
-        }
-
-        figure:hover {
-            transition: 2s ease-out;
-            outline: .125em solid white;
-        }
-
         figure img {
             max-width: 100%;
             vertical-align: top;
             opacity: 0.4;
-        }
-
-        figure.hover img,
-        figure:hover img {
-            max-width: 100%;
-            vertical-align: top;
-            opacity: 1;
-            -webkit-transform: scale(1.3) rotate(5deg);
-            transform: scale(1.3) rotate(5deg);
-        }
-
-        figure figcaption {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.25em;
-            background-image: -webkit-linear-gradient(bottom, rgba(15, 15, 15, 0.8) 0%, transparent 100%);
-            background-image: linear-gradient(to top, rgba(15, 15, 15, 0.8) 0%, transparent 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-
-        figure h3 {
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1;
-            letter-spacing: .0625em;
-            text-transform: uppercase;
-            margin: .2em 0;
-        }
-
-        figure .title1 {
-            font-weight: 700;
-        }
-
-        figure .title2 {
-            color: #a58e7c;
-            font-weight: 300;
-        }
-
-        figure a {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
         }
     </style>
 </head>
@@ -278,104 +228,40 @@
             </div>
             <img src="static_assets/images/ico.svg" />
         </div>
-        <!--<nav class="github-link">-->
-            <!--<a href="https://github.com/grodno-vr/grodno-vr.github.io">-->
-                <!--<img src="static_assets/images/githubico.svg" />-->
-                <!--<span>GitHub</span>-->
-            <!--</a>-->
-        <!--</nav>-->
     </header>
     <main>
-        <!--<section>-->
-            <!--<figure id="ozheshko">-->
-                <!--<img src="./static_assets/images/ozheshko.png" onload="imgLoaded++; offBlur()" alt="Улица Элизы Ожешко"/>-->
-                <!--<figcaption>-->
-                    <!--<h3 class="title1">Начать с</h3>-->
-                    <!--<h3 class="title2">Улица Элизы Ожешко</h3>-->
-                <!--</figcaption>-->
-                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
-            <!--</figure>-->
-            <!--<figure id="center">-->
-                <!--<img src="./static_assets/images/square.png" onload="imgLoaded++; offBlur()" alt="Площадь Советская"/>-->
-                <!--<figcaption>-->
-                    <!--<h3 class="title1">Начать с</h3>-->
-                    <!--<h3 class="title2">Площадь Советская</h3>-->
-                <!--</figcaption>-->
-                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
-            <!--</figure>-->
-            <!--<figure id="towers">-->
-                <!--<img src="./static_assets/images/towers.png" onload="imgLoaded++; offBlur()" alt="Водонапорные Башни"/>-->
-                <!--<figcaption>-->
-                    <!--<h3 class="title1">Начать с</h3>-->
-                    <!--<h3 class="title2">Водонапорные Башни</h3>-->
-                <!--</figcaption>-->
-                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
-            <!--</figure>-->
-            <!--<figure id="castles">-->
-                <!--<img src="./static_assets/images/castles.png" onload="imgLoaded++; offBlur()" alt="Старый и Новый Замки"/>-->
-                <!--<figcaption>-->
-                    <!--<h3 class="title1">Начать с</h3>-->
-                    <!--<h3 class="title2">Старый и Новый Замки</h3>-->
-                <!--</figcaption>-->
-                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
-            <!--</figure>-->
-            <!--<figure id="kalozha">-->
-                <!--<img src="./static_assets/images/kalozha.png" onload="imgLoaded++; offBlur()" alt="Свято-Борисо-Глебская Коложская Церковь"/>-->
-                <!--<figcaption>-->
-                    <!--<h3 class="title1">Начать с</h3>-->
-                    <!--<h3 class="title2">Коложская Церковь</h3>-->
-                <!--</figcaption>-->
-                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
-            <!--</figure>-->
-            <!--<figure id="lenina">-->
-                <!--<img src="./static_assets/images/lenina.png" onload="imgLoaded++; offBlur()" alt="Площадь А. Тизенгауза (Площадь В.И. Ленина)"/>-->
-                <!--<figcaption>-->
-                    <!--<h3 class="title1">Начать с</h3>-->
-                    <!--<h3 class="title2">Площадь А. Тизенгауза</h3>-->
-                <!--</figcaption>-->
-                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
-            <!--</figure>-->
-            <!--<figure id="swiss_valley">-->
-                <!--<img src="./static_assets/images/swiss_valley.png" onload="imgLoaded++; offBlur()" alt="Швейцарская долина (Парк Ж.Э.Жилибера)"/>-->
-                <!--<figcaption>-->
-                    <!--<h3 class="title1">Начать с</h3>-->
-                    <!--<h3 class="title2">Швейцарская долина</h3>-->
-                <!--</figcaption>-->
-                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
-            <!--</figure>-->
-            <!--<figure id="synagoge">-->
-                <!--<img src="./static_assets/images/synagoge.png" onload="imgLoaded++; offBlur()" alt="Большая Хоральная Синагога"/>-->
-                <!--<figcaption>-->
-                    <!--<h3 class="title1">Начать с</h3>-->
-                    <!--<h3 class="title2">Хоральная Синагога</h3>-->
-                <!--</figcaption>-->
-                <!--&lt;!&ndash;<a href=""></a>&ndash;&gt;-->
-            <!--</figure>-->
-        <!--</section>-->
-
         <section>
+            <div class="text">
+                <p>
+                    Grodno is a city-museum of the Republic of Belarus, as well as one of the oldest cities in the country. This web application provides a unique opportunity to explore the sights in the virtual reality mode. The ability to trace the history of attractions through the old photos of the city. GrodnoVR - an open source demo based on the ReactVR library.
+                </p>
+            </div>
             <button onclick="window.location.replace(`/demo.html?locale=en&place=${'center'/*window.place*/}`)">
                 START DEMO
             </button>
+        </section>
+        <section>
+            <figure id="center">
+                <img src="./static_assets/images/square.png" alt="Площадь Советская"/>
+            </figure>
+        </section>
+        <section>
+            <div class="text">
+                <p>
+                    Гродно — город-музей Республики Беларусь, а так же один из старейших городов страны. Данное веб-приложение предоставляет уникальную возможность изучить достопримечательности в режиме виртуальной реальности. Возможность проследить историю достопримечательностей через старые фотографии города. GrodnoVR - демо с открытым исходным кодом на основе ReactVR библиотеки.
+                </p>
+            </div>
             <button onclick="window.location.replace(`/demo.html?locale=ru&place=${'center'/*window.place*/}`)">
                 НАЧАТЬ ДЕМО
             </button>
         </section>
-        <section>
-            <figure id="center" class="hover">
-                <img src="./static_assets/images/square.png" alt="Площадь Советская"/>
-                <figcaption>
-                    <!--<h3 class="title1">Начать с</h3>-->
-                    <!--<h3 class="title2">Площадь Советская</h3>-->
-                </figcaption>
-                <!--<a href=""></a>-->
-            </figure>
-        </section>
-        <footer class="github-link">
-            <a href="https://github.com/grodno-vr/grodno-vr.github.io">
-                <img src="static_assets/images/githubico.svg" />
-                <span>GitHub</span>
-            </a>
+        <footer>
+            <div class="github-link">
+                <a href="https://github.com/grodno-vr/grodno-vr.github.io">
+                    <img src="static_assets/images/githubico.svg" />
+                    <span>GitHub</span>
+                </a>
+            </div>
         </footer>
     </main>
 
