@@ -199,6 +199,16 @@ const bridge = {
                         width: 8,
                         height: 4.9
                     }
+                },                {
+                    source: 'places/bridge/old/bernardineSisterXIX.jpg',
+                    year: {
+                        ru: 'XIX в. Н.Орда',
+                        en: '19th c. N.Orda'
+                    },
+                    style: {
+                        width: 8,
+                        height: 4.9
+                    }
                 },
                 {
                     source: 'places/bridge/old/bernardineSisters1944.png',

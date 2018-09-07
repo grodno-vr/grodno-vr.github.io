@@ -198,6 +198,17 @@ const center = {
                     }
                 },
                 {
+                    source: 'places/center/old/vitautXIX.jpg',
+                    year: {
+                        ru: 'XIX в. Н.Орда',
+                        en: '19th c. N.Orda'
+                    },
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
                     source: 'places/center/old/vitaut3.jpg',
                     year: {
                         ru: '1900 г. Фото wikimedia.org',

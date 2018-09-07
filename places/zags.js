@@ -142,6 +142,17 @@ const zags = {
             },
             oldImages: [
                 {
+                    source: 'places/zags/old/dominikXIX.jpg',
+                    year: {
+                        ru: 'XIX в. Н.Орда',
+                        en: '19th c. N.Orda'
+                    },
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
                     source: 'places/zags/old/dominikXIX-XX.png',
                     year: {
                         ru: 'XIX-XX вв.',

@@ -35,6 +35,17 @@ const palace = {
             },
             oldImages: [
                 {
+                    source: 'places/palace/old/valickiXIX.jpg',
+                    year: {
+                        ru: 'XIX в. Н.Орда',
+                        en: '19th c. N.Orda'
+                    },
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
                     source: 'places/palace/old/valickiXX.png',
                     year: {
                         ru: 'XX в. Фото oldgrodno.by',

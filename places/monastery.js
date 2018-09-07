@@ -39,10 +39,21 @@ const monastery = {
             },
             oldImages: [
                 {
+                    source: 'places/monastery/old/monasteryXIX.jpg',
+                    year: {
+                        ru: 'XIX в. Н.Орда',
+                        en: '19th c. N.Orda'
+                    },
+                    style: {
+                        width: 7,
+                        height: 4.2
+                    }
+                },
+                {
                     source: 'places/monastery/old/monasteryXIX.png',
                     year: {
                         ru: 'XIX в. Фото oldgrodno.by',
-                        en: '20th c. Photo oldgrodno.by'
+                        en: '19th c. Photo oldgrodno.by'
                     },
                     style: {
                         width: 4.2,
