@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Animated, Image, asset } from 'react-vr';
+import { Text, View, Animated, asset } from 'react-vr';
 
 import Arrow from './Arrow';
 import Close from './Close';
@@ -94,21 +94,27 @@ class Gallery extends React.Component {
                         {currentImage.year && currentImage.year[locale] || '---'}
                     </Text>
                 </View>
-
                 <View style={styles.imageView}>
-
-
                     <Animated.Image
                         onLoad={() => this.imageLoadHandler()}
                         source={asset(currentImage.source)}
-                        style={[ styles.image, {...currentImage.style, transform: [{ rotateY : this.state.rotateY, rotateX: -6 }]}]}
+                        style={[ styles.image, {
+                            ...currentImage.style,
+                            transform: [
+                                { rotateY : this.state.rotateY, rotateX: -6 }
+                            ]
+                        }]}
                     />
 
                 </View>
                 <View style={[styles.centerView, { flexDirection: 'row', transform: [{ rotateX: -27 }] }]}>
-                    <Arrow direction="left" text={locale === 'ru' ? "Назад" : "Prev"} onClick={() => this.nextImage(-1)} />
+                    <Arrow direction="left"
+                           onClick={() => this.nextImage(-1)}
+                           text={locale === 'ru' ? "Назад" : "Prev"} />
                     <Close locale={locale} onClick={() => onClose()} />
-                    <Arrow direction="right" text={locale === 'ru' ? "Вперед" : "Next"} onClick={() => this.nextImage(1)} />
+                    <Arrow direction="right"
+                           onClick={() => this.nextImage(1)}
+                           text={locale === 'ru' ? "Вперед" : "Next"} />
                 </View>
             </Animated.View>
         );

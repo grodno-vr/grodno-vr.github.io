@@ -73,7 +73,6 @@ class Arrow extends React.Component {
                 <Text style={styles.tooltipButton}>
                     {text}
                 </Text>
-
             </View>
         );
     }

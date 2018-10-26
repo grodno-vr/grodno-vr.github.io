@@ -1,12 +1,11 @@
 import React from 'react';
-import { asset, Pano, View, Sound, Animated, NativeModules, VrHeadModel } from 'react-vr';
+import { asset, Pano, Sound, Animated } from 'react-vr';
 
 import { Portal, Label, Gallery, VRInformation } from '../.';
 import { lightMixin, cameraMixin, loadingMixin } from './mixins';
 
 import styles from './styles';
 
-// const { DomOverlayModule } = NativeModules;
 const SuperClass = loadingMixin(cameraMixin(lightMixin(React.Component)));
 
 const AnimatedPano = Animated.createAnimatedComponent(Pano);

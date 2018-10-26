@@ -1,7 +1,7 @@
 import React from 'react';
 import { asset, VrButton, Animated, VrSoundEffects } from 'react-vr';
 
-const GAZE_TIMEOUT = 2000; // 2s
+const GAZE_TIMEOUT = 1500; // 1.5s
 const AnimatedButton = Animated.createAnimatedComponent(VrButton);
 
 class GazeButton extends React.Component {

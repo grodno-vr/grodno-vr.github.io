@@ -44,7 +44,7 @@ class VRInformation extends React.Component {
             Animated
                 .timing(
                     this.state.closeScale,
-                    { toValue: 0.9, duration: 800, easing: Easing.in }
+                    { toValue: 0.1, duration: 1500, easing: Easing.in }
                 )
         ]).start();
     }
@@ -174,7 +174,6 @@ class VRInformation extends React.Component {
                                 justifyContent: 'center',
                                 alignItems: 'flex-end'
                             }}>
-                                { /* <Image style={{ opacity: 0.1, width: 200, height: 200 }} source={asset('icons/3d-placeholder.png')} /> */ }
                             </View> }
                         </View>
                     </Animated.View>

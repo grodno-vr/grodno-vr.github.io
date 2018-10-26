@@ -4,7 +4,7 @@ import { VRLoading } from '../../../components'
 
 const { DomOverlayModule } = NativeModules;
 
-const cameraMixin = Base => class extends Base {
+const loadingMixin = Base => class extends Base {
 
     constructor(props) {
         super(props);
@@ -17,7 +17,9 @@ const cameraMixin = Base => class extends Base {
     }
     
     renderLoading() {
-        return this.state.loading && VrHeadModel.inVR() && <VRLoading text={this.loadingText()} />;
+        return this.state.loading
+            && VrHeadModel.inVR()
+            && <VRLoading text={this.loadingText()} />;
     }
 
     startLoading() {
@@ -36,4 +38,4 @@ const cameraMixin = Base => class extends Base {
 
 };
 
-export default cameraMixin;
+export default loadingMixin;

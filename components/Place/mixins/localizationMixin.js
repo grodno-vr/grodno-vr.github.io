@@ -3,7 +3,7 @@ import { VrHeadModel, NativeModules } from 'react-vr';
 
 const { PersistenceOverlayModule } = NativeModules;
 
-const cameraMixin = Base => class extends Base {
+const localizationMixin = Base => class extends Base {
 
     constructor(props) {
         super(props);
@@ -21,4 +21,4 @@ const cameraMixin = Base => class extends Base {
     }
 };
 
-export default cameraMixin;
+export default localizationMixin;

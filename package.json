@@ -13,15 +13,14 @@
     "ovrui": "2.0.0",
     "react": "16.0.0",
     "react-dom": "16.2.0",
-    "react-native": "0.48.0",
+    "react-native": "0.48.4",
     "react-vr": "2.0.0",
-    "react-vr-controller-raycaster": "1.0.0",
     "react-vr-web": "2.0.0",
-    "three": "0.87.0"
+    "three": "0.87.1"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
-    "babel-preset-react-native": "1.9.1",
+    "babel-preset-react-native": "1.9.2",
     "jest": "19.0.2",
     "react-devtools": "2.5.2",
     "react-test-renderer": "16.0.0",
