@@ -1,7 +1,7 @@
 # [GrodnoVR Demo](https://grodno-vr.github.io)
 > :church: Старые фотографии города Гродно в  режиме виртуальной реальности, демо с открытым исходным кодом на основе [ReactVR](https://facebook.github.io/react-vr) библиотеки.
 
->> Проект находится в разработке, по мере свободного времени мы вносим какие-то изменения и что-то исправляем, многое может не работать на демо.
+> Подробнее о проекте можно почитать в статье [GrodnoVR: My first and last experience with ReactVR](https://medium.com/front-end-in-regions-grodno/grodnovr-my-first-and-last-experience-with-reactvr-7ac156fc1a70)
 
 ![Screen 1](./media/screen1.png)
 ![Screen 2](./media/screen3.png)
@@ -50,16 +50,16 @@ npm run bundle
 
 ### Титры
 
-*Разработка:* Артур Басак
+Разработка: *Артур Басак*
 
-*Помощь в разработке:* Александр Зимаков, Максим Лысаков
+Помощь в разработке: *Александр Зимаков, Максим Лысаков*
 
-*Перевод на английский язык:* Елизавета Чеканова
+Перевод на английский язык: *Елизавета Чеканова*
 
-*3d модели:* Игорь Ламека, Артур Басак
+3d модели: *Игорь Ламека, Артур Басак*
 
-*360-фото:* Артур Басак
+360-фото: *Артур Басак*
 
-*Старинные фото из частных коллекций:* Феликс Ворошильский, Виктор Саяпин, И. Пашпекина, Китурко Константин, Залы торгового центра OldCity
+Старинные фото из частных коллекций: *Феликс Ворошильский, Виктор Саяпин, И. Пашпекина, Китурко Константин, Залы торгового центра OldCity*
 
-*Большинство фото и текстов взято из публичных источников:* wikipedia.org, newgrodno.by, oldgrodno.by, old.grodno.net, grodno.net, grodnonews.by, kinogrodno.by, vgr.by, hrodno.life, harodnia.com, grodno.in, holiday.by, galina-lukas.ru, radzima.org, s13.ru, ggau.by, trainer.by, tut.by, zetgrodno.com, allcastles.ru, ay.by, wikimedia.org, drama.grodno.by, katolik.life
+Большинство фото и текстов взято из публичных источников: *wikipedia.org, newgrodno.by, oldgrodno.by, old.grodno.net, grodno.net, grodnonews.by, kinogrodno.by, vgr.by, hrodno.life, harodnia.com, grodno.in, holiday.by, galina-lukas.ru, radzima.org, s13.ru, ggau.by, trainer.by, tut.by, zetgrodno.com, allcastles.ru, ay.by, wikimedia.org, drama.grodno.by, katolik.life*
