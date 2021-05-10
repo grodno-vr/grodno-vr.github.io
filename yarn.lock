@@ -380,7 +380,7 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-jest@^19.0.0:
+babel-jest@19.0.0, babel-jest@^19.0.0:
   version "19.0.0"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-19.0.0.tgz#59323ced99a3a84d359da219ca881074ffc6ce3f"
   dependencies:
@@ -752,7 +752,7 @@ babel-preset-jest@^19.0.0:
   dependencies:
     babel-plugin-jest-hoist "^19.0.0"
 
-babel-preset-react-native@^1.9.1:
+babel-preset-react-native@1.9.2:
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/babel-preset-react-native/-/babel-preset-react-native-1.9.2.tgz#b22addd2e355ff3b39671b79be807e52dfa145f2"
   dependencies:
@@ -2132,8 +2132,8 @@ home-path@^1.0.1:
   resolved "https://registry.yarnpkg.com/home-path/-/home-path-1.0.5.tgz#788b29815b12d53bacf575648476e6f9041d133f"
 
 hosted-git-info@^2.1.4:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
 
 html-encoding-sniffer@^1.0.1:
   version "1.0.2"
@@ -2689,7 +2689,7 @@ jest-validate@^19.0.2:
     leven "^2.0.0"
     pretty-format "^19.0.0"
 
-jest@^19.0.2:
+jest@19.0.2:
   version "19.0.2"
   resolved "https://registry.yarnpkg.com/jest/-/jest-19.0.2.tgz#b794faaf8ff461e7388f28beef559a54f20b2c10"
   dependencies:
@@ -3433,7 +3433,7 @@ osenv@^0.1.4:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
-ovrui@~2.0.0:
+ovrui@2.0.0, ovrui@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ovrui/-/ovrui-2.0.0.tgz#8475ae04b89a1a67e84fd54c268015092a97c466"
   dependencies:
@@ -3707,7 +3707,7 @@ react-devtools-core@^2.5.0, react-devtools-core@^2.5.2:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-devtools@^2.5.2:
+react-devtools@2.5.2:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/react-devtools/-/react-devtools-2.5.2.tgz#b6319590b287f60dab767006e882770113fa2cae"
   dependencies:
@@ -3718,7 +3718,7 @@ react-devtools@^2.5.2:
     react-devtools-core "^2.5.2"
     update-notifier "^2.1.0"
 
-react-dom@^16.2.0:
+react-dom@16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
   dependencies:
@@ -3727,7 +3727,7 @@ react-dom@^16.2.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-native@~0.48.0:
+react-native@0.48.4:
   version "0.48.4"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.48.4.tgz#f305e9fef069a5b3f6a7250ddd50f603cf30ab2d"
   dependencies:
@@ -3840,14 +3840,14 @@ react-transform-hmr@^1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react-vr-web@~2.0.0:
+react-vr-web@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-vr-web/-/react-vr-web-2.0.0.tgz#cf8b4ef232a4bfd4c8ec7f87f6ae8d69547e0ab3"
   dependencies:
     ovrui "~2.0.0"
     three-gltf2-loader "^1.0.0"
 
-react-vr@~2.0.0:
+react-vr@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-vr/-/react-vr-2.0.0.tgz#8e0f2558eef72b343d420528dd1168ff213730d4"
   dependencies:
@@ -4521,7 +4521,7 @@ three-gltf2-loader@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/three-gltf2-loader/-/three-gltf2-loader-1.2.0.tgz#1fffae0659b1490034e6d055c7aabc439ab5de21"
 
-three@^0.87.0:
+three@0.87.1, three@^0.87.0:
   version "0.87.1"
   resolved "https://registry.yarnpkg.com/three/-/three-0.87.1.tgz#466a34edc4543459ced9b9d7d276b65216fe2ba8"
 
