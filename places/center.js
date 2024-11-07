@@ -222,8 +222,8 @@ const center = {
                 {
                     source: 'places/center/old/vitaut1.jpg',
                     year: {
-                        ru: '1923 – 1930 гг. Фото s13.ru',
-                        en: '1923 – 1930, Photo s13.ru'
+                        ru: '1923 – 1930 гг. Фото <unknown>',
+                        en: '1923 – 1930, Photo <unknown>'
                     },
                     style: {
                         width: 7,
@@ -420,8 +420,8 @@ const center = {
                 {
                     source: 'places/center/old/muravjov3.jpg',
                     year: {
-                        ru: '2006 г. Фото s13.ru',
-                        en: '2006, Photo s13.ru'
+                        ru: '2006 г. Фото <unknown>',
+                        en: '2006, Photo <unknown>'
                     },
                     style: {
                         width: 7,
@@ -510,8 +510,8 @@ const center = {
                 {
                     source: 'places/center/old/cathedral3.png',
                     year: {
-                        ru: '1924 г. Фото tut.by',
-                        en: '1924, Photo tut.by'
+                        ru: '1924 г. Фото <unknown>',
+                        en: '1924, Photo <unknown>'
                     },
                     style: {
                         width: 7,

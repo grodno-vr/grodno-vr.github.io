@@ -161,8 +161,8 @@ const fire = {
                 {
                     source: 'places/fire/old/palaceXX.jpg',
                     year: {
-                        ru: 'XX в. Фото tut.by',
-                        en: '20th c. Photo tut.by'
+                        ru: 'XX в. Фото <unknown>',
+                        en: '20th c. Photo <unknown>'
                     },
                     style: {
                         width: 7,

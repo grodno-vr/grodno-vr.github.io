@@ -69,8 +69,8 @@ const bridge = {
                 {
                     source: 'places/bridge/old/tank2.jpg',
                     year: {
-                        ru: '2008 г. Фото tut.by',
-                        en: '2008, Photo tut.by'
+                        ru: '2008 г. Фото <unknown>',
+                        en: '2008, Photo <unknown>'
                     },
                     style: {
                         width: 8,
@@ -80,8 +80,8 @@ const bridge = {
                 {
                     source: 'places/bridge/old/tank3.jpg',
                     year: {
-                        ru: '1968 г. Фото tut.by',
-                        en: '1968, Photo tut.by'
+                        ru: '1968 г. Фото <unknown>',
+                        en: '1968, Photo <unknown>'
                     },
                     style: {
                         width: 8,
@@ -102,7 +102,7 @@ const bridge = {
             description: {
                 ru: `В 1947 г. постановлением Совета Министров БССР в Гродно создан областной драматический театр. \n
                         Официальное открытие театра состоялось премьерным спектаклем «В одном городе» по пьесе А.Сафронова.\n
-                        \n\nТекст drama.grodno.by`,
+                        \n\nТекст <unknown>`,
                 en: `Regional drama theatre was established in Grodno in 1947 under the resolution of the BSSR Council of Ministers.
                      Premiere performance of "In One City" after the the play by Safronov marked the official opening of the theater.`
             },
@@ -114,8 +114,8 @@ const bridge = {
                 {
                     source: 'places/bridge/old/theater.jpg',
                     year: {
-                        ru: '1978 - 1984 гг. Фото drama.grodno.by',
-                        en: '1978 - 1984, Photo drama.grodno.by'
+                        ru: '1978 - 1984 гг. Фото <unknown>',
+                        en: '1978 - 1984, Photo <unknown>'
                     },
                     style: {
                         width: 8,
@@ -125,8 +125,8 @@ const bridge = {
                 {
                     source: 'places/bridge/old/theater1.jpg',
                     year: {
-                        ru: '1978 - 1984 гг. Фото drama.grodno.by',
-                        en: '1978 - 1984, Photo drama.grodno.by'
+                        ru: '1978 - 1984 гг. Фото <unknown>',
+                        en: '1978 - 1984, Photo <unknown>'
                     },
                     style: {
                         width: 8,
@@ -136,8 +136,8 @@ const bridge = {
                 {
                     source: 'places/bridge/old/theater2.jpg',
                     year: {
-                        ru: '1978 - 1984 гг. Фото drama.grodno.by',
-                        en: '1978 - 1984, Photo drama.grodno.by'
+                        ru: '1978 - 1984 гг. Фото <unknown>',
+                        en: '1978 - 1984, Photo <unknown>'
                     },
                     style: {
                         width: 8,
@@ -147,8 +147,8 @@ const bridge = {
                 {
                     source: 'places/bridge/old/theater3.jpg',
                     year: {
-                        ru: '1978 - 1984 гг. Фото drama.grodno.by',
-                        en: '1978 - 1984, Photo drama.grodno.by'
+                        ru: '1978 - 1984 гг. Фото <unknown>',
+                        en: '1978 - 1984, Photo <unknown>'
                     },
                     style: {
                         width: 8,
@@ -158,8 +158,8 @@ const bridge = {
                 {
                     source: 'places/bridge/old/theater4.jpg',
                     year: {
-                        ru: '1978 - 1984 гг. Фото drama.grodno.by',
-                        en: '1978 - 1984, Photo drama.grodno.by'
+                        ru: '1978 - 1984 гг. Фото <unknown>',
+                        en: '1978 - 1984, Photo <unknown>'
                     },
                     style: {
                         width: 8,
@@ -213,8 +213,8 @@ const bridge = {
                 {
                     source: 'places/bridge/old/bernardineSisters1944.png',
                     year: {
-                        ru: '1944 г. Фото s13.ru',
-                        en: '1944, Photo s13.ru'
+                        ru: '1944 г. Фото <unknown>',
+                        en: '1944, Photo <unknown>'
                     },
                     style: {
                         width: 8,

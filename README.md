@@ -62,4 +62,4 @@ npm run bundle
 
 Старинные фото из частных коллекций: *Феликс Ворошильский, Виктор Саяпин, И. Пашпекина, Китурко Константин, Залы торгового центра OldCity*
 
-Большинство фото и текстов взято из публичных источников: *wikipedia.org, newgrodno.by, oldgrodno.by, old.grodno.net, grodno.net, grodnonews.by, kinogrodno.by, vgr.by, hrodno.life, harodnia.com, grodno.in, holiday.by, galina-lukas.ru, radzima.org, s13.ru, ggau.by, trainer.by, tut.by, zetgrodno.com, allcastles.ru, ay.by, wikimedia.org, drama.grodno.by, katolik.life*
+Большинство фото и текстов взято из публичных источников: *wikipedia.org, newgrodno.by, oldgrodno.by, old.grodno.net, grodno.net, grodnonews.by, kinogrodno.by, vgr.by, <unknown>, harodnia.com, grodno.in, holiday.by, galina-lukas.ru, radzima.org, <unknown>, ggau.by, trainer.by, <unknown>, zetgrodno.com, allcastles.ru, ay.by, wikimedia.org, <unknown>, katolik.life*

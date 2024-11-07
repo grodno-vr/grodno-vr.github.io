@@ -107,8 +107,8 @@ const garadnica = {
                 {
                     source: 'places/lenina/old/squareXX.png',
                     year: {
-                        ru: 'XX вв. Фото s13.ru',
-                        en: '20th c. Photo s13.ru'
+                        ru: 'XX вв. Фото <unknown>',
+                        en: '20th c. Photo <unknown>'
                     },
                     style: {
                         width: 7,

@@ -170,8 +170,8 @@ const vilenskaja = {
                 {
                     source: 'places/vilenskaja/old/sokolovXX.png',
                     year: {
-                        ru: 'XX вв. Фото hrodno.life',
-                        en: '20th c. Photo hrodno.life'
+                        ru: 'XX вв. Фото <unknown>',
+                        en: '20th c. Photo <unknown>'
                     },
                     style: {
                         width: 7,
